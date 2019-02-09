@@ -9,7 +9,10 @@ enum routeNames {
   REGISTRATION_CONTACT_TYPE = 'registration_contact_type',
   REGISTRATION_NONPROFIT_STATUS = 'registration_nonprofit_status',
   PROFILE = 'profile',
-  NEWS_FEED = 'newsfeed'
+  NEWS_FEED = 'newsfeed',
+  DONATIONS = 'donations',
+  DISCOVER = 'discover',
+  MESSAGES = 'messages'
 }
 
 export default routeNames;
