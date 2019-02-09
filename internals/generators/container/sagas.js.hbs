@@ -1,9 +1,9 @@
 import { takeLatest, all } from 'redux-saga/effects';
-import {{ properCase name }}Constants from './constants';
+import {{ properCase name }}Constants from '../constants';
 import defaultSaga from './controllers/defaultSaga';
 
 // Individual exports for testing
-export function* defaultSaga() {
+export function* {{ properCase name }}Saga() {
   yield all([
     takeLatest({{ properCase name }}Constants.DEFAULT_ACTION, defaultSaga)
   ]);

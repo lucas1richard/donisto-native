@@ -96,13 +96,13 @@ module.exports = {
       // Reducer
       actions.push({
         type: 'add',
-        path: '{{ cwd }}/{{ from }}/{{properCase name}}/reducer/index..ts',
+        path: '{{ cwd }}/{{ from }}/{{properCase name}}/reducer/index.ts',
         templateFile: './container/reducer.js.hbs',
         abortOnFail: true
       });
       actions.push({
         type: 'add',
-        path: '{{ cwd }}/{{ from }}/{{properCase name}}/tests/reducer/index.test.ts',
+        path: '{{ cwd }}/{{ from }}/{{properCase name}}/tests/reducer.test.ts',
         templateFile: './container/reducer.test.js.hbs',
         abortOnFail: true
       });
