@@ -1,0 +1,1 @@
+{"version":3,"file":"rootReducer.js","sourceRoot":"","sources":["../../src/redux/rootReducer.js"],"names":[],"mappings":"AAAA,uDAAuD;AACvD,OAAO,gBAAgB,MAAM,YAAY,CAAC;AAE1C,MAAM,WAAW,GAAG,CAAC,KAAK,EAAE,MAAM,EAAE,EAAE;IACpC,wBAAwB;IACxB,gCAAgC;IAChC,0BAA0B;IAC1B,IAAI;IAEJ,OAAO,gBAAgB,CAAC,KAAK,EAAE,MAAM,CAAC,CAAC;AACzC,CAAC,CAAC;AAEF,eAAe,WAAW,CAAC"}

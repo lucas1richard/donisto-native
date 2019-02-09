@@ -1,0 +1,9 @@
+Corepro accountDetails needed after
+ - Deposit
+ - Withdrawal
+
+getUser needed after
+ -
+
+getAccounts (investments) needed after
+ - investment account created

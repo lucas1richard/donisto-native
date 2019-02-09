@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "897740840404",
+    "firebase_url": "https://grand-app-45c44.firebaseio.com",
+    "project_id": "grand-app-45c44",
+    "storage_bucket": "grand-app-45c44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897740840404:android:d4850e81b453f069",
+        "android_client_info": {
+          "package_name": "com.grand.native"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897740840404-krklncgq2dbrkmueh5au1rq9g5sb8c3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ4PxguWFXcdoIGl50RbjhxpsOeB7tkyQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

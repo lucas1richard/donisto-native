@@ -1,0 +1,24 @@
+{
+  "tags": {
+      "allowUnknownTags": true
+  },
+  "recurseDepth": 10,
+  "source": {
+      "includePattern": ".+\\.js(doc|x)?$",
+      "excludePattern": "(^|\\/|\\\\)_",
+      "exclude": [
+          "./node_modules",
+          "./webpack*",
+          "./public",
+          "./*.json"
+      ]
+  },
+  "plugins": [],
+  "templates": {
+      "cleverLinks": true,
+      "monospaceLinks": false,
+      "default": {
+          "outputSourceFiles": true
+      }
+  }
+}

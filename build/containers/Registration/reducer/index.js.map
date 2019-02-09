@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../src/containers/Registration/reducer/index.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,MAAM,wBAAwB,GAAG,EAAE,CAAC;AAE3C,MAAM,mBAAmB,GAAG,CAAC,KAAK,GAAG,wBAAwB,EAAE,MAAW,EAAE,EAAE;IAC5E,QAAQ,MAAM,CAAC,IAAI,EAAE;QACnB;YACE,OAAO,KAAK,CAAC;KAChB;AACH,CAAC,CAAC;AAEF,eAAe,mBAAmB,CAAC"}

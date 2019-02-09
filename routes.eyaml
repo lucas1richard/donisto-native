@@ -1,0 +1,41 @@
+- launch-screen
+- sign-up (Stack)
+    - email-password
+    - first-last-name
+    - mobile-phone
+    - recurring-amount
+    - link-account
+    - close-account
+- dashboard (Drawer)
+    - overview (Stack)
+        - choose-destination
+        - investing
+        - notifications
+        - drawings/overview
+        - drawings/detail
+        - balance/overview
+        - balance/detail
+        - investing/overview
+        - investing/detail
+        - investment/current-address
+        - investment/employment
+        - investment/regulatory-questions
+        - investment/identity-verification
+        - investment/portfolio
+        - investment/signature
+        - investment/confirm-goal
+    - smart-advisor (Stack)
+        - assets
+        - employment-info
+        - personal-details
+        - congrats
+        - need-more-info
+    - investing (Stack)
+        - overview
+        - detail
+    - notifications
+    - profile (Tab)
+        - basic-info
+        - linked-accounts
+        - jackpot-savings
+        - investing

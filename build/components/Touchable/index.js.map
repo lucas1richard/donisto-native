@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/components/Touchable/index.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,uBAAuB,EAAE,QAAQ,EAAE,MAAM,cAAc,CAAC;AAMnF,MAAM,aAAa,GAAmB;IACpC,OAAO,EAAE,uBAAuB;IAChC,GAAG,EAAE,gBAAgB;CACtB,CAAC;AAEF,eAAe,aAAa,CAAC,QAAQ,CAAC,EAAE,CAAC,CAAC"}

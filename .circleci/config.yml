@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+   docker:
+     - image: node:10
+   working_directory: ~/if-native
+   branches:
+     only:
+       - master
+       - production
+   steps:
+     - checkout
+     - run:
+         name: Pre-Dependencies
+         command: mkdir ~/if-native/artifacts
+     - restore_cache:
+         key: v1-ifnative-{{ .Branch }}-{{ checksum "package.json" }}
+     - run:
+         name: Install Dependencies
+         command: yarn install
+     - save_cache:
+         key: v1-ifnative-{{ .Branch }}-{{ checksum "package.json" }}
+         paths:
+           - node_modules
+     - deploy:
+         command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              yarn run expo-login && yarn run publish-staging
+            fi
+            if [ "${CIRCLE_BRANCH}" == "production" ]; then
+              yarn run expo-login && yarn run publish
+            fi
+     - store_artifacts:
+         path: ~/if-native/artifacts
+         destination: tmp
