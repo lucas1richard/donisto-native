@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import makeSelectDonations from './selectors';
+import { makeSelectDonations } from './selectors';
 
 const mapStateToProps = createStructuredSelector({
   Donations: makeSelectDonations()

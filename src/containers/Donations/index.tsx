@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import mapToProps from './mapToProps';
+import { h1 } from 'styles/Headings';
 
 interface IDonationsProps {
 }
@@ -8,9 +9,11 @@ interface IDonationsProps {
 export class Donations extends React.Component<IDonationsProps> {
   render() {
     return (
-      <Text>
-        Donations component
-      </Text>
+      <View  style={{flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={h1()}>
+          My Donations
+        </Text>
+      </View>
     );
   }
 }

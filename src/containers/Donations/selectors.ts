@@ -1,24 +1,15 @@
 import { createSelector } from 'reselect';
+import { IDonationsInitialState } from './reducer';
+import { IReduxState } from 'redux/reducers';
 
-/**
- * Direct selector to the donations state domain
- */
-const selectDonationsDomain = () => (state: any) => state.donations;
+export const selectDonationsDomain = () => (state: IReduxState): IDonationsInitialState => state.donations;
 
-/**
- * Other specific selectors
- */
-
-/**
- * Default selector used by Donations
- */
-
-const makeSelectDonations = () => createSelector(
+export const makeSelectDonations = () => createSelector(
   selectDonationsDomain(),
-  (substate) => substate
+  (substate) => substate.donations
 );
 
-export default makeSelectDonations;
-export {
-  selectDonationsDomain
-};
+export const makeSelectUi = () => createSelector(
+  selectDonationsDomain(),
+  (substate) => substate.ui
+);
