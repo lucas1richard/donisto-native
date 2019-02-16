@@ -4,11 +4,11 @@ import {
 } from "react-navigation";
 
 import routeNames from "./routeNames";
-import Profile from 'containers/Profile';
 import NewsFeed from 'containers/NewsFeed';
 import Donations from 'containers/Donations';
 import Discover from 'containers/Discover';
 import Messages from 'containers/Messages';
+import Contact from 'containers/Contact';
 import { FontAwesome, Entypo, Feather } from "@expo/vector-icons";
 
 interface ITabBarIconProps {
@@ -18,7 +18,7 @@ interface ITabBarIconProps {
 const PostAuthNavigator = createBottomTabNavigator({
   [routeNames.NEWS_FEED]: {
     navigationOptions: {
-      tabBarLabel: 'News Feed',
+      tabBarLabel: 'Feed',
       tabBarIcon: ({ focused }: ITabBarIconProps) => (
         <Entypo
           size={20}
@@ -74,7 +74,7 @@ const PostAuthNavigator = createBottomTabNavigator({
         style={{ textAlign: 'center', color: focused ? 'blue' : 'gray' }}
       />)
     },
-    screen: Profile
+    screen: Contact
   }
 }, {
   initialRouteName: routeNames.PROFILE

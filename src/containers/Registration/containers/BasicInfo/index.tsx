@@ -2,33 +2,61 @@ import React from 'react';
 import RegistrationBasicInfoForm from './components/Form';
 import { NavigationFocusInjectedProps } from 'react-navigation';
 
-import { View, Text } from 'react-native';
+import { View, ImageBackground } from 'react-native';
 import Button from 'components/Button';
-import { h2 } from 'styles/Headings';
 import theme from 'theme/iftheme';
-// import NavigationService from 'containers/Navigation/NavigationService';
-// import routeNames from 'containers/Navigation/routeNames';
 import mapToProps from './mapToProps';
+import H1 from 'components/H1';
+import H2 from 'components/H2';
+import Txt from 'components/Txt';
+import LoginLink from 'components/LoginLink';
 
 interface RegistrationBasicInfoProps {
   createContact: () => undefined
 }
 
+const charityImg = require('../../../../../assets/charity-demo.jpeg');
+
 class RegistrationBasicInfo extends React.Component<NavigationFocusInjectedProps & RegistrationBasicInfoProps> {
   render() {
     const { createContact } = this.props;
     return (
-      <View style={{ padding: 12, justifyContent: 'space-between', flex: 1 }}>
-        <Text style={h2({ color: theme.secondary[500] })}>
-          Provide account information
-        </Text>
-        <RegistrationBasicInfoForm />
-        <Button
-          color="primary"
-          title="Next Step"
-          onPress={createContact}
-        />
-      </View>
+      <ImageBackground
+        source={charityImg}
+        style={{
+          height: '100%',
+          justifyContent: 'space-between',
+          paddingHorizontal: theme.screenPadding,
+          paddingVertical: theme.screenPadding,
+          backgroundColor: '#000'
+        }}
+        imageStyle={{ height: 800, overflow: 'hidden', flex: 1 }}
+      >
+        <View style={{ padding: 12, justifyContent: 'space-between', flex: 1 }}>
+          <H1 color="light">
+            Create Account
+          </H1>
+          <H2 color="light">
+            and start meeting new friends around the world
+          </H2>
+          <RegistrationBasicInfoForm />
+          <Button
+            color="primary"
+            variant="contained"
+            title="Sign Up"
+            onPress={createContact}
+          />
+          <View style={{ alignItems: 'center' }}>
+            <Txt color="light">
+              By Proceeding, I agree to the
+            </Txt>
+            <Txt color="light">
+              Terms of Use and Privacy Policy
+            </Txt>
+          </View>
+          <LoginLink />
+        </View>
+      </ImageBackground>
     );
   }
 }

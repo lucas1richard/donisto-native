@@ -5,3 +5,4 @@ docs
 out
 coverage
 yarn.lock
+build

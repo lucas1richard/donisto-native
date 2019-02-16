@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 function Loader() {
-    return (React.createElement(View, null,
-        React.createElement(Text, null, "TODO: Loader")));
+    return (React.createElement(View, { style: { alignItems: 'center' } },
+        React.createElement(ActivityIndicator, { size: "large" })));
 }
 export default Loader;
 //# sourceMappingURL=index.js.map

@@ -11,6 +11,9 @@ var routeNames;
     routeNames["REGISTRATION_NONPROFIT_STATUS"] = "registration_nonprofit_status";
     routeNames["PROFILE"] = "profile";
     routeNames["NEWS_FEED"] = "newsfeed";
+    routeNames["DONATIONS"] = "donations";
+    routeNames["DISCOVER"] = "discover";
+    routeNames["MESSAGES"] = "messages";
 })(routeNames || (routeNames = {}));
 export default routeNames;
 //# sourceMappingURL=routeNames.js.map

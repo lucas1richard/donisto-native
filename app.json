@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Donisto",
-    "slug": "if-native",
+    "slug": "donisto",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "version": "1.0.14",
@@ -23,7 +23,7 @@
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
             "organization": "invest-forward",
-            "project": "if-native",
+            "project": "donisto",
             "authToken": "7a6227af0d274b438e901bc5bf7da548d0a56e7d95574e678c5ae76e76dd9b63"
           }
         }

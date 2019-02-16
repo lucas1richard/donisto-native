@@ -18,29 +18,30 @@ export class RegistrationBasicInfoForm extends FormFlow<TRegistrationFormData> {
   render() {
     return (
       <View>
-        <MyField
-          component={Input}
-          name="email"
-          label="Enter your email"
-          keyboardType="email-address"
-          innerRef={this.registerField('email')}
-          onSubmitEditing={this.submitEditing('password1')}
-        />
+        <View style={{ marginBottom: 12 }}>
+          <MyField
+            component={Input}
+            name="email"
+            label="Email"
+            keyboardType="email-address"
+            innerRef={this.registerField('email')}
+            onSubmitEditing={this.submitEditing('password1')}
+          />
+        </View>
         <MyField
           component={Input}
           name="password"
-          label="Enter a password"
+          label="Password"
           secureTextEntry
           innerRef={this.registerField('password1')}
-          onSubmitEditing={this.submitEditing('password2')}
         />
-        <MyField
+        {/* <MyField
           component={Input}
           name="password-confirm"
           label="Type the password again"
           secureTextEntry
           innerRef={this.registerField('password2')}
-        />
+        /> */}
       </View>
     );
   }

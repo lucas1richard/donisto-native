@@ -1,7 +1,7 @@
 import ContactConstants from "./constants";
 import { Action } from "redux";
 
-export type ContactActions =
+export type TContactActions =
   IGetContactAction
   | IGetContactSuccessAction
   | IGetContactFailAction

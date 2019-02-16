@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Donisto",
-    "slug": "if-native",
+    "slug": "donisto-native",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "version": "1.0.14",
@@ -16,55 +16,6 @@
     },
     "packagerOpts": {
       "assetExts": ["ttf", "mp4"]
-    },
-    "hooks": {
-      "postPublish": [
-        {
-          "file": "sentry-expo/upload-sourcemaps",
-          "config": {
-            "organization": "invest-forward",
-            "project": "if-native",
-            "authToken": "7a6227af0d274b438e901bc5bf7da548d0a56e7d95574e678c5ae76e76dd9b63"
-          }
-        }
-      ]
-    },
-    "ios": {
-      "bundleIdentifier": "com.grand.native",
-      "supportsTablet": true,
-      "appStoreUrl": "https://itunes.apple.com/us/app/grand-save-money-win/id1370990686?ls=1&mt=8",
-      "buildNumber": "18.0.32",
-      "config": {
-        "branch": {
-          "apiKey": "key_live_ddB0ee0bOxL0l3GT705aGpfjEsdgzNkt"
-        }
-      },
-      "infoPlist": {
-        "NSLocationAlwaysUsageDescription": "This app uses location services for analytics.",
-        "NSFaceIDUsageDescription": "This app uses Face ID to allow for easier sign in",
-        "NSContactsUsageDescription": "GRAND would like access to your contacts.",
-        "LSApplicationQueriesSchemes": [
-          "googlegmail",
-          "inbox-gmail",
-          "ymail",
-          "readdle-spark"
-        ]
-      },
-      "associatedDomains": [
-        "applinks:grand.app.link",
-        "applinks:grand-alternate.app.link"
-      ]
-    },
-    "android": {
-      "package": "com.grand.native",
-      "versionCode": 14,
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.grand.native",
-      "googleServicesFile": "./google-services.json",
-      "config": {
-        "branch": {
-          "apiKey": "key_live_ddB0ee0bOxL0l3GT705aGpfjEsdgzNkt"
-        }
-      }
     }
   }
 }

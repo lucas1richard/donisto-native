@@ -9,22 +9,36 @@ import {
   getContactFailAction
 } from 'containers/Contact/actions';
 import { getNewsFeedAction } from 'containers/NewsFeed/actions';
+import showToast from 'components/Toast';
+import { getDonationsAction } from 'containers/Donations/actions';
 
 function* loginSaga() {
   try {
+
     yield put(startSubmit(LOGIN_FORM_NAME));
     const formData = yield select(getFormValues(LOGIN_FORM_NAME));
     const { data } = yield call(api, 'post', '/api/contact/get', formData);
     yield all([
       put(getContactSuccessAction(data)),
-      put(getNewsFeedAction())
+      put(getNewsFeedAction()),
+      put(getDonationsAction())
     ]);
     yield call(NavigationService.navigate, 'loggedIn');
+
   } catch (err) {
+
     yield put(getContactFailAction(err));
+    if (err.status === 401) {
+      showToast({
+        text: 'Your email or password didn\'t match our records'
+      }, 'error');
+    }
     errorHandler(err);
+
   } finally {
+
     yield put(stopSubmit(LOGIN_FORM_NAME));
+
   }
 }
 

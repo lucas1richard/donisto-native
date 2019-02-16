@@ -7,10 +7,19 @@ import { reducer as form } from 'redux-form';
 import { combineReducers } from 'redux';
 
 import contact from 'containers/Contact/reducer';
-import newsfeed from 'containers/NewsFeed/reducer';
-import donations from 'containers/Donations/reducer';
+import newsfeed, { INewsfeedInitialState } from 'containers/NewsFeed/reducer';
+import donations, { IDonationsInitialState } from 'containers/Donations/reducer';
 import discover from 'containers/Discover/reducer';
 import messages from 'containers/Messages/reducer';
+
+export interface IReduxState {
+  contact: any;
+  donations: IDonationsInitialState;
+  discover: any;
+  form: any;
+  messages: any;
+  newsfeed: INewsfeedInitialState;
+}
 
 /** To be combined below */
 const reducers = {

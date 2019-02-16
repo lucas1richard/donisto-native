@@ -90,6 +90,7 @@ theme = {
         900: '#e65100'
     },
     screenPadding: 12,
+    fontSize: 16,
     mui: {
         palette: {
             common: {

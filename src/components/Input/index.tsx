@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { TextField } from 'react-native-material-textfield';
+import { View, TextInput } from 'react-native';
 import { IFieldPrimitiveProps } from 'components/FieldPrimitive';
 import showToast from 'components/Toast';
-import styles from './styles';
 import theme from 'theme/iftheme';
 import { WrappedFieldProps } from 'redux-form';
+import { BlurView } from 'expo';
 
 export type TFieldLabels = 'fieldLabel'|'fieldLabelerror'|'fieldLabelactive'|'fieldLabelactive';
 export type TInputLabels = 'inputStyle'|'inputStyleerror'|'inputStyleactive'|'inputStyleactive';
@@ -98,36 +97,44 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
       showFloatingLabel,
       multiline,
       meta,
+      icon,
       ...field
     } = this.props;
-    const {
-      fieldLabelKey
-    } = this.styleKeys();
+    // const {
+    //   fieldLabelKey
+    // } = this.styleKeys();
+
+    const hasIcon = !!icon;
 
     return (
-      <View style={{ marginBottom: 4 }}>
-        {showFloatingLabel &&
-          <Text style={styles[fieldLabelKey]}>
-            {field.label}
-          </Text>
-        }
         <View>
-          <TextField
-            {...input}
-            {...field}
-            allowFontScaling={false}
-            ref={innerRef}
-            label={field.label}
-            value={input.value}
-            onChangeText={input.onChange}
-            tintColor={theme.green}
-            onBlur={this.onBlur}
-            onFocus={this.onFocus}
-            error={meta.submitFailed ? meta.error : ''}
-            returnKeyType={field.returnKeyType || 'next'}
-          />
+          <BlurView tint="dark" intensity={80} style={{ borderRadius: theme.fontSize * 0.6 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              {hasIcon && (
+                <View style={{ paddingLeft: theme.fontSize }}>
+                  {icon}
+                </View>
+              )}
+              <TextInput
+                {...input}
+                {...field}
+                allowFontScaling={false}
+                ref={innerRef}
+                label={field.label}
+                placeholder={field.label}
+                placeholderTextColor="#bbb"
+                value={input.value}
+                onChangeText={input.onChange}
+                tintColor={theme.green}
+                style={{ color: '#fff', fontSize: theme.fontSize + 4, padding: theme.fontSize }}
+                onBlur={this.onBlur}
+                onFocus={this.onFocus}
+                error={meta.submitFailed ? meta.error : ''}
+                returnKeyType={field.returnKeyType || 'next'}
+              />
+            </View>
+          </BlurView>
         </View>
-      </View>
     );
   }
 }

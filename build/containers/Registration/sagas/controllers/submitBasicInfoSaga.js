@@ -5,9 +5,11 @@ import NavigationService from 'containers/Navigation/NavigationService';
 import errorHandler from 'utilities/errorHandler';
 import { getContactSuccessAction } from 'containers/Contact/actions';
 import { REGISTRATION_BASICINFO_FORM_NAME } from '../../containers/BasicInfo/components/Form';
+import logger from 'utilities/logger';
 function* submitBasicInfoSaga() {
     try {
         const formData = yield select(getFormValues(REGISTRATION_BASICINFO_FORM_NAME));
+        logger.log(formData, 'submitBasicInfoSaga');
         const { data } = yield call(api, 'post', '/api/contact/create', {
             email: formData.email,
             password: formData.password

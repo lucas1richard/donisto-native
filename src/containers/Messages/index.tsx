@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
+import MessageList from './components/MessageList';
 import mapToProps from './mapToProps';
 
 interface IMessagesProps {
@@ -8,9 +9,11 @@ interface IMessagesProps {
 export class Messages extends React.Component<IMessagesProps> {
   render() {
     return (
-      <Text>
-        Messages component
-      </Text>
+      <ScrollView>
+        <View style={{ flex: 1 }}>
+          <MessageList />
+        </View>
+      </ScrollView>
     );
   }
 }

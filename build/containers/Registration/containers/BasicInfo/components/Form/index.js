@@ -8,9 +8,9 @@ export const REGISTRATION_BASICINFO_FORM_NAME = 'registration_basic_info';
 export class RegistrationBasicInfoForm extends FormFlow {
     render() {
         return (React.createElement(View, null,
-            React.createElement(MyField, { component: Input, name: "email", label: "Enter your email", keyboardType: "email-address", innerRef: this.registerField('email'), onSubmitEditing: this.submitEditing('password1') }),
-            React.createElement(MyField, { component: Input, name: "password", label: "Enter a password", secureTextEntry: true, innerRef: this.registerField('password1'), onSubmitEditing: this.submitEditing('password2') }),
-            React.createElement(MyField, { component: Input, name: "password-confirm", label: "Type the password again", secureTextEntry: true, innerRef: this.registerField('password2') })));
+            React.createElement(View, { style: { marginBottom: 12 } },
+                React.createElement(MyField, { component: Input, name: "email", label: "Email", keyboardType: "email-address", innerRef: this.registerField('email'), onSubmitEditing: this.submitEditing('password1') })),
+            React.createElement(MyField, { component: Input, name: "password", label: "Password", secureTextEntry: true, innerRef: this.registerField('password1') })));
     }
 }
 export default reduxForm({

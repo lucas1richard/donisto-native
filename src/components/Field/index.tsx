@@ -8,7 +8,8 @@ interface MyFieldProps {
   label?: string;
   keyboardType?: string;
   innerRef?: (el: React.ComponentType) => any;
-  onSubmitEditing?: (el: any) => void
+  onSubmitEditing?: (el: any) => void;
+  icon?: any;
 }
 
 class MyField extends React.Component<MyFieldProps> {

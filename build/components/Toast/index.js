@@ -8,10 +8,14 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { Toast } from 'native-base';
-import toastStyles from 'styles/toast';
-const showToast = (_a) => {
+import { defaultStyles, errorStyles } from 'styles/toast';
+const showToast = (_a, type) => {
     var { text } = _a, other = __rest(_a, ["text"]);
-    return Toast.show(Object.assign({ text }, other, { position: 'top', duration: global.toastDuration }, toastStyles));
+    let toastStyles = defaultStyles;
+    if (type === 'error') {
+        toastStyles = errorStyles;
+    }
+    Toast.show(Object.assign({ text }, other, { position: 'top', duration: global.toastDuration }, toastStyles));
 };
 export default showToast;
 //# sourceMappingURL=index.js.map

@@ -4,6 +4,7 @@ import { h1, h2 } from 'styles/Headings';
 import Touchable from 'components/Touchable';
 import RNModal from 'components/Modal';
 import theme from 'theme/iftheme';
+import card from 'styles/Card';
 
 interface INewsFeedItemProps {
   item: any,
@@ -26,7 +27,7 @@ class NewsFeedItem extends React.Component<INewsFeedItemProps, INewsFeedItemStat
     const { item } = this.props;
     return (
       <Touchable onPress={this.toggleModal}>
-        <View key={item.id} style={{ borderBottomWidth: 1, paddingVertical: 18 }}>
+        <View key={item.id} style={card()}>
           <Text style={h1()}>
             {item.title}
           </Text>
@@ -35,7 +36,7 @@ class NewsFeedItem extends React.Component<INewsFeedItemProps, INewsFeedItemStat
           </Text>
         </View>
         <RNModal
-          title={item.title.slice(0, 50)}
+          title={item.title.slice(0, 20)}
           onHide={this.toggleModal}
           visible={this.state.modalVisible}
         >

@@ -1,5 +1,5 @@
 import ContactConstants from "../constants";
-const initialContactState = {};
+export const initialContactState = {};
 const contactReducer = (state = initialContactState, action) => {
     switch (action.type) {
         case ContactConstants.GET_CONTACT_SUCCESS:
