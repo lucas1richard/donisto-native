@@ -1,12 +1,21 @@
 import { Toast } from 'native-base';
-import toastStyles from 'styles/toast';
+import { defaultStyles, errorStyles } from 'styles/toast';
 
-const showToast = ({ text, ...other }: { text: string }) => Toast.show({
-  text,
-  ...other,
-  position: 'top',
-  duration: global.toastDuration,
-  ...toastStyles
-});
+interface IShowToastArgs { text: string }
+type TToastType = 'default'|'error';
+
+const showToast = ({ text, ...other }: IShowToastArgs, type?: TToastType) => {
+  let toastStyles = defaultStyles;
+  if (type === 'error') {
+    toastStyles = errorStyles;
+  }
+  Toast.show({
+    text,
+    ...other,
+    position: 'top',
+    duration: global.toastDuration,
+    ...toastStyles
+  });
+};
 
 export default showToast;
