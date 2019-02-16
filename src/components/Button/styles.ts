@@ -1,16 +1,13 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import theme from 'theme/iftheme';
 
-interface IDefaultStyles {
-  [x: string]: any;
-}
-
-const defaultViewStyles: IDefaultStyles = {
-  padding: 12,
+const defaultViewStyles: ViewStyle = {
+  padding: theme.fontSize,
   width: '100%',
-  borderRadius: 6,
+  borderRadius: 8,
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  flexDirection: 'row'
 };
 
 export const viewStyles = StyleSheet.create({
@@ -20,17 +17,18 @@ export const viewStyles = StyleSheet.create({
     borderColor: theme.primary[600],
     backgroundColor: theme.primary[50]
   },
-  contained: {
+  rounded: {
     ...defaultViewStyles,
-    borderWidth: 0,
-    backgroundColor: theme.primary[600]
+    borderRadius: 99
+  },
+  contained: {
+    ...defaultViewStyles
   },
   text: {
-    backgroundColor: '#fff'
   },
   primary: {
     ...defaultViewStyles,
-    backgroundColor: theme.primary[400]
+    backgroundColor: theme.primary[500]
   },
   secondary: {
     ...defaultViewStyles,
@@ -46,11 +44,22 @@ export const viewStyles = StyleSheet.create({
   }
 });
 
-const defaultTextStyles: IDefaultStyles = {
-  fontSize: 18
+const defaultTextStyles: TextStyle = {
+  fontSize: theme.fontSize + 4
 };
 
 export const textStyles = StyleSheet.create({
+  'text-primary': {
+    color: theme.primary[400],
+    borderBottomWidth: 1,
+    borderBottomColor: theme.primary[400]
+  },
+  'text-secondary': {
+    color: theme.secondary[400]
+  },
+  'text-default': {
+    color: '#000'
+  },
   primary: {
     ...defaultTextStyles,
     color: '#fff'
