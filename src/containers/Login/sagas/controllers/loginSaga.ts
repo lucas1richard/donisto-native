@@ -11,13 +11,15 @@ import {
 import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 import showToast from 'components/Toast';
 import { getDonationsAction } from 'containers/Donations/actions';
+import { manualSetOutgoingHeaders } from 'utilities/request';
 
 function* loginSaga() {
   try {
 
     yield put(startSubmit(LOGIN_FORM_NAME));
     const formData = yield select(getFormValues(LOGIN_FORM_NAME));
-    const { data } = yield call(api, 'post', '/api/contact/get', formData);
+    const { data, headers } = yield call(api, 'post', '/api/login', formData);
+    yield call(manualSetOutgoingHeaders, headers.token, data.uuid);
     yield all([
       put(getContactSuccessAction(data)),
       put(getNewsFeedAction()),

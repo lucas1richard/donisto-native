@@ -1,23 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Button from 'components/Button';
 import { NavigationFocusInjectedProps } from 'react-navigation';
-import { h2, h1 } from 'styles/Headings';
 import theme from 'theme/iftheme';
+import H1 from 'components/H1';
+import H2 from 'components/H2';
 
 class RegistrationContactType extends React.Component<NavigationFocusInjectedProps> {
   render() {
     return (
       <View style={{ padding: theme.screenPadding }}>
-        <Text style={h1({ color: theme.primary[500]})}>
+        <H1 color="primary">
           Tell us who you are
-        </Text>
+        </H1>
         <Button
           color="primary"
           title="I'm a Nonprofit"
           onPress={() => undefined}
         />
-        <Text style={h2({ color: theme.secondary[500]})}>OR</Text>
+        <H2 color="secondary">OR</H2>
         <Button
           color="primary"
           title="I'm a Donor"

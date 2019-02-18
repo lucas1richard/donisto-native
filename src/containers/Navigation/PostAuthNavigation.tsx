@@ -8,8 +8,12 @@ import NewsFeed from 'containers/NewsFeed';
 import Donations from 'containers/Donations';
 import Discover from 'containers/Discover';
 import Messages from 'containers/Messages';
-import Contact from 'containers/Contact';
+import Contact from 'containers/Contact/router';
 import { FontAwesome, Entypo, Feather } from "@expo/vector-icons";
+import theme from 'theme/iftheme';
+
+const focusedColor = theme.primary[500];
+const notFocusedColor = 'gray';
 
 interface ITabBarIconProps {
   focused: boolean
@@ -23,7 +27,7 @@ const PostAuthNavigator = createBottomTabNavigator({
         <Entypo
           size={20}
           name="news"
-          style={{ textAlign: 'center', color: focused ? 'blue' : 'gray' }}
+          style={{ textAlign: 'center', color: focused ? focusedColor : notFocusedColor }}
         />)
     },
     screen: NewsFeed
@@ -35,7 +39,7 @@ const PostAuthNavigator = createBottomTabNavigator({
         <Entypo
           size={20}
           name="magnifying-glass"
-          style={{ textAlign: 'center', color: focused ? 'blue' : 'gray' }}
+          style={{ textAlign: 'center', color: focused ? focusedColor : notFocusedColor }}
         />)
     },
     screen: Discover
@@ -47,7 +51,7 @@ const PostAuthNavigator = createBottomTabNavigator({
         <FontAwesome
           size={20}
           name="money"
-          style={{ textAlign: 'center', color: focused ? 'blue' : 'gray' }}
+          style={{ textAlign: 'center', color: focused ? focusedColor : notFocusedColor }}
         />)
     },
     screen: Donations
@@ -59,7 +63,7 @@ const PostAuthNavigator = createBottomTabNavigator({
         <Feather
           size={20}
           name="message-square"
-          style={{ textAlign: 'center', color: focused ? 'blue' : 'gray' }}
+          style={{ textAlign: 'center', color: focused ? focusedColor : notFocusedColor }}
         />)
     },
     screen: Messages
@@ -71,13 +75,17 @@ const PostAuthNavigator = createBottomTabNavigator({
       <FontAwesome
         size={20}
         name="user-o"
-        style={{ textAlign: 'center', color: focused ? 'blue' : 'gray' }}
+        style={{ textAlign: 'center', color: focused ? focusedColor : notFocusedColor }}
       />)
     },
     screen: Contact
   }
 }, {
-  initialRouteName: routeNames.PROFILE
+  initialRouteName: routeNames.PROFILE,
+  tabBarOptions: {
+    activeTintColor: focusedColor,
+    inactiveTintColor: notFocusedColor
+  }
 });
 
 export default PostAuthNavigator;

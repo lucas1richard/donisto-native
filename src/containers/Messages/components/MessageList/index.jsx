@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import card from 'styles/Card';
-import { h1 } from 'styles/Headings';
 import MessageItem from './MessageItem';
+import H1 from 'components/H1';
 
 class MessageList extends React.Component {
   render() {
     return (
       <View>
-        <Text style={h1()}>Messages</Text>
+        <H1>Messages</H1>
         <MessageItem>
           <Text>Message 1</Text>
           <Text>From Person 1</Text>
