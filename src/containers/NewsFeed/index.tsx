@@ -8,6 +8,12 @@ interface INewsFeedProps {
   loaded: boolean
 }
 
+const images = [
+  require('../../../assets/scenic-1.jpg'),
+  require('../../../assets/happy-1.jpg'),
+  require('../../../assets/scenic-2.jpg')
+];
+
 class NewsFeed extends React.Component<INewsFeedProps> {
   render() {
     const { newsfeed, loaded } = this.props;
@@ -21,8 +27,8 @@ class NewsFeed extends React.Component<INewsFeedProps> {
               </Text>
             </View>
           )}
-          {newsfeed.map((item) => (
-            <NewsFeedItem key={item.id} item={item} />
+          {newsfeed.map((item, ix) => (
+            <NewsFeedItem key={item.id} item={item} img={images[ix]} />
           ))}
         </View>
       </ScrollView>

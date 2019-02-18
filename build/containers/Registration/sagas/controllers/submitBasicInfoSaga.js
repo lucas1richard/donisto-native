@@ -6,6 +6,7 @@ import errorHandler from 'utilities/errorHandler';
 import { getContactSuccessAction } from 'containers/Contact/actions';
 import { REGISTRATION_BASICINFO_FORM_NAME } from '../../containers/BasicInfo/components/Form';
 import logger from 'utilities/logger';
+import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 function* submitBasicInfoSaga() {
     try {
         const formData = yield select(getFormValues(REGISTRATION_BASICINFO_FORM_NAME));
@@ -14,6 +15,7 @@ function* submitBasicInfoSaga() {
             email: formData.email,
             password: formData.password
         });
+        yield put(getNewsFeedAction());
         yield put(getContactSuccessAction(data));
         yield call(NavigationService.navigate, 'loggedIn');
     }
