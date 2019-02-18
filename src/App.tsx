@@ -8,7 +8,7 @@
 import logger from './utilities/logger';
 // import 'utilities/globals';
 import React from 'react';
-import { Constants, AppLoading } from 'expo';
+import { Constants, AppLoading, Asset } from 'expo';
 import { Root } from 'native-base';
 import { Provider } from 'react-redux';
 import {
@@ -64,6 +64,10 @@ class App extends React.Component {
     // if (hasAccount) {
       // logger.info('there is an account, nav to /login', 'App.js');
     // }
+    await Promise.all([
+      Asset.fromModule(require('../assets/scenic-1.jpg')).downloadAsync(),
+      Asset.fromModule(require('../assets/onboarding-bg.png')).downloadAsync()
+    ]);
   }
 
   componentWillUnmount() {
