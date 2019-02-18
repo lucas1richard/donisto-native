@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text, TextStyle } from 'react-native';
+import { Text, TextProperties } from 'react-native';
 import styles from './styles';
 
-interface IH1Props {
+interface IH1Props extends TextProperties {
   children: string;
-  color: 'primary'|'secondary'|'default'|'light';
-  style?: TextStyle;
+  color?: 'primary'|'secondary'|'default'|'light';
 }
 
 const H1 = ({ children, color, style }: IH1Props) => {
@@ -14,6 +13,10 @@ const H1 = ({ children, color, style }: IH1Props) => {
       {children}
     </Text>
   );
+};
+
+H1.defaultProps = {
+  color: 'default'
 };
 
 export default H1;

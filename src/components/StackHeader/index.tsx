@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { h1 } from 'styles/Headings';
+import { View, StyleSheet } from 'react-native';
 import Left from './components/Left';
 import Right from './components/Right';
 import NavigationService from 'containers/Navigation/NavigationService';
 import theme from 'theme/iftheme';
+import H1 from 'components/H1';
 
 interface IStackHeaderProps {
   title?: string;
@@ -31,9 +31,9 @@ class StackHeader extends React.Component<IStackHeaderProps> {
           noBackOption={noBackOption}
           onBack={NavigationService.back}
         />
-        <Text style={h1({ color: theme.primary[500] })}>
+        <H1 color="primary">
           {title}
-        </Text>
+        </H1>
         <Right
           noCloseOption={noCloseOption}
           onClose={onClose}

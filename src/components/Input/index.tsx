@@ -108,10 +108,10 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
 
     return (
         <View>
-          <BlurView tint="dark" intensity={80} style={{ borderRadius: theme.fontSize * 0.6 }}>
+          <BlurView tint="dark" intensity={80} style={{ borderRadius: theme.fs * 0.6 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               {hasIcon && (
-                <View style={{ paddingLeft: theme.fontSize }}>
+                <View style={{ paddingLeft: theme.fs, minWidth: theme.fs * 2 }}>
                   {icon}
                 </View>
               )}
@@ -126,7 +126,7 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
                 value={input.value}
                 onChangeText={input.onChange}
                 tintColor={theme.green}
-                style={{ color: '#fff', fontSize: theme.fontSize + 4, padding: theme.fontSize }}
+                style={{ color: '#fff', fontSize: theme.fs + 4, flex: 14, padding: theme.fs }}
                 onBlur={this.onBlur}
                 onFocus={this.onFocus}
                 error={meta.submitFailed ? meta.error : ''}

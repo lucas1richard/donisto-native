@@ -2,7 +2,7 @@ import React from 'react';
 import Touchable from 'components/Touchable';
 import { View, StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import theme from 'theme/iftheme';
+import Txt from 'components/Txt';
 
 const hitSlop = {
   top: 15,
@@ -26,8 +26,9 @@ function Left({ noBackOption, onBack }: {
         <Feather
           size={30}
           name="chevron-left"
-          color={theme.primary[500]}
+          color="#fff"
         />
+        <Txt color="light">Back</Txt>
       </View>
     </Touchable>
   );
@@ -38,12 +39,14 @@ export default Left;
 const styles = StyleSheet.create({
   wrapper: {
     position: 'absolute',
+    flexDirection: 'row',
+    alignItems: 'center',
     top: 12,
     left: 12,
-    // backgroundColor: 'rgba(0,0,0,0.1)',
+    backgroundColor: 'rgba(0,0,0,0.2)',
     padding: 2,
-    paddingRight: 4,
+    paddingRight: 10,
     paddingBottom: 4,
-    borderRadius: 20
+    borderRadius: 99
   }
 });

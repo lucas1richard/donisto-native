@@ -3,8 +3,8 @@ import { Text, TextProps } from 'react-native';
 import styles from './styles';
 
 interface ITxtProps extends TextProps {
-  children: string;
-  color: 'primary'|'secondary'|'default'|'light';
+  children: any;
+  color?: 'primary'|'secondary'|'default'|'light';
 }
 
 const Txt = ({ children, color }: ITxtProps) => {
@@ -13,6 +13,10 @@ const Txt = ({ children, color }: ITxtProps) => {
       {children}
     </Text>
   );
+};
+
+Txt.defaultProps = {
+  color: 'default'
 };
 
 export default Txt;
