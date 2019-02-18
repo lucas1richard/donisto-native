@@ -18,7 +18,7 @@ interface ILaunchScreenProps {
 type TLaunchScreenProps = NavigationFocusInjectedProps<ILaunchScreenProps>;
 
 class LaunchScreen extends React.Component<TLaunchScreenProps> {
-  static charityImg = require('../../../assets/charity-demo.jpeg');
+  static charityImg = require('../../../assets/onboarding-bg.png');
   shouldComponentUpdate() {
     if (this.props.isFocused === false) {
       return false;
@@ -39,7 +39,7 @@ class LaunchScreen extends React.Component<TLaunchScreenProps> {
     const { navigation } = this.props;
     return (
       <ImageBackground
-        source={require('../../../assets/charity-demo.jpeg')}
+        source={require('../../../assets/onboarding-bg.png')}
         style={{
           height: '100%',
           justifyContent: 'space-between',
@@ -47,7 +47,12 @@ class LaunchScreen extends React.Component<TLaunchScreenProps> {
           paddingVertical: theme.screenPadding,
           backgroundColor: '#000'
         }}
-        imageStyle={{ height: 800, overflow: 'hidden', flex: 1 }}
+        imageStyle={{
+          height: 900,
+          overflow: 'hidden',
+          flex: 1,
+          alignSelf: 'flex-start'
+        }}
       >
         <View style={{ marginTop: 50 }}>
           <Logo />

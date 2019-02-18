@@ -15,7 +15,7 @@ interface RegistrationBasicInfoProps {
   createContact: () => undefined
 }
 
-const charityImg = require('../../../../../assets/charity-demo.jpeg');
+const charityImg = require('../../../../../assets/onboarding-bg.png');
 
 class RegistrationBasicInfo extends React.Component<NavigationFocusInjectedProps & RegistrationBasicInfoProps> {
   render() {
@@ -32,7 +32,7 @@ class RegistrationBasicInfo extends React.Component<NavigationFocusInjectedProps
         }}
         imageStyle={{ height: 800, overflow: 'hidden', flex: 1 }}
       >
-        <View style={{ padding: 12, justifyContent: 'space-between', flex: 1 }}>
+        <View style={{ justifyContent: 'space-between', flex: 1, paddingTop: 50 }}>
           <H1 color="light">
             Create Account
           </H1>

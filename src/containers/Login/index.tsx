@@ -17,7 +17,7 @@ interface ILoginProps {
   submitting: boolean
 }
 
-const charityImg = require('../../../assets/charity-demo.jpeg');
+const charityImg = require('../../../assets/onboarding-bg.png');
 
 class Login extends React.Component<NavigationFocusInjectedProps<ILoginProps> & ILoginProps> {
   static navigationOptions = {
