@@ -8,7 +8,7 @@ import {
 
 function* getNewsFeedSaga() {
   try {
-    const { data } = yield call(api, 'get', '/api/newsfeed/get');
+    const { data } = yield call(api, 'get', '/v1/newsfeed/get');
     yield put(getNewsFeedSuccessAction(data));
   } catch (err) {
     logger.log(err, 'getNewsFeedSaga');

@@ -3,7 +3,7 @@ import api from 'utilities/api';
 import logger from 'utilities/logger';
 
 function* testAPI() {
-  const { data } = yield call(api, 'get', '/api/contact');
+  const { data } = yield call(api, 'get', '/v1/contact');
   logger.log(data, 'testSaga');
 }
 

@@ -10,7 +10,7 @@ function* submitBasicInfoSaga() {
     try {
         const formData = yield select(getFormValues(REGISTRATION_BASICINFO_FORM_NAME));
         logger.log(formData, 'submitBasicInfoSaga');
-        const { data } = yield call(api, 'post', '/api/contact/create', {
+        const { data } = yield call(api, 'post', '/v1/contact/create', {
             email: formData.email,
             password: formData.password
         });

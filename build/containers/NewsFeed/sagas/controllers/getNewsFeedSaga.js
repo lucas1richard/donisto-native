@@ -4,7 +4,7 @@ import api from "utilities/api";
 import { getNewsFeedSuccessAction, getNewsFeedFailAction } from 'containers/NewsFeed/actions';
 function* getNewsFeedSaga() {
     try {
-        const { data } = yield call(api, 'get', '/api/newsfeed/get');
+        const { data } = yield call(api, 'get', '/v1/newsfeed/get');
         yield put(getNewsFeedSuccessAction(data));
     }
     catch (err) {

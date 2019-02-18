@@ -7,7 +7,7 @@ import { LOGIN_FORM_NAME, ILoginFormData } from 'containers/Login/components/For
 function* makeContact() {
   try {
     const formData: ILoginFormData = yield select(getFormValues(LOGIN_FORM_NAME));
-    const { data } = yield call<IApi>(api, 'post', '/api/contact/create', formData);
+    const { data } = yield call<IApi>(api, 'post', '/v1/contact/create', formData);
     logger.log(data, 'makeContactSaga');
   } catch (err) {
     logger.error(err, 'makeContacts.ts');

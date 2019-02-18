@@ -10,7 +10,7 @@ import { UPDATE_CONTACT_FORM_NAME } from '../../containers/UpdateContact/compone
 function* updateContactSaga() {
   try {
     const formData = yield select(getFormValues(UPDATE_CONTACT_FORM_NAME));
-    const { data } = yield call(api, 'put', '/api/contact', formData);
+    const { data } = yield call(api, 'put', '/v1/contact', formData);
     yield put(updateContactSuccessAction(data));
   } catch (err) {
     yield put(updateContactFailAction(err));

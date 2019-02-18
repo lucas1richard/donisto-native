@@ -6,7 +6,7 @@ import { LOGIN_FORM_NAME } from 'containers/Login/components/Form';
 function* makeContact() {
     try {
         const formData = yield select(getFormValues(LOGIN_FORM_NAME));
-        const { data } = yield call(api, 'post', '/api/contact/create', formData);
+        const { data } = yield call(api, 'post', '/v1/contact/create', formData);
         logger.log(data, 'makeContactSaga');
     }
     catch (err) {

@@ -13,7 +13,7 @@ function* loginSaga() {
     try {
         yield put(startSubmit(LOGIN_FORM_NAME));
         const formData = yield select(getFormValues(LOGIN_FORM_NAME));
-        const { data, headers } = yield call(api, 'post', '/api/login', formData);
+        const { data, headers } = yield call(api, 'post', '/v1/login', formData);
         yield call(manualSetOutgoingHeaders, headers.token, data.uuid);
         yield all([
             put(getContactSuccessAction(data)),

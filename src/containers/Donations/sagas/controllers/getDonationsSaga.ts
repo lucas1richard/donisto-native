@@ -9,7 +9,7 @@ import {
 
 function* defaultSaga() {
   try {
-    const { data } = yield call(api, 'get', '/api/donation');
+    const { data } = yield call(api, 'get', '/v1/donation');
     yield put(getDonationsSuccessAction(data));
     yield call(logger.log, 'defaultSaga', 'donations - defaultSaga');
   } catch (err) {
