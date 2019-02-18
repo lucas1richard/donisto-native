@@ -11,7 +11,13 @@ import React from 'react';
 import { Constants, AppLoading } from 'expo';
 import { Root } from 'native-base';
 import { Provider } from 'react-redux';
-import { Platform, StyleSheet, View, KeyboardAvoidingView, AppState } from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  View,
+  KeyboardAvoidingView,
+  AppState
+} from 'react-native';
 // import AppNav from 'containers/Navigation/AppNavigation';
 // import AppWrapper from 'containers/AppWrapper';
 // import NotificationsWrapper from 'containers/Notifications/NotificationsWrapper';
@@ -57,7 +63,6 @@ class App extends React.Component {
     // });
     // if (hasAccount) {
       // logger.info('there is an account, nav to /login', 'App.js');
-      await store.dispatch({type: 'wee'});
     // }
   }
 
@@ -81,6 +86,7 @@ class App extends React.Component {
           keyboardVerticalOffset={0}
           behavior="padding"
           style={styles.appWrapper}
+          contentContainerStyle={styles.appWrapper}
         >
           <Provider store={store}>
             <View style={styles.appView}>

@@ -1,3 +1,6 @@
+import { Dimensions } from 'react-native';
+export const window = Dimensions.get('window');
+
 interface Itheme {
   [x: string]: any
 }
@@ -96,7 +99,12 @@ theme = {
     900: '#e65100'
   },
   screenPadding: 12,
-  fontSize: 16,
+  fontSize: window.height / 40,
+  fs: window.height / 40,
+  windowHeight: window.height,
+  windowWidth: window.width,
+  windowScale: window.scale,
+  windowFontScale: window.fontScale,
   mui: {
     palette: {
       common: {
