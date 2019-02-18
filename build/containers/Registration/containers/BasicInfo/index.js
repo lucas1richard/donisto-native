@@ -8,7 +8,7 @@ import H1 from 'components/H1';
 import H2 from 'components/H2';
 import Txt from 'components/Txt';
 import LoginLink from 'components/LoginLink';
-const charityImg = require('../../../../../assets/charity-demo.jpeg');
+const charityImg = require('../../../../../assets/onboarding-bg.png');
 class RegistrationBasicInfo extends React.Component {
     render() {
         const { createContact } = this.props;
@@ -19,7 +19,7 @@ class RegistrationBasicInfo extends React.Component {
                 paddingVertical: theme.screenPadding,
                 backgroundColor: '#000'
             }, imageStyle: { height: 800, overflow: 'hidden', flex: 1 } },
-            React.createElement(View, { style: { padding: 12, justifyContent: 'space-between', flex: 1 } },
+            React.createElement(View, { style: { justifyContent: 'space-between', flex: 1, paddingTop: 50 } },
                 React.createElement(H1, { color: "light" }, "Create Account"),
                 React.createElement(H2, { color: "light" }, "and start meeting new friends around the world"),
                 React.createElement(RegistrationBasicInfoForm, null),

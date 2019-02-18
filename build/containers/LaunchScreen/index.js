@@ -25,13 +25,18 @@ class LaunchScreen extends React.Component {
     render() {
         logger.log(this.props, 'LaunchScreen.tsx');
         const { navigation } = this.props;
-        return (React.createElement(ImageBackground, { source: require('../../../assets/charity-demo.jpeg'), style: {
+        return (React.createElement(ImageBackground, { source: require('../../../assets/onboarding-bg.png'), style: {
                 height: '100%',
                 justifyContent: 'space-between',
                 paddingHorizontal: theme.screenPadding,
                 paddingVertical: theme.screenPadding,
                 backgroundColor: '#000'
-            }, imageStyle: { height: 800, overflow: 'hidden', flex: 1 } },
+            }, imageStyle: {
+                height: 900,
+                overflow: 'hidden',
+                flex: 1,
+                alignSelf: 'flex-start'
+            } },
             React.createElement(View, { style: { marginTop: 50 } },
                 React.createElement(Logo, null),
                 React.createElement(View, { style: { marginTop: 30 } },
@@ -45,6 +50,6 @@ class LaunchScreen extends React.Component {
                 React.createElement(LoginLink, null))));
     }
 }
-LaunchScreen.charityImg = require('../../../assets/charity-demo.jpeg');
+LaunchScreen.charityImg = require('../../../assets/onboarding-bg.png');
 export default LaunchScreen;
 //# sourceMappingURL=index.js.map

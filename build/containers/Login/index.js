@@ -10,7 +10,7 @@ import H1 from 'components/H1';
 import H2 from 'components/H2';
 import Txt from 'components/Txt';
 import JoinNowLink from 'components/JoinNowLink';
-const charityImg = require('../../../assets/charity-demo.jpeg');
+const charityImg = require('../../../assets/onboarding-bg.png');
 class Login extends React.Component {
     render() {
         const { login, submitting } = this.props;
