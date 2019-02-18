@@ -10,6 +10,8 @@ var routeNames;
     routeNames["REGISTRATION_CONTACT_TYPE"] = "registration_contact_type";
     routeNames["REGISTRATION_NONPROFIT_STATUS"] = "registration_nonprofit_status";
     routeNames["PROFILE"] = "profile";
+    routeNames["UPDATE_CONTACT"] = "update_contact";
+    routeNames["CONTACT"] = "contact";
     routeNames["NEWS_FEED"] = "newsfeed";
     routeNames["DONATIONS"] = "donations";
     routeNames["DISCOVER"] = "discover";

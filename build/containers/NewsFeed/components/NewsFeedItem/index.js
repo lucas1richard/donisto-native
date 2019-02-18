@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { h1, h2 } from 'styles/Headings';
+import { View } from 'react-native';
 import Touchable from 'components/Touchable';
 import RNModal from 'components/Modal';
 import theme from 'theme/iftheme';
 import card from 'styles/Card';
+import H1 from 'components/H1';
+import H2 from 'components/H2';
 class NewsFeedItem extends React.Component {
     constructor() {
         super(...arguments);
@@ -19,11 +20,11 @@ class NewsFeedItem extends React.Component {
         const { item } = this.props;
         return (React.createElement(Touchable, { onPress: this.toggleModal },
             React.createElement(View, { key: item.id, style: card() },
-                React.createElement(Text, { style: h1() }, item.title),
-                React.createElement(Text, { style: h2() }, item.subtitle)),
+                React.createElement(H1, null, item.title),
+                React.createElement(H2, null, item.subtitle)),
             React.createElement(RNModal, { title: item.title.slice(0, 20), onHide: this.toggleModal, visible: this.state.modalVisible },
                 React.createElement(View, { style: { padding: theme.screenPadding } },
-                    React.createElement(Text, { style: h1() }, item.subtitle)))));
+                    React.createElement(H2, null, item.subtitle)))));
     }
 }
 export default NewsFeedItem;

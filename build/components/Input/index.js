@@ -71,10 +71,10 @@ class Input extends React.Component {
         // } = this.styleKeys();
         const hasIcon = !!icon;
         return (React.createElement(View, null,
-            React.createElement(BlurView, { tint: "dark", intensity: 80, style: { borderRadius: theme.fontSize * 0.6 } },
+            React.createElement(BlurView, { tint: "dark", intensity: 80, style: { borderRadius: theme.fs * 0.6 } },
                 React.createElement(View, { style: { flexDirection: 'row', alignItems: 'center' } },
-                    hasIcon && (React.createElement(View, { style: { paddingLeft: theme.fontSize } }, icon)),
-                    React.createElement(TextInput, Object.assign({}, input, field, { allowFontScaling: false, ref: innerRef, label: field.label, placeholder: field.label, placeholderTextColor: "#bbb", value: input.value, onChangeText: input.onChange, tintColor: theme.green, style: { color: '#fff', fontSize: theme.fontSize + 4, padding: theme.fontSize }, onBlur: this.onBlur, onFocus: this.onFocus, error: meta.submitFailed ? meta.error : '', returnKeyType: field.returnKeyType || 'next' }))))));
+                    hasIcon && (React.createElement(View, { style: { paddingLeft: theme.fs, minWidth: theme.fs * 2 } }, icon)),
+                    React.createElement(TextInput, Object.assign({}, input, field, { allowFontScaling: false, ref: innerRef, label: field.label, placeholder: field.label, placeholderTextColor: "#bbb", value: input.value, onChangeText: input.onChange, tintColor: theme.green, style: { color: '#fff', fontSize: theme.fs + 4, flex: 14, padding: theme.fs }, onBlur: this.onBlur, onFocus: this.onFocus, error: meta.submitFailed ? meta.error : '', returnKeyType: field.returnKeyType || 'next' }))))));
     }
 }
 export default Input;

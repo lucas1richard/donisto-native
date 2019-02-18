@@ -59,7 +59,6 @@ class App extends React.Component {
             // });
             // if (hasAccount) {
             // logger.info('there is an account, nav to /login', 'App.js');
-            yield store.dispatch({ type: 'wee' });
             // }
         });
     }
@@ -71,7 +70,7 @@ class App extends React.Component {
             return (React.createElement(AppLoading, { startAsync: this.loadFonts, onFinish: () => this.setState({ fontLoaded: true }) }));
         }
         return (React.createElement(View, { style: { flex: 1, paddingTop: isIphone10 ? 40 : 0 } },
-            React.createElement(KeyboardAvoidingView, { keyboardVerticalOffset: 0, behavior: "padding", style: styles.appWrapper },
+            React.createElement(KeyboardAvoidingView, { keyboardVerticalOffset: 0, behavior: "padding", style: styles.appWrapper, contentContainerStyle: styles.appWrapper },
                 React.createElement(Provider, { store: store },
                     React.createElement(View, { style: styles.appView },
                         React.createElement(StatusBar

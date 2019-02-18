@@ -1,16 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { h1 } from 'styles/Headings';
+import { View, StyleSheet } from 'react-native';
 import Left from './components/Left';
 import Right from './components/Right';
 import NavigationService from 'containers/Navigation/NavigationService';
 import theme from 'theme/iftheme';
+import H1 from 'components/H1';
 class StackHeader extends React.Component {
     render() {
         const { noBackOption, noCloseOption, title, onClose } = this.props;
         return (React.createElement(View, { style: styles.wrapper },
             React.createElement(Left, { noBackOption: noBackOption, onBack: NavigationService.back }),
-            React.createElement(Text, { style: h1({ color: theme.primary[500] }) }, title),
+            React.createElement(H1, { color: "primary" }, title),
             React.createElement(Right, { noCloseOption: noCloseOption, onClose: onClose })));
     }
 }
