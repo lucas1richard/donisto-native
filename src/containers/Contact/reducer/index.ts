@@ -16,6 +16,15 @@ const contactReducer = (state = initialContactState, action: TContactActions) =>
         error: action.error
       };
 
+      case ContactConstants.UPDATE_CONTACT_SUCCESS:
+        return action.contact;
+
+      case ContactConstants.UPDATE_CONTACT_FAIL:
+        return {
+          ...state,
+          error: action.error
+        };
+
     default:
       return state;
   }
