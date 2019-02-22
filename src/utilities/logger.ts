@@ -6,30 +6,6 @@ const cns = console;
 
 const msgStyle = (style: string) => `font-weight: bold; font-size: 14px; ${style}`;
 const titleStyle = (style: string) => `font-weight: bold; font-size: 14px; ${style}`;
-
-/**
- * Log information
- * @param {'log'|'info'|'warn'|'error'} type request type
- * @param {*} msg What to display
- * @param {string} file Specify the file
- */
-// function log(style = '', mgStyle = '', msg, file) {
-//   if (process.env.NODE_ENV !== 'development') {
-//     return;
-//   }
-//   if (typeof msg === 'string') {
-//     if (file) {
-//       cns.log(file, msg);
-//       // cns.log(`${chalk.blue(file)}`);
-//     } else {
-//       cns.log(msg);
-//     }
-//   } else if (file) {
-//     cns.log(file, msg);
-//   } else {
-//     cns.log(msg);
-//   }
-// }
 function log(style = '', mgStyle = '', msg: any, file: string, color?: string) {
   if (process.env.NODE_ENV !== 'development') {
     return;
@@ -41,7 +17,6 @@ function log(style = '', mgStyle = '', msg: any, file: string, color?: string) {
   if (typeof msg === 'string') {
     if (file) {
       cns.log(`%c(${file}) %c${msg}`, titleStyle(injectedStyle), msgStyle(mgStyle));
-      // cns.log(`${chalk.blue(file)}`);
     } else {
       cns.log(`%cGRAND %c${msg}`, titleStyle(injectedStyle), msgStyle(mgStyle));
     }
@@ -60,13 +35,6 @@ const logger = {
   time: (name: string) => __DEV__ ? cns.time(name) : undefined,
   timeEnd: (name: string) => __DEV__ ? cns.timeEnd(name) : undefined
 };
-
-// const logger = {
-//   log: () => null,
-//   warn: () => null,
-//   info: () => null,
-//   error: () => null
-// };
 
 global.logger = logger;
 
