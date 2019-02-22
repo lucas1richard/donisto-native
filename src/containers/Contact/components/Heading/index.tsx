@@ -6,7 +6,6 @@ import theme from 'theme/iftheme';
 import { Entypo } from '@expo/vector-icons';
 import Touchable from 'components/Touchable';
 import NavigationService from 'containers/Navigation/NavigationService';
-import routeNames from 'containers/Navigation/routeNames';
 
 interface IContactHeadingProps {
   contact: any;
