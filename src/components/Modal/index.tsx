@@ -8,7 +8,7 @@ interface RNModalProps extends ModalBaseProps {
   onShow?: () => any,
   onHide: () => any,
   children: any,
-  title: string,
+  title?: string,
   onRequestClose?: () => any
 }
 

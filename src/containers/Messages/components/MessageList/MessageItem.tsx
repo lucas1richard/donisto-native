@@ -1,20 +1,24 @@
 import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import card from 'styles/Card';
 import Touchable from 'components/Touchable';
 import RNModal from 'components/Modal';
+import Txt from 'components/Txt';
 
+interface IMessagetemState {
+  showModal: boolean
+}
 
-class MessageItem extends React.Component {
+class MessageItem extends React.Component<any, IMessagetemState> {
   state = {
     showModal: false
-  }
+  };
 
   toggleModal = () => {
     this.setState({ showModal: !this.state.showModal });
   }
-  
+
   render() {
     const { children } = this.props;
     return (
@@ -25,12 +29,12 @@ class MessageItem extends React.Component {
               <FontAwesome name="user" size={30} />
             </View>
             <View>
-              {children}       
+              {children}
             </View>
           </View>
         </View>
         <RNModal visible={this.state.showModal} onHide={this.toggleModal}>
-          <Text>Messages</Text>
+          <Txt>Messages</Txt>
         </RNModal>
       </Touchable>
     );
