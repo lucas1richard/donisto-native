@@ -38,7 +38,7 @@ class ContactHeading extends React.Component<IContactHeadingProps> {
             {this.contactLocation}
           </Txt>
         </View>
-        <Touchable onPress={() => NavigationService.navigate(routeNames.UPDATE_CONTACT)}>
+        <Touchable onPress={() => NavigationService.openDrawer()}>
           <View style={{ position: 'absolute', right: theme.screenPadding, top: theme.screenPadding }}>
             <Entypo name="dots-three-horizontal" color="#fff" size={theme.fs * 2} />
           </View>

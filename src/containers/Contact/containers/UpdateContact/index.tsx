@@ -6,6 +6,7 @@ import theme from 'theme/iftheme';
 import Button from 'components/Button';
 import mapToProps from './mapToProps';
 import H2 from 'components/H2';
+import StackHeader from 'components/StackHeader';
 
 interface IUpdateContactProps extends NavigationFocusInjectedProps {
   contact: any;
@@ -18,6 +19,7 @@ class UpdateContact extends React.Component<IUpdateContactProps> {
     console.log(updateContact);
     return (
       <View style={{ backgroundColor: '#888', flex: 1 }}>
+        <StackHeader noCloseOption />
         <ScrollView contentContainerStyle={{ backgroundColor: '#888', paddingHorizontal: theme.screenPadding, paddingTop: 50 }}>
           <View>
             <H2 color="light">Update Contact</H2>
