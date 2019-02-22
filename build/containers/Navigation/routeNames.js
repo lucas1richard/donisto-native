@@ -16,6 +16,7 @@ var routeNames;
     routeNames["DONATIONS"] = "donations";
     routeNames["DISCOVER"] = "discover";
     routeNames["MESSAGES"] = "messages";
+    routeNames["ORGANIZATION"] = "organization";
 })(routeNames || (routeNames = {}));
 export default routeNames;
 //# sourceMappingURL=routeNames.js.map
