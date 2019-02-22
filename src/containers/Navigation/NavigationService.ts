@@ -1,4 +1,4 @@
-import { NavigationActions } from 'react-navigation';
+import { NavigationActions, DrawerActions } from 'react-navigation';
 
 class NavigationService {
   static _navigator: any;
@@ -19,6 +19,27 @@ class NavigationService {
     if (NavigationService._navigator) {
       NavigationService._navigator.dispatch(
         NavigationActions.back()
+      );
+    }
+  }
+  static toggleDrawer() {
+    if (NavigationService._navigator) {
+      NavigationService._navigator.dispatch(
+        DrawerActions.toggleDrawer()
+      );
+    }
+  }
+  static openDrawer() {
+    if (NavigationService._navigator) {
+      NavigationService._navigator.dispatch(
+        DrawerActions.openDrawer()
+      );
+    }
+  }
+  static closeDrawer() {
+    if (NavigationService._navigator) {
+      NavigationService._navigator.dispatch(
+        DrawerActions.closeDrawer()
       );
     }
   }
