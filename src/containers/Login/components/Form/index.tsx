@@ -26,6 +26,13 @@ export class LoginForm extends FormFlow<InjectedFormProps<ILoginFormData>> {
             label="Email"
             keyboardType="email-address"
             onSubmitEditing={this.submitEditing('password')}
+            spellCheck={false}
+            autoCorrect={false}
+            autoCapitalize="none"
+            blurViewProps={{
+              tint: 'dark',
+              intensity: 80
+            }}
           />
         </View>
         <View style={{ marginBottom: 8 }}>
@@ -36,6 +43,10 @@ export class LoginForm extends FormFlow<InjectedFormProps<ILoginFormData>> {
             label="Password"
             secureTextEntry
             innerRef={this.registerField('password')}
+            blurViewProps={{
+              tint: 'dark',
+              intensity: 80
+            }}
           />
         </View>
       </View>

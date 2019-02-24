@@ -6,6 +6,7 @@ import donationsSagas from 'containers/Donations/sagas';
 import discoverSagas from 'containers/Discover/sagas';
 import messagesSagas from 'containers/Messages/sagas';
 import contactSagas from 'containers/Contact/sagas';
+import orgnizationSagas from 'containers/Organization/sagas';
 function* rootSaga() {
     yield all([
         fork(loginSagas),
@@ -14,7 +15,8 @@ function* rootSaga() {
         fork(donationsSagas),
         fork(discoverSagas),
         fork(messagesSagas),
-        fork(contactSagas)
+        fork(contactSagas),
+        fork(orgnizationSagas)
     ]);
 }
 export default [rootSaga];

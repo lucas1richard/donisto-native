@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
 export const selectContactDomain = () => (state) => state.contact;
 export const makeSelectContact = () => createSelector(selectContactDomain(), (substate) => substate);
+export const makeSelectOrganizationUuid = () => createSelector(selectContactDomain(), (substate) => substate.organization_uuid);
 //# sourceMappingURL=selectors.js.map

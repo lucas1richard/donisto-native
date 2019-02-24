@@ -86,9 +86,16 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
     };
   }
 
+  get returnKeyType() {
+    let type = this.props.returnKeyType || 'next';
+    if (this.props.multiLine) {
+      type = 'default';
+    }
+    return type;
+  }
+
   render() {
     const {
-      noMargin,
       style,
       input,
       innerRef,
@@ -97,18 +104,17 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
       showFloatingLabel,
       multiline,
       meta,
+      tint,
       icon,
+      blurViewProps,
       ...field
     } = this.props;
-    // const {
-    //   fieldLabelKey
-    // } = this.styleKeys();
 
     const hasIcon = !!icon;
 
     return (
         <View>
-          <BlurView tint="dark" intensity={80} style={{ borderRadius: theme.fs * 0.6 }}>
+          <BlurView {...blurViewProps} intensity={80} style={[{ borderRadius: theme.fs * 0.6 }, blurViewProps && blurViewProps.style]}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               {hasIcon && (
                 <View style={{ paddingLeft: theme.fs, minWidth: theme.fs * 2 }}>
@@ -121,16 +127,24 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
                 allowFontScaling={false}
                 ref={innerRef}
                 label={field.label}
+                textAlignVertical="center"
                 placeholder={field.label}
-                placeholderTextColor="#bbb"
+                placeholderTextColor={blurViewProps && blurViewProps.tint === 'light' ? '#333' : "#bbb"}
                 value={input.value}
                 onChangeText={input.onChange}
-                tintColor={theme.green}
-                style={{ color: '#fff', fontSize: theme.fs + 4, flex: 14, padding: theme.fs }}
+                multiline={field.multiLine}
+                numberOfLines={field.multiLine ? 4 : 1}
+                style={{
+                  color: blurViewProps && blurViewProps.tint === 'light' ? '#000' : '#fff',
+                  fontSize: theme.fs + 4,
+                  flex: 14,
+                  padding: theme.fs,
+                  minHeight: field.multiLine ? theme.fs * 8 : undefined
+                }}
                 onBlur={this.onBlur}
                 onFocus={this.onFocus}
                 error={meta.submitFailed ? meta.error : ''}
-                returnKeyType={field.returnKeyType || 'next'}
+                returnKeyType={this.returnKeyType}
               />
             </View>
           </BlurView>

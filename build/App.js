@@ -46,20 +46,18 @@ class App extends React.Component {
                     React.createElement(View, { style: styles.appView },
                         React.createElement(StatusBar, null),
                         React.createElement(Root, null,
-                            React.createElement(AppNavigation, { ref: (navRef) => {
-                                    NavigationService.setTopLevelNavigator(navRef);
-                                } })))))));
+                            React.createElement(AppNavigation, { ref: NavigationService.setTopLevelNavigator })))))));
     }
 }
 export default App;
 const styles = StyleSheet.create({
     appWrapper: {
         flex: 1,
-        backgroundColor: '#fff'
+        backgroundColor: 'transparent'
     },
     appView: {
         flex: 1,
-        backgroundColor: '#fff'
+        backgroundColor: 'transparent'
     }
 });
 //# sourceMappingURL=App.js.map

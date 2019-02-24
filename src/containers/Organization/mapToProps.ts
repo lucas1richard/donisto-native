@@ -1,15 +1,19 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { makeSelectOrganization } from './selectors';
+import { makeSelectOrganization, makeSelectActiveOrganization } from './selectors';
+import { makeSelectOrganizationUuid } from 'containers/Contact/selectors';
+import { registerOrgAction } from './actions';
 
 const mapStateToProps = createStructuredSelector({
-  Organization: makeSelectOrganization()
+  Organization: makeSelectOrganization(),
+  organizationUuid: makeSelectOrganizationUuid(),
+  activeOrg: makeSelectActiveOrganization()
 });
 
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
-    dispatch
+    registerNewOrg: () => dispatch(registerOrgAction())
   };
 }
 

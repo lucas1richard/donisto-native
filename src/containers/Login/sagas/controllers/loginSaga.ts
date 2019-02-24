@@ -12,6 +12,8 @@ import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 import showToast from 'components/Toast';
 import { getDonationsAction } from 'containers/Donations/actions';
 import { manualSetOutgoingHeaders } from 'utilities/request';
+import { getOrgAction } from 'containers/Organization/actions';
+import routeNames from 'containers/Navigation/routeNames';
 
 function* loginSaga() {
   try {
@@ -23,9 +25,10 @@ function* loginSaga() {
     yield all([
       put(getContactSuccessAction(data)),
       put(getNewsFeedAction()),
-      put(getDonationsAction())
+      put(getDonationsAction()),
+      put(getOrgAction())
     ]);
-    yield call(NavigationService.navigate, 'loggedIn');
+    yield call(NavigationService.navigate, routeNames.LOGGED_IN);
 
   } catch (err) {
 

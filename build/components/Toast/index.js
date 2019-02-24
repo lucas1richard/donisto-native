@@ -8,7 +8,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { Toast } from 'native-base';
-import { defaultStyles, errorStyles } from 'styles/toast';
+import { defaultStyles, errorStyles } from './styles';
 const showToast = (_a, type) => {
     var { text } = _a, other = __rest(_a, ["text"]);
     let toastStyles = defaultStyles;

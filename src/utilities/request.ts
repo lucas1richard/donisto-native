@@ -4,8 +4,8 @@ import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import logger from './logger';
 // import appJSON from '../../app.json';
 
-const baseURL = 'http://donisto.herokuapp.com/api';
-// const baseURL = 'http://192.168.0.9:3000/api';
+// const baseURL = 'http://donisto.herokuapp.com/api';
+const baseURL = 'http://192.168.0.9:3000/api';
 let authorizationOutgoingHeaders: number;
 
 const apiClient = axios.create({

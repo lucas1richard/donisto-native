@@ -1,11 +1,11 @@
 import { takeLatest, all } from 'redux-saga/effects';
 import CreateNewsStoryConstants from '../constants';
-import defaultSaga from './controllers/defaultSaga';
+import submitStorySaga from './controllers/submitStorySaga';
 
 // Individual exports for testing
 export function* CreateNewsStorySaga() {
   yield all([
-    takeLatest(CreateNewsStoryConstants.DEFAULT_ACTION, defaultSaga)
+    takeLatest(CreateNewsStoryConstants.SUBMIT_STORY, submitStorySaga)
   ]);
 }
 

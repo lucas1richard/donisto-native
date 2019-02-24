@@ -17,6 +17,8 @@ var routeNames;
     routeNames["DISCOVER"] = "discover";
     routeNames["MESSAGES"] = "messages";
     routeNames["ORGANIZATION"] = "organization";
+    routeNames["ORGANIZATION_NEWS_FEED"] = "organization_news_feed";
+    routeNames["LOGGED_IN"] = "loggedIn";
 })(routeNames || (routeNames = {}));
 export default routeNames;
 //# sourceMappingURL=routeNames.js.map

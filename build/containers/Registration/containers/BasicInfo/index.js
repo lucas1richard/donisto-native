@@ -1,7 +1,6 @@
 import React from 'react';
 import RegistrationBasicInfoForm from './components/Form';
 import { View, ImageBackground } from 'react-native';
-import Button from 'components/Button';
 import theme from 'theme/iftheme';
 import mapToProps from './mapToProps';
 import H1 from 'components/H1';
@@ -22,8 +21,7 @@ class RegistrationBasicInfo extends React.Component {
             React.createElement(View, { style: { justifyContent: 'space-between', flex: 1, paddingTop: 50 } },
                 React.createElement(H1, { color: "light" }, "Create Account"),
                 React.createElement(H2, { color: "light" }, "and start meeting new friends around the world"),
-                React.createElement(RegistrationBasicInfoForm, null),
-                React.createElement(Button, { color: "primary", variant: "contained", title: "Sign Up", onPress: createContact }),
+                React.createElement(RegistrationBasicInfoForm, { createContact: createContact }),
                 React.createElement(View, { style: { alignItems: 'center' } },
                     React.createElement(Txt, { color: "light" }, "By Proceeding, I agree to the"),
                     React.createElement(Txt, { color: "light" }, "Terms of Use and Privacy Policy")),

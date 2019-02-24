@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Platform, StyleSheet, StatusBar } from 'react-native';
+import theme from 'theme/iftheme';
 
 const STATUSBAR_HEIGHT = Platform.OS === 'ios'
   ? 20
@@ -20,7 +21,9 @@ const styles = StyleSheet.create({
     height: STATUSBAR_HEIGHT,
     opacity: 1,
     zIndex: 150,
-    backgroundColor: '#fff'
+    backgroundColor: 'transparent',
+    borderBottomWidth: 1,
+    borderBottomColor: theme.primary[500]
   }
 });
 

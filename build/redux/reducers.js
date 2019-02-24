@@ -9,15 +9,18 @@ import newsfeed from 'containers/NewsFeed/reducer';
 import donations from 'containers/Donations/reducer';
 import discover from 'containers/Discover/reducer';
 import messages from 'containers/Messages/reducer';
+import organization from 'containers/Organization/reducer';
+import createNewsStory from 'containers/Organization/containers/CreateNewsStory/reducer';
 /** To be combined below */
 const reducers = {
-    launch: (state = {}) => state,
     contact,
     donations,
     discover,
     form,
     messages,
-    newsfeed
+    organization,
+    newsfeed,
+    createNewsStory
 };
 const combinedReducers = combineReducers(reducers);
 export const initialState = {};

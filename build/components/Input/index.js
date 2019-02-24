@@ -64,17 +64,27 @@ class Input extends React.Component {
             textInputWrapperKey
         };
     }
+    get returnKeyType() {
+        let type = this.props.returnKeyType || 'next';
+        if (this.props.multiLine) {
+            type = 'default';
+        }
+        return type;
+    }
     render() {
-        const _a = this.props, { noMargin, style, input, innerRef, validateAtLength, specialError, showFloatingLabel, multiline, meta, icon } = _a, field = __rest(_a, ["noMargin", "style", "input", "innerRef", "validateAtLength", "specialError", "showFloatingLabel", "multiline", "meta", "icon"]);
-        // const {
-        //   fieldLabelKey
-        // } = this.styleKeys();
+        const _a = this.props, { style, input, innerRef, validateAtLength, specialError, showFloatingLabel, multiline, meta, tint, icon, blurViewProps } = _a, field = __rest(_a, ["style", "input", "innerRef", "validateAtLength", "specialError", "showFloatingLabel", "multiline", "meta", "tint", "icon", "blurViewProps"]);
         const hasIcon = !!icon;
         return (React.createElement(View, null,
-            React.createElement(BlurView, { tint: "dark", intensity: 80, style: { borderRadius: theme.fs * 0.6 } },
+            React.createElement(BlurView, Object.assign({}, blurViewProps, { intensity: 80, style: [{ borderRadius: theme.fs * 0.6 }, blurViewProps && blurViewProps.style] }),
                 React.createElement(View, { style: { flexDirection: 'row', alignItems: 'center' } },
                     hasIcon && (React.createElement(View, { style: { paddingLeft: theme.fs, minWidth: theme.fs * 2 } }, icon)),
-                    React.createElement(TextInput, Object.assign({}, input, field, { allowFontScaling: false, ref: innerRef, label: field.label, placeholder: field.label, placeholderTextColor: "#bbb", value: input.value, onChangeText: input.onChange, tintColor: theme.green, style: { color: '#fff', fontSize: theme.fs + 4, flex: 14, padding: theme.fs }, onBlur: this.onBlur, onFocus: this.onFocus, error: meta.submitFailed ? meta.error : '', returnKeyType: field.returnKeyType || 'next' }))))));
+                    React.createElement(TextInput, Object.assign({}, input, field, { allowFontScaling: false, ref: innerRef, label: field.label, textAlignVertical: "center", placeholder: field.label, placeholderTextColor: blurViewProps && blurViewProps.tint === 'light' ? '#333' : "#bbb", value: input.value, onChangeText: input.onChange, multiline: field.multiLine, numberOfLines: field.multiLine ? 4 : 1, style: {
+                            color: blurViewProps && blurViewProps.tint === 'light' ? '#000' : '#fff',
+                            fontSize: theme.fs + 4,
+                            flex: 14,
+                            padding: theme.fs,
+                            minHeight: field.multiLine ? theme.fs * 8 : undefined
+                        }, onBlur: this.onBlur, onFocus: this.onFocus, error: meta.submitFailed ? meta.error : '', returnKeyType: this.returnKeyType }))))));
     }
 }
 export default Input;

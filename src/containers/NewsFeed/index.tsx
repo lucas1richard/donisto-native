@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import mapToProps from './mapToProps';
 import NewsFeedItem from './components/NewsFeedItem';
+import Loader from 'components/Loader';
 
 interface INewsFeedProps {
   newsfeed: any[],
@@ -22,13 +23,15 @@ class NewsFeed extends React.Component<INewsFeedProps> {
         <View>
           {!loaded && (
             <View>
-              <Text>
-                Getting your news feed
-              </Text>
+              <Loader />
             </View>
           )}
           {newsfeed.map((item, ix) => (
-            <NewsFeedItem key={item.id} item={item} img={images[ix]} />
+            <NewsFeedItem
+              key={item.id}
+              item={item}
+              img={images[ix % (images.length)]}
+            />
           ))}
         </View>
       </ScrollView>

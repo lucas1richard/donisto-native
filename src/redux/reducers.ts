@@ -11,6 +11,8 @@ import newsfeed, { INewsfeedInitialState } from 'containers/NewsFeed/reducer';
 import donations, { IDonationsInitialState } from 'containers/Donations/reducer';
 import discover from 'containers/Discover/reducer';
 import messages from 'containers/Messages/reducer';
+import organization, { IOrganizationInitialState } from 'containers/Organization/reducer';
+import createNewsStory, { ICreateStoryReduxState } from 'containers/Organization/containers/CreateNewsStory/reducer';
 
 export interface IReduxState {
   contact: any;
@@ -18,18 +20,21 @@ export interface IReduxState {
   discover: any;
   form: any;
   messages: any;
+  organization: IOrganizationInitialState;
   newsfeed: INewsfeedInitialState;
+  createNewsStory: ICreateStoryReduxState
 }
 
 /** To be combined below */
 const reducers = {
-  launch: (state = {}) => state,
   contact,
   donations,
   discover,
   form,
   messages,
-  newsfeed
+  organization,
+  newsfeed,
+  createNewsStory
 };
 
 const combinedReducers = combineReducers(reducers);

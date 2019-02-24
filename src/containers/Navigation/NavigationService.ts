@@ -1,11 +1,12 @@
 import { NavigationActions, DrawerActions } from 'react-navigation';
+import routeNames from './routeNames';
 
 class NavigationService {
   static _navigator: any;
   static setTopLevelNavigator(navigatorRef: any) {
     NavigationService._navigator = navigatorRef;
   }
-  static navigate(routeName: string, params?: any) {
+  static navigate(routeName: routeNames, params?: any) {
     if (NavigationService._navigator) {
       NavigationService._navigator.dispatch(
         NavigationActions.navigate({

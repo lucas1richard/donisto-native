@@ -1,5 +1,5 @@
 import { Toast } from 'native-base';
-import { defaultStyles, errorStyles } from 'styles/toast';
+import { defaultStyles, errorStyles } from './styles';
 
 interface IShowToastArgs { text: string }
 type TToastType = 'default'|'error';

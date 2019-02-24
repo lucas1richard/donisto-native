@@ -15,7 +15,9 @@ enum routeNames {
   DONATIONS = 'donations',
   DISCOVER = 'discover',
   MESSAGES = 'messages',
-  ORGANIZATION = 'organization'
+  ORGANIZATION = 'organization',
+  ORGANIZATION_NEWS_FEED = 'organization_news_feed',
+  LOGGED_IN = 'loggedIn'
 }
 
 export default routeNames;

@@ -4,13 +4,15 @@ import Touchable from 'components/Touchable';
 import { Text } from 'react-native';
 import { viewStyles, textStyles } from './styles';
 import theme from 'theme/iftheme';
+import Loader from 'components/Loader';
 
 interface IButtonProps extends ButtonProperties {
   title: string;
   onPress: () => any;
   variant?: 'text'|'contained'|'outlined'|'default'|'rounded';
   color?: 'primary'|'secondary'|'default';
-  icon?: any
+  icon?: any;
+  showLoader?: boolean;
 }
 
 class Button extends React.Component<IButtonProps> {
@@ -46,12 +48,15 @@ class Button extends React.Component<IButtonProps> {
   }
 
   render() {
-    const { onPress, title, icon } = this.props;
+    const { onPress, title, icon, showLoader } = this.props;
+    if (showLoader) {
+      return <Loader />;
+    }
     return (
       <Touchable onPress={onPress}>
         <View style={this.viewStyles}>
           {icon ? (
-            <View style={{ marginRight: theme.fontSize }}>
+            <View style={{ marginRight: theme.fs }}>
               {icon}
             </View>
           ) : undefined}

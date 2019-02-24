@@ -59,9 +59,7 @@ class App extends React.Component {
               <StatusBar />
                 <Root>
                   <AppNavigation
-                    ref={(navRef: any) => {
-                      NavigationService.setTopLevelNavigator(navRef);
-                    }}
+                    ref={NavigationService.setTopLevelNavigator}
                   />
                 </Root>
             </View>
@@ -77,10 +75,10 @@ export default App;
 const styles = StyleSheet.create({
   appWrapper: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: 'transparent'
   },
   appView: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: 'transparent'
   }
 });

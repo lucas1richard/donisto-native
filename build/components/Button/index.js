@@ -4,6 +4,7 @@ import Touchable from 'components/Touchable';
 import { Text } from 'react-native';
 import { viewStyles, textStyles } from './styles';
 import theme from 'theme/iftheme';
+import Loader from 'components/Loader';
 class Button extends React.Component {
     constructor() {
         super(...arguments);
@@ -31,10 +32,13 @@ class Button extends React.Component {
         return [viewStyles[color], viewStyles[variant]];
     }
     render() {
-        const { onPress, title, icon } = this.props;
+        const { onPress, title, icon, showLoader } = this.props;
+        if (showLoader) {
+            return React.createElement(Loader, null);
+        }
         return (React.createElement(Touchable, { onPress: onPress },
             React.createElement(View, { style: this.viewStyles },
-                icon ? (React.createElement(View, { style: { marginRight: theme.fontSize } }, icon)) : undefined,
+                icon ? (React.createElement(View, { style: { marginRight: theme.fs } }, icon)) : undefined,
                 React.createElement(Text, { style: this.textStyles }, title))));
     }
 }

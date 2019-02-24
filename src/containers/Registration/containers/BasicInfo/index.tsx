@@ -39,13 +39,7 @@ class RegistrationBasicInfo extends React.Component<NavigationFocusInjectedProps
           <H2 color="light">
             and start meeting new friends around the world
           </H2>
-          <RegistrationBasicInfoForm />
-          <Button
-            color="primary"
-            variant="contained"
-            title="Sign Up"
-            onPress={createContact}
-          />
+          <RegistrationBasicInfoForm createContact={createContact} />
           <View style={{ alignItems: 'center' }}>
             <Txt color="light">
               By Proceeding, I agree to the
