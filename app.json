@@ -8,9 +8,9 @@
     "scheme": "donisto",
     "orientation": "portrait",
     "primaryColor": "#FFFFFF",
-    "icon": "./assets/gs-icon.png",
+    "icon": "./assets/donisto-icon.png",
     "splash": {
-      "image": "./assets/grand-splash-logo.png",
+      "image": "./assets/donisto-splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

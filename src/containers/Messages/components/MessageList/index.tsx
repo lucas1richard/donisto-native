@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 import MessageItem from './MessageItem';
-import H2 from 'components/H2';
 import Txt from 'components/Txt';
 
 interface IMessage {
@@ -14,8 +13,8 @@ const messages: IMessage[] = [];
 for (let ix = 0; ix < 10; ix += 1) {
   messages.push({
     id: ix,
-    title: `Message ${ix}`,
-    text: `From Person ${ix}`
+    title: `Michael Jones`,
+    text: `Thank you so much!`
   });
 }
 
@@ -23,11 +22,26 @@ class MessageList extends React.Component {
   render() {
     return (
       <View>
-        <H2>Messages</H2>
         {messages.map((message) => (
           <MessageItem key={message.id}>
-            <Txt>{message.title}</Txt>
-            <Txt>{message.text}</Txt>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '82%' }}>
+              <View>
+                <Txt color="primary">
+                  {message.title}
+                </Txt>
+                <Txt style={{ fontWeight: '600' }}>
+                  {message.text}
+                </Txt>
+              </View>
+              <View style={{ alignItems: 'center' }}>
+                <Txt style={{ color: '#aaa' }}>
+                  23
+                </Txt>
+                <Txt style={{ color: '#aaa' }}>
+                  mins
+                </Txt>
+              </View>
+            </View>
           </MessageItem>
         ))}
       </View>

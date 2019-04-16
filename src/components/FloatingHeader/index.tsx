@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import Left from './components/Left';
 import Right from './components/Right';
 import NavigationService from 'containers/Navigation/NavigationService';
@@ -25,19 +25,18 @@ class FloatingHeader extends React.Component<IFloatingHeaderProps> {
       onClose
     } = this.props;
     return (
-      <View style={styles.wrapper}>
-        <Left
-          noBackOption={noBackOption}
-          onBack={NavigationService.back}
-        />
-        {/* <Text style={h1({ color: theme.primary[500] })}>
-          {title}
-        </Text> */}
-        <Right
-          noCloseOption={noCloseOption}
-          onClose={onClose}
-        />
-      </View>
+      <SafeAreaView>
+        <View style={styles.wrapper}>
+          <Left
+            noBackOption={noBackOption}
+            onBack={NavigationService.back}
+          />
+          <Right
+            noCloseOption={noCloseOption}
+            onClose={onClose}
+          />
+        </View>
+      </SafeAreaView>
     );
   }
 }

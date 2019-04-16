@@ -136,7 +136,7 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
                 numberOfLines={field.multiLine ? 4 : 1}
                 style={{
                   color: blurViewProps && blurViewProps.tint === 'light' ? '#000' : '#fff',
-                  fontSize: theme.fs + 4,
+                  fontSize: 18,
                   flex: 14,
                   padding: theme.fs,
                   minHeight: field.multiLine ? theme.fs * 8 : undefined

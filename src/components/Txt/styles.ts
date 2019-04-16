@@ -2,7 +2,7 @@ import { StyleSheet, TextStyle } from 'react-native';
 import theme from 'theme/iftheme';
 
 const defaultStyles: TextStyle = {
-  fontSize: theme.fontSize,
+  fontSize: 18,
   color: theme.black
 };
 

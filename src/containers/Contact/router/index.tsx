@@ -1,12 +1,13 @@
 import React from 'react';
-import { View } from "react-native";
-import { createDrawerNavigator } from "react-navigation";
-import routeNames from "containers/Navigation/routeNames";
-import UpdateContact from "../containers/UpdateContact";
+import { View } from 'react-native';
+import { createDrawerNavigator } from 'react-navigation';
+import routeNames from 'containers/Navigation/routeNames';
+import UpdateContact from '../containers/UpdateContact';
 import FloatingHeader from 'components/FloatingHeader';
 import Contact from '../';
 import theme from 'theme/iftheme';
 import DrawerContent from './DrawerContent';
+import causeRouter from 'containers/Cause/router';
 
 const AppNavigator = createDrawerNavigator({
   [routeNames.UPDATE_CONTACT]: {
@@ -20,6 +21,12 @@ const AppNavigator = createDrawerNavigator({
       header: <View />
     },
     screen: Contact
+  },
+  [routeNames.CAUSE]: {
+    navigationOptions: {
+      header: <FloatingHeader />
+    },
+    screen: causeRouter
   }
 }, {
   initialRouteName: routeNames.CONTACT,

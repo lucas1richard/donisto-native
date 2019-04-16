@@ -6,10 +6,12 @@ import {
   makeSelectCreateNewsStoryStatus
 } from './selectors';
 import { submitStoryAction } from './actions';
+import { makeSelectOrganizations } from 'containers/Organization/selectors';
 
 const mapStateToProps = createStructuredSelector({
   CreateNewsStory: makeSelectCreateNewsStory(),
-  status: makeSelectCreateNewsStoryStatus()
+  status: makeSelectCreateNewsStoryStatus(),
+  organizations: makeSelectOrganizations()
 });
 
 function mapDispatchToProps(dispatch: Dispatch) {

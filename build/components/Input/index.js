@@ -80,7 +80,7 @@ class Input extends React.Component {
                     hasIcon && (React.createElement(View, { style: { paddingLeft: theme.fs, minWidth: theme.fs * 2 } }, icon)),
                     React.createElement(TextInput, Object.assign({}, input, field, { allowFontScaling: false, ref: innerRef, label: field.label, textAlignVertical: "center", placeholder: field.label, placeholderTextColor: blurViewProps && blurViewProps.tint === 'light' ? '#333' : "#bbb", value: input.value, onChangeText: input.onChange, multiline: field.multiLine, numberOfLines: field.multiLine ? 4 : 1, style: {
                             color: blurViewProps && blurViewProps.tint === 'light' ? '#000' : '#fff',
-                            fontSize: theme.fs + 4,
+                            fontSize: 18,
                             flex: 14,
                             padding: theme.fs,
                             minHeight: field.multiLine ? theme.fs * 8 : undefined

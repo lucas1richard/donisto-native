@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import Left from './components/Left';
 import Right from './components/Right';
 import NavigationService from 'containers/Navigation/NavigationService';
@@ -8,10 +8,11 @@ import H1 from 'components/H1';
 class StackHeader extends React.Component {
     render() {
         const { noBackOption, noCloseOption, title, onClose } = this.props;
-        return (React.createElement(View, { style: styles.wrapper },
-            React.createElement(Left, { noBackOption: noBackOption, onBack: NavigationService.back }),
-            React.createElement(H1, { color: "primary" }, title),
-            React.createElement(Right, { noCloseOption: noCloseOption, onClose: onClose })));
+        return (React.createElement(SafeAreaView, null,
+            React.createElement(View, { style: styles.wrapper },
+                React.createElement(Left, { noBackOption: noBackOption, onBack: NavigationService.back }),
+                React.createElement(H1, { color: "primary" }, title),
+                React.createElement(Right, { noCloseOption: noCloseOption, onClose: onClose }))));
     }
 }
 StackHeader.defaultProps = {
@@ -20,8 +21,8 @@ StackHeader.defaultProps = {
 export default StackHeader;
 const styles = StyleSheet.create({
     wrapper: {
-        height: 45,
-        backgroundColor: '#fff',
+        // height: 45,
+        // backgroundColor: '#fff',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
         // flex: 1,

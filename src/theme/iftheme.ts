@@ -101,8 +101,8 @@ theme = {
     900: '#e65100'
   },
   screenPadding: 12,
-  fontSize: window.height / 40,
-  fs: window.height / 40,
+  fontSize: 20,
+  fs: 20,
   windowHeight: window.height,
   windowWidth: window.width,
   windowScale: window.scale,

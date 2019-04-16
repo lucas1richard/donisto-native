@@ -1,19 +1,30 @@
-import NewsFeedConstants from "../constants";
+import NewsFeedConstants from '../constants';
+import toggleSelectCauseTransformer from './transformers/toggleSelectCause';
+import updateDetailIxTransformer from './transformers/updateDetailIx';
+import getNewsFeedFailTransformer from './transformers/getNewsFeedFail';
+import getNewsFeedSuccessTransformer from './transformers/getNewsFeedSuccess';
+import getNewsFeedTransformer from './transformers/getNewsFeed';
 export const newsfeedInitialState = {
     news: [],
+    selectedCauses: {},
     error: undefined,
     ui: {
-        loaded: false
+        loaded: false,
+        detailIx: 0
     }
 };
 const newsfeedReducer = (state = newsfeedInitialState, action) => {
     switch (action.type) {
         case NewsFeedConstants.GET_NEWS_FEED:
-            return Object.assign({}, state, { ui: Object.assign({}, state.ui, { loaded: false }) });
+            return getNewsFeedTransformer(state, action);
         case NewsFeedConstants.GET_NEWS_FEED_SUCCESS:
-            return Object.assign({}, state, { news: action.newsfeed, error: undefined, ui: Object.assign({}, state.ui, { loaded: true }) });
+            return getNewsFeedSuccessTransformer(state, action);
         case NewsFeedConstants.GET_NEWS_FEED_FAIL:
-            return Object.assign({}, state, { error: action.error, ui: Object.assign({}, state.ui, { loaded: true }) });
+            return getNewsFeedFailTransformer(state, action);
+        case NewsFeedConstants.UPDATE_DETAIL_IX:
+            return updateDetailIxTransformer(state, action);
+        case NewsFeedConstants.TOGGLE_SELECT_CAUSE:
+            return toggleSelectCauseTransformer(state, action);
         default:
             return state;
     }

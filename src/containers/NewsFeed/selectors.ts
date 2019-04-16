@@ -12,3 +12,13 @@ export const makeSelectNewsFeed = () => createSelector(
   selectNewsFeedDomain(),
   (substate) => substate.news
 );
+
+export const makeSelectDetailItem = () => createSelector(
+  selectNewsFeedDomain(),
+  (substate) => substate.news[substate.ui.detailIx]
+);
+
+export const makeSelectSelectedCauses = () => createSelector(
+  selectNewsFeedDomain(),
+  (substate) => substate.selectedCauses
+);

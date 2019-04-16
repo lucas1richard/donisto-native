@@ -44,7 +44,8 @@ export class UpdateContactForm extends FormFlow<IUpdateContactFormProps & Inject
             icon={<MaterialIcons name="person" size={theme.fs * 1.2} color="#fff" />}
             name="last_name"
             label="Last name"
-            onSubmitEditing={this.submitEditing('last_name')}
+            innerRef={this.registerField('last_name')}
+            onSubmitEditing={this.submitEditing('city')}
             blurViewProps={{
               tint: 'dark',
               intensity: 80
@@ -57,6 +58,7 @@ export class UpdateContactForm extends FormFlow<IUpdateContactFormProps & Inject
             icon={<MaterialCommunityIcons name="city" size={theme.fs * 1.2} color="#fff" />}
             name="city"
             label="City"
+            innerRef={this.registerField('city')}
             onSubmitEditing={this.submitEditing('state')}
             blurViewProps={{
               tint: 'dark',

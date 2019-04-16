@@ -1,7 +1,12 @@
 enum NewsFeedConstants {
   GET_NEWS_FEED = 'donisto/NewsFeed/GET_NEWS_FEED',
   GET_NEWS_FEED_SUCCESS = 'donisto/NewsFeed/GET_NEWS_FEED_SUCCESS',
-  GET_NEWS_FEED_FAIL = 'donisto/NewsFeed/GET_NEWS_FEED_FAIL'
+  GET_NEWS_FEED_FAIL = 'donisto/NewsFeed/GET_NEWS_FEED_FAIL',
+  UPDATE_DETAIL_IX = 'donisto/NewsFeed/UPDATE_DETAIL_IX',
+  TOGGLE_SELECT_CAUSE = 'donisto/NewsFeed/TOGGLE_SELECT_CAUSE',
+  GET_NEWS_ITEM_DETAIL = 'donisto/NewsFeed/GET_NEWS_ITEM_DETAIL',
+  GET_NEWS_ITEM_DETAIL_SUCCESS = 'donisto/NewsFeed/GET_NEWS_ITEM_DETAIL_SUCCESS',
+  GET_NEWS_ITEM_DETAIL_FAIL = 'donisto/NewsFeed/GET_NEWS_ITEM_DETAIL_FAIL',
 }
 
 export default NewsFeedConstants;

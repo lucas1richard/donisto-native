@@ -10,6 +10,8 @@ import {
 import { makeSelectActiveOrganization } from 'containers/Organization/selectors';
 import logger from 'utilities/logger';
 import { getNewsFeedAction } from 'containers/NewsFeed/actions';
+import { getOrgNewsFeedAction } from 'containers/Contact/actions';
+import { makeSelectSelectedCauses } from 'containers/Cause/selectors';
 
 function* submitStorySaga() {
   try {
@@ -17,9 +19,11 @@ function* submitStorySaga() {
     const formData = yield select(getFormValues(CreateNewsStory_FORM_NAME));
     const activeOrganization = yield select(makeSelectActiveOrganization());
     const organizationUuid = activeOrganization.uuid;
+    const selectedCauses = yield select(makeSelectSelectedCauses());
     const newsStoryData = {
       ...formData,
-      organizationUuid
+      organizationUuid,
+      causesUuid: Object.keys(selectedCauses)
     };
 
     logger.log(newsStoryData, 'submitStorySaga');
@@ -27,7 +31,8 @@ function* submitStorySaga() {
     const { data } = yield call(api, 'post', '/v1/newsfeed', newsStoryData);
     yield all([
       put(submitStorySuccessAction(data)),
-      put(getNewsFeedAction())
+      put(getNewsFeedAction()),
+      put(getOrgNewsFeedAction())
     ]);
 
   } catch (err) {

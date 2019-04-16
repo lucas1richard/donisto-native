@@ -1,9 +1,22 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { makeSelectNewsFeed, makeSelectLoaded } from './selectors';
+import { makeSelectOrganizations } from 'containers/Organization/selectors';
+import { updateDetailIxAction } from './actions';
+import NavigationService from 'containers/Navigation/NavigationService';
+import routeNames from 'containers/Navigation/routeNames';
 export const mapStateToProps = createStructuredSelector({
     newsfeed: makeSelectNewsFeed(),
-    loaded: makeSelectLoaded()
+    loaded: makeSelectLoaded(),
+    organizations: makeSelectOrganizations()
 });
-export default connect(mapStateToProps);
+export const mapDispatchToProps = (dispatch) => {
+    return {
+        navDetail: (ix) => {
+            dispatch(updateDetailIxAction(ix));
+            NavigationService.navigate(routeNames.NEWS_ITEM_DETAIL);
+        }
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps);
 //# sourceMappingURL=mapToProps.js.map

@@ -1,0 +1,11 @@
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  img: {
+    width: '100%',
+    height: 219,
+    overflow: 'hidden'
+  }
+});
+
+export default styles;

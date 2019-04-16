@@ -9,7 +9,9 @@ import theme from 'theme/iftheme';
 const JoinNowLink = () => {
   return (
     <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: theme.fs * 2 }}>
-      <Txt color="light">Don&apos;t have an account? </Txt>
+      <Txt color="light">
+        Don&apos;t have an account?&nbsp;
+      </Txt>
       <Touchable
         onPress={() => NavigationService.navigate(routeNames.REGISTRATION_BASIC_INFO)}
       >

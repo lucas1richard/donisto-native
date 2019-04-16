@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 import logger from 'utilities/logger';
-import api from "utilities/api";
+import api from 'utilities/api';
 import { getNewsFeedSuccessAction, getNewsFeedFailAction } from 'containers/NewsFeed/actions';
 function* getNewsFeedSaga() {
     try {

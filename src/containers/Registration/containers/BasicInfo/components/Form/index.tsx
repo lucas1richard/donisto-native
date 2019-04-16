@@ -6,7 +6,8 @@ import MyField from 'components/Field';
 import FormFlow from 'components/FormFlow';
 import Button from 'components/Button';
 import theme from 'theme/iftheme';
-import logger from 'utilities/logger';
+import MarginWrapper from 'components/Field/MarginWrapper';
+import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 
 export const REGISTRATION_BASICINFO_FORM_NAME = 'registration_basic_info';
 
@@ -19,14 +20,30 @@ export interface IRegistrationFormProps {
   createContact(): any;
 }
 
+const EmailIcon = (
+  <MaterialCommunityIcons
+    name="email"
+    size={theme.fs * 1.2}
+    color="#fff"
+  />
+);
+
+const LockIcon = (
+  <FontAwesome
+    name="lock"
+    size={theme.fs * 1.2}
+    color="#fff"
+  />
+);
+
 export class RegistrationBasicInfoForm extends FormFlow<IRegistrationFormProps & InjectedFormProps<IRegistrationFormData, IRegistrationFormProps>> {
   render() {
     const { createContact, submitting } = this.props;
-    logger.log(submitting, 'RegistrationBasicInfoForm', 'yellow');
     return (
       <View>
-        <View style={{ marginBottom: theme.fs }}>
+        <MarginWrapper>
           <MyField
+            icon={EmailIcon}
             component={Input}
             name="email"
             label="Email"
@@ -40,9 +57,10 @@ export class RegistrationBasicInfoForm extends FormFlow<IRegistrationFormProps &
               intensity: 80
             }}
           />
-        </View>
-        <View style={{ marginBottom: theme.fs }}>
+        </MarginWrapper>
+        <MarginWrapper>
           <MyField
+            icon={LockIcon}
             component={Input}
             name="password"
             label="Password"
@@ -53,14 +71,7 @@ export class RegistrationBasicInfoForm extends FormFlow<IRegistrationFormProps &
               intensity: 80
             }}
           />
-        </View>
-        {/* <MyField
-          component={Input}
-          name="password-confirm"
-          label="Type the password again"
-          secureTextEntry
-          innerRef={this.registerField('password2')}
-        /> */}
+        </MarginWrapper>
         <Button
           color="primary"
           variant="contained"

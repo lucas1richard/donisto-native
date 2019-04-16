@@ -16,10 +16,9 @@ export class CreateNewsStory extends React.Component<ICreateNewsStoryProps> {
   render() {
     const { submitStory, status } = this.props;
     return (
-      // <ImageBackground source={require('../../../../../assets/onboarding-bg.png')} style={{ width: '100%', flex: 1 }}>
-      <View style={{ backgroundColor: '#eee', flex: 1 }}>
+      <View style={{ height: '100%' }}>
         <ScrollView>
-          <View style={{ padding: theme.screenPadding }}>
+          <View style={{ padding: theme.screenPadding, paddingTop: 60 }}>
             <H2>Create News Story</H2>
             {status === 'editing' && (
               <CreateNewsStoryForm submitStory={submitStory} />
@@ -37,7 +36,6 @@ export class CreateNewsStory extends React.Component<ICreateNewsStoryProps> {
           </View>
         </ScrollView>
       </View>
-      // </ImageBackground>
     );
   }
 }

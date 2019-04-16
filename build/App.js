@@ -11,7 +11,7 @@ import React from 'react';
 import { Constants, AppLoading, Asset } from 'expo';
 import { Root } from 'native-base';
 import { Provider } from 'react-redux';
-import { Platform, StyleSheet, View, KeyboardAvoidingView, AppState } from 'react-native';
+import { Platform, StyleSheet, View, KeyboardAvoidingView, AppState, SafeAreaView } from 'react-native';
 import StatusBar from 'components/StatusBar';
 import 'theme/iftheme';
 import configureStore from './redux/store';
@@ -29,6 +29,8 @@ class App extends React.Component {
         this.loadAssets = () => __awaiter(this, void 0, void 0, function* () {
             yield Promise.all([
                 Asset.fromModule(require('../assets/scenic-1.jpg')).downloadAsync(),
+                Asset.fromModule(require('../assets/scenic-2.jpg')).downloadAsync(),
+                Asset.fromModule(require('../assets/happy-1.jpg')).downloadAsync(),
                 Asset.fromModule(require('../assets/onboarding-bg.png')).downloadAsync()
             ]);
         });
@@ -42,11 +44,12 @@ class App extends React.Component {
         }
         return (React.createElement(View, { style: { flex: 1, paddingTop: isIphone10 ? 40 : 0 } },
             React.createElement(KeyboardAvoidingView, { keyboardVerticalOffset: 0, behavior: "padding", style: styles.appWrapper, contentContainerStyle: styles.appWrapper },
-                React.createElement(Provider, { store: store },
-                    React.createElement(View, { style: styles.appView },
-                        React.createElement(StatusBar, null),
-                        React.createElement(Root, null,
-                            React.createElement(AppNavigation, { ref: NavigationService.setTopLevelNavigator })))))));
+                React.createElement(SafeAreaView, { style: { flex: 1, backgroundColor: '#000' } },
+                    React.createElement(Provider, { store: store },
+                        React.createElement(View, { style: styles.appView },
+                            React.createElement(StatusBar, null),
+                            React.createElement(Root, null,
+                                React.createElement(AppNavigation, { ref: NavigationService.setTopLevelNavigator }))))))));
     }
 }
 export default App;
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     },
     appView: {
         flex: 1,
-        backgroundColor: 'transparent'
+        backgroundColor: '#fff'
     }
 });
 //# sourceMappingURL=App.js.map

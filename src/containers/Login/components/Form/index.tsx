@@ -6,6 +6,9 @@ import Field from 'components/Field';
 import FormFlow from 'components/FormFlow';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import theme from 'theme/iftheme';
+import MarginWrapper from 'components/Field/MarginWrapper';
+import Button from 'components/Button';
+import { BlurViewProps } from 'expo';
 
 export const LOGIN_FORM_NAME = 'login';
 
@@ -14,14 +17,41 @@ export interface ILoginFormData {
   password: string;
 }
 
-export class LoginForm extends FormFlow<InjectedFormProps<ILoginFormData>> {
+interface ILoginFormProps {
+  onSubmit(): any;
+}
+
+type TLoginFormProps = ILoginFormProps & InjectedFormProps<ILoginFormData, ILoginFormProps>;
+
+const EmailIcon = (
+  <MaterialCommunityIcons
+    name="email"
+    size={theme.fontSize * 1.2}
+    color="#fff"
+  />
+);
+const LockIcon = (
+  <FontAwesome
+    name="lock"
+    size={theme.fontSize * 1.2}
+    color="#fff"
+  />
+);
+
+const blurViewProps: BlurViewProps = {
+  tint: 'dark',
+  intensity: 80
+};
+
+export class LoginForm extends FormFlow<TLoginFormProps> {
   render() {
+    const { submitting, onSubmit, handleSubmit } = this.props;
     return (
       <View>
-        <View style={{ marginBottom: 8 }}>
+        <MarginWrapper>
           <Field
             component={Input}
-            icon={<MaterialCommunityIcons name="email" size={theme.fontSize * 1.2} color="#fff" />}
+            icon={EmailIcon}
             name="email"
             label="Email"
             keyboardType="email-address"
@@ -29,31 +59,36 @@ export class LoginForm extends FormFlow<InjectedFormProps<ILoginFormData>> {
             spellCheck={false}
             autoCorrect={false}
             autoCapitalize="none"
-            blurViewProps={{
-              tint: 'dark',
-              intensity: 80
-            }}
+            blurViewProps={blurViewProps}
           />
-        </View>
-        <View style={{ marginBottom: 8 }}>
+        </MarginWrapper>
+        <MarginWrapper>
           <Field
             component={Input}
             name="password"
-            icon={<FontAwesome name="lock" size={theme.fontSize * 1.2} color="#fff" />}
+            icon={LockIcon}
             label="Password"
             secureTextEntry
             innerRef={this.registerField('password')}
-            blurViewProps={{
-              tint: 'dark',
-              intensity: 80
-            }}
+            blurViewProps={blurViewProps}
           />
-        </View>
+        </MarginWrapper>
+        <Button
+          variant="contained"
+          color="primary"
+          onPress={handleSubmit(onSubmit)}
+          title="Log In"
+          showLoader={submitting}
+        />
       </View>
     );
   }
 }
 
-export default reduxForm<ILoginFormData>({
-  form: LOGIN_FORM_NAME
+export default reduxForm<ILoginFormData, ILoginFormProps>({
+  form: LOGIN_FORM_NAME,
+  initialValues: {
+    email: 'qqz@zz.zz',
+    password: 'yay'
+  }
 })(LoginForm);

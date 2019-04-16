@@ -1,21 +1,39 @@
-import React from "react";
-import { View, ImageBackground } from "react-native";
-import Button from "components/Button";
-import logger from "utilities/logger";
-import { NavigationFocusInjectedProps } from "react-navigation";
-import routeNames from "containers/Navigation/routeNames";
-import theme from "theme/iftheme";
-import Logo from "components/Logo";
-import H1 from "components/H1";
-import H2 from "components/H2";
-import { MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
-import LoginLink from "components/LoginLink";
+import React from 'react';
+import { View, ImageBackground } from 'react-native';
+import Expo from 'expo';
+import { Alert } from "react-native";
+import Button from 'components/Button';
+import logger from 'utilities/logger';
+import { NavigationFocusInjectedProps } from 'react-navigation';
+import routeNames from 'containers/Navigation/routeNames';
+import theme from 'theme/iftheme';
+import Logo from 'components/Logo';
+import H1 from 'components/H1';
+import H2 from 'components/H2';
+import { MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
+import LoginLink from 'components/LoginLink';
+import NavigationService from 'containers/Navigation/NavigationService';
 
 interface ILaunchScreenProps {
   navigation: any
 }
 
 type TLaunchScreenProps = NavigationFocusInjectedProps<ILaunchScreenProps>;
+
+const FacebookIcon = (
+  <FontAwesome
+    name="facebook"
+    size={theme.fs}
+    color="#fff"
+  />
+);
+const EmailIcon = (
+  <MaterialCommunityIcons
+    name="email"
+    size={theme.fs}
+    color="#000"
+  />
+);
 
 class LaunchScreen extends React.Component<TLaunchScreenProps> {
   static charityImg = require('../../../assets/onboarding-bg.png');
@@ -34,9 +52,28 @@ class LaunchScreen extends React.Component<TLaunchScreenProps> {
     logger.log('HomeScreen will update', 'LaunchScreen.tsx', 'teal');
   }
 
+  logIn = async () => {
+    try {
+      const {
+        type,
+        token
+      } = await Expo.Facebook.logInWithReadPermissionsAsync('372264243610330', {
+        permissions: ['public_profile']
+      });
+      if (type === 'success') {
+        // Get the user's name using Facebook's Graph API
+        const response = await fetch(`https://graph.facebook.com/me?access_token=${token}&fields=id,first_name,last_name`);
+        const json = await response.json();
+        Alert.alert('Logged in!', `Hi ${json.first_name}!`);
+      } else {
+        // type === 'cancel'
+      }
+    } catch ({ message }) {
+      alert(`Facebook Login Error: ${message}`);
+    }
+  }
+
   render() {
-    logger.log(this.props, 'LaunchScreen.tsx');
-    const { navigation } = this.props;
     return (
       <ImageBackground
         source={require('../../../assets/onboarding-bg.png')}
@@ -48,7 +85,7 @@ class LaunchScreen extends React.Component<TLaunchScreenProps> {
           backgroundColor: '#000'
         }}
         imageStyle={{
-          height: 900,
+          height: theme.windowHeight,
           overflow: 'hidden',
           flex: 1,
           alignSelf: 'flex-start'
@@ -57,7 +94,7 @@ class LaunchScreen extends React.Component<TLaunchScreenProps> {
         <View style={{ marginTop: 50 }}>
           <Logo />
           <View style={{ marginTop: 30 }}>
-            <H1 color="light" style={{ fontWeight: "900", fontSize: theme.fontSize * 4 }}>
+            <H1 color="light" style={{ fontWeight: "900", fontSize: theme.fs * 4 }}>
               donisto
             </H1>
             <H2 color="light">
@@ -68,20 +105,20 @@ class LaunchScreen extends React.Component<TLaunchScreenProps> {
         <View>
           <View style={{ marginBottom: 12 }}>
             <Button
-              icon={<FontAwesome name="facebook" size={theme.fontSize + 4} color="#fff" />}
+              icon={FacebookIcon}
               color="primary"
               variant="rounded"
               title="Continue with Facebook"
-              onPress={() => navigation.navigate(routeNames.REGISTRATION_BASIC_INFO)}
+              onPress={this.logIn}
             />
           </View>
           <View style={{ marginBottom: 36 }}>
             <Button
-              icon={<MaterialCommunityIcons name="email" size={theme.fontSize + 4} color="#000" />}
+              icon={EmailIcon}
               color="default"
               variant="rounded"
               title="Sign Up with Email"
-              onPress={() => navigation.navigate(routeNames.REGISTRATION_BASIC_INFO)}
+              onPress={() => NavigationService.navigate(routeNames.REGISTRATION_BASIC_INFO)}
             />
           </View>
           <LoginLink />

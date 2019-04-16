@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import SwipeCards from 'react-native-swipe-cards';
 import logger from 'utilities/logger';
+import { Entypo } from '@expo/vector-icons';
+import theme from 'theme/iftheme';
+import Txt from 'components/Txt';
 
 interface ICardProps {
   image: string;
@@ -91,19 +94,44 @@ export default class Discover extends React.Component<IDiscoverProps, IDiscoverS
 
   render() {
     return (
-      <SwipeCards
-        cards={this.state.cards}
-        loop={false}
-
-        renderCard={(cardData: ICardProps) => <Card {...cardData} />}
-        renderNoMoreCards={() => <NoMoreCards />}
-        showYup={true}
-        showNope={true}
-
-        handleYup={this.handleYup}
-        handleNope={this.handleNope}
-        cardRemoved={this.cardRemoved}
-      />
+      <View style={{ flex: 1 }}>
+        <View style={{
+    height: 60,
+    borderBottomWidth: 1,
+    borderBottomColor: '#d3d3d3',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20
+  }}>
+          <Entypo
+            name="plus"
+            color={theme.primary[500]}
+            size={25}
+          />
+          <Txt style={{ fontSize: 22, fontWeight: '600' }}>
+            Discover
+          </Txt>
+          <Entypo
+            name="magnifying-glass"
+            color={theme.primary[500]}
+            size={25}
+          />
+        </View>
+        <SwipeCards
+          cards={this.state.cards}
+          loop={false}
+  
+          renderCard={(cardData: ICardProps) => <Card {...cardData} />}
+          renderNoMoreCards={() => <NoMoreCards />}
+          showYup={true}
+          showNope={true}
+  
+          handleYup={this.handleYup}
+          handleNope={this.handleNope}
+          cardRemoved={this.cardRemoved}
+        />
+      </View>
     );
   }
 }

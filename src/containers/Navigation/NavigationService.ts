@@ -1,5 +1,8 @@
 import { NavigationActions, DrawerActions } from 'react-navigation';
 import routeNames from './routeNames';
+import logger from 'utilities/logger';
+
+const log = (msg: any) => logger.log(msg, 'NavigationService');
 
 class NavigationService {
   static _navigator: any;
@@ -8,6 +11,9 @@ class NavigationService {
   }
   static navigate(routeName: routeNames, params?: any) {
     if (NavigationService._navigator) {
+      params
+        ? log(`navigate to ${routeName} with params ${JSON.stringify(params)}`)
+        : log(`navigate to ${routeName}`);
       NavigationService._navigator.dispatch(
         NavigationActions.navigate({
           routeName,
@@ -18,6 +24,7 @@ class NavigationService {
   }
   static back() {
     if (NavigationService._navigator) {
+      log(`navigate back`);
       NavigationService._navigator.dispatch(
         NavigationActions.back()
       );
@@ -25,6 +32,7 @@ class NavigationService {
   }
   static toggleDrawer() {
     if (NavigationService._navigator) {
+      log(`toggle drawer`);
       NavigationService._navigator.dispatch(
         DrawerActions.toggleDrawer()
       );
@@ -32,6 +40,7 @@ class NavigationService {
   }
   static openDrawer() {
     if (NavigationService._navigator) {
+      log(`open drawer`);
       NavigationService._navigator.dispatch(
         DrawerActions.openDrawer()
       );
@@ -39,6 +48,7 @@ class NavigationService {
   }
   static closeDrawer() {
     if (NavigationService._navigator) {
+      log(`close drawer`);
       NavigationService._navigator.dispatch(
         DrawerActions.closeDrawer()
       );

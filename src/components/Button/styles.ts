@@ -2,7 +2,8 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
 import theme from 'theme/iftheme';
 
 const defaultViewStyles: ViewStyle = {
-  padding: theme.fontSize,
+  // padding: theme.fontSize,
+  height: 46,
   width: '100%',
   borderRadius: 8,
   alignItems: 'center',
@@ -45,7 +46,7 @@ export const viewStyles = StyleSheet.create({
 });
 
 const defaultTextStyles: TextStyle = {
-  fontSize: theme.fontSize + 4
+  fontSize: theme.fs
 };
 
 export const textStyles = StyleSheet.create({

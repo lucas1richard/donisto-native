@@ -47,7 +47,8 @@ const PostAuthOrgNavigator = createBottomTabNavigator({
     style: {
       borderTopWidth: 1,
       borderTopColor: focusedColor
-    }
+    },
+    safeAreaInset: { bottom: 'never' }
   }
 });
 

@@ -20,9 +20,23 @@ export default StyleSheet.create({
     borderColor: '#fff'
   },
   image: {
-    height: theme.fs * 10,
-    position: 'absolute',
+    height: 100,
     alignSelf: 'center',
     overflow: 'hidden'
+  },
+  dots: {
+    position: 'absolute',
+    right: theme.screenPadding,
+    top: theme.screenPadding,
+    justifyContent: 'flex-start',
+    backgroundColor: 'teal',
+    height: 40,
+    zIndex: 100
+  },
+  infoWrapper: {
+    position: 'absolute',
+    bottom: theme.fs,
+    right: theme.screenPadding,
+    maxWidth: theme.fs * 15
   }
 });

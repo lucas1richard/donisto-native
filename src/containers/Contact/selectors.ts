@@ -11,3 +11,8 @@ export const makeSelectOrganizationUuid = () => createSelector(
   selectContactDomain(),
   (substate) => substate.organization_uuid
 );
+
+export const makeSelectOrgNewsFeed = () => createSelector(
+  selectContactDomain(),
+  (substate) => substate.orgNewsFeed || []
+);

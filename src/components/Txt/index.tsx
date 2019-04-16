@@ -7,9 +7,9 @@ interface ITxtProps extends TextProps {
   color?: 'primary'|'secondary'|'default'|'light';
 }
 
-const Txt = ({ children, color }: ITxtProps) => {
+const Txt = ({ children, color, style, ...rest }: ITxtProps) => {
   return (
-    <Text style={styles[color]}>
+    <Text style={[styles[color], style]} {...rest}>
       {children}
     </Text>
   );

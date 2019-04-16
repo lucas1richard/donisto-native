@@ -1,4 +1,4 @@
-import ContactConstants from "../constants";
+import ContactConstants from '../constants';
 export const initialContactState = {};
 const contactReducer = (state = initialContactState, action) => {
     switch (action.type) {
@@ -7,8 +7,14 @@ const contactReducer = (state = initialContactState, action) => {
         case ContactConstants.GET_CONTACT_FAIL:
             return Object.assign({}, state, { error: action.error });
         case ContactConstants.UPDATE_CONTACT_SUCCESS:
-            return action.contact;
+            return Object.assign({}, state, action.contact);
         case ContactConstants.UPDATE_CONTACT_FAIL:
+            return Object.assign({}, state, { error: action.error });
+        case ContactConstants.GET_ORG_NEWS_FEED:
+            return state;
+        case ContactConstants.GET_ORG_NEWS_FEED_SUCCESS:
+            return Object.assign({}, state, { orgNewsFeed: action.orgNewsFeed });
+        case ContactConstants.GET_ORG_NEWS_FEED_FAIL:
             return Object.assign({}, state, { error: action.error });
         default:
             return state;

@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
 import theme from 'theme/iftheme';
 const defaultViewStyles = {
-    padding: theme.fontSize,
+    // padding: theme.fontSize,
+    height: 46,
     width: '100%',
     borderRadius: 8,
     alignItems: 'center',
@@ -19,7 +20,7 @@ export const viewStyles = StyleSheet.create({
     _default: Object.assign({}, defaultViewStyles, { backgroundColor: '#f2f2f2' })
 });
 const defaultTextStyles = {
-    fontSize: theme.fontSize + 4
+    fontSize: theme.fs
 };
 export const textStyles = StyleSheet.create({
     'text-primary': {

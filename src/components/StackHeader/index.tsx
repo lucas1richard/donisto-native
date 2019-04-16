@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import Left from './components/Left';
 import Right from './components/Right';
 import NavigationService from 'containers/Navigation/NavigationService';
@@ -26,19 +26,21 @@ class StackHeader extends React.Component<IStackHeaderProps> {
       onClose
     } = this.props;
     return (
-      <View style={styles.wrapper}>
-        <Left
-          noBackOption={noBackOption}
-          onBack={NavigationService.back}
-        />
-        <H1 color="primary">
-          {title}
-        </H1>
-        <Right
-          noCloseOption={noCloseOption}
-          onClose={onClose}
-        />
-      </View>
+      <SafeAreaView>
+        <View style={styles.wrapper}>
+          <Left
+            noBackOption={noBackOption}
+            onBack={NavigationService.back}
+          />
+          <H1 color="primary">
+            {title}
+          </H1>
+          <Right
+            noCloseOption={noCloseOption}
+            onClose={onClose}
+          />
+        </View>
+      </SafeAreaView>
     );
   }
 }
@@ -47,8 +49,8 @@ export default StackHeader;
 
 const styles = StyleSheet.create({
   wrapper: {
-    height: 45,
-    backgroundColor: '#fff',
+    // height: 45,
+    // backgroundColor: '#fff',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
     // flex: 1,

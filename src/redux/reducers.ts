@@ -11,6 +11,7 @@ import newsfeed, { INewsfeedInitialState } from 'containers/NewsFeed/reducer';
 import donations, { IDonationsInitialState } from 'containers/Donations/reducer';
 import discover from 'containers/Discover/reducer';
 import messages from 'containers/Messages/reducer';
+import cause, { ICauseInitialState } from 'containers/Cause/reducer';
 import organization, { IOrganizationInitialState } from 'containers/Organization/reducer';
 import createNewsStory, { ICreateStoryReduxState } from 'containers/Organization/containers/CreateNewsStory/reducer';
 
@@ -19,6 +20,7 @@ export interface IReduxState {
   donations: IDonationsInitialState;
   discover: any;
   form: any;
+  cause: ICauseInitialState;
   messages: any;
   organization: IOrganizationInitialState;
   newsfeed: INewsfeedInitialState;
@@ -32,6 +34,7 @@ const reducers = {
   discover,
   form,
   messages,
+  cause,
   organization,
   newsfeed,
   createNewsStory

@@ -3,13 +3,15 @@ import theme from 'theme/iftheme';
 
 const styles = StyleSheet.create({
   wrapper: {
-    width: theme.fs * 18,
+    width: 300,
     height: theme.fs * 24,
-    padding: theme.fs
+    marginRight: theme.screenPadding
+    // padding: theme.fs
   },
   innerWrapper: {
     height: '100%',
     width: '100%',
+    borderRadius: 10,
     backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center'

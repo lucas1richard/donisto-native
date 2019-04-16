@@ -8,7 +8,8 @@ import {
   StyleSheet,
   View,
   KeyboardAvoidingView,
-  AppState
+  AppState,
+  SafeAreaView
 } from 'react-native';
 import StatusBar from 'components/StatusBar';
 import 'theme/iftheme';
@@ -29,6 +30,8 @@ class App extends React.Component {
   loadAssets = async () => {
     await Promise.all([
       Asset.fromModule(require('../assets/scenic-1.jpg')).downloadAsync(),
+      Asset.fromModule(require('../assets/scenic-2.jpg')).downloadAsync(),
+      Asset.fromModule(require('../assets/happy-1.jpg')).downloadAsync(),
       Asset.fromModule(require('../assets/onboarding-bg.png')).downloadAsync()
     ]);
   }
@@ -54,16 +57,18 @@ class App extends React.Component {
           style={styles.appWrapper}
           contentContainerStyle={styles.appWrapper}
         >
-          <Provider store={store}>
-            <View style={styles.appView}>
-              <StatusBar />
+          <SafeAreaView style={{flex: 1, backgroundColor: '#000' }}>
+            <Provider store={store}>
+              <View style={styles.appView}>
+                <StatusBar />
                 <Root>
                   <AppNavigation
                     ref={NavigationService.setTopLevelNavigator}
                   />
                 </Root>
-            </View>
-          </Provider>
+              </View>
+            </Provider>
+          </SafeAreaView>
         </KeyboardAvoidingView>
       </View>
     );
@@ -79,6 +84,6 @@ const styles = StyleSheet.create({
   },
   appView: {
     flex: 1,
-    backgroundColor: 'transparent'
+    backgroundColor: '#fff'
   }
 });

@@ -3,13 +3,12 @@ import RegistrationBasicInfoForm from './components/Form';
 import { NavigationFocusInjectedProps } from 'react-navigation';
 
 import { View, ImageBackground } from 'react-native';
-import Button from 'components/Button';
 import theme from 'theme/iftheme';
 import mapToProps from './mapToProps';
 import H1 from 'components/H1';
 import H2 from 'components/H2';
-import Txt from 'components/Txt';
 import LoginLink from 'components/LoginLink';
+import TOSandPrivacy from 'components/TOSandPrivacy';
 
 interface RegistrationBasicInfoProps {
   createContact: () => undefined
@@ -40,14 +39,7 @@ class RegistrationBasicInfo extends React.Component<NavigationFocusInjectedProps
             and start meeting new friends around the world
           </H2>
           <RegistrationBasicInfoForm createContact={createContact} />
-          <View style={{ alignItems: 'center' }}>
-            <Txt color="light">
-              By Proceeding, I agree to the
-            </Txt>
-            <Txt color="light">
-              Terms of Use and Privacy Policy
-            </Txt>
-          </View>
+          <TOSandPrivacy />
           <LoginLink />
         </View>
       </ImageBackground>

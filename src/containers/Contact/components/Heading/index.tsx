@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, ImageBackground } from 'react-native';
 import styles from './styles';
 import Txt from 'components/Txt';
 import theme from 'theme/iftheme';
@@ -24,12 +24,35 @@ class ContactHeading extends React.Component<IContactHeadingProps> {
     const { contact } = this.props;
     return (
       <View style={styles.wrapper}>
-        <Image
+        <ImageBackground
           source={require('../../../../../assets/charity-demo.jpeg')}
-          style={styles.image}
-        />
+          style={{
+            height: 200,
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+            paddingHorizontal: theme.screenPadding,
+            paddingVertical: theme.screenPadding,
+            backgroundColor: '#000'
+          }}
+          imageStyle={{
+            height: 200,
+            overflow: 'hidden',
+            flex: 1,
+            alignSelf: 'flex-start'
+          }}
+        >
+          <Touchable onPress={NavigationService.openDrawer}>
+            <View>
+              <Entypo
+                name="dots-three-horizontal"
+                color="#fff"
+                size={theme.fs * 2}
+              />
+            </View>
+          </Touchable>
+        </ImageBackground>
         <View style={styles.profilePicWrapper} />
-        <View style={{ position: 'absolute', bottom: theme.fs, right: theme.screenPadding, maxWidth: theme.fs * 15 }}>
+        <View style={styles.infoWrapper}>
           <Txt color="light">
             {contact.first_name} {contact.last_name}
           </Txt>
@@ -37,11 +60,6 @@ class ContactHeading extends React.Component<IContactHeadingProps> {
             {this.contactLocation}
           </Txt>
         </View>
-        <Touchable onPress={() => NavigationService.openDrawer()}>
-          <View style={{ position: 'absolute', right: theme.screenPadding, top: theme.screenPadding }}>
-            <Entypo name="dots-three-horizontal" color="#fff" size={theme.fs * 2} />
-          </View>
-        </Touchable>
       </View>
     );
   }

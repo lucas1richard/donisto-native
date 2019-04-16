@@ -2,7 +2,7 @@ import { StyleSheet, TextStyle } from 'react-native';
 import theme from 'theme/iftheme';
 
 const defaultStyles: TextStyle = {
-  fontSize: theme.fontSize * 2,
+  fontSize: 34,
   color: theme.black,
   textAlign: 'center'
 };

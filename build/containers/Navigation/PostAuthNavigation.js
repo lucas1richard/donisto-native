@@ -1,12 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from "react-navigation";
 import routeNames from "./routeNames";
-import NewsFeed from 'containers/NewsFeed';
+import NewsFeed from 'containers/NewsFeed/router';
 import Donations from 'containers/Donations';
 import Discover from 'containers/Discover';
 import Messages from 'containers/Messages';
 import Contact from 'containers/Contact/router';
-import { FontAwesome, Entypo, Feather } from "@expo/vector-icons";
+import { FontAwesome, Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
 import theme from 'theme/iftheme';
 const focusedColor = theme.primary[500];
 const notFocusedColor = 'gray';
@@ -35,14 +35,14 @@ const PostAuthNavigator = createBottomTabNavigator({
     [routeNames.MESSAGES]: {
         navigationOptions: {
             tabBarLabel: 'Messages',
-            tabBarIcon: ({ focused }) => (React.createElement(Feather, { size: 20, name: "message-square", style: { textAlign: 'center', color: focused ? focusedColor : notFocusedColor } }))
+            tabBarIcon: ({ focused }) => (React.createElement(MaterialCommunityIcons, { size: 20, name: focused ? 'message' : 'message-outline', style: { textAlign: 'center', color: focused ? focusedColor : notFocusedColor } }))
         },
         screen: Messages
     },
     [routeNames.PROFILE]: {
         navigationOptions: {
             tabBarLabel: 'Profile',
-            tabBarIcon: ({ focused }) => (React.createElement(FontAwesome, { size: 20, name: "user-o", style: { textAlign: 'center', color: focused ? focusedColor : notFocusedColor } }))
+            tabBarIcon: ({ focused }) => (React.createElement(FontAwesome, { size: 20, name: focused ? 'user' : 'user-o', style: { textAlign: 'center', color: focused ? focusedColor : notFocusedColor } }))
         },
         screen: Contact
     }
@@ -50,7 +50,8 @@ const PostAuthNavigator = createBottomTabNavigator({
     initialRouteName: routeNames.PROFILE,
     tabBarOptions: {
         activeTintColor: focusedColor,
-        inactiveTintColor: notFocusedColor
+        inactiveTintColor: notFocusedColor,
+        safeAreaInset: { bottom: 'never' }
     }
 });
 export default PostAuthNavigator;

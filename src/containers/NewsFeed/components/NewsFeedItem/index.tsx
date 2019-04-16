@@ -1,16 +1,14 @@
 import React from 'react';
-import { View, Image } from 'react-native';
-import Touchable from 'components/Touchable';
-import RNModal from 'components/Modal';
-import theme from 'theme/iftheme';
-import H1 from 'components/H1';
-import H2 from 'components/H2';
-import Txt from 'components/Txt';
-import Card from 'components/Card';
+import { View } from 'react-native';
+import styles from './styles';
+import TopRow from './components/TopRow';
+import BottomRow from './components/BottomRow';
+import Img from './components/Img';
 
 interface INewsFeedItemProps {
   item: any;
   img: any;
+  navDetail: () => any
 }
 
 interface INewsFeedItemState {
@@ -18,56 +16,19 @@ interface INewsFeedItemState {
 }
 
 class NewsFeedItem extends React.Component<INewsFeedItemProps, INewsFeedItemState> {
-  state = {
-    modalVisible: false
-  };
-
-  toggleModal = () => {
-    this.setState({ modalVisible: !this.state.modalVisible });
-  }
-
   render() {
-    const { item, img } = this.props;
+    const { item, img, navDetail } = this.props;
     return (
-      <Touchable onPress={this.toggleModal}>
-        <View>
-          <Card key={item.id}>
-            <Image
-              source={img}
-              style={{ width: '100%', height: 200, overflow: 'hidden' }}
-            />
-            <H1>
-              {item.title}
-            </H1>
-          </Card>
-          <RNModal
-            title={item.title.slice(0, 20)}
-            onHide={this.toggleModal}
-            visible={this.state.modalVisible}
-          >
-            <View style={{ padding: theme.screenPadding }}>
-              <H2>{item.subtitle}</H2>
-              <Image
-                source={img}
-                style={{ width: '100%', height: 200, overflow: 'hidden' }}
-              />
-              <Txt>
-                {item.text}
-              </Txt>
-              {/* <Txt>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </Txt>
-              <Txt>
-                Duis aute irure dolor in reprehenderit in
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Txt> */}
-            </View>
-          </RNModal>
+      <View>
+        <View style={styles.wrapper} key={item.id}>
+          <TopRow name={item.organization.name} />
+          <Img
+            navDetail={navDetail}
+            img={img}
+          />
+          <BottomRow />
         </View>
-      </Touchable>
+      </View>
     );
   }
 }
