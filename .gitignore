@@ -6,3 +6,4 @@ out
 coverage
 yarn.lock
 build
+.jest/*

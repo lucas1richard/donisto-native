@@ -10,12 +10,17 @@
     ],
     "coveragePathIgnorePatterns": [
       "/test/"
-    ]
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.test.json"
+      }
+    }
   },
   "scripts": {
     "doc": "./node_modules/.bin/esdoc ./src/**/*",
     "flow": "flow",
-    "expo-login": "exp login --username lucas1richard --password Getitdone1",
+    "expo-login": "exp login --username lucas1richard --password 1donisto",
     "publish-staging": "./node_modules/exp/bin/exp.js publish --release-channel=staging && ./node_modules/exp/bin/exp.js publish --release-channel=api-testing",
     "publish": "./node_modules/exp/bin/exp.js publish",
     "deploy": "exp publish --release-channel=production",
@@ -78,9 +83,10 @@
     "warning": "^3.0.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.9.1",
     "@types/expo": "^31.0.8",
     "@types/invariant": "^2.2.29",
-    "@types/jest": "^23.3.13",
+    "@types/jest": "^23.3.14",
     "@types/lodash": "^4.14.120",
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
@@ -96,8 +102,8 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react-native": "2.0.0",
     "concurrently": "^4.1.0",
-    "enzyme": "^3.5.0",
-    "enzyme-adapter-react-16": "^1.3.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.4",
     "esdoc": "^1.1.0",
     "esdoc-flow-plugin": "^1.0.0",
@@ -117,7 +123,7 @@
     "jest-expo": "^30.0.0",
     "jsdoc": "^3.5.5",
     "plop": "^1.9.0",
-    "react-dom": "^16.4.2",
+    "react-dom": "^16.8.6",
     "react-native-public-ip": "^1.0.1",
     "remote-redux-devtools": "^0.5.12",
     "rimraf": "^2.6.3",
