@@ -1,8 +1,9 @@
 import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import { View } from 'react-native';
-import Txt from 'components/Txt';
-import ModalRP from 'components/ModalRP';
+import Touchable from 'components/Touchable';
+import NavigationService from 'containers/Navigation/NavigationService';
+import routeNames from 'containers/Navigation/routeNames';
 
 const padding = 18;
 
@@ -10,7 +11,7 @@ class MessageItem extends React.Component<any> {
   render() {
     const { children } = this.props;
     return (
-      <ModalRP trigger={(
+      <Touchable onPress={() => NavigationService.navigate(routeNames.MESSAGES_SPECIFIC)}>
         <View style={{ paddingTop: padding, paddingLeft: padding }}>
           <View style={{ flexDirection: 'row' }}>
             <View style={{ marginRight: 18 }}>
@@ -21,9 +22,7 @@ class MessageItem extends React.Component<any> {
             </View>
           </View>
         </View>
-      )}>
-        <Txt>Messages</Txt>
-      </ModalRP>
+      </Touchable>
     );
   }
 }

@@ -7,6 +7,9 @@ export type TNewsFeedActions =
   | IGetNewsFeedFailAction
   | IUpdateDetailIxAction
   | IToggleSelectCauseAction
+  | IGetNewsItemDetailAction
+  | IGetNewsItemDetailSuccessAction
+  | IGetNewsItemDetailFailAction
 ;
 
 export interface IGetNewsFeedAction extends Action<string> {
@@ -37,38 +40,44 @@ export const getNewsFeedFailAction = (error: any): IGetNewsFeedFailAction => ({
   error
 });
 
-export interface IUpdateDetailIxAction extends Action<string> {
-  type: NewsFeedConstants.UPDATE_DETAIL_IX,
-  detailIx: number
-}
-
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-export const updateDetailIxAction = (detailIx: number): IUpdateDetailIxAction => ({
+export interface IUpdateDetailIxAction extends Action<string> {
+  type: NewsFeedConstants.UPDATE_DETAIL_IX,
+  detailIx: string
+}
+
+export const updateDetailIxAction = (detailIx: string): IUpdateDetailIxAction => ({
   type: NewsFeedConstants.UPDATE_DETAIL_IX,
   detailIx
 });
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 export interface IToggleSelectCauseAction extends Action<string> {
   type: NewsFeedConstants.TOGGLE_SELECT_CAUSE,
   uuid: string
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 export const toggleSelectCauseAction = (uuid: string): IToggleSelectCauseAction => ({
   type: NewsFeedConstants.TOGGLE_SELECT_CAUSE,
   uuid
 });
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 export interface IGetNewsItemDetailAction extends Action<string> {
   type: NewsFeedConstants.GET_NEWS_ITEM_DETAIL,
   news_item_uuid: string
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
-export const getNewsItemAction = (news_item_uuid: string): IGetNewsItemDetailAction => ({
+export const getNewsItemDetailAction = (news_item_uuid: string): IGetNewsItemDetailAction => ({
   type: NewsFeedConstants.GET_NEWS_ITEM_DETAIL,
   news_item_uuid
 });
@@ -78,7 +87,7 @@ export interface IGetNewsItemDetailSuccessAction extends Action<string> {
   news_item: any
 }
 
-export const getNewsItemSuccessAction = (news_item: any): IGetNewsItemDetailSuccessAction => ({
+export const getNewsItemDetailSuccessAction = (news_item: any): IGetNewsItemDetailSuccessAction => ({
   type: NewsFeedConstants.GET_NEWS_ITEM_DETAIL_SUCCESS,
   news_item
 });
@@ -88,7 +97,7 @@ export interface IGetNewsItemDetailFailAction extends Action<string> {
   error: any
 }
 
-export const getNewsItemFailAction = (error: any): IGetNewsItemDetailFailAction => ({
+export const getNewsItemDetailFailAction = (error: any): IGetNewsItemDetailFailAction => ({
   type: NewsFeedConstants.GET_NEWS_ITEM_DETAIL_FAIL,
   error
 });

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button styles has text-styles 1`] = `
+Object {
+  "_default": Object {
+    "color": "#000",
+    "fontSize": 20,
+  },
+  "default": Object {
+    "color": "#000",
+    "fontSize": 20,
+  },
+  "primary": Object {
+    "color": "#fff",
+    "fontSize": 20,
+  },
+  "secondary": Object {
+    "color": "#fff",
+    "fontSize": 20,
+  },
+  "text-default": Object {
+    "color": "#000",
+  },
+  "text-primary": Object {
+    "borderBottomColor": "rgb(238, 135, 119)",
+    "borderBottomWidth": 1,
+    "color": "rgb(238, 135, 119)",
+  },
+  "text-secondary": Object {
+    "color": "#ffa726",
+  },
+}
+`;
+
+exports[`button styles has view-styles 1`] = `
+Object {
+  "_default": Object {
+    "alignItems": "center",
+    "backgroundColor": "#f2f2f2",
+    "borderRadius": 8,
+    "flexDirection": "row",
+    "height": 46,
+    "justifyContent": "center",
+    "width": "100%",
+  },
+  "contained": Object {
+    "alignItems": "center",
+    "borderRadius": 8,
+    "flexDirection": "row",
+    "height": 46,
+    "justifyContent": "center",
+    "width": "100%",
+  },
+  "default": Object {
+    "alignItems": "center",
+    "backgroundColor": "#f2f2f2",
+    "borderRadius": 8,
+    "flexDirection": "row",
+    "height": 46,
+    "justifyContent": "center",
+    "width": "100%",
+  },
+  "outlined": Object {
+    "alignItems": "center",
+    "backgroundColor": "#fcebe8",
+    "borderColor": "#3949ab",
+    "borderRadius": 8,
+    "borderWidth": 1,
+    "flexDirection": "row",
+    "height": 46,
+    "justifyContent": "center",
+    "width": "100%",
+  },
+  "primary": Object {
+    "alignItems": "center",
+    "backgroundColor": "rgb(251, 100, 65)",
+    "borderRadius": 8,
+    "flexDirection": "row",
+    "height": 46,
+    "justifyContent": "center",
+    "width": "100%",
+  },
+  "rounded": Object {
+    "alignItems": "center",
+    "borderRadius": 99,
+    "flexDirection": "row",
+    "height": 46,
+    "justifyContent": "center",
+    "width": "100%",
+  },
+  "secondary": Object {
+    "alignItems": "center",
+    "backgroundColor": "#ffa726",
+    "borderRadius": 8,
+    "flexDirection": "row",
+    "height": 46,
+    "justifyContent": "center",
+    "width": "100%",
+  },
+  "text": Object {},
+}
+`;

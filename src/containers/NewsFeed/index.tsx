@@ -16,7 +16,7 @@ interface INewsFeedProps {
   newsfeed: any[],
   loaded: boolean,
   organizations: any[];
-  navDetail: (ix: number) => any
+  navDetail: (uuid: string) => any
 }
 
 const images = [
@@ -88,7 +88,7 @@ class NewsFeed extends React.Component<INewsFeedProps> {
                 key={item.id}
                 item={item}
                 img={images[ix % (images.length)]}
-                navDetail={() => this.props.navDetail(ix)}
+                navDetail={() => this.props.navDetail(item.uuid)}
               />
             ))}
           </View>

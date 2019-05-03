@@ -15,7 +15,7 @@ export const makeSelectNewsFeed = () => createSelector(
 
 export const makeSelectDetailItem = () => createSelector(
   selectNewsFeedDomain(),
-  (substate) => substate.news[substate.ui.detailIx]
+  (substate) => substate.uuid[substate.ui.detailIx]
 );
 
 export const makeSelectSelectedCauses = () => createSelector(

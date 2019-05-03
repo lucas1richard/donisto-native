@@ -4,8 +4,8 @@ import setOutgoingHeaders from './setOutgoingHeaders';
 import setIncomingHeaders from './setIncomingHeaders';
 import handleRequestError from './handleRequestError';
 
-const baseURL = 'http://donisto.herokuapp.com/api';
-// const baseURL = 'http://192.168.0.9:3000/api';
+// const baseURL = 'http://donisto.herokuapp.com/api';
+const baseURL = 'http://192.168.0.9:3000/api';
 
 let authorizationOutgoingHeaders: number;
 

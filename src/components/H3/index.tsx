@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { Text } from 'react-native';
 import styles from './styles';
 
-interface IH3Props {
+export interface IH3Props {
   children: string;
   color?: 'primary'|'secondary'|'default'|'light'
 }

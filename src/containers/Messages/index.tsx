@@ -15,14 +15,14 @@ export class Messages extends React.Component<IMessagesProps> {
     return (
       <Screen>
         <View style={{
-    height: 60,
-    borderBottomWidth: 1,
-    borderBottomColor: '#d3d3d3',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20
-  }}>
+          height: 60,
+          borderBottomWidth: 1,
+          borderBottomColor: '#d3d3d3',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: 20
+        }}>
           <Entypo
             name="plus"
             color={theme.primary[500]}

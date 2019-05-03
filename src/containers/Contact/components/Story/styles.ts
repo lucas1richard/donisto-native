@@ -12,9 +12,14 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     borderRadius: 10,
-    backgroundColor: 'red',
+  },
+  shade: {
+    height: '100%',
+    width: '100%',
+    borderRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0,0,0,0.6)'
   }
 });
 

@@ -16,13 +16,11 @@ export const mapStateToProps = createStructuredSelector({
   organizations: makeSelectOrganizations()
 });
 
-export const mapDispatchToProps = (dispatch: Dispatch) => {
-  return {
-    navDetail: (ix: number) => {
-      dispatch(updateDetailIxAction(ix));
-      NavigationService.navigate(routeNames.NEWS_ITEM_DETAIL);
-    }
-  };
-};
+export const mapDispatchToProps = (dispatch: Dispatch) => ({
+  navDetail: (uuid: string) => {
+    dispatch(updateDetailIxAction(uuid));
+    NavigationService.navigate(routeNames.NEWS_ITEM_DETAIL);
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps);
