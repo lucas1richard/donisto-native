@@ -5,6 +5,7 @@ import updateDetailIxTransformer from './transformers/updateDetailIx';
 import getNewsFeedFailTransformer from './transformers/getNewsFeedFail';
 import getNewsFeedSuccessTransformer from './transformers/getNewsFeedSuccess';
 import getNewsFeedTransformer from './transformers/getNewsFeed';
+import getNewsItemDetailSuccessTransformer from './transformers/getNewsItemDetailSuccess';
 
 export interface INewsFeedReduxUI {
   loaded: boolean;
@@ -14,6 +15,7 @@ export interface INewsFeedReduxUI {
 export interface INewsfeedInitialState {
   news: any[];
   error: string;
+  uuid: any;
   selectedCauses: {
     [x: string]: boolean
   };
@@ -24,6 +26,7 @@ export const newsfeedInitialState: INewsfeedInitialState = {
   news: [],
   selectedCauses: {},
   error: undefined,
+  uuid: {},
   ui: {
     loaded: false,
     detailIx: 0
@@ -46,6 +49,9 @@ const newsfeedReducer = (state = newsfeedInitialState, action: TNewsFeedActions)
 
     case NewsFeedConstants.TOGGLE_SELECT_CAUSE:
       return toggleSelectCauseTransformer(state, action);
+
+    case NewsFeedConstants.GET_NEWS_ITEM_DETAIL_SUCCESS:
+      return getNewsItemDetailSuccessTransformer(state, action);
 
     default:
       return state;

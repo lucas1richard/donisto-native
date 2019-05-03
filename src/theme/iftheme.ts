@@ -5,7 +5,7 @@ interface Itheme {
   [x: string]: any
 }
 
-declare let theme: Itheme;
+let theme: Itheme;
 
 theme = {
   green: '#64C0A3',

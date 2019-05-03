@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { View } from 'react-native';
 import styles from './styles';
 
-interface ICardProps {
+export interface ICardProps {
   children: any;
 }
 

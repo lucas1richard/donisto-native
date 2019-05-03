@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
 import mapToProps from './mapToProps';
-import H1 from 'components/H1';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
 import Button from 'components/Button';
 import MarginWrapper from 'components/Field/MarginWrapper';
 import theme from 'theme/iftheme';
 import NICause from './components/Cause';
+import SelectCauseHeader from './components/Header';
 
 interface IChooseCauseProps {
   causes: any[],
@@ -24,11 +24,7 @@ class ChooseCause extends React.Component<IChooseCauseProps> {
     } = this.props;
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ paddingTop: 60 }}>
-          <H1>
-            Select a Cause
-          </H1>
-        </View>
+        <SelectCauseHeader />
         <ScrollView>
           <MarginWrapper>
             {causes.map((cause) => (

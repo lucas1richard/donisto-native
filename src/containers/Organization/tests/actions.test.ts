@@ -1,7 +1,5 @@
 
-import {
-  defaultAction
-} from '../actions';
+import { defaultAction } from '../actions';
 import OrganizationConstants from '../constants';
 
 describe('Organization actions', () => {

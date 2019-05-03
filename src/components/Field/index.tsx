@@ -8,6 +8,7 @@ interface MyFieldProps {
   name: string;
   secureTextEntry?: boolean;
   label?: string;
+  placeholder?: string;
   multiLine?: boolean;
   maxLength?: number;
   numberOfLines?: number;
@@ -15,6 +16,7 @@ interface MyFieldProps {
   innerRef?: (el: React.ComponentType) => any;
   onSubmitEditing?: (el: any) => void;
   icon?: any;
+  format?: (arg: any) => any;
   returnKeyType?: ReturnKeyTypeOptions;
   spellCheck?: boolean;
   autoCorrect?: boolean;

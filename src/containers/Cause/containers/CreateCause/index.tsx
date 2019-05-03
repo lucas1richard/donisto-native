@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import Txt from 'components/Txt';
 import CreateCauseForm from './Form';
 import theme from 'theme/iftheme';
 import mapToProps from './mapToProps';
+import CreateCauseHeader from './components/Header';
 
 interface ICreateCauseProps {
   createCause: () => any;
@@ -14,9 +14,7 @@ class CreateCause extends React.Component<ICreateCauseProps> {
     const { createCause } = this.props;
     return (
       <View>
-        <Txt style={{ fontSize: 22, fontWeight: '600' }}>
-          Create Cause
-        </Txt>
+        <CreateCauseHeader />
         <View style={{ paddingHorizontal: theme.screenPadding }}>
           <CreateCauseForm
             onSubmit={createCause}

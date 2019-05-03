@@ -1,13 +1,13 @@
 import { takeLatest, all } from 'redux-saga/effects';
 import DonationsConstants from '../constants';
-import defaultSaga from './controllers/defaultSaga';
+import getDonationsSaga from './controllers/getDonationsSaga';
+import createDonationSaga from './controllers/createDonationSaga';
 
-// Individual exports for testing
 export function* donationsSaga() {
   yield all([
-    takeLatest(DonationsConstants.DEFAULT_ACTION, defaultSaga)
+    takeLatest(DonationsConstants.GET_DONATIONS, getDonationsSaga),
+    takeLatest(DonationsConstants.CREATE_DONATION, createDonationSaga),
   ]);
 }
 
-// All sagas to be loaded
-export default defaultSaga;
+export default donationsSaga;

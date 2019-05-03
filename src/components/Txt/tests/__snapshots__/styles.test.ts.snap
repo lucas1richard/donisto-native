@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Txt styles matches a snapshot 1`] = `
+Object {
+  "default": Object {
+    "color": "#000000",
+    "fontSize": 18,
+  },
+  "light": Object {
+    "color": "#fff",
+    "fontSize": 18,
+  },
+  "primary": Object {
+    "color": "rgb(251, 100, 65)",
+    "fontSize": 18,
+  },
+  "secondary": Object {
+    "color": "#ff9800",
+    "fontSize": 18,
+  },
+}
+`;

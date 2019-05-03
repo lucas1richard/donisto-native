@@ -1,14 +1,16 @@
 import React from 'react';
-import { createBottomTabNavigator } from "react-navigation";
+import { createBottomTabNavigator } from 'react-navigation';
 
-import routeNames from "./routeNames";
+import routeNames from './routeNames';
 import NewsFeed from 'containers/NewsFeed/router';
-import Donations from 'containers/Donations';
+// import Donations from 'containers/Donations';
 import Discover from 'containers/Discover';
-import Messages from 'containers/Messages';
+// import Messages from 'containers/Messages';
 import Contact from 'containers/Contact/router';
-import { FontAwesome, Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
+import { FontAwesome, Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 import theme from 'theme/iftheme';
+import messagesRouter from 'containers/Messages/router';
+import donationsRouter from 'containers/Donations/router';
 
 const focusedColor = theme.primary[500];
 const notFocusedColor = 'gray';
@@ -52,7 +54,7 @@ const PostAuthNavigator = createBottomTabNavigator({
           style={{ textAlign: 'center', color: focused ? focusedColor : notFocusedColor }}
         />)
     },
-    screen: Donations
+    screen: donationsRouter
   },
   [routeNames.MESSAGES]: {
     navigationOptions: {
@@ -64,7 +66,7 @@ const PostAuthNavigator = createBottomTabNavigator({
           style={{ textAlign: 'center', color: focused ? focusedColor : notFocusedColor }}
         />)
     },
-    screen: Messages
+    screen: messagesRouter
   },
   [routeNames.PROFILE]: {
     navigationOptions: {

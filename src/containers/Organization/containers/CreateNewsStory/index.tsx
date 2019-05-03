@@ -3,9 +3,9 @@ import { View, ScrollView } from 'react-native';
 import mapToProps from './mapToProps';
 import CreateNewsStoryForm from './components/CreateNewsStoryForm';
 import theme from 'theme/iftheme';
-import H2 from 'components/H2';
 import { TCreateStoryStatus } from './reducer';
 import Txt from 'components/Txt';
+import CreateNewsStoryHeader from './components/Header';
 
 interface ICreateNewsStoryProps {
   submitStory: () => any;
@@ -17,9 +17,9 @@ export class CreateNewsStory extends React.Component<ICreateNewsStoryProps> {
     const { submitStory, status } = this.props;
     return (
       <View style={{ height: '100%' }}>
+        <CreateNewsStoryHeader />
         <ScrollView>
-          <View style={{ padding: theme.screenPadding, paddingTop: 60 }}>
-            <H2>Create News Story</H2>
+          <View style={{ padding: theme.screenPadding }}>
             {status === 'editing' && (
               <CreateNewsStoryForm submitStory={submitStory} />
             )}

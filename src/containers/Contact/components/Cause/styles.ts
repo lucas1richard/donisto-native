@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     height: theme.fs * 5,
     width: theme.fs * 5,
     marginRight: theme.screenPadding
-    // padding: theme.fs
   },
   innerWrapper: {
     height: '100%',

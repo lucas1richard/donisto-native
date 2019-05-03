@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
 import theme from 'theme/iftheme';
 
-interface IMarginWrapperProps {
+export interface IMarginWrapperProps {
   children: any;
 }
 

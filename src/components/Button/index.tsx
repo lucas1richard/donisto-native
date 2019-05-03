@@ -1,12 +1,12 @@
-import React from 'react';
-import { View, ButtonProperties } from 'react-native';
+import * as React from 'react';
+import { View, ButtonProps } from 'react-native';
 import Touchable from 'components/Touchable';
 import { Text } from 'react-native';
 import { viewStyles, textStyles } from './styles';
 import theme from 'theme/iftheme';
 import Loader from 'components/Loader';
 
-interface IButtonProps extends ButtonProperties {
+export interface IButtonProps extends ButtonProps {
   title: string;
   onPress: () => any;
   variant?: 'text'|'contained'|'outlined'|'default'|'rounded';

@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { Text, TextProps } from 'react-native';
 import styles from './styles';
 
-interface ITxtProps extends TextProps {
+export interface ITxtProps extends TextProps {
   children: any;
   color?: 'primary'|'secondary'|'default'|'light';
 }

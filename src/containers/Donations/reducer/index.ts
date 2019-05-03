@@ -1,20 +1,31 @@
 import DonationsConstants from '../constants';
 import { TDonationsActions } from '../actions';
+import createDonationReducer, {
+  createDonationInitialState,
+  ICreateDonationReduxState
+} from './createDonationReducer';
+import getDonationsSuccessCaseFn from './casefn/getDonationsSuccess';
 
 export interface IDonation {}
 
 export interface IDonationsInitialState {
   ui: {
     loaded: boolean;
+    viewDonation: string;
   };
-  donations: IDonation[],
-  error: any
+  uuid: any;
+  createDonation: ICreateDonationReduxState;
+  donations: IDonation[];
+  error: any;
 }
 
 const initialState: IDonationsInitialState = {
   ui: {
-    loaded: false
+    loaded: false,
+    viewDonation: ''
   },
+  uuid: {},
+  createDonation: createDonationInitialState,
   donations: [],
   error: undefined
 };
@@ -30,14 +41,8 @@ function donationsReducer(state = initialState, action: TDonationsActions) {
         }
       };
     case DonationsConstants.GET_DONATIONS_SUCCESS:
-      return {
-        ...state,
-        ui: {
-          ...state.ui,
-          loaded: true
-        },
-        donations: action.donations
-      };
+      return getDonationsSuccessCaseFn(state, action);
+
     case DonationsConstants.GET_DONATIONS_FAIL:
       return {
         ...state,
@@ -46,6 +51,35 @@ function donationsReducer(state = initialState, action: TDonationsActions) {
           loaded: true
         },
         error: action.error
+      };
+
+    case DonationsConstants.SELECT_DETAIL_VIEW:
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          viewDonation: action.donationUuid
+        }
+      };
+    case DonationsConstants.CREATE_DONATION:
+      return {
+        ...state,
+        createDonation: createDonationReducer(state.createDonation, action)
+      };
+    case DonationsConstants.CREATE_DONATION_SUCCESS:
+      return {
+        ...state,
+        createDonation: createDonationReducer(state.createDonation, action)
+      };
+    case DonationsConstants.CREATE_DONATION_FAIL:
+      return {
+        ...state,
+        createDonation: createDonationReducer(state.createDonation, action)
+      };
+    case DonationsConstants.SELECT_CAUSE:
+      return {
+        ...state,
+        createDonation: createDonationReducer(state.createDonation, action)
       };
     default:
       return state;

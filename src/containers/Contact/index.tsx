@@ -12,8 +12,9 @@ import AddCauseLink from './components/AddCauseLink';
 
 interface IContactProps extends NavigationFocusInjectedProps {
   contact: ContactAttributes;
-  orgNewsFeed: any[],
-  causes: any[]
+  orgNewsFeed: any[];
+  causes: any[];
+  organizations: any[];
 }
 
 const images = [
@@ -24,13 +25,23 @@ const images = [
 
 class Contact extends React.Component<IContactProps> {
   render() {
-    const { contact, orgNewsFeed, causes } = this.props;
+    const { contact, orgNewsFeed, causes, organizations } = this.props;
     return (
       <ScrollView>
         <ContactHeading contact={contact} />
         <View style={{ paddingHorizontal: theme.screenPadding }}>
+          <H3>Organizations</H3>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            {organizations.map((org, ix) => (
+              <Cause
+                key={org.id}
+                title={org.name}
+                img={images[ix % (images.length)]}
+              />
+            ))}
+          </ScrollView>
           <H3>Causes</H3>
-          <ScrollView horizontal>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <AddCauseLink />
             {causes.map((item, ix) => (
               <Cause
@@ -50,7 +61,7 @@ class Contact extends React.Component<IContactProps> {
           </ScrollView>
 
           <H3>Stories</H3>
-          <ScrollView horizontal>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {orgNewsFeed.map((item, ix) => (
               <Story
                 key={item.id}

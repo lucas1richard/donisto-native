@@ -3,7 +3,7 @@ import { createStackNavigator } from 'react-navigation';
 import NewsFeed from '.';
 import { View } from 'react-native';
 import NewsItemDetail from './containers/NewsItemDetail';
-import FloatingHeader from 'components/FloatingHeader';
+// import FloatingHeader from 'components/FloatingHeader';
 import CreateNewsStory from 'containers/Organization/containers/CreateNewsStory';
 import routeNames from 'containers/Navigation/routeNames';
 import ChooseCause from './containers/ChooseCause';
@@ -17,19 +17,19 @@ const NewsFeedRouter = createStackNavigator({
   },
   [routeNames.NEWS_ITEM_DETAIL]: {
     navigationOptions: {
-      header: <FloatingHeader />
+      header: <View />
     },
     screen: NewsItemDetail
   },
   [routeNames.CHOOSE_CAUSE_NI]: {
     navigationOptions: {
-      header: <FloatingHeader />
+      header: <View />
     },
     screen: ChooseCause
   },
   [routeNames.CREATE_NEWS_ITEM]: {
     navigationOptions: {
-      header: <FloatingHeader />
+      header: <View />
     },
     screen: CreateNewsStory
   }
