@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<H1 /> renders with a color prop 1`] = `
+exports[`<H3 /> renders with a color prop 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <H1
+  Symbol(enzyme.__unrendered__): <H3
     color="light"
   >
     mockText
-  </H1>,
+  </H3>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -26,14 +26,10 @@ ShallowWrapper {
       "allowFontScaling": true,
       "children": "mockText",
       "ellipsizeMode": "tail",
-      "style": Array [
-        Object {
-          "color": "#fff",
-          "fontSize": 34,
-          "textAlign": "center",
-        },
-        undefined,
-      ],
+      "style": Object {
+        "color": "#fff",
+        "fontSize": 28,
+      },
     },
     "ref": null,
     "rendered": "mockText",
@@ -49,14 +45,10 @@ ShallowWrapper {
         "allowFontScaling": true,
         "children": "mockText",
         "ellipsizeMode": "tail",
-        "style": Array [
-          Object {
-            "color": "#fff",
-            "fontSize": 34,
-            "textAlign": "center",
-          },
-          undefined,
-        ],
+        "style": Object {
+          "color": "#fff",
+          "fontSize": 28,
+        },
       },
       "ref": null,
       "rendered": "mockText",
@@ -90,14 +82,14 @@ ShallowWrapper {
 }
 `;
 
-exports[`<H1 /> renders with just text 1`] = `
+exports[`<H3 /> renders with just text 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <H1
+  Symbol(enzyme.__unrendered__): <H3
     color="default"
   >
     mockText
-  </H1>,
+  </H3>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "checkPropTypes": [Function],
@@ -116,14 +108,10 @@ ShallowWrapper {
       "allowFontScaling": true,
       "children": "mockText",
       "ellipsizeMode": "tail",
-      "style": Array [
-        Object {
-          "color": "#000000",
-          "fontSize": 34,
-          "textAlign": "center",
-        },
-        undefined,
-      ],
+      "style": Object {
+        "color": "#000000",
+        "fontSize": 28,
+      },
     },
     "ref": null,
     "rendered": "mockText",
@@ -139,14 +127,10 @@ ShallowWrapper {
         "allowFontScaling": true,
         "children": "mockText",
         "ellipsizeMode": "tail",
-        "style": Array [
-          Object {
-            "color": "#000000",
-            "fontSize": 34,
-            "textAlign": "center",
-          },
-          undefined,
-        ],
+        "style": Object {
+          "color": "#000000",
+          "fontSize": 28,
+        },
       },
       "ref": null,
       "rendered": "mockText",
