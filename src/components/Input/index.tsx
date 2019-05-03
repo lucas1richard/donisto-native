@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { View, TextInput } from 'react-native';
 import { IFieldPrimitiveProps } from 'components/FieldPrimitive';
-import showToast from 'components/Toast';
+// import showToast from 'components/Toast';
 import theme from 'theme/iftheme';
 import { WrappedFieldProps } from 'redux-form';
 import { BlurView } from 'expo';
@@ -31,9 +31,9 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
   onBlur = () => {
     const { input, meta, noToast } = this.props;
     if (meta.error && !noToast) {
-      const { error } = meta;
-      const text = Array.isArray(error) ? error[0] : error;
-      showToast({ text: `${text}` });
+      // const { error } = meta;
+      // const text = Array.isArray(error) ? error[0] : error;
+      // showToast({ text: `${text}` });
     }
     if (input && input.onBlur) {
       input.onBlur(input.value);

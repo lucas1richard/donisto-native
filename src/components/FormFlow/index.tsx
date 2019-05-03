@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 class FormFlow<T> extends React.Component<T> {
   fields: { [x: string]: any} = {};

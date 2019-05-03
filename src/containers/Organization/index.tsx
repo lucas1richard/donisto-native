@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import mapToProps from './mapToProps';
 import H1 from 'components/H1';
 import { View, ScrollView } from 'react-native';
@@ -9,9 +9,13 @@ import Button from 'components/Button';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
 
-interface IOrganizationProps {
-  organizationUuid: string;
-  activeOrg: any;
+export interface IActiveOrg {
+  name: string;
+}
+
+export interface IOrganizationProps {
+  organizationUuid?: string;
+  activeOrg?: IActiveOrg;
 }
 
 export class Organization extends React.Component<IOrganizationProps> {

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ScrollView } from 'react-native';
 import Txt from 'components/Txt';
 import mapToProps from './mapToProps';

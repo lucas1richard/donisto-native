@@ -1,10 +1,14 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-// import { Donations } from '../index';
+import { Donations, IDonationsProps } from '../';
 
 describe('<Donations />', () => {
+  const renderComponent = (props: IDonationsProps) => shallow(<Donations {...props} />);
   it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+    expect(renderComponent({
+      donations: [],
+      viewDetail: jest.fn(() => undefined)
+    })).toMatchSnapshot();
   });
 });

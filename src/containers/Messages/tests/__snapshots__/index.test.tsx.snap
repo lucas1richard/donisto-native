@@ -1,0 +1,424 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Messages /> Expect to have unit tests specified 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Messages />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#d3d3d3",
+              "borderBottomWidth": 1,
+              "flexDirection": "row",
+              "height": 60,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 20,
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            color="rgb(251, 100, 65)"
+            name="plus"
+            size={25}
+          />
+          <Txt
+            color="default"
+            style={
+              Object {
+                "fontSize": 22,
+                "fontWeight": "600",
+              }
+            }
+          >
+            Messages
+          </Txt>
+          <Icon
+            allowFontScaling={false}
+            color="rgb(251, 100, 65)"
+            name="magnifying-glass"
+            size={25}
+          />
+        </Component>,
+        <ScrollViewMock>
+          <Component
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <MessageList />
+          </Component>
+        </ScrollViewMock>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Icon
+              allowFontScaling={false}
+              color="rgb(251, 100, 65)"
+              name="plus"
+              size={25}
+            />,
+            <Txt
+              color="default"
+              style={
+                Object {
+                  "fontSize": 22,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              Messages
+            </Txt>,
+            <Icon
+              allowFontScaling={false}
+              color="rgb(251, 100, 65)"
+              name="magnifying-glass"
+              size={25}
+            />,
+          ],
+          "style": Object {
+            "alignItems": "center",
+            "borderBottomColor": "#d3d3d3",
+            "borderBottomWidth": 1,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-between",
+            "paddingHorizontal": 20,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "allowFontScaling": false,
+              "color": "rgb(251, 100, 65)",
+              "name": "plus",
+              "size": 25,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Messages",
+              "color": "default",
+              "style": Object {
+                "fontSize": 22,
+                "fontWeight": "600",
+              },
+            },
+            "ref": null,
+            "rendered": "Messages",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "allowFontScaling": false,
+              "color": "rgb(251, 100, 65)",
+              "name": "magnifying-glass",
+              "size": 25,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Component
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <MessageList />
+          </Component>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <MessageList />,
+            "style": Object {
+              "flex": 1,
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        "type": [MockFunction],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Component
+            style={
+              Object {
+                "alignItems": "center",
+                "borderBottomColor": "#d3d3d3",
+                "borderBottomWidth": 1,
+                "flexDirection": "row",
+                "height": 60,
+                "justifyContent": "space-between",
+                "paddingHorizontal": 20,
+              }
+            }
+          >
+            <Icon
+              allowFontScaling={false}
+              color="rgb(251, 100, 65)"
+              name="plus"
+              size={25}
+            />
+            <Txt
+              color="default"
+              style={
+                Object {
+                  "fontSize": 22,
+                  "fontWeight": "600",
+                }
+              }
+            >
+              Messages
+            </Txt>
+            <Icon
+              allowFontScaling={false}
+              color="rgb(251, 100, 65)"
+              name="magnifying-glass"
+              size={25}
+            />
+          </Component>,
+          <ScrollViewMock>
+            <Component
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <MessageList />
+            </Component>
+          </ScrollViewMock>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Icon
+                allowFontScaling={false}
+                color="rgb(251, 100, 65)"
+                name="plus"
+                size={25}
+              />,
+              <Txt
+                color="default"
+                style={
+                  Object {
+                    "fontSize": 22,
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Messages
+              </Txt>,
+              <Icon
+                allowFontScaling={false}
+                color="rgb(251, 100, 65)"
+                name="magnifying-glass"
+                size={25}
+              />,
+            ],
+            "style": Object {
+              "alignItems": "center",
+              "borderBottomColor": "#d3d3d3",
+              "borderBottomWidth": 1,
+              "flexDirection": "row",
+              "height": 60,
+              "justifyContent": "space-between",
+              "paddingHorizontal": 20,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "allowFontScaling": false,
+                "color": "rgb(251, 100, 65)",
+                "name": "plus",
+                "size": 25,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Messages",
+                "color": "default",
+                "style": Object {
+                  "fontSize": 22,
+                  "fontWeight": "600",
+                },
+              },
+              "ref": null,
+              "rendered": "Messages",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "allowFontScaling": false,
+                "color": "rgb(251, 100, 65)",
+                "name": "magnifying-glass",
+                "size": 25,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Component
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <MessageList />
+            </Component>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <MessageList />,
+              "style": Object {
+                "flex": 1,
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          "type": [MockFunction],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": false,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

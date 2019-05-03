@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Touchable from 'components/Touchable';
 import { View, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';

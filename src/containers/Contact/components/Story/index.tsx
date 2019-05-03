@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ImageBackground } from 'react-native';
 import Touchable from 'components/Touchable';
 import H2 from 'components/H2';

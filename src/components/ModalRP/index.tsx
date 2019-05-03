@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import RNModal from 'components/Modal';
 import { View } from 'react-native';
 import Touchable from 'components/Touchable';

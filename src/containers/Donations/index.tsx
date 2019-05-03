@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ScrollView } from 'react-native';
 import mapToProps from './mapToProps';
 import Screen from 'components/Screen';
 import Donation from './components/Donation';
 import DonationsHeader from './components/Header';
 
-interface IDonationsProps {
+export interface IDonationsProps {
   donations: any[];
   viewDetail: (donationUuid: string) => any;
 }

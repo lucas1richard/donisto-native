@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import { View } from 'react-native';
 import Touchable from 'components/Touchable';

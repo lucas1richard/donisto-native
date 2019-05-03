@@ -1,6 +1,5 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-
 import SwipeCards from 'react-native-swipe-cards';
 import logger from 'utilities/logger';
 import { Entypo } from '@expo/vector-icons';
@@ -52,7 +51,7 @@ const cards2 = [
   { name: '13', image: 'https://source.unsplash.com/random/200x200?12' }
 ];
 
-interface IDiscoverProps {}
+export interface IDiscoverProps {}
 interface IDiscoverState {
   cards: any[];
   outOfCards: boolean
@@ -96,14 +95,14 @@ export default class Discover extends React.Component<IDiscoverProps, IDiscoverS
     return (
       <View style={{ flex: 1 }}>
         <View style={{
-    height: 60,
-    borderBottomWidth: 1,
-    borderBottomColor: '#d3d3d3',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20
-  }}>
+          height: 60,
+          borderBottomWidth: 1,
+          borderBottomColor: '#d3d3d3',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: 20
+        }}>
           <Entypo
             name="plus"
             color={theme.primary[500]}
@@ -121,12 +120,10 @@ export default class Discover extends React.Component<IDiscoverProps, IDiscoverS
         <SwipeCards
           cards={this.state.cards}
           loop={false}
-  
           renderCard={(cardData: ICardProps) => <Card {...cardData} />}
           renderNoMoreCards={() => <NoMoreCards />}
           showYup={true}
           showNope={true}
-  
           handleYup={this.handleYup}
           handleNope={this.handleNope}
           cardRemoved={this.cardRemoved}

@@ -1,0 +1,407 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateNewsStory /> Expect to have unit tests specified 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CreateNewsStory
+    status="editing"
+    submitStory={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <CreateNewsStoryHeader />,
+        <ScrollViewMock>
+          <Component
+            style={
+              Object {
+                "padding": 12,
+              }
+            }
+          >
+            <ForwardRef
+              destroyOnUnmount={true}
+              enableReinitialize={false}
+              forceUnregisterOnUnmount={false}
+              form="CreateNewsStory_FORM_NAME"
+              getFormState={[Function]}
+              keepDirtyOnReinitialize={false}
+              persistentSubmitErrors={false}
+              pure={true}
+              shouldAsyncValidate={[Function]}
+              shouldError={[Function]}
+              shouldValidate={[Function]}
+              shouldWarn={[Function]}
+              submitAsSideEffect={false}
+              submitStory={[MockFunction]}
+              touchOnBlur={true}
+              touchOnChange={false}
+              updateUnregisteredFields={false}
+            />
+          </Component>
+        </ScrollViewMock>,
+      ],
+      "style": Object {
+        "height": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <Component
+            style={
+              Object {
+                "padding": 12,
+              }
+            }
+          >
+            <ForwardRef
+              destroyOnUnmount={true}
+              enableReinitialize={false}
+              forceUnregisterOnUnmount={false}
+              form="CreateNewsStory_FORM_NAME"
+              getFormState={[Function]}
+              keepDirtyOnReinitialize={false}
+              persistentSubmitErrors={false}
+              pure={true}
+              shouldAsyncValidate={[Function]}
+              shouldError={[Function]}
+              shouldValidate={[Function]}
+              shouldWarn={[Function]}
+              submitAsSideEffect={false}
+              submitStory={[MockFunction]}
+              touchOnBlur={true}
+              touchOnChange={false}
+              updateUnregisteredFields={false}
+            />
+          </Component>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <ForwardRef
+                destroyOnUnmount={true}
+                enableReinitialize={false}
+                forceUnregisterOnUnmount={false}
+                form="CreateNewsStory_FORM_NAME"
+                getFormState={[Function]}
+                keepDirtyOnReinitialize={false}
+                persistentSubmitErrors={false}
+                pure={true}
+                shouldAsyncValidate={[Function]}
+                shouldError={[Function]}
+                shouldValidate={[Function]}
+                shouldWarn={[Function]}
+                submitAsSideEffect={false}
+                submitStory={[MockFunction]}
+                touchOnBlur={true}
+                touchOnChange={false}
+                updateUnregisteredFields={false}
+              />,
+              false,
+              false,
+            ],
+            "style": Object {
+              "padding": 12,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "destroyOnUnmount": true,
+                "enableReinitialize": false,
+                "forceUnregisterOnUnmount": false,
+                "form": "CreateNewsStory_FORM_NAME",
+                "getFormState": [Function],
+                "keepDirtyOnReinitialize": false,
+                "persistentSubmitErrors": false,
+                "pure": true,
+                "shouldAsyncValidate": [Function],
+                "shouldError": [Function],
+                "shouldValidate": [Function],
+                "shouldWarn": [Function],
+                "submitAsSideEffect": false,
+                "submitStory": [MockFunction],
+                "touchOnBlur": true,
+                "touchOnChange": false,
+                "updateUnregisteredFields": false,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "defaultProps": Object {
+                  "destroyOnUnmount": true,
+                  "enableReinitialize": false,
+                  "forceUnregisterOnUnmount": false,
+                  "form": "CreateNewsStory_FORM_NAME",
+                  "getFormState": [Function],
+                  "keepDirtyOnReinitialize": false,
+                  "persistentSubmitErrors": false,
+                  "pure": true,
+                  "shouldAsyncValidate": [Function],
+                  "shouldError": [Function],
+                  "shouldValidate": [Function],
+                  "shouldWarn": [Function],
+                  "submitAsSideEffect": false,
+                  "touchOnBlur": true,
+                  "touchOnChange": false,
+                  "updateUnregisteredFields": false,
+                },
+                "displayName": "ReduxForm",
+                "render": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              },
+            },
+            false,
+            false,
+          ],
+          "type": [Function],
+        },
+        "type": [MockFunction],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <CreateNewsStoryHeader />,
+          <ScrollViewMock>
+            <Component
+              style={
+                Object {
+                  "padding": 12,
+                }
+              }
+            >
+              <ForwardRef
+                destroyOnUnmount={true}
+                enableReinitialize={false}
+                forceUnregisterOnUnmount={false}
+                form="CreateNewsStory_FORM_NAME"
+                getFormState={[Function]}
+                keepDirtyOnReinitialize={false}
+                persistentSubmitErrors={false}
+                pure={true}
+                shouldAsyncValidate={[Function]}
+                shouldError={[Function]}
+                shouldValidate={[Function]}
+                shouldWarn={[Function]}
+                submitAsSideEffect={false}
+                submitStory={[MockFunction]}
+                touchOnBlur={true}
+                touchOnChange={false}
+                updateUnregisteredFields={false}
+              />
+            </Component>
+          </ScrollViewMock>,
+        ],
+        "style": Object {
+          "height": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <Component
+              style={
+                Object {
+                  "padding": 12,
+                }
+              }
+            >
+              <ForwardRef
+                destroyOnUnmount={true}
+                enableReinitialize={false}
+                forceUnregisterOnUnmount={false}
+                form="CreateNewsStory_FORM_NAME"
+                getFormState={[Function]}
+                keepDirtyOnReinitialize={false}
+                persistentSubmitErrors={false}
+                pure={true}
+                shouldAsyncValidate={[Function]}
+                shouldError={[Function]}
+                shouldValidate={[Function]}
+                shouldWarn={[Function]}
+                submitAsSideEffect={false}
+                submitStory={[MockFunction]}
+                touchOnBlur={true}
+                touchOnChange={false}
+                updateUnregisteredFields={false}
+              />
+            </Component>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <ForwardRef
+                  destroyOnUnmount={true}
+                  enableReinitialize={false}
+                  forceUnregisterOnUnmount={false}
+                  form="CreateNewsStory_FORM_NAME"
+                  getFormState={[Function]}
+                  keepDirtyOnReinitialize={false}
+                  persistentSubmitErrors={false}
+                  pure={true}
+                  shouldAsyncValidate={[Function]}
+                  shouldError={[Function]}
+                  shouldValidate={[Function]}
+                  shouldWarn={[Function]}
+                  submitAsSideEffect={false}
+                  submitStory={[MockFunction]}
+                  touchOnBlur={true}
+                  touchOnChange={false}
+                  updateUnregisteredFields={false}
+                />,
+                false,
+                false,
+              ],
+              "style": Object {
+                "padding": 12,
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "destroyOnUnmount": true,
+                  "enableReinitialize": false,
+                  "forceUnregisterOnUnmount": false,
+                  "form": "CreateNewsStory_FORM_NAME",
+                  "getFormState": [Function],
+                  "keepDirtyOnReinitialize": false,
+                  "persistentSubmitErrors": false,
+                  "pure": true,
+                  "shouldAsyncValidate": [Function],
+                  "shouldError": [Function],
+                  "shouldValidate": [Function],
+                  "shouldWarn": [Function],
+                  "submitAsSideEffect": false,
+                  "submitStory": [MockFunction],
+                  "touchOnBlur": true,
+                  "touchOnChange": false,
+                  "updateUnregisteredFields": false,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "defaultProps": Object {
+                    "destroyOnUnmount": true,
+                    "enableReinitialize": false,
+                    "forceUnregisterOnUnmount": false,
+                    "form": "CreateNewsStory_FORM_NAME",
+                    "getFormState": [Function],
+                    "keepDirtyOnReinitialize": false,
+                    "persistentSubmitErrors": false,
+                    "pure": true,
+                    "shouldAsyncValidate": [Function],
+                    "shouldError": [Function],
+                    "shouldValidate": [Function],
+                    "shouldWarn": [Function],
+                    "submitAsSideEffect": false,
+                    "touchOnBlur": true,
+                    "touchOnChange": false,
+                    "updateUnregisteredFields": false,
+                  },
+                  "displayName": "ReduxForm",
+                  "render": [Function],
+                  Symbol(Symbol.hasInstance): [Function],
+                },
+              },
+              false,
+              false,
+            ],
+            "type": [Function],
+          },
+          "type": [MockFunction],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": false,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

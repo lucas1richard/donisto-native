@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View } from "react-native";
 import Touchable from "components/Touchable";
 import H3 from "components/H3";

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ScrollView, View } from 'react-native';
 import mapToProps from './mapToProps';
 import H3 from 'components/H3';

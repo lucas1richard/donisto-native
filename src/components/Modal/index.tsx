@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Modal, View, ModalBaseProps, ScrollView } from 'react-native';
 import Stack from 'components/StackHeader';
 import logger from 'utilities/logger';

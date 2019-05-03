@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Field } from 'redux-form';
 import { KeyboardTypeOptions, ReturnKeyTypeOptions } from 'react-native';
 import { BlurViewProps } from 'expo';

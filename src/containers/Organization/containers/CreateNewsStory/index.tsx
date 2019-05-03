@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ScrollView } from 'react-native';
 import mapToProps from './mapToProps';
 import CreateNewsStoryForm from './components/CreateNewsStoryForm';
@@ -7,7 +7,7 @@ import { TCreateStoryStatus } from './reducer';
 import Txt from 'components/Txt';
 import CreateNewsStoryHeader from './components/Header';
 
-interface ICreateNewsStoryProps {
+export interface ICreateNewsStoryProps {
   submitStory: () => any;
   status: TCreateStoryStatus
 }

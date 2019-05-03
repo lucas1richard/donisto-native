@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View } from 'react-native';
 import MyField from 'components/Field';
 import Input from 'components/Input';
@@ -9,11 +9,11 @@ import Loader from 'components/Loader';
 
 export const CreateNewsStory_FORM_NAME = 'CreateNewsStory_FORM_NAME';
 
-interface ICreateNewsStoryFormProps {
+export interface ICreateNewsStoryFormProps {
   submitStory: () => any
 }
 
-class CreateNewsStoryForm extends React.Component<ICreateNewsStoryFormProps & InjectedFormProps<any, ICreateNewsStoryFormProps>> {
+export class CreateNewsStoryForm extends React.Component<ICreateNewsStoryFormProps & InjectedFormProps<any, ICreateNewsStoryFormProps>> {
   render() {
     const { submitStory, submitting } = this.props;
     return (

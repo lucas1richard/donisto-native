@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
 import routeNames from 'containers/Navigation/routeNames';
 import theme from 'theme/iftheme';

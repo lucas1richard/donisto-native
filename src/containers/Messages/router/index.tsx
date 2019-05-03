@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import routeNames from 'containers/Navigation/routeNames';
 import { View } from 'react-native';

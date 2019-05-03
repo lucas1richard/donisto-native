@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View } from 'react-native';
 import { reduxForm, InjectedFormProps } from 'redux-form';
 import Input from 'components/Input';

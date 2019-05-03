@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { KeyboardAvoidingView } from 'react-native';
 
 class Form extends React.Component {

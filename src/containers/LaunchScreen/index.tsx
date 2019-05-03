@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ImageBackground } from 'react-native';
 import Expo from 'expo';
 import { Alert } from "react-native";

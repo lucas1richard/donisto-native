@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import mapToProps from './mapToProps';
 import NewsFeedItem from './components/NewsFeedItem';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
 import Touchable from 'components/Touchable';

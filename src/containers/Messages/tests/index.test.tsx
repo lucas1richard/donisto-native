@@ -1,10 +1,11 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
+import * as React from 'react';
+import { shallow } from 'enzyme';
 
-// import { Messages } from '../index';
+import { Messages, IMessagesProps } from '../index';
 
 describe('<Messages />', () => {
+  const renderComponent = (props: IMessagesProps) => shallow(<Messages {...props} />);
   it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+    expect(renderComponent({})).toMatchSnapshot();
   });
 });
