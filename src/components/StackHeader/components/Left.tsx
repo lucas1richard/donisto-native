@@ -11,11 +11,12 @@ const hitSlop = {
   right: 50
 };
 
-function Left({ noBackOption, onBack }: {
+export interface ILeftProps {
   noBackOption?: boolean,
-  blue?: boolean,
   onBack: () => void
-}) {
+}
+
+function Left({ noBackOption, onBack }: ILeftProps) {
   if (noBackOption) {
     return <View style={styles.wrapper} />;
   }

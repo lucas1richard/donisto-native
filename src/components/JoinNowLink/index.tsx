@@ -4,18 +4,22 @@ import Txt from 'components/Txt';
 import Touchable from 'components/Touchable';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
-import theme from 'theme/iftheme';
+import styles from './styles';
+
+const nav = () => {
+  NavigationService.navigate(routeNames.REGISTRATION_BASIC_INFO);
+};
 
 const JoinNowLink = () => {
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: theme.fs * 2 }}>
+    <View style={styles.wrapper}>
       <Txt color="light">
         Don&apos;t have an account?&nbsp;
       </Txt>
       <Touchable
-        onPress={() => NavigationService.navigate(routeNames.REGISTRATION_BASIC_INFO)}
+        onPress={nav}
       >
-        <View style={{ borderBottomWidth: theme.fs * 0.05, borderBottomColor: '#fff' }}>
+        <View style={styles.joinNowWrapper}>
           <Txt color="light">
             Join now
           </Txt>

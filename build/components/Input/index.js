@@ -7,9 +7,9 @@ var __rest = (this && this.__rest) || function (s, e) {
             t[p[i]] = s[p[i]];
     return t;
 };
-import React from 'react';
+import * as React from 'react';
 import { View, TextInput } from 'react-native';
-import showToast from 'components/Toast';
+// import showToast from 'components/Toast';
 import theme from 'theme/iftheme';
 import { BlurView } from 'expo';
 class Input extends React.Component {
@@ -18,9 +18,9 @@ class Input extends React.Component {
         this.onBlur = () => {
             const { input, meta, noToast } = this.props;
             if (meta.error && !noToast) {
-                const { error } = meta;
-                const text = Array.isArray(error) ? error[0] : error;
-                showToast({ text: `${text}` });
+                // const { error } = meta;
+                // const text = Array.isArray(error) ? error[0] : error;
+                // showToast({ text: `${text}` });
             }
             if (input && input.onBlur) {
                 input.onBlur(input.value);

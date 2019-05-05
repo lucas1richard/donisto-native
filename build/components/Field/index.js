@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Field } from 'redux-form';
 class MyField extends React.Component {
     render() {

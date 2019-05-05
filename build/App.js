@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import logger from './utilities/logger';
-import React from 'react';
+import * as React from 'react';
 import { Constants, AppLoading, Asset } from 'expo';
 import { Root } from 'native-base';
 import { Provider } from 'react-redux';

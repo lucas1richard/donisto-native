@@ -2,7 +2,7 @@ import * as React from 'react';
 import { SafeAreaView } from 'react-native';
 import { SafeAreaViewProps } from 'react-navigation';
 
-interface IScreenProps {
+export interface IScreenProps {
   style?: SafeAreaViewProps
 }
 

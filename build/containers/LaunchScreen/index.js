@@ -6,7 +6,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import React from 'react';
+import * as React from 'react';
 import { View, ImageBackground } from 'react-native';
 import Expo from 'expo';
 import { Alert } from "react-native";

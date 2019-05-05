@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import RegistrationBasicInfoForm from './components/Form';
 import { View, ImageBackground } from 'react-native';
 import theme from 'theme/iftheme';

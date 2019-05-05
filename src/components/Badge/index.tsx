@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import Txt from 'components/Txt';
 import badgeStyles from './styles';
 
-interface IBadgeProps {
+export interface IBadgeProps {
   label: string;
 }
 

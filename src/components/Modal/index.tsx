@@ -4,7 +4,7 @@ import Stack from 'components/StackHeader';
 import logger from 'utilities/logger';
 import StatusBarComponent from 'components/StatusBar';
 
-interface RNModalProps extends ModalBaseProps {
+export interface IRNModalProps extends ModalBaseProps {
   onShow?: () => any,
   onHide: () => any,
   children: any,
@@ -12,7 +12,7 @@ interface RNModalProps extends ModalBaseProps {
   onRequestClose?: () => any
 }
 
-class RNModal extends React.PureComponent<RNModalProps> {
+class RNModal extends React.PureComponent<IRNModalProps> {
   static marginTop: number;
 
   componentWillMount() {

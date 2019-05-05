@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, StyleSheet, StatusBar } from 'react-native';
 class StatusBarComponent extends React.PureComponent {
     render() {

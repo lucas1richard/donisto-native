@@ -10,26 +10,23 @@ export const getNewsFeedFailAction = (error) => ({
     type: NewsFeedConstants.GET_NEWS_FEED_FAIL,
     error
 });
-////////////////////////////////////////////////////////////////////////////////
 export const updateDetailIxAction = (detailIx) => ({
     type: NewsFeedConstants.UPDATE_DETAIL_IX,
     detailIx
 });
-////////////////////////////////////////////////////////////////////////////////
 export const toggleSelectCauseAction = (uuid) => ({
     type: NewsFeedConstants.TOGGLE_SELECT_CAUSE,
     uuid
 });
-////////////////////////////////////////////////////////////////////////////////
-export const getNewsItemAction = (news_item_uuid) => ({
+export const getNewsItemDetailAction = (news_item_uuid) => ({
     type: NewsFeedConstants.GET_NEWS_ITEM_DETAIL,
     news_item_uuid
 });
-export const getNewsItemSuccessAction = (news_item) => ({
+export const getNewsItemDetailSuccessAction = (news_item) => ({
     type: NewsFeedConstants.GET_NEWS_ITEM_DETAIL_SUCCESS,
     news_item
 });
-export const getNewsItemFailAction = (error) => ({
+export const getNewsItemDetailFailAction = (error) => ({
     type: NewsFeedConstants.GET_NEWS_ITEM_DETAIL_FAIL,
     error
 });

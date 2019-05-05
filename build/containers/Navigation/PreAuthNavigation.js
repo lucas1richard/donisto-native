@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { createStackNavigator, withNavigationFocus } from "react-navigation";
 import LaunchScreen from 'containers/LaunchScreen';
 import Login from "containers/Login";

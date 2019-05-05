@@ -6,7 +6,7 @@ import NavigationService from 'containers/Navigation/NavigationService';
 import theme from 'theme/iftheme';
 import H1 from 'components/H1';
 
-interface IStackHeaderProps {
+export interface IStackHeaderProps {
   title?: string;
   noCloseOption?: boolean;
   noBackOption?: boolean;

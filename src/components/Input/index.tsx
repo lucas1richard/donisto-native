@@ -27,7 +27,9 @@ export interface IFieldPrimitiveProps {
   label?: string;
 }
 
-class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
+export type TInputProps = WrappedFieldProps & IFieldPrimitiveProps;
+
+class Input extends React.Component<TInputProps> {
   onBlur = () => {
     const { input, meta, noToast } = this.props;
     if (meta.error && !noToast) {
@@ -40,7 +42,7 @@ class Input extends React.Component<WrappedFieldProps & IFieldPrimitiveProps> {
     }
   }
 
-  onFocus = (ev: any) => {
+  onFocus = (ev?: any) => {
     this.props.input.onFocus(ev);
   }
 

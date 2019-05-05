@@ -7,7 +7,7 @@ var __rest = (this && this.__rest) || function (s, e) {
             t[p[i]] = s[p[i]];
     return t;
 };
-import React from 'react';
+import * as React from 'react';
 import { Modal, View, ScrollView } from 'react-native';
 import Stack from 'components/StackHeader';
 import logger from 'utilities/logger';

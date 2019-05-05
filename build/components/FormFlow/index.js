@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 class FormFlow extends React.Component {
     constructor() {
         super(...arguments);

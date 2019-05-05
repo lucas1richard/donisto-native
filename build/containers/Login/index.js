@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ImageBackground } from 'react-native';
 import Form from './components/Form';
 import mapToProps from './mapToProps';

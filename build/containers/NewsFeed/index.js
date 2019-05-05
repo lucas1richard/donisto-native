@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import mapToProps from './mapToProps';
 import NewsFeedItem from './components/NewsFeedItem';
@@ -44,7 +44,7 @@ class NewsFeed extends React.Component {
                 React.createElement(View, { style: newsFeedStyles.itemsWrapper },
                     !loaded && (React.createElement(View, null,
                         React.createElement(Loader, null))),
-                    newsfeed.map((item, ix) => (React.createElement(NewsFeedItem, { key: item.id, item: item, img: images[ix % (images.length)], navDetail: () => this.props.navDetail(ix) })))))));
+                    newsfeed.map((item, ix) => (React.createElement(NewsFeedItem, { key: item.id, item: item, img: images[ix % (images.length)], navDetail: () => this.props.navDetail(item.uuid) })))))));
     }
 }
 export default mapToProps(NewsFeed);

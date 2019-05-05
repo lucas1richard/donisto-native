@@ -11,12 +11,12 @@ const hitSlop = {
   right: 50
 };
 
-function Right({ noCloseOption, onClose }: {
+export interface IRightProps {
   noCloseOption?: boolean,
-  blue?: boolean,
-  style?: Object,
   onClose: () => void
-}) {
+}
+
+function Right({ noCloseOption, onClose }: IRightProps) {
   if (noCloseOption) {
     return <View style={styles.wrapper} />;
   }

@@ -1,5 +1,6 @@
 import { Dimensions } from 'react-native';
 export const window = Dimensions.get('window');
+let theme;
 theme = {
     green: '#64C0A3',
     darkGreen: '#64C0A3',

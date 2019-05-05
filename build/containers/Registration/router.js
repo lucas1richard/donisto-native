@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { createStackNavigator, withNavigationFocus } from "react-navigation";
 import routeNames from "containers/Navigation/routeNames";
 import RegistrationBasicInfo from "./containers/BasicInfo";
