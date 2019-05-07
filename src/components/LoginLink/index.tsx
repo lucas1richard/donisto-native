@@ -8,9 +8,7 @@ import styles from './styles';
 
 const LoginLink = () => (
   <View style={styles.wrapper}>
-    <Txt color="light">
-      Already have an account?
-    </Txt>
+    <Txt color="light">Already have an account? </Txt>
     <Touchable onPress={() => NavigationService.navigate(routeNames.LOGIN)}>
       <View style={styles.loginWrapper}>
         <Txt color="light">

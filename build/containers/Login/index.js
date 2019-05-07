@@ -2,7 +2,6 @@ import * as React from 'react';
 import { View, ImageBackground } from 'react-native';
 import Form from './components/Form';
 import mapToProps from './mapToProps';
-import logger from 'utilities/logger';
 import FloatingHeader from 'components/FloatingHeader';
 import H1 from 'components/H1';
 import Txt from 'components/Txt';
@@ -13,7 +12,6 @@ const charityImg = require('../../../assets/onboarding-bg.png');
 class Login extends React.Component {
     render() {
         const { login } = this.props;
-        logger.log(this.props, 'Login');
         return (React.createElement(ImageBackground, { source: charityImg, style: styles.imgBackground, imageStyle: styles.imgStyle },
             React.createElement(View, { style: { marginTop: 50 } },
                 React.createElement(H1, { color: "light" }, "Welcome back"),

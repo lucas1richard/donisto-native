@@ -5,11 +5,10 @@ import { View } from 'react-native';
 import { reduxForm, InjectedFormProps } from 'redux-form';
 import theme from 'theme/iftheme';
 import Button from 'components/Button';
-import Loader from 'components/Loader';
 
 export const RegisterNewOrgForm_FORM_NAME = 'RegisterNewOrgForm_FORM_NAME';
 
-interface IRegisterNewOrgFormProps {
+export interface IRegisterNewOrgFormProps {
   registerNewOrg: () => any;
 }
 
@@ -17,7 +16,9 @@ export interface IRegisterNewOrgFormData {
   name: string;
 }
 
-class RegisterNewOrgForm extends React.Component<IRegisterNewOrgFormProps & InjectedFormProps<IRegisterNewOrgFormData, IRegisterNewOrgFormProps>> {
+export type TRegisterNewOrgFormProps = IRegisterNewOrgFormProps & InjectedFormProps<IRegisterNewOrgFormData, IRegisterNewOrgFormProps>;
+
+export class RegisterNewOrgForm extends React.Component<TRegisterNewOrgFormProps> {
   render() {
     const { registerNewOrg, submitting } = this.props;
     return (
@@ -33,14 +34,13 @@ class RegisterNewOrgForm extends React.Component<IRegisterNewOrgFormProps & Inje
             }}
           />
         </View>
-        {submitting ? <Loader /> : (
-          <Button
-            title="Register"
-            onPress={registerNewOrg}
-            color="primary"
-            variant="contained"
-          />
-        )}
+        <Button
+          title="Register"
+          onPress={registerNewOrg}
+          color="primary"
+          variant="contained"
+          showLoader={submitting}
+        />
       </View>
     );
   }

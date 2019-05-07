@@ -17,11 +17,11 @@ export interface ILoginFormData {
   password: string;
 }
 
-interface ILoginFormProps {
+export interface ILoginFormProps {
   onSubmit(): any;
 }
 
-type TLoginFormProps = ILoginFormProps & InjectedFormProps<ILoginFormData, ILoginFormProps>;
+export type TLoginFormProps = ILoginFormProps & InjectedFormProps<ILoginFormData, ILoginFormProps>;
 
 const EmailIcon = (
   <MaterialCommunityIcons

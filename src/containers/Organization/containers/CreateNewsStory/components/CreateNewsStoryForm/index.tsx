@@ -5,7 +5,6 @@ import Input from 'components/Input';
 import { reduxForm, InjectedFormProps } from 'redux-form';
 import theme from 'theme/iftheme';
 import Button from 'components/Button';
-import Loader from 'components/Loader';
 
 export const CreateNewsStory_FORM_NAME = 'CreateNewsStory_FORM_NAME';
 
@@ -43,14 +42,13 @@ export class CreateNewsStoryForm extends React.Component<ICreateNewsStoryFormPro
             style: { borderWidth: 1, borderColor: '#333', marginBottom: theme.fs }
           }}
         />
-        {submitting ? <Loader /> : (
-          <Button
-            title="Submit"
-            color="primary"
-            variant="rounded"
-            onPress={submitStory}
-          />
-        )}
+        <Button
+          title="Submit"
+          color="primary"
+          variant="rounded"
+          onPress={submitStory}
+          showLoader={submitting}
+        />
       </View>
     );
   }

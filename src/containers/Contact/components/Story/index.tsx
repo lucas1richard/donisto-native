@@ -15,9 +15,15 @@ class Story extends React.Component<IStoryProps> {
     return (
       <View style={styles.wrapper}>
         <Touchable>
-          <ImageBackground source={img} imageStyle={{ borderRadius: 10 }} style={styles.innerWrapper}>
+          <ImageBackground
+            source={img}
+            imageStyle={{ borderRadius: 10 }}
+            style={styles.innerWrapper}
+          >
             <View style={styles.shade}>
-              <H2 color="light">{title}</H2>
+              <H2 color="light">
+                {title}
+              </H2>
             </View>
           </ImageBackground>
         </Touchable>

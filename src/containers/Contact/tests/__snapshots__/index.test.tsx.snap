@@ -1,0 +1,608 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Contact /> renders 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Contact
+    causes={Array []}
+    contact={
+      Object {
+        "email": "mockEmail",
+        "first_name": "mockFirstName",
+        "last_name": "mockLastName",
+        "uuid": "mockUuid",
+      }
+    }
+    orgNewsFeed={Array []}
+    organizations={Array []}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <ContactHeading
+          contact={
+            Object {
+              "email": "mockEmail",
+              "first_name": "mockFirstName",
+              "last_name": "mockLastName",
+              "uuid": "mockUuid",
+            }
+          }
+        />,
+        <Component
+          style={
+            Object {
+              "paddingHorizontal": 12,
+            }
+          }
+        >
+          <H3
+            color="default"
+          >
+            Organizations
+          </H3>
+          <ScrollViewMock
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          />
+          <H3
+            color="default"
+          >
+            Causes
+          </H3>
+          <ScrollViewMock
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          >
+            <AddCauseLink />
+          </ScrollViewMock>
+          <H3
+            color="default"
+          >
+            Donations
+          </H3>
+          <ScrollViewMock
+            horizontal={true}
+          >
+            <Txt
+              color="default"
+            >
+              No Donations Yet
+            </Txt>
+          </ScrollViewMock>
+          <H3
+            color="default"
+          >
+            Stories
+          </H3>
+          <ScrollViewMock
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+          />
+        </Component>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "contact": Object {
+            "email": "mockEmail",
+            "first_name": "mockFirstName",
+            "last_name": "mockLastName",
+            "uuid": "mockUuid",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <H3
+              color="default"
+            >
+              Organizations
+            </H3>,
+            <ScrollViewMock
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            />,
+            <H3
+              color="default"
+            >
+              Causes
+            </H3>,
+            <ScrollViewMock
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <AddCauseLink />
+            </ScrollViewMock>,
+            <H3
+              color="default"
+            >
+              Donations
+            </H3>,
+            <ScrollViewMock
+              horizontal={true}
+            >
+              <Txt
+                color="default"
+              >
+                No Donations Yet
+              </Txt>
+            </ScrollViewMock>,
+            <H3
+              color="default"
+            >
+              Stories
+            </H3>,
+            <ScrollViewMock
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            />,
+          ],
+          "style": Object {
+            "paddingHorizontal": 12,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Organizations",
+              "color": "default",
+            },
+            "ref": null,
+            "rendered": "Organizations",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [],
+              "horizontal": true,
+              "showsHorizontalScrollIndicator": false,
+            },
+            "ref": null,
+            "rendered": Array [],
+            "type": [MockFunction],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Causes",
+              "color": "default",
+            },
+            "ref": null,
+            "rendered": "Causes",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <AddCauseLink />,
+                Array [],
+              ],
+              "horizontal": true,
+              "showsHorizontalScrollIndicator": false,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [MockFunction],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Donations",
+              "color": "default",
+            },
+            "ref": null,
+            "rendered": "Donations",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <Txt
+                color="default"
+              >
+                No Donations Yet
+              </Txt>,
+              "horizontal": true,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "No Donations Yet",
+                "color": "default",
+              },
+              "ref": null,
+              "rendered": "No Donations Yet",
+              "type": [Function],
+            },
+            "type": [MockFunction],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Stories",
+              "color": "default",
+            },
+            "ref": null,
+            "rendered": "Stories",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [],
+              "horizontal": true,
+              "showsHorizontalScrollIndicator": false,
+            },
+            "ref": null,
+            "rendered": Array [],
+            "type": [MockFunction],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [MockFunction],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <ContactHeading
+            contact={
+              Object {
+                "email": "mockEmail",
+                "first_name": "mockFirstName",
+                "last_name": "mockLastName",
+                "uuid": "mockUuid",
+              }
+            }
+          />,
+          <Component
+            style={
+              Object {
+                "paddingHorizontal": 12,
+              }
+            }
+          >
+            <H3
+              color="default"
+            >
+              Organizations
+            </H3>
+            <ScrollViewMock
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            />
+            <H3
+              color="default"
+            >
+              Causes
+            </H3>
+            <ScrollViewMock
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <AddCauseLink />
+            </ScrollViewMock>
+            <H3
+              color="default"
+            >
+              Donations
+            </H3>
+            <ScrollViewMock
+              horizontal={true}
+            >
+              <Txt
+                color="default"
+              >
+                No Donations Yet
+              </Txt>
+            </ScrollViewMock>
+            <H3
+              color="default"
+            >
+              Stories
+            </H3>
+            <ScrollViewMock
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            />
+          </Component>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "contact": Object {
+              "email": "mockEmail",
+              "first_name": "mockFirstName",
+              "last_name": "mockLastName",
+              "uuid": "mockUuid",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <H3
+                color="default"
+              >
+                Organizations
+              </H3>,
+              <ScrollViewMock
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              />,
+              <H3
+                color="default"
+              >
+                Causes
+              </H3>,
+              <ScrollViewMock
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
+                <AddCauseLink />
+              </ScrollViewMock>,
+              <H3
+                color="default"
+              >
+                Donations
+              </H3>,
+              <ScrollViewMock
+                horizontal={true}
+              >
+                <Txt
+                  color="default"
+                >
+                  No Donations Yet
+                </Txt>
+              </ScrollViewMock>,
+              <H3
+                color="default"
+              >
+                Stories
+              </H3>,
+              <ScrollViewMock
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              />,
+            ],
+            "style": Object {
+              "paddingHorizontal": 12,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Organizations",
+                "color": "default",
+              },
+              "ref": null,
+              "rendered": "Organizations",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [],
+                "horizontal": true,
+                "showsHorizontalScrollIndicator": false,
+              },
+              "ref": null,
+              "rendered": Array [],
+              "type": [MockFunction],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Causes",
+                "color": "default",
+              },
+              "ref": null,
+              "rendered": "Causes",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <AddCauseLink />,
+                  Array [],
+                ],
+                "horizontal": true,
+                "showsHorizontalScrollIndicator": false,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [MockFunction],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Donations",
+                "color": "default",
+              },
+              "ref": null,
+              "rendered": "Donations",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Txt
+                  color="default"
+                >
+                  No Donations Yet
+                </Txt>,
+                "horizontal": true,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "No Donations Yet",
+                  "color": "default",
+                },
+                "ref": null,
+                "rendered": "No Donations Yet",
+                "type": [Function],
+              },
+              "type": [MockFunction],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Stories",
+                "color": "default",
+              },
+              "ref": null,
+              "rendered": "Stories",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [],
+                "horizontal": true,
+                "showsHorizontalScrollIndicator": false,
+              },
+              "ref": null,
+              "rendered": Array [],
+              "type": [MockFunction],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [MockFunction],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": false,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

@@ -3,7 +3,6 @@ import CauseConstants from '../constants';
 import createCauseSaga from './controllers/createCauseSaga';
 import getCausesSaga from './controllers/getCausesSaga';
 
-// Individual exports for testing
 export function* causeSaga() {
   yield all([
     takeLatest(CauseConstants.CREATE_CAUSE_ACTION, createCauseSaga),
@@ -11,5 +10,4 @@ export function* causeSaga() {
   ]);
 }
 
-// All sagas to be loaded
 export default causeSaga;

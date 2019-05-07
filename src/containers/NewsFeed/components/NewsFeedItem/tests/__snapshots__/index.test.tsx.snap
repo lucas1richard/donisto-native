@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NewsFeedItem /> renders 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NewsFeedItem
+    img="mockImage"
+    item={
+      Object {
+        "organization": Object {
+          "name": "mockOrgName",
+        },
+      }
+    }
+    navDetail={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <Component
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "borderRadius": 10,
+            "elevation": 3,
+            "marginTop": 20,
+            "shadowColor": "#555",
+            "shadowOffset": Object {
+              "height": 4,
+              "width": 2,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 6,
+          }
+        }
+      >
+        <TopRow
+          name="mockOrgName"
+        />
+        <Img
+          img="mockImage"
+          navDetail={[MockFunction]}
+        />
+        <BottomRow />
+      </Component>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <TopRow
+            name="mockOrgName"
+          />,
+          <Img
+            img="mockImage"
+            navDetail={[MockFunction]}
+          />,
+          <BottomRow />,
+        ],
+        "style": Object {
+          "backgroundColor": "#fff",
+          "borderRadius": 10,
+          "elevation": 3,
+          "marginTop": 20,
+          "shadowColor": "#555",
+          "shadowOffset": Object {
+            "height": 4,
+            "width": 2,
+          },
+          "shadowOpacity": 0.2,
+          "shadowRadius": 6,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "name": "mockOrgName",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "img": "mockImage",
+            "navDetail": [MockFunction],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Component
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "borderRadius": 10,
+              "elevation": 3,
+              "marginTop": 20,
+              "shadowColor": "#555",
+              "shadowOffset": Object {
+                "height": 4,
+                "width": 2,
+              },
+              "shadowOpacity": 0.2,
+              "shadowRadius": 6,
+            }
+          }
+        >
+          <TopRow
+            name="mockOrgName"
+          />
+          <Img
+            img="mockImage"
+            navDetail={[MockFunction]}
+          />
+          <BottomRow />
+        </Component>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <TopRow
+              name="mockOrgName"
+            />,
+            <Img
+              img="mockImage"
+              navDetail={[MockFunction]}
+            />,
+            <BottomRow />,
+          ],
+          "style": Object {
+            "backgroundColor": "#fff",
+            "borderRadius": 10,
+            "elevation": 3,
+            "marginTop": 20,
+            "shadowColor": "#555",
+            "shadowOffset": Object {
+              "height": 4,
+              "width": 2,
+            },
+            "shadowOpacity": 0.2,
+            "shadowRadius": 6,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "name": "mockOrgName",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "img": "mockImage",
+              "navDetail": [MockFunction],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": false,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

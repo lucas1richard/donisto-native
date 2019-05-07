@@ -5,7 +5,6 @@ import registerOrgSaga from './controllers/registerOrganizationSaga';
 import getOrgSaga from './controllers/getOrganizationsSaga';
 import CreateNewsStorySaga from '../containers/CreateNewsStory/sagas';
 
-// Individual exports for testing
 export function* OrganizationSaga() {
   yield all([
     takeLatest(OrganizationConstants.DEFAULT_ACTION, defaultSaga),
@@ -15,5 +14,4 @@ export function* OrganizationSaga() {
   ]);
 }
 
-// All sagas to be loaded
 export default OrganizationSaga;

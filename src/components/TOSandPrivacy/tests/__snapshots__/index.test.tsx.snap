@@ -1,0 +1,557 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TOSandPrivacy /> renders 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TOSandPrivacy />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Txt
+          color="light"
+        >
+          By Proceeding, I agree to the
+        </Txt>,
+        <Component
+          style={
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <TouchableOpacity
+            activeOpacity={0.2}
+          >
+            <Component>
+              <Txt
+                color="light"
+                style={
+                  Object {
+                    "fontWeight": "800",
+                  }
+                }
+              >
+                Terms of Use
+              </Txt>
+            </Component>
+          </TouchableOpacity>
+          <Txt
+            color="light"
+          >
+             and 
+          </Txt>
+          <TouchableOpacity
+            activeOpacity={0.2}
+          >
+            <Component>
+              <Txt
+                color="light"
+                style={
+                  Object {
+                    "fontWeight": "800",
+                  }
+                }
+              >
+                Privacy Policy
+              </Txt>
+            </Component>
+          </TouchableOpacity>
+        </Component>,
+      ],
+      "style": Object {
+        "alignItems": "center",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": "By Proceeding, I agree to the",
+          "color": "light",
+        },
+        "ref": null,
+        "rendered": "By Proceeding, I agree to the",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <TouchableOpacity
+              activeOpacity={0.2}
+            >
+              <Component>
+                <Txt
+                  color="light"
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                >
+                  Terms of Use
+                </Txt>
+              </Component>
+            </TouchableOpacity>,
+            <Txt
+              color="light"
+            >
+               and 
+            </Txt>,
+            <TouchableOpacity
+              activeOpacity={0.2}
+            >
+              <Component>
+                <Txt
+                  color="light"
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                >
+                  Privacy Policy
+                </Txt>
+              </Component>
+            </TouchableOpacity>,
+          ],
+          "style": Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeOpacity": 0.2,
+              "children": <Component>
+                <Txt
+                  color="light"
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                >
+                  Terms of Use
+                </Txt>
+              </Component>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Txt
+                  color="light"
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                >
+                  Terms of Use
+                </Txt>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Terms of Use",
+                  "color": "light",
+                  "style": Object {
+                    "fontWeight": "800",
+                  },
+                },
+                "ref": null,
+                "rendered": "Terms of Use",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": " and ",
+              "color": "light",
+            },
+            "ref": null,
+            "rendered": " and ",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeOpacity": 0.2,
+              "children": <Component>
+                <Txt
+                  color="light"
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                >
+                  Privacy Policy
+                </Txt>
+              </Component>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Txt
+                  color="light"
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                >
+                  Privacy Policy
+                </Txt>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Privacy Policy",
+                  "color": "light",
+                  "style": Object {
+                    "fontWeight": "800",
+                  },
+                },
+                "ref": null,
+                "rendered": "Privacy Policy",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Txt
+            color="light"
+          >
+            By Proceeding, I agree to the
+          </Txt>,
+          <Component
+            style={
+              Object {
+                "flexDirection": "row",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.2}
+            >
+              <Component>
+                <Txt
+                  color="light"
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                >
+                  Terms of Use
+                </Txt>
+              </Component>
+            </TouchableOpacity>
+            <Txt
+              color="light"
+            >
+               and 
+            </Txt>
+            <TouchableOpacity
+              activeOpacity={0.2}
+            >
+              <Component>
+                <Txt
+                  color="light"
+                  style={
+                    Object {
+                      "fontWeight": "800",
+                    }
+                  }
+                >
+                  Privacy Policy
+                </Txt>
+              </Component>
+            </TouchableOpacity>
+          </Component>,
+        ],
+        "style": Object {
+          "alignItems": "center",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": "By Proceeding, I agree to the",
+            "color": "light",
+          },
+          "ref": null,
+          "rendered": "By Proceeding, I agree to the",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <TouchableOpacity
+                activeOpacity={0.2}
+              >
+                <Component>
+                  <Txt
+                    color="light"
+                    style={
+                      Object {
+                        "fontWeight": "800",
+                      }
+                    }
+                  >
+                    Terms of Use
+                  </Txt>
+                </Component>
+              </TouchableOpacity>,
+              <Txt
+                color="light"
+              >
+                 and 
+              </Txt>,
+              <TouchableOpacity
+                activeOpacity={0.2}
+              >
+                <Component>
+                  <Txt
+                    color="light"
+                    style={
+                      Object {
+                        "fontWeight": "800",
+                      }
+                    }
+                  >
+                    Privacy Policy
+                  </Txt>
+                </Component>
+              </TouchableOpacity>,
+            ],
+            "style": Object {
+              "flexDirection": "row",
+              "justifyContent": "center",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeOpacity": 0.2,
+                "children": <Component>
+                  <Txt
+                    color="light"
+                    style={
+                      Object {
+                        "fontWeight": "800",
+                      }
+                    }
+                  >
+                    Terms of Use
+                  </Txt>
+                </Component>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <Txt
+                    color="light"
+                    style={
+                      Object {
+                        "fontWeight": "800",
+                      }
+                    }
+                  >
+                    Terms of Use
+                  </Txt>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Terms of Use",
+                    "color": "light",
+                    "style": Object {
+                      "fontWeight": "800",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Terms of Use",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": " and ",
+                "color": "light",
+              },
+              "ref": null,
+              "rendered": " and ",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeOpacity": 0.2,
+                "children": <Component>
+                  <Txt
+                    color="light"
+                    style={
+                      Object {
+                        "fontWeight": "800",
+                      }
+                    }
+                  >
+                    Privacy Policy
+                  </Txt>
+                </Component>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <Txt
+                    color="light"
+                    style={
+                      Object {
+                        "fontWeight": "800",
+                      }
+                    }
+                  >
+                    Privacy Policy
+                  </Txt>,
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Privacy Policy",
+                    "color": "light",
+                    "style": Object {
+                      "fontWeight": "800",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Privacy Policy",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": false,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

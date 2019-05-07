@@ -5,13 +5,13 @@ import TopRow from './components/TopRow';
 import BottomRow from './components/BottomRow';
 import Img from './components/Img';
 
-interface INewsFeedItemProps {
+export interface INewsFeedItemProps {
   item: any;
   img: any;
   navDetail: () => any
 }
 
-interface INewsFeedItemState {
+export interface INewsFeedItemState {
   modalVisible: boolean;
 }
 
@@ -20,7 +20,7 @@ class NewsFeedItem extends React.Component<INewsFeedItemProps, INewsFeedItemStat
     const { item, img, navDetail } = this.props;
     return (
       <View>
-        <View style={styles.wrapper} key={item.id}>
+        <View style={styles.wrapper}>
           <TopRow name={item.organization.name} />
           <Img
             navDetail={navDetail}

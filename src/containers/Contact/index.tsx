@@ -3,14 +3,13 @@ import { ScrollView, View } from 'react-native';
 import mapToProps from './mapToProps';
 import H3 from 'components/H3';
 import ContactHeading from './components/Heading';
-import { NavigationFocusInjectedProps } from 'react-navigation';
 import Story from './components/Story';
 import Txt from 'components/Txt';
 import theme from 'theme/iftheme';
 import Cause from './components/Cause';
 import AddCauseLink from './components/AddCauseLink';
 
-interface IContactProps extends NavigationFocusInjectedProps {
+export interface IContactProps {
   contact: ContactAttributes;
   orgNewsFeed: any[];
   causes: any[];
@@ -23,9 +22,15 @@ const images = [
   require('../../../assets/scenic-2.jpg')
 ];
 
-class Contact extends React.Component<IContactProps> {
+export class Contact extends React.Component<IContactProps> {
   render() {
-    const { contact, orgNewsFeed, causes, organizations } = this.props;
+    const {
+      contact,
+      orgNewsFeed,
+      causes,
+      organizations
+    } = this.props;
+
     return (
       <ScrollView>
         <ContactHeading contact={contact} />

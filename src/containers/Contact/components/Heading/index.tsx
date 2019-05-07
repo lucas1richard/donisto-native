@@ -6,8 +6,9 @@ import theme from 'theme/iftheme';
 import { Entypo } from '@expo/vector-icons';
 import Touchable from 'components/Touchable';
 import NavigationService from 'containers/Navigation/NavigationService';
+import routeNames from 'containers/Navigation/routeNames';
 
-interface IContactHeadingProps {
+export interface IContactHeadingProps {
   contact: any;
 }
 
@@ -41,7 +42,7 @@ class ContactHeading extends React.Component<IContactHeadingProps> {
             alignSelf: 'flex-start'
           }}
         >
-          <Touchable onPress={NavigationService.openDrawer}>
+          <Touchable onPress={() => NavigationService.navigate(routeNames.UPDATE_CONTACT)}>
             <View>
               <Entypo
                 name="dots-three-horizontal"
@@ -52,14 +53,16 @@ class ContactHeading extends React.Component<IContactHeadingProps> {
           </Touchable>
         </ImageBackground>
         <View style={styles.profilePicWrapper} />
-        <View style={styles.infoWrapper}>
-          <Txt color="light">
-            {contact.first_name} {contact.last_name}
-          </Txt>
-          <Txt color="light">
-            {this.contactLocation}
-          </Txt>
-        </View>
+        <Touchable onPress={() => NavigationService.navigate(routeNames.UPDATE_CONTACT)}>
+          <View style={styles.infoWrapper}>
+            <Txt color="light">
+              {contact.first_name} {contact.last_name}
+            </Txt>
+            <Txt color="light">
+              {this.contactLocation}
+            </Txt>
+          </View>
+        </Touchable>
       </View>
     );
   }

@@ -1,0 +1,786 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BottomRow /> renders 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <BottomRow />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Icon
+            allowFontScaling={false}
+            color="rgb(200,199,204)"
+            name="eye"
+            size={18}
+          />
+          <Txt
+            color="default"
+            style={
+              Object {
+                "fontSize": 13,
+                "marginLeft": 8,
+              }
+            }
+          >
+            4567
+          </Txt>
+        </Component>,
+        <Component
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Component
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Icon
+              allowFontScaling={false}
+              color="rgb(255,45,85)"
+              name="heart"
+              size={22}
+            />
+            <Txt
+              color="default"
+              style={
+                Object {
+                  "fontSize": 13,
+                  "marginLeft": 8,
+                }
+              }
+            >
+              24
+            </Txt>
+          </Component>
+          <Component
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "marginLeft": 8,
+              }
+            }
+          >
+            <Icon
+              allowFontScaling={false}
+              color="rgb(200,199,204)"
+              name="message"
+              size={22}
+            />
+            <Txt
+              color="default"
+              style={
+                Object {
+                  "fontSize": 13,
+                  "marginLeft": 8,
+                }
+              }
+            >
+              2
+            </Txt>
+          </Component>
+        </Component>,
+      ],
+      "style": Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 49,
+        "justifyContent": "space-between",
+        "paddingHorizontal": 22,
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Icon
+              allowFontScaling={false}
+              color="rgb(200,199,204)"
+              name="eye"
+              size={18}
+            />,
+            <Txt
+              color="default"
+              style={
+                Object {
+                  "fontSize": 13,
+                  "marginLeft": 8,
+                }
+              }
+            >
+              4567
+            </Txt>,
+          ],
+          "style": Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "allowFontScaling": false,
+              "color": "rgb(200,199,204)",
+              "name": "eye",
+              "size": 18,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "4567",
+              "color": "default",
+              "style": Object {
+                "fontSize": 13,
+                "marginLeft": 8,
+              },
+            },
+            "ref": null,
+            "rendered": "4567",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Component
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Icon
+                allowFontScaling={false}
+                color="rgb(255,45,85)"
+                name="heart"
+                size={22}
+              />
+              <Txt
+                color="default"
+                style={
+                  Object {
+                    "fontSize": 13,
+                    "marginLeft": 8,
+                  }
+                }
+              >
+                24
+              </Txt>
+            </Component>,
+            <Component
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginLeft": 8,
+                }
+              }
+            >
+              <Icon
+                allowFontScaling={false}
+                color="rgb(200,199,204)"
+                name="message"
+                size={22}
+              />
+              <Txt
+                color="default"
+                style={
+                  Object {
+                    "fontSize": 13,
+                    "marginLeft": 8,
+                  }
+                }
+              >
+                2
+              </Txt>
+            </Component>,
+          ],
+          "style": Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Icon
+                  allowFontScaling={false}
+                  color="rgb(255,45,85)"
+                  name="heart"
+                  size={22}
+                />,
+                <Txt
+                  color="default"
+                  style={
+                    Object {
+                      "fontSize": 13,
+                      "marginLeft": 8,
+                    }
+                  }
+                >
+                  24
+                </Txt>,
+              ],
+              "style": Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "allowFontScaling": false,
+                  "color": "rgb(255,45,85)",
+                  "name": "heart",
+                  "size": 22,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "24",
+                  "color": "default",
+                  "style": Object {
+                    "fontSize": 13,
+                    "marginLeft": 8,
+                  },
+                },
+                "ref": null,
+                "rendered": "24",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Icon
+                  allowFontScaling={false}
+                  color="rgb(200,199,204)"
+                  name="message"
+                  size={22}
+                />,
+                <Txt
+                  color="default"
+                  style={
+                    Object {
+                      "fontSize": 13,
+                      "marginLeft": 8,
+                    }
+                  }
+                >
+                  2
+                </Txt>,
+              ],
+              "style": Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "marginLeft": 8,
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "allowFontScaling": false,
+                  "color": "rgb(200,199,204)",
+                  "name": "message",
+                  "size": 22,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "2",
+                  "color": "default",
+                  "style": Object {
+                    "fontSize": 13,
+                    "marginLeft": 8,
+                  },
+                },
+                "ref": null,
+                "rendered": "2",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Component
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Icon
+              allowFontScaling={false}
+              color="rgb(200,199,204)"
+              name="eye"
+              size={18}
+            />
+            <Txt
+              color="default"
+              style={
+                Object {
+                  "fontSize": 13,
+                  "marginLeft": 8,
+                }
+              }
+            >
+              4567
+            </Txt>
+          </Component>,
+          <Component
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Component
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Icon
+                allowFontScaling={false}
+                color="rgb(255,45,85)"
+                name="heart"
+                size={22}
+              />
+              <Txt
+                color="default"
+                style={
+                  Object {
+                    "fontSize": 13,
+                    "marginLeft": 8,
+                  }
+                }
+              >
+                24
+              </Txt>
+            </Component>
+            <Component
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginLeft": 8,
+                }
+              }
+            >
+              <Icon
+                allowFontScaling={false}
+                color="rgb(200,199,204)"
+                name="message"
+                size={22}
+              />
+              <Txt
+                color="default"
+                style={
+                  Object {
+                    "fontSize": 13,
+                    "marginLeft": 8,
+                  }
+                }
+              >
+                2
+              </Txt>
+            </Component>
+          </Component>,
+        ],
+        "style": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 49,
+          "justifyContent": "space-between",
+          "paddingHorizontal": 22,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Icon
+                allowFontScaling={false}
+                color="rgb(200,199,204)"
+                name="eye"
+                size={18}
+              />,
+              <Txt
+                color="default"
+                style={
+                  Object {
+                    "fontSize": 13,
+                    "marginLeft": 8,
+                  }
+                }
+              >
+                4567
+              </Txt>,
+            ],
+            "style": Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "allowFontScaling": false,
+                "color": "rgb(200,199,204)",
+                "name": "eye",
+                "size": 18,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "4567",
+                "color": "default",
+                "style": Object {
+                  "fontSize": 13,
+                  "marginLeft": 8,
+                },
+              },
+              "ref": null,
+              "rendered": "4567",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Component
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <Icon
+                  allowFontScaling={false}
+                  color="rgb(255,45,85)"
+                  name="heart"
+                  size={22}
+                />
+                <Txt
+                  color="default"
+                  style={
+                    Object {
+                      "fontSize": 13,
+                      "marginLeft": 8,
+                    }
+                  }
+                >
+                  24
+                </Txt>
+              </Component>,
+              <Component
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "marginLeft": 8,
+                  }
+                }
+              >
+                <Icon
+                  allowFontScaling={false}
+                  color="rgb(200,199,204)"
+                  name="message"
+                  size={22}
+                />
+                <Txt
+                  color="default"
+                  style={
+                    Object {
+                      "fontSize": 13,
+                      "marginLeft": 8,
+                    }
+                  }
+                >
+                  2
+                </Txt>
+              </Component>,
+            ],
+            "style": Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Icon
+                    allowFontScaling={false}
+                    color="rgb(255,45,85)"
+                    name="heart"
+                    size={22}
+                  />,
+                  <Txt
+                    color="default"
+                    style={
+                      Object {
+                        "fontSize": 13,
+                        "marginLeft": 8,
+                      }
+                    }
+                  >
+                    24
+                  </Txt>,
+                ],
+                "style": Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "allowFontScaling": false,
+                    "color": "rgb(255,45,85)",
+                    "name": "heart",
+                    "size": 22,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "24",
+                    "color": "default",
+                    "style": Object {
+                      "fontSize": 13,
+                      "marginLeft": 8,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "24",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Icon
+                    allowFontScaling={false}
+                    color="rgb(200,199,204)"
+                    name="message"
+                    size={22}
+                  />,
+                  <Txt
+                    color="default"
+                    style={
+                      Object {
+                        "fontSize": 13,
+                        "marginLeft": 8,
+                      }
+                    }
+                  >
+                    2
+                  </Txt>,
+                ],
+                "style": Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginLeft": 8,
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "allowFontScaling": false,
+                    "color": "rgb(200,199,204)",
+                    "name": "message",
+                    "size": 22,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "2",
+                    "color": "default",
+                    "style": Object {
+                      "fontSize": 13,
+                      "marginLeft": 8,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "2",
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": false,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

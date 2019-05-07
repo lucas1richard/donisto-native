@@ -4,7 +4,7 @@ import Touchable from 'components/Touchable';
 import H2 from 'components/H2';
 import styles from './styles';
 
-interface IDonationProps {
+export interface IDonationProps {
   title: string;
 }
 

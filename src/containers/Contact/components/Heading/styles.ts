@@ -35,8 +35,10 @@ export default StyleSheet.create({
   },
   infoWrapper: {
     position: 'absolute',
-    bottom: theme.fs,
+    bottom: theme.screenPadding,
     right: theme.screenPadding,
-    maxWidth: theme.fs * 15
+    maxWidth: theme.fs * 15,
+    zIndex: 50,
+    minWidth: theme.fs * 5,
   }
 });

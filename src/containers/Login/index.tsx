@@ -3,7 +3,6 @@ import { View, ImageBackground } from 'react-native';
 import { NavigationFocusInjectedProps } from 'react-navigation';
 import Form from './components/Form';
 import mapToProps from './mapToProps';
-import logger from 'utilities/logger';
 import FloatingHeader from 'components/FloatingHeader';
 import H1 from 'components/H1';
 import Txt from 'components/Txt';
@@ -25,7 +24,6 @@ class Login extends React.Component<NavigationFocusInjectedProps<ILoginProps> & 
 
   render() {
     const { login } = this.props;
-    logger.log(this.props, 'Login');
     return (
       <ImageBackground
         source={charityImg}

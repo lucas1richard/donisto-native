@@ -5,7 +5,7 @@ import Touchable from 'components/Touchable';
 import { Entypo } from '@expo/vector-icons';
 import styles from './styles';
 
-interface TopRowProps {
+export interface TopRowProps {
   name: string;
 }
 

@@ -13,7 +13,7 @@ const images = [
     require('../../../assets/happy-1.jpg'),
     require('../../../assets/scenic-2.jpg')
 ];
-class Contact extends React.Component {
+export class Contact extends React.Component {
     render() {
         const { contact, orgNewsFeed, causes, organizations } = this.props;
         return (React.createElement(ScrollView, null,

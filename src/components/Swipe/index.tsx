@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, ScrollView } from 'react-native';
 import styles from './styles';
 
-interface ISwipeProps {
+export interface ISwipeProps {
   height?: number;
   hideIndex?: boolean;
   onIndexChanged?(): any;

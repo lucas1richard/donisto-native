@@ -2,7 +2,11 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import styles from './styles';
 
-class NewsFeedContact extends React.Component<any> {
+export interface NewsFeedContactProps {
+  name: string;
+}
+
+class NewsFeedContact extends React.Component<NewsFeedContactProps> {
   render() {
     return (
       <View style={styles.outerwrapper}>
