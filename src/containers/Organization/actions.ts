@@ -13,9 +13,16 @@ export type TOrganizationActions =
   | IGetOrgAction
   | IGetOrgSuccessAction
   | IGetOrgFailAction
+  | IUpdateOrgAction
+  | IUpdateOrgSuccessAction
+  | IUpdateOrgFailAction
+  | IGetOrgDetailAction
+  | IGetOrgDetailSuccessAction
+  | IGetOrgDetailFailAction
+  | ISelectOrgDetailAction
 ;
 
-interface IDefaultAction {
+export interface IDefaultAction {
   type: OrganizationConstants.DEFAULT_ACTION
 }
 
@@ -23,7 +30,11 @@ export const defaultAction = (): IDefaultAction => ({
   type: OrganizationConstants.DEFAULT_ACTION
 });
 
-interface IRegisterOrgAction {
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface IRegisterOrgAction {
   type: OrganizationConstants.REGISTER_ORG;
 }
 
@@ -31,7 +42,7 @@ export const registerOrgAction = (): IRegisterOrgAction => ({
   type: OrganizationConstants.REGISTER_ORG
 });
 
-interface IRegisterOrgSuccessAction {
+export interface IRegisterOrgSuccessAction {
   type: OrganizationConstants.REGISTER_ORG_SUCCESS;
   organization: any;
 }
@@ -41,7 +52,7 @@ export const registerOrgActionSuccess = (organization: any): IRegisterOrgSuccess
   organization
 });
 
-interface IRegisterOrgFailAction {
+export interface IRegisterOrgFailAction {
   type: OrganizationConstants.REGISTER_ORG_FAIL;
   error: any;
 }
@@ -52,8 +63,10 @@ export const registerOrgFailAction = (error: any): IRegisterOrgFailAction => ({
 });
 
 ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-interface IGetOrgAction {
+export interface IGetOrgAction {
   type: OrganizationConstants.GET_ORG;
 }
 
@@ -61,9 +74,9 @@ export const getOrgAction = (): IGetOrgAction => ({
   type: OrganizationConstants.GET_ORG
 });
 
-interface IGetOrgSuccessAction {
+export interface IGetOrgSuccessAction {
   type: OrganizationConstants.GET_ORG_SUCCESS;
-  organization: any;
+  organization: any[];
 }
 
 export const getOrgActionSuccess = (organization: any): IGetOrgSuccessAction => ({
@@ -71,12 +84,92 @@ export const getOrgActionSuccess = (organization: any): IGetOrgSuccessAction => 
   organization
 });
 
-interface IGetOrgFailAction {
+export interface IGetOrgFailAction {
   type: OrganizationConstants.GET_ORG_FAIL;
   error: any;
 }
 
 export const getOrgFailAction = (error: any): IGetOrgFailAction => ({
   type: OrganizationConstants.GET_ORG_FAIL,
+  error
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface IGetOrgDetailAction {
+  type: OrganizationConstants.GET_ORG_DETAIL;
+}
+
+export const getOrgDetailAction = (): IGetOrgDetailAction => ({
+  type: OrganizationConstants.GET_ORG_DETAIL
+});
+
+export interface IGetOrgDetailSuccessAction {
+  type: OrganizationConstants.GET_ORG_DETAIL_SUCCESS;
+  organization: IOrganization;
+}
+
+export const getOrgDetailActionSuccess = (organization: IOrganization): IGetOrgDetailSuccessAction => ({
+  type: OrganizationConstants.GET_ORG_DETAIL_SUCCESS,
+  organization
+});
+
+export interface IGetOrgDetailFailAction {
+  type: OrganizationConstants.GET_ORG_DETAIL_FAIL;
+  error: any;
+}
+
+export const getOrgDetailFailAction = (error: any): IGetOrgDetailFailAction => ({
+  type: OrganizationConstants.GET_ORG_DETAIL_FAIL,
+  error
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface ISelectOrgDetailAction {
+  type: OrganizationConstants.SELECT_DETAIL;
+  uuid: string;
+}
+
+export const selectOrgDetailAction = (uuid: string): ISelectOrgDetailAction => ({
+  type: OrganizationConstants.SELECT_DETAIL,
+  uuid
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface IUpdateOrgAction {
+  type: OrganizationConstants.UPDATE_ORG;
+  onComplete: () => any;
+}
+
+export const updateOrgAction = (onComplete: () => any): IUpdateOrgAction => ({
+  type: OrganizationConstants.UPDATE_ORG,
+  onComplete
+});
+
+export interface IUpdateOrgSuccessAction {
+  type: OrganizationConstants.UPDATE_ORG_SUCCESS;
+  organization: IOrganization;
+}
+
+export const updateOrgActionSuccess = (organization: IOrganization): IUpdateOrgSuccessAction => ({
+  type: OrganizationConstants.UPDATE_ORG_SUCCESS,
+  organization
+});
+
+export interface IUpdateOrgFailAction {
+  type: OrganizationConstants.UPDATE_ORG_FAIL;
+  error: any;
+}
+
+export const updateOrgFailAction = (error: any): IUpdateOrgFailAction => ({
+  type: OrganizationConstants.UPDATE_ORG_FAIL,
   error
 });
