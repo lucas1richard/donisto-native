@@ -15,12 +15,12 @@ export interface IUpdateContactFormProps {
   updateContact(): any;
 }
 
-export interface ILoginFormData {
+export interface IUpdateContactFormData {
   email: string;
   password: string;
 }
 
-export class UpdateContactForm extends FormFlow<IUpdateContactFormProps & InjectedFormProps<ILoginFormData, IUpdateContactFormProps>> {
+export class UpdateContactForm extends FormFlow<IUpdateContactFormProps & InjectedFormProps<IUpdateContactFormData, IUpdateContactFormProps>> {
   render() {
     const { updateContact, submitting } = this.props;
     return (
@@ -105,6 +105,6 @@ export class UpdateContactForm extends FormFlow<IUpdateContactFormProps & Inject
   }
 }
 
-export default reduxForm<ILoginFormData, IUpdateContactFormProps>({
+export default reduxForm<IUpdateContactFormData, IUpdateContactFormProps>({
   form: UPDATE_CONTACT_FORM_NAME
 })(UpdateContactForm);

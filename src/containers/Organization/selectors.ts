@@ -17,3 +17,8 @@ export const makeSelectActiveOrganization = () => createSelector(
   selectOrganizationDomain(),
   (substate) => substate.organizations[substate.ix]
 );
+
+export const makeSelectDetailOrganization = () => createSelector(
+  selectOrganizationDomain(),
+  (substate) => substate.uuid[substate.ui.detailUuid]
+);

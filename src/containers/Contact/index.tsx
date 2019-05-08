@@ -7,6 +7,7 @@ import Story from './components/Story';
 import Txt from 'components/Txt';
 import theme from 'theme/iftheme';
 import Cause from './components/Cause';
+import Organization from './components/Organization';
 import AddCauseLink from './components/AddCauseLink';
 
 export interface IContactProps {
@@ -14,6 +15,7 @@ export interface IContactProps {
   orgNewsFeed: any[];
   causes: any[];
   organizations: any[];
+  goToOrgDetail: (uuid: string) => any;
 }
 
 const images = [
@@ -28,7 +30,8 @@ export class Contact extends React.Component<IContactProps> {
       contact,
       orgNewsFeed,
       causes,
-      organizations
+      organizations,
+      goToOrgDetail
     } = this.props;
 
     return (
@@ -38,10 +41,11 @@ export class Contact extends React.Component<IContactProps> {
           <H3>Organizations</H3>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {organizations.map((org, ix) => (
-              <Cause
+              <Organization
                 key={org.id}
                 title={org.name}
                 img={images[ix % (images.length)]}
+                onPress={() => goToOrgDetail(org.uuid)}
               />
             ))}
           </ScrollView>
