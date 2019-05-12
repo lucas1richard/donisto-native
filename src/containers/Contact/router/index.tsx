@@ -10,6 +10,7 @@ import Contact from '../';
 import causeRouter from 'containers/Cause/router';
 import { createStackNavigator } from 'react-navigation';
 import OrganizationLandingPage from 'containers/Organization/containers/LandingPage';
+import RegisterNewOrganization from 'containers/Organization/containers/RegisterNewOrganization';
 
 const AppNavigator = createStackNavigator({
   [routeNames.UPDATE_CONTACT]: {
@@ -35,6 +36,12 @@ const AppNavigator = createStackNavigator({
       header: <View />
     },
     screen: OrganizationLandingPage
+  },
+  [routeNames.REGISTER_ORGANIZATION]: {
+    navigationOptions: {
+      header: <View />
+    },
+    screen: RegisterNewOrganization
   }
 }, {
   initialRouteName: routeNames.CONTACT,

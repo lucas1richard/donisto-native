@@ -1,8 +1,13 @@
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { makeSelectDetailOrganization } from 'containers/Organization/selectors';
-import { getOrgDetailAction, updateOrgAction } from 'containers/Organization/actions';
-import { Dispatch } from 'redux';
+import {
+  getOrgDetailAction,
+  updateOrgAction,
+  createOrgLinksAction,
+  deleteOrgLinksAction
+} from 'containers/Organization/actions';
 
 export const mapToProps = createStructuredSelector({
   organization: makeSelectDetailOrganization(),
@@ -13,6 +18,8 @@ export const mapDispatchToProps = (dispatch: Dispatch) => ({
   updateOrg: (onComplete: () => any) => {
     dispatch(updateOrgAction(onComplete));
   },
+  createOrgLinks: () => dispatch(createOrgLinksAction()),
+  deleteOrgLinks: (links: string[], orgUuid: string) => dispatch(deleteOrgLinksAction(links, orgUuid))
 });
 
 export default connect(mapToProps, mapDispatchToProps);

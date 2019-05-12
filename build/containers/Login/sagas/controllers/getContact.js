@@ -1,9 +1,14 @@
-import { call } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import api from 'utilities/api';
-import logger from 'utilities/logger';
-function* testAPI() {
-    const { data } = yield call(api, 'get', '/v1/contact');
-    logger.log(data, 'testSaga');
+import { getContactSuccessAction, getContactFailAction } from 'containers/Contact/actions';
+function* getContactSaga() {
+    try {
+        const { data } = yield call(api, 'get', '/v1/contact/get');
+        yield put(getContactSuccessAction(data));
+    }
+    catch (err) {
+        yield put(getContactFailAction(err.message));
+    }
 }
-export default testAPI;
+export default getContactSaga;
 //# sourceMappingURL=getContact.js.map

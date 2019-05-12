@@ -3,14 +3,15 @@ import { TCauseActions } from '../actions';
 import selectForNewsFeedTransformer from './transformers/selectForNewsFeed';
 
 export interface ICauseInitialState {
-  causes: any,
-  getCausesError: string,
-  createCauseError: string,
-  selectedForNewsFeed: any
+  causes: any;
+  getCausesError: string;
+  createCauseError: string;
+  selectedForNewsFeed: any;
   ui: {
-    getCausesLoaded: boolean,
-    createCauseLoaded: boolean
-  }
+    getCausesLoaded: boolean;
+    createCauseLoaded: boolean;
+    createCauseOrg: string;
+  };
 }
 
 const causeInitialState: ICauseInitialState = {
@@ -20,7 +21,8 @@ const causeInitialState: ICauseInitialState = {
   createCauseError: undefined,
   ui: {
     getCausesLoaded: false,
-    createCauseLoaded: false
+    createCauseLoaded: false,
+    createCauseOrg: ''
   }
 };
 
@@ -63,6 +65,15 @@ function causeReducer(state = causeInitialState, action: TCauseActions) {
 
     case CauseConstants.TOGGLE_NEWSFEED_SELECT:
       return selectForNewsFeedTransformer(state, action);
+
+    case CauseConstants.SELECT_ORG_CREATE_CAUSE_ACTION:
+      return {
+        ...state,
+        ui: {
+          ...state.ui,
+          createCauseOrg: action.uuid
+        }
+      };
 
     default:
       return state;

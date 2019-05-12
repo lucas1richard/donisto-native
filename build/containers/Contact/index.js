@@ -9,6 +9,7 @@ import theme from 'theme/iftheme';
 import Cause from './components/Cause';
 import Organization from './components/Organization';
 import AddCauseLink from './components/AddCauseLink';
+import AddOrgLink from './components/AddOrgLink';
 const images = [
     require('../../../assets/scenic-1.jpg'),
     require('../../../assets/happy-1.jpg'),
@@ -21,7 +22,9 @@ export class Contact extends React.Component {
             React.createElement(ContactHeading, { contact: contact }),
             React.createElement(View, { style: { paddingHorizontal: theme.screenPadding } },
                 React.createElement(H3, null, "Organizations"),
-                React.createElement(ScrollView, { horizontal: true, showsHorizontalScrollIndicator: false }, organizations.map((org, ix) => (React.createElement(Organization, { key: org.id, title: org.name, img: images[ix % (images.length)], onPress: () => goToOrgDetail(org.uuid) })))),
+                React.createElement(ScrollView, { horizontal: true, showsHorizontalScrollIndicator: false },
+                    React.createElement(AddOrgLink, null),
+                    organizations.map((org, ix) => (React.createElement(Organization, { key: org.id, title: org.name, img: images[ix % (images.length)], onPress: () => goToOrgDetail(org.uuid) })))),
                 React.createElement(H3, null, "Causes"),
                 React.createElement(ScrollView, { horizontal: true, showsHorizontalScrollIndicator: false },
                     React.createElement(AddCauseLink, null),

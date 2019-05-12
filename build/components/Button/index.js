@@ -32,11 +32,11 @@ class Button extends React.Component {
         return [viewStyles[color], viewStyles[variant]];
     }
     render() {
-        const { onPress, title, icon, showLoader } = this.props;
+        const { onPress, title, icon, showLoader, disabled } = this.props;
         if (showLoader) {
             return React.createElement(Loader, null);
         }
-        return (React.createElement(Touchable, { onPress: onPress },
+        return (React.createElement(Touchable, { onPress: onPress, disabled: disabled },
             React.createElement(View, { style: this.viewStyles },
                 icon ? (React.createElement(View, { style: { marginRight: theme.fs } }, icon)) : undefined,
                 React.createElement(Text, { style: this.textStyles }, title))));

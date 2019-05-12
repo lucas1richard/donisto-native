@@ -9,6 +9,7 @@ import { getFormValues, startSubmit, stopSubmit } from 'redux-form';
 import { RegisterNewOrgForm_FORM_NAME } from 'containers/Organization/containers/RegisterNewOrganization/components/RegisterNewOrgForm';
 import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 import { getDonationsAction } from 'containers/Donations/actions';
+import { getContactAction } from 'containers/Contact/actions';
 
 function* registerOrgSaga() {
   try {
@@ -19,7 +20,8 @@ function* registerOrgSaga() {
       put(registerOrgActionSuccess(data)),
       put(getNewsFeedAction()),
       put(getDonationsAction()),
-      put(getOrgAction())
+      put(getOrgAction()),
+      put(getContactAction()),
     ]);
   } catch (err) {
     yield put(registerOrgFailAction(err));

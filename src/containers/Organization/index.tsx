@@ -9,13 +9,9 @@ import Button from 'components/Button';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
 
-export interface IActiveOrg {
-  name: string;
-}
-
 export interface IOrganizationProps {
   organizationUuid?: string;
-  activeOrg?: IActiveOrg;
+  activeOrg?: IOrganization;
 }
 
 export class Organization extends React.Component<IOrganizationProps> {

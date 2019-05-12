@@ -20,6 +20,12 @@ export type TOrganizationActions =
   | IGetOrgDetailSuccessAction
   | IGetOrgDetailFailAction
   | ISelectOrgDetailAction
+  | ICreateOrgLinksAction
+  | ICreateOrgLinksSuccessAction
+  | ICreateOrgLinksFailAction
+  | IDeleteOrgLinksAction
+  | IDeleteOrgLinksSuccessAction
+  | IDeleteOrgLinksFailAction
 ;
 
 export interface IDefaultAction {
@@ -171,5 +177,73 @@ export interface IUpdateOrgFailAction {
 
 export const updateOrgFailAction = (error: any): IUpdateOrgFailAction => ({
   type: OrganizationConstants.UPDATE_ORG_FAIL,
+  error
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface ICreateOrgLinksAction {
+  type: OrganizationConstants.CREATE_ORG_LINKS;
+}
+
+export const createOrgLinksAction = (): ICreateOrgLinksAction => ({
+  type: OrganizationConstants.CREATE_ORG_LINKS,
+});
+
+export interface ICreateOrgLinksSuccessAction {
+  type: OrganizationConstants.CREATE_ORG_LINKS_SUCCESS;
+  organization: IOrganization;
+}
+
+export const createOrgLinksSuccessAction = (organization: IOrganization): ICreateOrgLinksSuccessAction => ({
+  type: OrganizationConstants.CREATE_ORG_LINKS_SUCCESS,
+  organization
+});
+
+export interface ICreateOrgLinksFailAction {
+  type: OrganizationConstants.CREATE_ORG_LINKS_FAIL;
+  error: string;
+}
+
+export const createOrgLinksFailAction = (error: string): ICreateOrgLinksFailAction => ({
+  type: OrganizationConstants.CREATE_ORG_LINKS_FAIL,
+  error
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface IDeleteOrgLinksAction {
+  type: OrganizationConstants.DELETE_ORG_LINKS;
+  links: string[];
+  orgUuid: string;
+}
+
+export const deleteOrgLinksAction = (links: string[], orgUuid: string): IDeleteOrgLinksAction => ({
+  type: OrganizationConstants.DELETE_ORG_LINKS,
+  links,
+  orgUuid,
+});
+
+export interface IDeleteOrgLinksSuccessAction {
+  type: OrganizationConstants.DELETE_ORG_LINKS_SUCCESS;
+  organization: IOrganization;
+}
+
+export const deleteOrgLinksSuccessAction = (organization: IOrganization): IDeleteOrgLinksSuccessAction => ({
+  type: OrganizationConstants.DELETE_ORG_LINKS_SUCCESS,
+  organization
+});
+
+export interface IDeleteOrgLinksFailAction {
+  type: OrganizationConstants.DELETE_ORG_LINKS_FAIL;
+  error: string;
+}
+
+export const deleteOrgLinksFailAction = (error: string): IDeleteOrgLinksFailAction => ({
+  type: OrganizationConstants.DELETE_ORG_LINKS_FAIL,
   error
 });

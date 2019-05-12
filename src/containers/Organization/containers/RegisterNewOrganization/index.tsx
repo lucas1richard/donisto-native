@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { View } from 'react-native';
-import Txt from 'components/Txt';
+import { View, ScrollView } from 'react-native';
 import RegisterNewOrgForm from './components/RegisterNewOrgForm';
 import mapToProps from './mapToProps';
+import theme from 'theme/iftheme';
+import RegisterOrgHeader from './components/Header';
 
 interface IRegisterNewOrgProps {
   registerNewOrg: () => any
@@ -13,12 +14,14 @@ class RegisterNewOrg extends React.Component<IRegisterNewOrgProps> {
     const { registerNewOrg } = this.props;
     return (
       <View>
-        <Txt>
-          Register New Orgnization
-        </Txt>
-        <RegisterNewOrgForm
-          registerNewOrg={registerNewOrg}
-        />
+        <RegisterOrgHeader />
+        <ScrollView>
+          <View style={{ paddingHorizontal: theme.screenPadding }}>
+            <RegisterNewOrgForm
+              registerNewOrg={registerNewOrg}
+            />
+          </View>
+        </ScrollView>
       </View>
     );
   }

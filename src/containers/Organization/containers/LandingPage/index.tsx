@@ -5,26 +5,38 @@ import Txt from 'components/Txt';
 import OrgLandingPageHeader from './components/Header';
 import theme from 'theme/iftheme';
 import UpdateForm from './components/UpdateForm';
+import LinkForm from './components/LinkForm';
 import H3 from 'components/H3';
 import Button from 'components/Button';
+import { Feather } from '@expo/vector-icons';
+import Touchable from 'components/Touchable';
+import { IDeleteOrgLinksAction } from 'containers/Organization/actions';
 
 export interface IOrgLandingPageProps {
   organization: IOrganization;
   getDetail: () => any;
+  createOrgLinks: () => any;
   updateOrg: (onComplete?: () => any) => any;
+  deleteOrgLinks: (links: string[], orgUuid: string) => IDeleteOrgLinksAction;
 }
 
 export interface IOrgLandingPageState {
   displayForm: boolean;
+  displayLinkForm: boolean;
 }
 
 class OrganizationLandingPage extends React.Component<IOrgLandingPageProps, IOrgLandingPageState> {
   state = {
-    displayForm: false
+    displayForm: false,
+    displayLinkForm: false,
   };
 
   toggleForm = () => {
     this.setState((state) => ({ displayForm: !state.displayForm }));
+  }
+
+  toggleLinkForm = () => {
+    this.setState((state) => ({ displayLinkForm: !state.displayLinkForm }));
   }
 
   componentDidMount() {
@@ -52,20 +64,15 @@ class OrganizationLandingPage extends React.Component<IOrgLandingPageProps, IOrg
     return cityStateZip.join(' ');
   }
 
-  get links() {
-    const { organization } = this.props;
-    return organization.links || [{ label: 'No Links Yet', uuid: '1' }];
-  }
-
   get gallery(): any[] {
     return [];
   }
 
   render() {
-    const { organization, updateOrg } = this.props;
+    const { organization, updateOrg, createOrgLinks, deleteOrgLinks } = this.props;
     const isMember = organization.contactIsMember;
 
-    const { displayForm } = this.state;
+    const { displayForm, displayLinkForm } = this.state;
 
     return (
       <View style={{ flex: 1 }}>
@@ -89,17 +96,55 @@ class OrganizationLandingPage extends React.Component<IOrgLandingPageProps, IOrg
               </Txt>
             </View>
             <View style={{ marginBottom: theme.screenPadding }}>
-              <H3 color="primary">Mission Statement:</H3>
+              <H3 color="primary">
+                Mission Statement:
+              </H3>
               <Txt>{organization.mission}</Txt>
             </View>
             <View style={{ marginBottom: theme.screenPadding }}>
-              <H3 color="primary">Links:</H3>
-              {this.links.map((link: any) => (
-                <Txt key={link.uuid}>{link.label}</Txt>
+              <H3 color="primary">
+                Links:
+              </H3>
+              {organization.links && organization.links.map((link) => (
+                <View key={link.uuid} style={{ padding: 3, borderWidth: 1, marginBottom: theme.screenPadding }}>
+                  <Txt>
+                    {link.label}
+                  </Txt>
+                  <Txt>
+                    {link.description}
+                  </Txt>
+                  <Touchable onPress={() => deleteOrgLinks([link.uuid], organization.uuid)}>
+                    <View style={{ alignItems: 'center' }}>
+                      <Txt color="muted">
+                        Delete
+                      </Txt>
+                    </View>
+                  </Touchable>
+                </View>
               ))}
+              {displayLinkForm && (
+                <LinkForm
+                  onSubmit={createOrgLinks}
+                  cancel={this.toggleLinkForm}
+                />
+              )}
+              {isMember && !displayLinkForm && (
+                <Touchable onPress={this.toggleLinkForm}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                    <Feather
+                      name="plus-circle"
+                      size={30}
+                      style={{ color: theme.primary[500], marginRight: 3 }}
+                    />
+                    <Txt color="primary">Add Link</Txt>
+                  </View>
+                </Touchable>
+              )}
             </View>
             <View style={{ marginBottom: theme.screenPadding }}>
-              <H3 color="primary">Gallery:</H3>
+              <H3 color="primary">
+                Gallery:
+              </H3>
               {this.gallery.map((link: any) => (
                 <Txt key={link.uuid}>{link.label}</Txt>
               ))}

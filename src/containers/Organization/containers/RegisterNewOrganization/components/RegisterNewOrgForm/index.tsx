@@ -5,6 +5,7 @@ import { View } from 'react-native';
 import { reduxForm, InjectedFormProps } from 'redux-form';
 import theme from 'theme/iftheme';
 import Button from 'components/Button';
+import MarginWrapper from 'components/Field/MarginWrapper';
 
 export const RegisterNewOrgForm_FORM_NAME = 'RegisterNewOrgForm_FORM_NAME';
 
@@ -24,15 +25,62 @@ export class RegisterNewOrgForm extends React.Component<TRegisterNewOrgFormProps
     return (
       <View>
         <View style={{ marginBottom: theme.fs }}>
-          <MyField
-            name="name"
-            label="Organization Name"
-            component={Input}
-            blurViewProps={{
-              tint: 'light',
-              intensity: 80
-            }}
-          />
+          <MarginWrapper>
+            <MyField
+              name="name"
+              label="Name"
+              component={Input}
+              blurViewProps={{
+                tint: 'light',
+                intensity: 80
+              }}
+            />
+          </MarginWrapper>
+          <MarginWrapper>
+            <MyField
+              name="city"
+              label="City"
+              component={Input}
+              blurViewProps={{
+                tint: 'light',
+                intensity: 80
+              }}
+            />
+          </MarginWrapper>
+          <MarginWrapper>
+            <MyField
+              name="state"
+              label="State"
+              component={Input}
+              blurViewProps={{
+                tint: 'light',
+                intensity: 80
+              }}
+            />
+          </MarginWrapper>
+          <MarginWrapper>
+            <MyField
+              name="zip"
+              label="Zip"
+              component={Input}
+              blurViewProps={{
+                tint: 'light',
+                intensity: 80
+              }}
+            />
+          </MarginWrapper>
+          <MarginWrapper>
+            <MyField
+              name="mission"
+              label="Mission"
+              multiLine
+              component={Input}
+              blurViewProps={{
+                tint: 'light',
+                intensity: 80
+              }}
+            />
+          </MarginWrapper>
         </View>
         <Button
           title="Register"

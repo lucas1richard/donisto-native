@@ -21,5 +21,9 @@ export default StyleSheet.create({
   light: {
     ...defaultStyles,
     color: '#fff'
-  }
+  },
+  muted: {
+    ...defaultStyles,
+    color: '#bbb'
+  },
 });

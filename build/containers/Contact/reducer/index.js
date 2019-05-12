@@ -3,7 +3,7 @@ export const initialContactState = {};
 const contactReducer = (state = initialContactState, action) => {
     switch (action.type) {
         case ContactConstants.GET_CONTACT_SUCCESS:
-            return action.contact;
+            return Object.assign({}, state, action.contact);
         case ContactConstants.GET_CONTACT_FAIL:
             return Object.assign({}, state, { error: action.error });
         case ContactConstants.UPDATE_CONTACT_SUCCESS:

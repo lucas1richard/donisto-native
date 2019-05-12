@@ -24,6 +24,7 @@ enum routeNames {
   ORGANIZATION = 'organization',
   ORGANIZATION_LANDING_PAGE = 'organization/landing-page',
   ORGANIZATION_NEWS_FEED = 'organization/news-feed',
+  REGISTER_ORGANIZATION = 'organization/register',
   LOGGED_IN = 'loggedIn',
   NEWS_ITEM_DETAIL = 'newsItemDetail',
   NEWS_FEED_BASE = 'newsFeedBase',

@@ -4,7 +4,7 @@ import styles from './styles';
 
 export interface ITxtProps extends TextProps {
   children: any;
-  color?: 'primary'|'secondary'|'default'|'light';
+  color?: 'primary'|'secondary'|'default'|'light'|'muted';
 }
 
 const Txt = ({ children, color, style, ...rest }: ITxtProps) => {

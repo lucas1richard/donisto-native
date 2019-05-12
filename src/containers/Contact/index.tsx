@@ -9,6 +9,7 @@ import theme from 'theme/iftheme';
 import Cause from './components/Cause';
 import Organization from './components/Organization';
 import AddCauseLink from './components/AddCauseLink';
+import AddOrgLink from './components/AddOrgLink';
 
 export interface IContactProps {
   contact: ContactAttributes;
@@ -40,6 +41,7 @@ export class Contact extends React.Component<IContactProps> {
         <View style={{ paddingHorizontal: theme.screenPadding }}>
           <H3>Organizations</H3>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <AddOrgLink />
             {organizations.map((org, ix) => (
               <Organization
                 key={org.id}

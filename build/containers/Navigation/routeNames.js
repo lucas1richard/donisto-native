@@ -25,6 +25,7 @@ var routeNames;
     routeNames["ORGANIZATION"] = "organization";
     routeNames["ORGANIZATION_LANDING_PAGE"] = "organization/landing-page";
     routeNames["ORGANIZATION_NEWS_FEED"] = "organization/news-feed";
+    routeNames["REGISTER_ORGANIZATION"] = "organization/register";
     routeNames["LOGGED_IN"] = "loggedIn";
     routeNames["NEWS_ITEM_DETAIL"] = "newsItemDetail";
     routeNames["NEWS_FEED_BASE"] = "newsFeedBase";

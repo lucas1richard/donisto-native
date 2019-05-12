@@ -1,3 +1,11 @@
+interface IOrganizationLink {
+  uuid: string;
+  label: string;
+  href?: string;
+  description?: string;
+  image?: string;
+}
+
 interface IOrganization {
   uuid: string;
   name: string;
@@ -5,6 +13,6 @@ interface IOrganization {
   state?: string;
   zip?: string;
   mission?: string;
-  links?: any[];
+  links?: IOrganizationLink[];
   contactIsMember?: boolean;
 }

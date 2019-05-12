@@ -5,19 +5,23 @@ import { getFormValues, startSubmit, stopSubmit } from 'redux-form';
 import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 import { getDonationsAction } from 'containers/Donations/actions';
 import { CREATE_CAUSE_FORM_NAME } from 'containers/Cause/containers/CreateCause/Form';
-import { makeSelectActiveOrganization } from 'containers/Organization/selectors';
 import {
   createCauseSuccessAction,
   createCauseFailAction,
-  getCauseAction
+  getCauseAction,
+  selectOrgCreateCauseAction
 } from 'containers/Cause/actions';
+import { makeSelectCreateCauseOrg } from 'containers/Cause/selectors';
 
 function* createCauseSaga() {
   try {
     yield put(startSubmit(CREATE_CAUSE_FORM_NAME));
     const formData = yield select(getFormValues(CREATE_CAUSE_FORM_NAME));
-    const activeOrganization = yield select(makeSelectActiveOrganization());
-    const organizationUuid = activeOrganization.uuid;
+    const selectedOrganization = yield select(makeSelectCreateCauseOrg());
+    if (!selectedOrganization) {
+      throw new Error('You must select an organization');
+    }
+    const organizationUuid = selectedOrganization;
     const causeData = {
       ...formData,
       organizationUuid
@@ -31,9 +35,10 @@ function* createCauseSaga() {
       put(getOrgAction())
     ]);
   } catch (err) {
-    yield put(createCauseFailAction(err));
+    yield put(createCauseFailAction(err.message));
   } finally {
     yield put(stopSubmit(CREATE_CAUSE_FORM_NAME));
+    yield put(selectOrgCreateCauseAction(''));
   }
 }
 

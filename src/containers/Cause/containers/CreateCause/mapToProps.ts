@@ -1,12 +1,19 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Dispatch } from 'redux';
-import { createCauseAction } from 'containers/Cause/actions';
+import { createCauseAction, selectOrgCreateCauseAction } from 'containers/Cause/actions';
+import { makeSelectContactOrganizations } from 'containers/Organization/selectors';
+import { makeSelectCreateCauseOrg } from 'containers/Cause/selectors';
 
-export const mapStateToProps = createStructuredSelector({});
+export const mapStateToProps = createStructuredSelector({
+  organizations: makeSelectContactOrganizations(),
+  selectedOrganization: makeSelectCreateCauseOrg(),
+});
+
 export const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    createCause: () => dispatch(createCauseAction())
+    createCause: () => dispatch(createCauseAction()),
+    selectOrganization: (uuid: string) => dispatch(selectOrgCreateCauseAction(uuid)),
   };
 };
 

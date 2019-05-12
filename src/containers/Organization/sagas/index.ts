@@ -6,6 +6,8 @@ import getOrgSaga from './controllers/getOrganizationsSaga';
 import CreateNewsStorySaga from '../containers/CreateNewsStory/sagas';
 import getOrgDetailsSaga from './controllers/getOrganizationDetailsSaga';
 import updateOrgSaga from './controllers/updateOrganizationSaga';
+import createOrgLinksSaga from './controllers/createOrgLinksSaga';
+import deleteOrgLinksSaga from './controllers/deleteOrgLinksSaga';
 
 export function* OrganizationSaga() {
   yield all([
@@ -14,6 +16,8 @@ export function* OrganizationSaga() {
     takeLatest(OrganizationConstants.GET_ORG, getOrgSaga),
     takeLatest(OrganizationConstants.GET_ORG_DETAIL, getOrgDetailsSaga),
     takeLatest(OrganizationConstants.UPDATE_ORG, updateOrgSaga),
+    takeLatest(OrganizationConstants.CREATE_ORG_LINKS, createOrgLinksSaga),
+    takeLatest(OrganizationConstants.DELETE_ORG_LINKS, deleteOrgLinksSaga),
     fork(CreateNewsStorySaga)
   ]);
 }

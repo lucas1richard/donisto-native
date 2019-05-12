@@ -18,6 +18,12 @@ enum OrganizationConstants {
   GET_ORG_DETAIL = 'app/Organization/GET_ORG_DETAIL',
   GET_ORG_DETAIL_SUCCESS = 'app/Organization/GET_ORG_DETAIL_SUCCESS',
   GET_ORG_DETAIL_FAIL = 'app/Organization/GET_ORG_DETAIL_FAIL',
+  CREATE_ORG_LINKS = 'app/Organization/CREATE_ORG_LINKS',
+  CREATE_ORG_LINKS_SUCCESS = 'app/Organization/CREATE_ORG_LINKS_SUCCESS',
+  CREATE_ORG_LINKS_FAIL = 'app/Organization/CREATE_ORG_LINKS_FAIL',
+  DELETE_ORG_LINKS = 'app/Organization/DELETE_ORG_LINKS',
+  DELETE_ORG_LINKS_SUCCESS = 'app/Organization/DELETE_ORG_LINKS_SUCCESS',
+  DELETE_ORG_LINKS_FAIL = 'app/Organization/DELETE_ORG_LINKS_FAIL',
   SELECT_DETAIL = 'app/Organization/SELECT_DETAIL',
 }
 

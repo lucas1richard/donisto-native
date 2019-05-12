@@ -14,6 +14,7 @@ export type TCauseActions =
   | IGetCauseFailAction
   | IGetCauseSuccessAction
   | IToggleNewsFeedSelectAction
+  | ISelectOrgCreateCauseAction
 ;
 
 interface ICreateCauseAction {
@@ -45,6 +46,8 @@ export const createCauseSuccessAction = (cause: any): ICreateCauseSuccessAction 
 });
 
 ///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 interface IGetCauseAction {
   type: CauseConstants.GET_CAUSE_ACTION
@@ -75,6 +78,8 @@ export const getCauseSuccessAction = (cause: any): IGetCauseSuccessAction => ({
 });
 
 ////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 export interface IToggleNewsFeedSelectAction {
   type: CauseConstants.TOGGLE_NEWSFEED_SELECT,
@@ -83,5 +88,19 @@ export interface IToggleNewsFeedSelectAction {
 
 export const toggleNewsFeedSelectAction = (uuid: string): IToggleNewsFeedSelectAction => ({
   type: CauseConstants.TOGGLE_NEWSFEED_SELECT,
+  uuid
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface ISelectOrgCreateCauseAction {
+  type: CauseConstants.SELECT_ORG_CREATE_CAUSE_ACTION,
+  uuid: string
+}
+
+export const selectOrgCreateCauseAction = (uuid: string): ISelectOrgCreateCauseAction => ({
+  type: CauseConstants.SELECT_ORG_CREATE_CAUSE_ACTION,
   uuid
 });

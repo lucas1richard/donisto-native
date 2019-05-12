@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { IReduxState } from 'redux/reducers';
+import { selectContactDomain } from 'containers/Contact/selectors';
 
 export const selectOrganizationDomain = () => (state: IReduxState) => state.organization;
 
@@ -21,4 +22,14 @@ export const makeSelectActiveOrganization = () => createSelector(
 export const makeSelectDetailOrganization = () => createSelector(
   selectOrganizationDomain(),
   (substate) => substate.uuid[substate.ui.detailUuid]
+);
+
+export const makeSelectContactOrganizations = () => createSelector(
+  selectContactDomain(),
+  selectOrganizationDomain(),
+  (contactSubstate, orgSubstate): IOrganization[] => {
+    return contactSubstate.organizations.map((org: IOrganization) => {
+      return orgSubstate.uuid[org.uuid];
+    });
+  }
 );

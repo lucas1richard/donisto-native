@@ -43,6 +43,9 @@ function organizationReducer(state = initialState, action: TOrganizationActions)
     case OrganizationConstants.GET_ORG_SUCCESS:
       return getOrgSuccessCaseFn(state, action);
 
+    case OrganizationConstants.GET_ORG_SUCCESS:
+      return getOrgSuccessCaseFn(state, action);
+
     case OrganizationConstants.REGISTER_ORG_FAIL:
       return {
         ...state,

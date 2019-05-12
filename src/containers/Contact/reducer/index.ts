@@ -3,12 +3,18 @@ import { TContactActions } from '../actions';
 
 export const initialContactState = {};
 
-const contactReducer = (state = initialContactState, action: TContactActions) => {
+const contactReducer = (
+  state = initialContactState,
+  action: TContactActions
+) => {
 
   switch (action.type) {
 
     case ContactConstants.GET_CONTACT_SUCCESS:
-      return action.contact;
+      return {
+        ...state,
+        ...action.contact
+      };
 
     case ContactConstants.GET_CONTACT_FAIL:
       return {

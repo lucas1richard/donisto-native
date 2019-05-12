@@ -22,3 +22,8 @@ export const makeSelectSelectedCauses = () => createSelector(
   selectCauseDomain(),
   (substate) => substate.selectedForNewsFeed
 );
+
+export const makeSelectCreateCauseOrg = () => createSelector(
+  selectCauseDomain(),
+  (substate) => substate.ui.createCauseOrg
+);

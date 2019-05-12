@@ -48,12 +48,12 @@ class Button extends React.Component<IButtonProps> {
   }
 
   render() {
-    const { onPress, title, icon, showLoader } = this.props;
+    const { onPress, title, icon, showLoader, disabled } = this.props;
     if (showLoader) {
       return <Loader />;
     }
     return (
-      <Touchable onPress={onPress}>
+      <Touchable onPress={onPress} disabled={disabled}>
         <View style={this.viewStyles}>
           {icon ? (
             <View style={{ marginRight: theme.fs }}>
