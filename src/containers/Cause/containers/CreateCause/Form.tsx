@@ -7,6 +7,7 @@ import FormFlow from 'components/FormFlow';
 import MarginWrapper from 'components/Field/MarginWrapper';
 import Button from 'components/Button';
 import { BlurViewProps } from 'expo';
+import { decimalMask } from 'utilities/masks';
 
 export const CREATE_CAUSE_FORM_NAME = 'create_cause';
 
@@ -40,6 +41,18 @@ export class CreateCauseForm extends FormFlow<TCreateCauseFormProps> {
             spellCheck={false}
             autoCorrect={false}
             autoCapitalize="none"
+            blurViewProps={blurViewProps}
+          />
+        </MarginWrapper>
+        <MarginWrapper>
+          <Field
+            component={Input}
+            name="suggested_amount"
+            label="Suggested Donation Amount"
+            tint="light"
+            // onSubmitEditing={this.submitEditing('password')}
+            format={decimalMask}
+            keyboardType="decimal-pad"
             blurViewProps={blurViewProps}
           />
         </MarginWrapper>

@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, Picker, ScrollView } from 'react-native';
 import CreateCauseForm from './Form';
 import theme from 'theme/iftheme';
 import mapToProps from './mapToProps';
 import CreateCauseHeader from './components/Header';
 import Txt from 'components/Txt';
-import Touchable from 'components/Touchable';
+import { BlurView } from 'expo';
 
 interface ICreateCauseProps {
   organizations: IOrganization[],
@@ -23,24 +23,38 @@ class CreateCause extends React.Component<ICreateCauseProps> {
       selectedOrganization,
     } = this.props;
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <CreateCauseHeader />
-        <View style={{ paddingHorizontal: theme.screenPadding }}>
-          <View style={{ marginVertical: theme.screenPadding }}>
-            {organizations.map((org) => (
-              <Touchable key={org.uuid} onPress={() => selectOrganization(selectedOrganization === org.uuid ? '' : org.uuid)}>
-                <View>
-                  <Txt>
-                    {org.name} {selectedOrganization === org.uuid && ' - Selected'}
-                  </Txt>
-                </View>
-              </Touchable>
-            ))}
+        <ScrollView>
+          <View style={{ paddingHorizontal: theme.screenPadding }}>
+            <View style={{ marginVertical: theme.screenPadding }}>
+              <View>
+                <Txt>
+                  Organization:
+                </Txt>
+                <BlurView tint="light" intensity={80}>
+                  <Picker
+                    selectedValue={selectedOrganization}
+                    onValueChange={selectOrganization}
+                    style={{ backgroundColor: '#f8f8f8', borderWidth: 1, borderColor: '#f8f8f8', borderRadius: theme.fs * 0.6 }}
+                  >
+                    <Picker.Item label="None" />
+                    {organizations.map((org) => (
+                      <Picker.Item
+                        label={org.name}
+                        value={org.uuid}
+                        key={org.uuid}
+                      />
+                    ))}
+                  </Picker>
+                </BlurView>
+              </View>
+            </View>
+            <CreateCauseForm
+              onSubmit={createCause}
+            />
           </View>
-          <CreateCauseForm
-            onSubmit={createCause}
-          />
-        </View>
+        </ScrollView>
       </View>
     );
   }

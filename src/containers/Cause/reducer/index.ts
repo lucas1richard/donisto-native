@@ -3,10 +3,10 @@ import { TCauseActions } from '../actions';
 import selectForNewsFeedTransformer from './transformers/selectForNewsFeed';
 
 export interface ICauseInitialState {
-  causes: any;
+  causes: { [x: string]: ICause };
   getCausesError: string;
   createCauseError: string;
-  selectedForNewsFeed: any;
+  selectedForNewsFeed: { [x: string]: boolean };
   ui: {
     getCausesLoaded: boolean;
     createCauseLoaded: boolean;

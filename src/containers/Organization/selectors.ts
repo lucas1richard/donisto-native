@@ -24,12 +24,24 @@ export const makeSelectDetailOrganization = () => createSelector(
   (substate) => substate.uuid[substate.ui.detailUuid]
 );
 
-export const makeSelectContactOrganizations = () => createSelector(
+export const makeSelectContactOrganizations = (alphabetized?: 'alphabetized') => createSelector(
   selectContactDomain(),
   selectOrganizationDomain(),
   (contactSubstate, orgSubstate): IOrganization[] => {
-    return contactSubstate.organizations.map((org: IOrganization) => {
+    const orgArray: IOrganization[] = contactSubstate.organizations.map((org: IOrganization) => {
       return orgSubstate.uuid[org.uuid];
     });
+    if (alphabetized) {
+      orgArray.sort((aa, bb) => {
+        if (aa.name > bb.name) {
+          return 1;
+        }
+        if (aa.name < bb.name) {
+          return -1;
+        }
+        return 0;
+      });
+    }
+    return orgArray;
   }
 );

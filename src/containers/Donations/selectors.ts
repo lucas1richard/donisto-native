@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 import { IDonationsInitialState } from './reducer';
 import { IReduxState } from 'redux/reducers';
 import { ICreateDonationReduxState } from './reducer/createDonationReducer';
-import { makeSelectCauses } from 'containers/Cause/selectors';
+import { makeSelectCauses, selectCauseDomain } from 'containers/Cause/selectors';
 
 export const selectDonationsDomain = () => (state: IReduxState): IDonationsInitialState => state.donations;
 export const selectCreateDonationsDomain = () => (state: IReduxState): ICreateDonationReduxState => state.donations.createDonation;
@@ -29,7 +29,8 @@ export const makeSelectCreateDonationsUi = () => createSelector(
 
 export const makeSelectCreateDonationsCause = () => createSelector(
   selectCreateDonationsDomain(),
-  (substate) => substate.selectedCause
+  selectCauseDomain(),
+  (donationSubstate, causeSubstate) => causeSubstate.causes[donationSubstate.selectedCause]
 );
 
 export const makeSelectDonationDetail = () => createSelector(
