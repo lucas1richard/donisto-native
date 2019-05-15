@@ -15,11 +15,11 @@ import routeNames from 'containers/Navigation/routeNames';
 function* createDonationSaga() {
   try {
     const formData = yield select(getFormValues(CREATE_DONATION_FORM));
-    const selectedCause = yield select(makeSelectCreateDonationsCause());
+    const selectedCause: ICause = yield select(makeSelectCreateDonationsCause());
     const dataToSend = {
       ...formData,
       amount: decimalMask(formData.amount),
-      cause_uuid: selectedCause
+      cause_uuid: selectedCause.uuid
     };
     const { data } = yield call(api, 'post', '/v1/donation', dataToSend);
     yield all([

@@ -6,7 +6,7 @@ import { makeSelectContactOrganizations } from 'containers/Organization/selector
 import { makeSelectCreateCauseOrg } from 'containers/Cause/selectors';
 
 export const mapStateToProps = createStructuredSelector({
-  organizations: makeSelectContactOrganizations(),
+  organizations: makeSelectContactOrganizations('alphabetized'),
   selectedOrganization: makeSelectCreateCauseOrg(),
 });
 

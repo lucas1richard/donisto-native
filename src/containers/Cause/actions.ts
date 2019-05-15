@@ -37,10 +37,10 @@ export const createCauseFailAction = (error: any): ICreateCauseFailAction => ({
 
 interface ICreateCauseSuccessAction {
   type: CauseConstants.CREATE_CAUSE_SUCCESS_ACTION,
-  cause: any
+  cause: ICause[]
 }
 
-export const createCauseSuccessAction = (cause: any): ICreateCauseSuccessAction => ({
+export const createCauseSuccessAction = (cause: ICause[]): ICreateCauseSuccessAction => ({
   type: CauseConstants.CREATE_CAUSE_SUCCESS_ACTION,
   cause
 });
@@ -69,10 +69,10 @@ export const getCauseFailAction = (error: any): IGetCauseFailAction => ({
 
 interface IGetCauseSuccessAction {
   type: CauseConstants.GET_CAUSE_SUCCESS_ACTION,
-  cause: any
+  cause: ICause[]
 }
 
-export const getCauseSuccessAction = (cause: any): IGetCauseSuccessAction => ({
+export const getCauseSuccessAction = (cause: ICause[]): IGetCauseSuccessAction => ({
   type: CauseConstants.GET_CAUSE_SUCCESS_ACTION,
   cause
 });
