@@ -22,6 +22,8 @@ interface MyFieldProps {
   autoCorrect?: boolean;
   autoCapitalize?: 'none'|'sentences'|'words'|'characters';
   tint?: 'light'|'dark';
+  toggledOn?: any;
+  toggledOff?: any;
   blurViewProps?: BlurViewProps;
 }
 

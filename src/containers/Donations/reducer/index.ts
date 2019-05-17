@@ -6,14 +6,12 @@ import createDonationReducer, {
 } from './createDonationReducer';
 import getDonationsSuccessCaseFn from './casefn/getDonationsSuccess';
 
-export interface IDonation {}
-
 export interface IDonationsInitialState {
   ui: {
     loaded: boolean;
     viewDonation: string;
   };
-  uuid: any;
+  uuid: { [x: string]: IDonation};
   createDonation: ICreateDonationReduxState;
   donations: IDonation[];
   error: any;
