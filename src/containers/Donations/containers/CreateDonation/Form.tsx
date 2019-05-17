@@ -6,6 +6,8 @@ import { reduxForm, InjectedFormProps } from 'redux-form';
 import Button from 'components/Button';
 import { BlurViewProps } from 'expo';
 import { moneyMask } from 'utilities/masks';
+import SwitchComponent from 'components/Switch';
+import Txt from 'components/Txt';
 
 export const CREATE_DONATION_FORM = 'create_donation_form';
 
@@ -15,7 +17,7 @@ const blurViewProps: BlurViewProps = {
 };
 
 export interface ICreateDonationFormData {
-  cause: string;
+  cause: ICause;
 }
 
 interface ICreateDonationFormProps {
@@ -31,9 +33,27 @@ class CreateDonationForm extends React.Component<TCreateDonationFormProps> {
       <View>
         <MyField
           component={Input}
+          label="Amount"
           name="amount"
           placeholder="$0.00"
           format={moneyMask}
+          keyboardType="decimal-pad"
+          blurViewProps={blurViewProps}
+        />
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Txt>Donate Anonymously:</Txt>
+          <MyField
+            component={SwitchComponent}
+            name="is_anonymous"
+            toggledOn={true}
+            toggledOff={false}
+          />
+        </View>
+        <MyField
+          component={Input}
+          label="Message"
+          name="message"
+          multiLine
           blurViewProps={blurViewProps}
         />
         <Button

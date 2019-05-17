@@ -5,8 +5,13 @@ import mapToProps from './mapToProps';
 import { moneyMask } from 'utilities/masks';
 import Badge from 'components/Badge';
 import H1 from 'components/H1';
+import Txt from 'components/Txt';
 
-class ViewDonation extends React.Component<any> {
+export interface IViewDonationProps {
+  donation: IDonationDetail
+}
+
+class ViewDonation extends React.Component<IViewDonationProps> {
   render() {
     const { donation } = this.props;
     return (
@@ -33,6 +38,17 @@ class ViewDonation extends React.Component<any> {
                 {moneyMask(donation.amount)}
               </H1>
               <Badge label={donation.cause.name} />
+              {donation.is_anonymous && (
+                <View style={{ marginTop: theme.screenPadding }}>
+                  <Txt color="light">You gave this donation anonymously</Txt>
+                </View>
+              )}
+              {donation.message && (
+                <View style={{ marginTop: theme.screenPadding }}>
+                  <Txt color="light">You left this message:</Txt>
+                  <Txt color="light">{donation.message}</Txt>
+                </View>
+              )}
             </View>
           </ImageBackground>
     );

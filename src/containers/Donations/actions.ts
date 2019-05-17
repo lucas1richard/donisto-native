@@ -68,10 +68,10 @@ export const createDonationAction = (): ICreateDonationAction => ({
 
 export interface ICreateDonationSuccessAction {
   type: DonationsConstants.CREATE_DONATION_SUCCESS,
-  donations: any[]
+  donations: IDonation[]
 }
 
-export const createDonationSuccessAction = (donations: any[]): ICreateDonationSuccessAction => ({
+export const createDonationSuccessAction = (donations: IDonation[]): ICreateDonationSuccessAction => ({
   type: DonationsConstants.CREATE_DONATION_SUCCESS,
   donations
 });
