@@ -5,13 +5,15 @@ import {
   getOrgDetailFailAction
 } from 'containers/Organization/actions';
 import { makeSelectDetailOrganization } from 'containers/Organization/selectors';
+import { getCauseDetailAction } from 'containers/Cause/actions';
 
 function* getOrgDetailsSaga() {
   try {
     const org = yield select(makeSelectDetailOrganization());
     const organization_uuid = org.uuid;
-    const { data } = yield call(api, 'post', '/v1/organization/detail', { organization_uuid });
+    const { data }: { data: IOrganizationDetail } = yield call(api, 'post', '/v1/organization/detail', { organization_uuid });
     yield put(getOrgDetailActionSuccess(data));
+    yield put(getCauseDetailAction(data.causes.map(cause => cause.uuid)));
   } catch (err) {
     yield put(getOrgDetailFailAction(err));
   }

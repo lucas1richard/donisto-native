@@ -6,11 +6,16 @@ import {
   getOrgDetailAction,
   updateOrgAction,
   createOrgLinksAction,
-  deleteOrgLinksAction
+  deleteOrgLinksAction,
+  selectOrgCauseDetailAction
 } from 'containers/Organization/actions';
+import { makeSelectDetailOrgCauses } from 'containers/Cause/selectors';
+import NavigationService from 'containers/Navigation/NavigationService';
+import routeNames from 'containers/Navigation/routeNames';
 
 export const mapToProps = createStructuredSelector({
   organization: makeSelectDetailOrganization(),
+  causes: makeSelectDetailOrgCauses()
 });
 
 export const mapDispatchToProps = (dispatch: Dispatch) => ({
@@ -18,8 +23,14 @@ export const mapDispatchToProps = (dispatch: Dispatch) => ({
   updateOrg: (onComplete: () => any) => {
     dispatch(updateOrgAction(onComplete));
   },
+  viewCauseDetail: (uuid: string) => {
+    dispatch(selectOrgCauseDetailAction(uuid));
+    NavigationService.navigate(routeNames.ORGANIZATION_LANDING_PAGE_CAUSE_DETAIL);
+  },
   createOrgLinks: () => dispatch(createOrgLinksAction()),
-  deleteOrgLinks: (links: string[], orgUuid: string) => dispatch(deleteOrgLinksAction(links, orgUuid))
+  deleteOrgLinks: (links: string[], orgUuid: string) => {
+    dispatch(deleteOrgLinksAction(links, orgUuid));
+  }
 });
 
 export default connect(mapToProps, mapDispatchToProps);

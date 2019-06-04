@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { makeSelectDonations } from './selectors';
+import { makeSelectDonationsWithCauses } from './selectors';
 import { selectDetailViewAction } from './actions';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
 
 const mapStateToProps = createStructuredSelector({
-  donations: makeSelectDonations()
+  donations: makeSelectDonationsWithCauses()
 });
 
 function mapDispatchToProps(dispatch: Dispatch) {

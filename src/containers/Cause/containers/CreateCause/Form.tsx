@@ -47,6 +47,18 @@ export class CreateCauseForm extends FormFlow<TCreateCauseFormProps> {
         <MarginWrapper>
           <Field
             component={Input}
+            name="goal_amount"
+            label="Goal Amount"
+            tint="light"
+            // onSubmitEditing={this.submitEditing('password')}
+            format={decimalMask}
+            keyboardType="decimal-pad"
+            blurViewProps={blurViewProps}
+          />
+        </MarginWrapper>
+        <MarginWrapper>
+          <Field
+            component={Input}
             name="suggested_amount"
             label="Suggested Donation Amount"
             tint="light"

@@ -6,7 +6,7 @@ import Donation from './components/Donation';
 import DonationsHeader from './components/Header';
 
 export interface IDonationsProps {
-  donations: any[];
+  donations: IDonationDetail[];
   viewDetail: (donationUuid: string) => any;
 }
 
@@ -30,6 +30,7 @@ export class Donations extends React.Component<IDonationsProps> {
                   key={donation.uuid}
                   img={images[ix % (images.length)]}
                   onPress={() => viewDetail(donation.uuid)}
+                  donation={donation}
                 />
               ))}
             </View>

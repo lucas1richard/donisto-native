@@ -1,12 +1,22 @@
 import * as React from 'react';
 import { View, Image } from 'react-native';
+import moment from 'moment';
 import Txt from 'components/Txt';
 import styles from './styles';
 import Touchable from 'components/Touchable';
+import logger from 'utilities/logger';
+import { moneyMask } from 'utilities/masks';
 
-class Donation extends React.Component<any> {
+interface IDonationComponentProps {
+  img: NodeRequire,
+  onPress: () => any;
+  donation: IDonationDetail;
+}
+
+class Donation extends React.Component<IDonationComponentProps> {
   render() {
-    const { img, onPress } = this.props;
+    const { img, onPress, donation } = this.props;
+    logger.info(donation, 'Donation');
     return (
       <View style={styles.marginWrapper}>
         <Touchable onPress={onPress}>
@@ -16,13 +26,13 @@ class Donation extends React.Component<any> {
             </View>
             <View style={{ padding: 10 }}>
               <Txt style={{ fontSize: 13 }}>
-                School for Kids
+                {moneyMask(donation.amount)}
               </Txt>
               <Txt style={{ fontSize: 13 }}>
-                Pre-K to Junior High
+                {donation.cause.name}
               </Txt>
-              <Txt style={{ fontSize: 13, color: '#aaa' }}>
-                on Dec 14, 2018
+              <Txt style={{ fontSize: 13/* , color: '#aaa' */ }} color="muted">
+                on {moment(donation.createdAt).format('MMM DD, YYYY')}
               </Txt>
             </View>
           </View>

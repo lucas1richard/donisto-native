@@ -6,11 +6,11 @@ import Txt from 'components/Txt';
 import Touchable from 'components/Touchable';
 import NavigationService from 'containers/Navigation/NavigationService';
 
-interface IOrgLandingPageHeaderProps {
-  title: string;
+interface IScreenHeaderProps {
+  title?: string;
 }
 
-class OrgLandingPageHeader extends React.PureComponent<IOrgLandingPageHeaderProps> {
+class ScreenHeader extends React.PureComponent<IScreenHeaderProps> {
   render() {
     const { title } = this.props;
     return (
@@ -46,4 +46,4 @@ class OrgLandingPageHeader extends React.PureComponent<IOrgLandingPageHeaderProp
   }
 }
 
-export default OrgLandingPageHeader;
+export default ScreenHeader;

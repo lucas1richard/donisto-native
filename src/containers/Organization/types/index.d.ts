@@ -6,6 +6,10 @@ interface IOrganizationLink {
   image?: string;
 }
 
+interface IOrgDetailCause extends ICause {
+  donations: IDonationWContact[];
+}
+
 interface IOrganization {
   uuid: string;
   name: string;
@@ -15,4 +19,5 @@ interface IOrganization {
   mission?: string;
   links?: IOrganizationLink[];
   contactIsMember?: boolean;
+  causes?: IOrgDetailCause[];
 }

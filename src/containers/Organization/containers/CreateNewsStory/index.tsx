@@ -24,12 +24,12 @@ export class CreateNewsStory extends React.Component<ICreateNewsStoryProps> {
               <CreateNewsStoryForm submitStory={submitStory} />
             )}
             {status === 'success' && (
-              <Txt>
+              <Txt style={{ color: '#00ff00' }}>
                 Success
               </Txt>
             )}
             {status === 'fail' && (
-              <Txt>
+              <Txt style={{ color: '#ff0000' }}>
                 Fail
               </Txt>
             )}

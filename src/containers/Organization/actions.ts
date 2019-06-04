@@ -26,6 +26,7 @@ export type TOrganizationActions =
   | IDeleteOrgLinksAction
   | IDeleteOrgLinksSuccessAction
   | IDeleteOrgLinksFailAction
+  | ISelectOrgCauseDetailAction
 ;
 
 export interface IDefaultAction {
@@ -143,6 +144,20 @@ export interface ISelectOrgDetailAction {
 
 export const selectOrgDetailAction = (uuid: string): ISelectOrgDetailAction => ({
   type: OrganizationConstants.SELECT_DETAIL,
+  uuid
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface ISelectOrgCauseDetailAction {
+  type: OrganizationConstants.SELECT_DETAIL_CAUSE;
+  uuid: string;
+}
+
+export const selectOrgCauseDetailAction = (uuid: string): ISelectOrgCauseDetailAction => ({
+  type: OrganizationConstants.SELECT_DETAIL_CAUSE,
   uuid
 });
 

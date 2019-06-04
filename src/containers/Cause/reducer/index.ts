@@ -53,6 +53,22 @@ function causeReducer(state = causeInitialState, action: TCauseActions) {
         }
       };
 
+    case CauseConstants.GET_CAUSE_DETAIL_SUCCESS_ACTION:
+      return {
+        ...state,
+        causes: {
+          ...state.causes,
+          ...action.cause.reduce((memo: any, item: any) => {
+            memo[item.uuid] = item;
+            return memo;
+          }, {})
+        },
+        ui: {
+          ...state.ui,
+          getCausesLoaded: true
+        }
+      };
+
     case CauseConstants.GET_CAUSE_FAIL_ACTION:
       return {
         ...state,

@@ -2,7 +2,6 @@ import * as React from 'react';
 import { View, ScrollView } from 'react-native';
 import mapToProps from './mapToProps';
 import Txt from 'components/Txt';
-import OrgLandingPageHeader from './components/Header';
 import theme from 'theme/iftheme';
 import UpdateForm from './components/UpdateForm';
 import LinkForm from './components/LinkForm';
@@ -11,9 +10,14 @@ import Button from 'components/Button';
 import { Feather } from '@expo/vector-icons';
 import Touchable from 'components/Touchable';
 import { IDeleteOrgLinksAction } from 'containers/Organization/actions';
+import ScreenHeader from 'components/ScreenHeader';
+import CausesSection from './components/CausesSection';
+import BasicInfoSection from './components/BasicInfoSection';
 
 export interface IOrgLandingPageProps {
   organization: IOrganization;
+  causes: IOrgDetailCause[];
+  viewCauseDetail: (uuid: string) => any;
   getDetail: () => any;
   createOrgLinks: () => any;
   updateOrg: (onComplete?: () => any) => any;
@@ -43,40 +47,26 @@ class OrganizationLandingPage extends React.Component<IOrgLandingPageProps, IOrg
     this.props.getDetail();
   }
 
-  get location() {
-    const { organization } = this.props;
-    const { city, state, zip } = organization;
-    const cityState = [];
-    const cityStateZip = [];
-    if (city) {
-      cityState.push(city);
-    }
-    if (state) {
-      cityState.push(state);
-    }
-    if (cityState.length > 0) {
-      cityStateZip.push(cityState.join(', '));
-    }
-    if (zip) {
-      cityStateZip.push(zip);
-    }
-
-    return cityStateZip.join(' ');
-  }
-
   get gallery(): any[] {
     return [];
   }
 
   render() {
-    const { organization, updateOrg, createOrgLinks, deleteOrgLinks } = this.props;
-    const isMember = organization.contactIsMember;
+    const {
+      organization,
+      updateOrg,
+      createOrgLinks,
+      deleteOrgLinks,
+      causes,
+      viewCauseDetail,
+    } = this.props;
 
+    const isMember = organization.contactIsMember;
     const { displayForm, displayLinkForm } = this.state;
 
     return (
       <View style={{ flex: 1 }}>
-        <OrgLandingPageHeader title={organization.name} />
+        <ScreenHeader title={organization.name} />
         <ScrollView>
 
           <View style={{ paddingHorizontal: theme.screenPadding }}>
@@ -88,18 +78,12 @@ class OrganizationLandingPage extends React.Component<IOrgLandingPageProps, IOrg
                   cancel={this.toggleForm}
                 />
               )}
-              <H3 color="primary">
-                Location:
-              </H3>
-              <Txt>
-                {this.location}
-              </Txt>
-            </View>
-            <View style={{ marginBottom: theme.screenPadding }}>
-              <H3 color="primary">
-                Mission Statement:
-              </H3>
-              <Txt>{organization.mission}</Txt>
+              <BasicInfoSection
+                mission={organization.mission}
+                city={organization.city}
+                state={organization.state}
+                zip={organization.zip}
+              />
             </View>
             <View style={{ marginBottom: theme.screenPadding }}>
               <H3 color="primary">
@@ -157,6 +141,17 @@ class OrganizationLandingPage extends React.Component<IOrgLandingPageProps, IOrg
                 />
               )}
             </View>
+            <CausesSection
+              causes={causes}
+              viewCauseDetail={viewCauseDetail}
+            />
+            {isMember && (
+              <View>
+                <H3 color="primary">
+                  Top Donors:
+                </H3>
+              </View>
+            )}
           </View>
         </ScrollView>
       </View>

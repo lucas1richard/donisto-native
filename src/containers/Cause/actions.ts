@@ -13,11 +13,14 @@ export type TCauseActions =
   | IGetCauseAction
   | IGetCauseFailAction
   | IGetCauseSuccessAction
+  | IGetCauseDetailAction
+  | IGetCauseDetailFailAction
+  | IGetCauseDetailSuccessAction
   | IToggleNewsFeedSelectAction
   | ISelectOrgCreateCauseAction
 ;
 
-interface ICreateCauseAction {
+export interface ICreateCauseAction {
   type: CauseConstants.CREATE_CAUSE_ACTION
 }
 
@@ -25,7 +28,7 @@ export const createCauseAction = (): ICreateCauseAction => ({
   type: CauseConstants.CREATE_CAUSE_ACTION
 });
 
-interface ICreateCauseFailAction {
+export interface ICreateCauseFailAction {
   type: CauseConstants.CREATE_CAUSE_FAIL_ACTION,
   error: any
 }
@@ -35,7 +38,7 @@ export const createCauseFailAction = (error: any): ICreateCauseFailAction => ({
   error
 });
 
-interface ICreateCauseSuccessAction {
+export interface ICreateCauseSuccessAction {
   type: CauseConstants.CREATE_CAUSE_SUCCESS_ACTION,
   cause: ICause[]
 }
@@ -49,7 +52,7 @@ export const createCauseSuccessAction = (cause: ICause[]): ICreateCauseSuccessAc
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-interface IGetCauseAction {
+export interface IGetCauseAction {
   type: CauseConstants.GET_CAUSE_ACTION
 }
 
@@ -57,7 +60,7 @@ export const getCauseAction = (): IGetCauseAction => ({
   type: CauseConstants.GET_CAUSE_ACTION
 });
 
-interface IGetCauseFailAction {
+export interface IGetCauseFailAction {
   type: CauseConstants.GET_CAUSE_FAIL_ACTION,
   error: any
 }
@@ -67,13 +70,46 @@ export const getCauseFailAction = (error: any): IGetCauseFailAction => ({
   error
 });
 
-interface IGetCauseSuccessAction {
+export interface IGetCauseSuccessAction {
   type: CauseConstants.GET_CAUSE_SUCCESS_ACTION,
   cause: ICause[]
 }
 
 export const getCauseSuccessAction = (cause: ICause[]): IGetCauseSuccessAction => ({
   type: CauseConstants.GET_CAUSE_SUCCESS_ACTION,
+  cause
+});
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+export interface IGetCauseDetailAction {
+  type: CauseConstants.GET_CAUSE_DETAIL_ACTION,
+  cause_uuids: string[]
+}
+
+export const getCauseDetailAction = (cause_uuids: string[]): IGetCauseDetailAction => ({
+  type: CauseConstants.GET_CAUSE_DETAIL_ACTION,
+  cause_uuids
+});
+
+export interface IGetCauseDetailFailAction {
+  type: CauseConstants.GET_CAUSE_DETAIL_FAIL_ACTION,
+  error: any
+}
+
+export const getCauseDetailFailAction = (error: any): IGetCauseDetailFailAction => ({
+  type: CauseConstants.GET_CAUSE_DETAIL_FAIL_ACTION,
+  error
+});
+
+export interface IGetCauseDetailSuccessAction {
+  type: CauseConstants.GET_CAUSE_DETAIL_SUCCESS_ACTION,
+  cause: ICause[]
+}
+
+export const getCauseDetailSuccessAction = (cause: ICause[]): IGetCauseDetailSuccessAction => ({
+  type: CauseConstants.GET_CAUSE_DETAIL_SUCCESS_ACTION,
   cause
 });
 

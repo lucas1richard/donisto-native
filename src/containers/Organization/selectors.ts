@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 import { IReduxState } from 'redux/reducers';
 import { selectContactDomain } from 'containers/Contact/selectors';
+import { selectCauseDomain } from 'containers/Cause/selectors';
 
 export const selectOrganizationDomain = () => (state: IReduxState) => state.organization;
 
@@ -21,7 +22,15 @@ export const makeSelectActiveOrganization = () => createSelector(
 
 export const makeSelectDetailOrganization = () => createSelector(
   selectOrganizationDomain(),
-  (substate) => substate.uuid[substate.ui.detailUuid]
+  (substate): IOrganization => substate.uuid[substate.ui.detailUuid]
+);
+
+export const makeSelectOrgCauseDetail = () => createSelector(
+  selectOrganizationDomain(),
+  selectCauseDomain(),
+  (substate, causeSubstate): ICause => {
+    return causeSubstate.causes[substate.ui.detailCauseUuid];
+  }
 );
 
 export const makeSelectContactOrganizations = (alphabetized?: 'alphabetized') => createSelector(

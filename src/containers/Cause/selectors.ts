@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { IReduxState } from 'redux/reducers';
+import { makeSelectDetailOrganization } from 'containers/Organization/selectors';
 
 export const selectCauseDomain = () => (state: IReduxState) => state.cause;
 
@@ -11,6 +12,16 @@ export const makeSelectCause = () => createSelector(
 export const makeSelectCauses = () => createSelector(
   selectCauseDomain(),
   (substate) => substate.causes
+);
+
+export const makeSelectDetailOrgCauses = () => createSelector(
+  makeSelectDetailOrganization(),
+  makeSelectCauses(),
+  (orgSubstate, causesSubstate) => {
+    return orgSubstate.causes
+      ? orgSubstate.causes.map(cause => causesSubstate[cause.uuid])
+      : [];
+  }
 );
 
 export const makeSelectCausesArray = () => createSelector(

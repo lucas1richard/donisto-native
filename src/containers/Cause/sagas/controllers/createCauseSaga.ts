@@ -1,7 +1,7 @@
 import { all, put, call, select } from 'redux-saga/effects';
 import { getOrgAction } from 'containers/Organization/actions';
 import api from 'utilities/api';
-import { getFormValues, startSubmit, stopSubmit } from 'redux-form';
+import { getFormValues, startSubmit, stopSubmit, reset } from 'redux-form';
 import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 import { getDonationsAction } from 'containers/Donations/actions';
 import { CREATE_CAUSE_FORM_NAME } from 'containers/Cause/containers/CreateCause/Form';
@@ -34,11 +34,13 @@ function* createCauseSaga() {
       put(getCauseAction()),
       put(getOrgAction())
     ]);
+
+    yield put(selectOrgCreateCauseAction(''));
+    yield put(reset(CREATE_CAUSE_FORM_NAME));
   } catch (err) {
     yield put(createCauseFailAction(err.message));
   } finally {
     yield put(stopSubmit(CREATE_CAUSE_FORM_NAME));
-    yield put(selectOrgCreateCauseAction(''));
   }
 }
 

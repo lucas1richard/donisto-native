@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
       height: 4
     },
     shadowRadius: 6,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    justifyContent: 'space-between',
   },
   imageWrapper: {
     overflow: 'hidden',

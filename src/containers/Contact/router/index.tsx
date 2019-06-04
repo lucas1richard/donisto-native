@@ -1,16 +1,12 @@
 import * as React from 'react';
 import { View } from 'react-native';
-// import { createDrawerNavigator } from 'react-navigation';
 import routeNames from 'containers/Navigation/routeNames';
 import UpdateContact from '../containers/UpdateContact';
-// import FloatingHeader from 'components/FloatingHeader';
 import Contact from '../';
-// import theme from 'theme/iftheme';
-// import DrawerContent from './DrawerContent';
 import causeRouter from 'containers/Cause/router';
 import { createStackNavigator } from 'react-navigation';
-import OrganizationLandingPage from 'containers/Organization/containers/LandingPage';
 import RegisterNewOrganization from 'containers/Organization/containers/RegisterNewOrganization';
+import orgLandingPageRouter from 'containers/Organization/containers/LandingPage/router';
 
 const AppNavigator = createStackNavigator({
   [routeNames.UPDATE_CONTACT]: {
@@ -31,11 +27,11 @@ const AppNavigator = createStackNavigator({
     },
     screen: causeRouter
   },
-  [routeNames.ORGANIZATION_LANDING_PAGE]: {
+  [routeNames.ORGANIZATION_LANDING_PAGE_HOME]: {
     navigationOptions: {
       header: <View />
     },
-    screen: OrganizationLandingPage
+    screen: orgLandingPageRouter
   },
   [routeNames.REGISTER_ORGANIZATION]: {
     navigationOptions: {

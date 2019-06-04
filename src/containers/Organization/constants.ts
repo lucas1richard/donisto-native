@@ -25,6 +25,7 @@ enum OrganizationConstants {
   DELETE_ORG_LINKS_SUCCESS = 'app/Organization/DELETE_ORG_LINKS_SUCCESS',
   DELETE_ORG_LINKS_FAIL = 'app/Organization/DELETE_ORG_LINKS_FAIL',
   SELECT_DETAIL = 'app/Organization/SELECT_DETAIL',
+  SELECT_DETAIL_CAUSE = 'app/Organization/SELECT_DETAIL_CAUSE',
 }
 
 export default OrganizationConstants;

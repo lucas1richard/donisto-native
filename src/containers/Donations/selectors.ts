@@ -3,6 +3,7 @@ import { IDonationsInitialState } from './reducer';
 import { IReduxState } from 'redux/reducers';
 import { ICreateDonationReduxState } from './reducer/createDonationReducer';
 import { makeSelectCauses, selectCauseDomain } from 'containers/Cause/selectors';
+import { selectOrganizationDomain } from 'containers/Organization/selectors';
 
 export const selectDonationsDomain = () => (state: IReduxState): IDonationsInitialState => state.donations;
 export const selectCreateDonationsDomain = () => (state: IReduxState): ICreateDonationReduxState => state.donations.createDonation;
@@ -33,16 +34,31 @@ export const makeSelectCreateDonationsCause = () => createSelector(
   (donationSubstate, causeSubstate) => causeSubstate.causes[donationSubstate.selectedCause]
 );
 
+export const makeSelectDonationsWithCauses = () => createSelector(
+  selectDonationsDomain(),
+  selectCauseDomain(),
+  (donations, causes): IDonationDetail[] => {
+    return donations.donations.map((donation) => {
+      return {
+        ...donation,
+        cause: causes.causes[donation.cause_uuid]
+      };
+    });
+  }
+);
+
 export const makeSelectDonationDetail = () => createSelector(
   makeSelectUi(),
   makeSelectUuid(),
   makeSelectCauses(),
-  (ui, uuid, causes) => {
+  selectOrganizationDomain(),
+  (ui, uuid, causes, orgs) => {
     const donation = uuid[ui.viewDonation];
     const cause = causes[donation.cause_uuid];
     return {
       ...donation,
-      cause
+      cause,
+      organization: orgs.uuid[cause.organization_uuid]
     };
   }
 );
