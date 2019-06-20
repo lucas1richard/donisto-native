@@ -26,7 +26,13 @@ export type TOrganizationActions =
   | IDeleteOrgLinksAction
   | IDeleteOrgLinksSuccessAction
   | IDeleteOrgLinksFailAction
+  | IGetDiscoverOrgsAction
+  | IGetDiscoverOrgsSuccessAction
+  | IGetDiscoverOrgsFailAction
   | ISelectOrgCauseDetailAction
+  | IFollowOrgAction
+  | IFollowOrgSuccessAction
+  | IFollowOrgFailAction
 ;
 
 export interface IDefaultAction {
@@ -261,4 +267,104 @@ export interface IDeleteOrgLinksFailAction {
 export const deleteOrgLinksFailAction = (error: string): IDeleteOrgLinksFailAction => ({
   type: OrganizationConstants.DELETE_ORG_LINKS_FAIL,
   error
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface IGetDiscoverOrgsAction {
+  type: OrganizationConstants.GET_DISCOVER_ORGS;
+}
+
+export const getDiscoverOrgsAction = (): IGetDiscoverOrgsAction => ({
+  type: OrganizationConstants.GET_DISCOVER_ORGS,
+});
+
+export interface IGetDiscoverOrgsSuccessAction {
+  type: OrganizationConstants.GET_DISCOVER_ORGS_SUCCESS;
+  organizations: IOrganization[];
+}
+
+export const getDiscoverOrgsSuccessAction = (organizations: IOrganization[]): IGetDiscoverOrgsSuccessAction => ({
+  type: OrganizationConstants.GET_DISCOVER_ORGS_SUCCESS,
+  organizations
+});
+
+export interface IGetDiscoverOrgsFailAction {
+  type: OrganizationConstants.GET_DISCOVER_ORGS_FAIL;
+  error: string;
+}
+
+export const getDiscoverOrgsFailAction = (error: string): IGetDiscoverOrgsFailAction => ({
+  type: OrganizationConstants.GET_DISCOVER_ORGS_FAIL,
+  error
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface IFollowOrgAction {
+  type: OrganizationConstants.FOLLOW_ORGANIZATION;
+  org_uuid: string;
+}
+
+export const followOrgAction = (org_uuid: string): IFollowOrgAction => ({
+  type: OrganizationConstants.FOLLOW_ORGANIZATION,
+  org_uuid,
+});
+
+export interface IFollowOrgSuccessAction {
+  type: OrganizationConstants.FOLLOW_ORGANIZATION_SUCCESS;
+  organization: IOrganization;
+}
+
+export const followOrgSuccessAction = (organization: IOrganization): IFollowOrgSuccessAction => ({
+  type: OrganizationConstants.FOLLOW_ORGANIZATION_SUCCESS,
+  organization,
+});
+
+export interface IFollowOrgFailAction {
+  type: OrganizationConstants.FOLLOW_ORGANIZATION_FAIL;
+  error: string;
+}
+
+export const followOrgFailAction = (error: string): IFollowOrgFailAction => ({
+  type: OrganizationConstants.FOLLOW_ORGANIZATION_FAIL,
+  error,
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface IRejectFollowOrgAction {
+  type: OrganizationConstants.REJECT_FOLLOW_ORGANIZATION;
+  org_uuid: string;
+}
+
+export const rejectFollowOrgAction = (org_uuid: string): IRejectFollowOrgAction => ({
+  type: OrganizationConstants.REJECT_FOLLOW_ORGANIZATION,
+  org_uuid,
+});
+
+export interface IRejectFollowOrgSuccessAction {
+  type: OrganizationConstants.REJECT_FOLLOW_ORGANIZATION_SUCCESS;
+  organization: IOrganization;
+}
+
+export const rejectFollowOrgSuccessAction = (organization: IOrganization): IRejectFollowOrgSuccessAction => ({
+  type: OrganizationConstants.REJECT_FOLLOW_ORGANIZATION_SUCCESS,
+  organization,
+});
+
+export interface IRejectFollowOrgFailAction {
+  type: OrganizationConstants.REJECT_FOLLOW_ORGANIZATION_FAIL;
+  error: string;
+}
+
+export const rejectFollowOrgFailAction = (error: string): IRejectFollowOrgFailAction => ({
+  type: OrganizationConstants.REJECT_FOLLOW_ORGANIZATION_FAIL,
+  error,
 });

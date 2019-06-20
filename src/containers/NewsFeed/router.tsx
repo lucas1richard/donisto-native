@@ -7,6 +7,7 @@ import NewsItemDetail from './containers/NewsItemDetail';
 import CreateNewsStory from 'containers/Organization/containers/CreateNewsStory';
 import routeNames from 'containers/Navigation/routeNames';
 import ChooseCause from './containers/ChooseCause';
+import ChooseOrganization from './containers/ChooseOrganization';
 
 const NewsFeedRouter = createStackNavigator({
   newsfeedbase: {
@@ -26,6 +27,12 @@ const NewsFeedRouter = createStackNavigator({
       header: <View />
     },
     screen: ChooseCause
+  },
+  [routeNames.CHOOSE_ORGANIZATION_NI]: {
+    navigationOptions: {
+      header: <View />
+    },
+    screen: ChooseOrganization
   },
   [routeNames.CREATE_NEWS_ITEM]: {
     navigationOptions: {

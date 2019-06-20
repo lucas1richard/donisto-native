@@ -8,6 +8,7 @@ import moment from 'moment';
 import H1 from 'components/H1';
 import Txt from 'components/Txt';
 import styles from './styles';
+import H3 from 'components/H3';
 
 export interface IDonationWithCauseAndOrg extends IDonationDetail {
   organization: IOrganization;
@@ -40,13 +41,15 @@ class ViewDonation extends React.Component<IViewDonationProps> {
                       {donation.organization.name} will gratefully use your donation to help with their cause: {donation.cause.name}
                     </Txt>
                   </View>
-                  <View style={{ marginTop: theme.screenPadding }}>
-                    <Txt color="light">
-                      You made this donation on {moment(donation.createdAt).format('DD MMM YYYY')}
-                    </Txt>
-                  </View>
                 </View>
               )}
+              <View>
+                <View style={{ marginTop: theme.screenPadding }}>
+                  <Txt color="light">
+                    You made this donation on {moment(donation.createdAt).format('DD MMM YYYY')}
+                  </Txt>
+                </View>
+              </View>
               {donation.is_anonymous && (
                 <View style={{ marginTop: theme.screenPadding }}>
                   <Txt color="light">
@@ -56,11 +59,11 @@ class ViewDonation extends React.Component<IViewDonationProps> {
               )}
               {donation.message && (
                 <View style={{ marginTop: theme.screenPadding }}>
-                  <Txt color="light">
+                  <H3 color="secondary">
                     You left this message:
-                  </Txt>
+                  </H3>
                   <Txt color="light">
-                    {donation.message}
+                    "{donation.message}"
                   </Txt>
                 </View>
               )}

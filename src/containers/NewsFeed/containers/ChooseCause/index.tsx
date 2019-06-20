@@ -8,11 +8,13 @@ import MarginWrapper from 'components/Field/MarginWrapper';
 import theme from 'theme/iftheme';
 import NICause from './components/Cause';
 import SelectCauseHeader from './components/Header';
+import Txt from 'components/Txt';
 
 interface IChooseCauseProps {
   causes: any[],
   toggleSelect: (uuid: string) => any;
   selectedCauses: { [x: string]: boolean };
+  selectedOrg: IOrganization
 }
 
 class ChooseCause extends React.Component<IChooseCauseProps> {
@@ -20,12 +22,16 @@ class ChooseCause extends React.Component<IChooseCauseProps> {
     const {
       causes,
       toggleSelect,
-      selectedCauses
+      selectedCauses,
+      selectedOrg,
     } = this.props;
     return (
       <View style={{ flex: 1 }}>
         <SelectCauseHeader />
         <ScrollView>
+          {selectedOrg && (
+            <Txt>{selectedOrg.name}</Txt>
+          )}
           <MarginWrapper>
             {causes.map((cause) => (
               <NICause

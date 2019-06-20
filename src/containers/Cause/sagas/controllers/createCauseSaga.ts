@@ -8,8 +8,8 @@ import { CREATE_CAUSE_FORM_NAME } from 'containers/Cause/containers/CreateCause/
 import {
   createCauseSuccessAction,
   createCauseFailAction,
-  getCauseAction,
-  selectOrgCreateCauseAction
+  selectOrgCreateCauseAction,
+  getContactCausesAction
 } from 'containers/Cause/actions';
 import { makeSelectCreateCauseOrg } from 'containers/Cause/selectors';
 
@@ -31,7 +31,7 @@ function* createCauseSaga() {
       put(createCauseSuccessAction(data)),
       put(getNewsFeedAction()),
       put(getDonationsAction()),
-      put(getCauseAction()),
+      put(getContactCausesAction()),
       put(getOrgAction())
     ]);
 

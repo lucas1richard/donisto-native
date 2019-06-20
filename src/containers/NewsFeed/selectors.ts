@@ -1,5 +1,6 @@
 import { newsfeedInitialState, INewsfeedInitialState } from "./reducer";
 import { createSelector } from "reselect";
+import { selectOrganizationDomain } from 'containers/Organization/selectors';
 
 export const selectNewsFeedDomain = () => (state: any): INewsfeedInitialState => state.newsfeed || newsfeedInitialState;
 
@@ -21,4 +22,10 @@ export const makeSelectDetailItem = () => createSelector(
 export const makeSelectSelectedCauses = () => createSelector(
   selectNewsFeedDomain(),
   (substate) => substate.selectedCauses
+);
+
+export const makeSelectSelectedOrg = () => createSelector(
+  selectNewsFeedDomain(),
+  selectOrganizationDomain(),
+  (substate, orgSubstate) => orgSubstate.uuid[substate.selectedOrgUuid]
 );

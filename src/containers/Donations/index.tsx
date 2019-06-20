@@ -8,6 +8,7 @@ import DonationsHeader from './components/Header';
 export interface IDonationsProps {
   donations: IDonationDetail[];
   viewDetail: (donationUuid: string) => any;
+  getCauseDetailsById: (ids: string[]) => any;
 }
 
 const images = [
@@ -17,6 +18,14 @@ const images = [
 ];
 
 export class Donations extends React.Component<IDonationsProps> {
+  componentDidMount() {
+    const { donations, getCauseDetailsById } = this.props;
+    const incompeteDonations = donations.filter((donation) => !donation.cause).map((donation) => donation.cause_uuid);
+    if (incompeteDonations.length) {
+      getCauseDetailsById(incompeteDonations);
+    }
+  }
+
   render() {
     const { donations, viewDetail } = this.props;
     return (

@@ -6,7 +6,7 @@ import {
 } from './selectors';
 import { makeSelectOrganizations } from 'containers/Organization/selectors';
 import { Dispatch } from 'redux';
-import { updateDetailIxAction } from './actions';
+import { updateDetailIxAction, getNewsFeedAction } from './actions';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
 
@@ -20,7 +20,8 @@ export const mapDispatchToProps = (dispatch: Dispatch) => ({
   navDetail: (uuid: string) => {
     dispatch(updateDetailIxAction(uuid));
     NavigationService.navigate(routeNames.NEWS_ITEM_DETAIL);
-  }
+  },
+  getNewsFeed: () => dispatch(getNewsFeedAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

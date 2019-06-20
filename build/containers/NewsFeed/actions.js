@@ -14,6 +14,10 @@ export const updateDetailIxAction = (detailIx) => ({
     type: NewsFeedConstants.UPDATE_DETAIL_IX,
     detailIx
 });
+export const selectOrgUuidAction = (uuid) => ({
+    type: NewsFeedConstants.SELECT_ORG_UUID,
+    uuid
+});
 export const toggleSelectCauseAction = (uuid) => ({
     type: NewsFeedConstants.TOGGLE_SELECT_CAUSE,
     uuid

@@ -1,7 +1,7 @@
 import { createStructuredSelector } from 'reselect';
 import { makeSelectContact, makeSelectOrgNewsFeed } from './selectors';
 import { connect } from 'react-redux';
-import { makeSelectCausesArray } from 'containers/Cause/selectors';
+import { makeSelectContactCauses } from 'containers/Cause/selectors';
 import { makeSelectOrganizations } from 'containers/Organization/selectors';
 import { selectOrgDetailAction } from 'containers/Organization/actions';
 import { Dispatch } from 'redux';
@@ -11,7 +11,7 @@ import routeNames from 'containers/Navigation/routeNames';
 const mapStateToProps = createStructuredSelector({
   contact: makeSelectContact(),
   orgNewsFeed: makeSelectOrgNewsFeed(),
-  causes: makeSelectCausesArray(),
+  causes: makeSelectContactCauses(),
   organizations: makeSelectOrganizations(),
 });
 

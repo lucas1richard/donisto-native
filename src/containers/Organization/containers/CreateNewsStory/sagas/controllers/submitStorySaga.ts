@@ -7,18 +7,18 @@ import {
   submitStoryFailAction,
   setCreateStoryStatusAction
 } from '../../actions';
-import { makeSelectActiveOrganization } from 'containers/Organization/selectors';
 import logger from 'utilities/logger';
 import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 import { getOrgNewsFeedAction } from 'containers/Contact/actions';
 import { makeSelectSelectedCauses } from 'containers/Cause/selectors';
+import { makeSelectSelectedOrg } from 'containers/NewsFeed/selectors';
 
 function* submitStorySaga() {
   try {
     yield put(startSubmit(CreateNewsStory_FORM_NAME));
     const formData = yield select(getFormValues(CreateNewsStory_FORM_NAME));
-    const activeOrganization = yield select(makeSelectActiveOrganization());
-    const organizationUuid = activeOrganization.uuid;
+    const selectedOrganization = yield select(makeSelectSelectedOrg());
+    const organizationUuid = selectedOrganization.uuid;
     const selectedCauses = yield select(makeSelectSelectedCauses());
     const newsStoryData = {
       ...formData,

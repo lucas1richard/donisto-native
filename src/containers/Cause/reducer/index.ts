@@ -4,6 +4,7 @@ import selectForNewsFeedTransformer from './transformers/selectForNewsFeed';
 
 export interface ICauseInitialState {
   causes: { [x: string]: ICause };
+  contactCauses: string[];
   getCausesError: string;
   createCauseError: string;
   selectedForNewsFeed: { [x: string]: boolean };
@@ -16,6 +17,7 @@ export interface ICauseInitialState {
 
 const causeInitialState: ICauseInitialState = {
   causes: {},
+  contactCauses: [],
   selectedForNewsFeed: {},
   getCausesError: undefined,
   createCauseError: undefined,
@@ -47,6 +49,23 @@ function causeReducer(state = causeInitialState, action: TCauseActions) {
           memo[item.uuid] = item;
           return memo;
         }, {}),
+        ui: {
+          ...state.ui,
+          getCausesLoaded: true
+        }
+      };
+
+    case CauseConstants.GET_CONTACT_CAUSES_SUCCESS_ACTION:
+      return {
+        ...state,
+        causes: {
+          ...state.causes,
+          ...action.cause.reduce((memo: any, item: any) => {
+            memo[item.uuid] = item;
+            return memo;
+          }, {}),
+        },
+        contactCauses: action.cause.map((cause) => cause.uuid),
         ui: {
           ...state.ui,
           getCausesLoaded: true

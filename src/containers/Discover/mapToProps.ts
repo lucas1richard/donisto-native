@@ -1,16 +1,25 @@
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { makeSelectDiscover } from './selectors';
+import {
+  makeSelectDiscoverOrgs,
+  makeSelectDiscoverOrgsLoaded
+} from 'containers/Organization/selectors';
+import {
+  getDiscoverOrgsAction,
+  followOrgAction,
+  rejectFollowOrgAction
+} from 'containers/Organization/actions';
 
 const mapStateToProps = createStructuredSelector({
-  Discover: makeSelectDiscover()
+  discoverOrgs: makeSelectDiscoverOrgs(),
+  loaded: makeSelectDiscoverOrgsLoaded(),
 });
 
-function mapDispatchToProps(dispatch: Dispatch) {
-  return {
-    dispatch
-  };
-}
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  getDiscoverOrgs: () => dispatch(getDiscoverOrgsAction()),
+  followOrg: (uuid: string) => dispatch(followOrgAction(uuid)),
+  rejectFollowOrg: (uuid: string) => dispatch(rejectFollowOrgAction(uuid)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps);

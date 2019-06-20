@@ -1,7 +1,6 @@
 import { INewsfeedInitialState } from '..';
-import { IGetNewsFeedAction } from 'containers/NewsFeed/actions';
 
-function getNewsFeedTransformer(state: INewsfeedInitialState, action: IGetNewsFeedAction): INewsfeedInitialState {
+function getNewsFeedTransformer(state: INewsfeedInitialState): INewsfeedInitialState {
   return {
     ...state,
     ui: {

@@ -23,7 +23,10 @@ const getOrgSuccessCaseFn = (
       ...state.ui,
       loaded: true
     },
-    uuid,
+    uuid: {
+      ...state.uuid,
+      ...uuid,
+    },
     organizations: action.organization
   };
 };

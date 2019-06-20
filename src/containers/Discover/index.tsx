@@ -1,97 +1,36 @@
-import * as React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import SwipeCards from 'react-native-swipe-cards';
-import logger from 'utilities/logger';
+import React from 'react';
+import { View } from 'react-native';
+import Txt from 'components/Txt';
+import Button from 'components/Button';
 import { Entypo } from '@expo/vector-icons';
 import theme from 'theme/iftheme';
-import Txt from 'components/Txt';
+import mapToProps from './mapToProps';
+import Loader from 'components/Loader';
+import SwiperCards from './components/SwiperCards';
 
-interface ICardProps {
-  image: string;
-  name: string;
+export interface IDiscoverProps {
+  discoverOrgs: IOrganization[];
+  loaded: boolean;
+  getDiscoverOrgs: () => any;
+  followOrg: (uuid: string) => any;
+  rejectFollowOrg: (uuid: string) => any;
 }
 
-class Card extends React.Component<ICardProps> {
-  render() {
-    return (
-      <View style={styles.card}>
-        <Image style={styles.thumbnail} source={{ uri: this.props.image }} />
-        <Text style={styles.text}>This is card {this.props.name}</Text>
-      </View>
-    );
-  }
-}
-
-class NoMoreCards extends React.Component {
-  render() {
-    return (
-      <View style={styles.noMoreCards}>
-        <Text>No more cards</Text>
-      </View>
-    );
-  }
-}
-
-const cards = [
-  { name: '1', image: 'https://source.unsplash.com/random/200x200?0' },
-  { name: '2', image: 'https://source.unsplash.com/random/200x200?1' },
-  { name: '3', image: 'https://source.unsplash.com/random/200x200?2' },
-  { name: '4', image: 'https://source.unsplash.com/random/200x200?3' },
-  { name: '5', image: 'https://source.unsplash.com/random/200x200?4' },
-  { name: '6', image: 'https://source.unsplash.com/random/200x200?5' },
-  { name: '7', image: 'https://source.unsplash.com/random/200x200?6' },
-  { name: '8', image: 'https://source.unsplash.com/random/200x200?7' },
-  { name: '9', image: 'https://source.unsplash.com/random/200x200?8' }
-];
-
-const cards2 = [
-  { name: '10', image: 'https://source.unsplash.com/random/200x200?9' },
-  { name: '11', image: 'https://source.unsplash.com/random/200x200?10' },
-  { name: '12', image: 'https://source.unsplash.com/random/200x200?11' },
-  { name: '13', image: 'https://source.unsplash.com/random/200x200?12' }
-];
-
-export interface IDiscoverProps {}
-interface IDiscoverState {
-  cards: any[];
-  outOfCards: boolean
-}
-
-export default class Discover extends React.Component<IDiscoverProps, IDiscoverState> {
-  constructor(props: IDiscoverProps) {
-    super(props);
-    this.state = {
-      cards: cards,
-      outOfCards: false
-    };
+class Discover extends React.Component<IDiscoverProps> {
+  componentDidMount() {
+    this.props.getDiscoverOrgs();
   }
 
-  handleYup = (/* card: any */) => {
-    logger.log('yup', 'Discover/index.tsx');
+  handleYup = (card: IOrganization) => {
+    this.props.followOrg(card.uuid);
   }
 
-  handleNope = (/* card: any */) => {
-    logger.log('nope', 'Discover/index.tsx');
-  }
-
-  cardRemoved = (index: number) => {
-    let CARD_REFRESH_LIMIT = 3;
-
-    if (this.state.cards.length - index <= CARD_REFRESH_LIMIT + 1) {
-      logger.log(`There are only ${this.state.cards.length - index - 1} cards left.`, 'Discover/index.tsx');
-
-      if (!this.state.outOfCards) {
-        logger.log(`Adding ${cards2.length} more cards`, 'Discover/index.tsx');
-
-        this.setState({
-          cards: this.state.cards.concat(cards2),
-          outOfCards: true
-        });
-      }
-    }
+  handleNope = (card: IOrganization) => {
+    this.props.rejectFollowOrg(card.uuid);
   }
 
   render() {
+    const { discoverOrgs, loaded } = this.props;
     return (
       <View style={{ flex: 1 }}>
         <View style={{
@@ -101,7 +40,8 @@ export default class Discover extends React.Component<IDiscoverProps, IDiscoverS
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
-          paddingHorizontal: 20
+          paddingHorizontal: 20,
+          marginBottom: theme.screenPadding
         }}>
           <Entypo
             name="plus"
@@ -117,44 +57,41 @@ export default class Discover extends React.Component<IDiscoverProps, IDiscoverS
             size={25}
           />
         </View>
-        <SwipeCards
-          cards={this.state.cards}
-          loop={false}
-          renderCard={(cardData: ICardProps) => <Card {...cardData} />}
-          renderNoMoreCards={() => <NoMoreCards />}
-          showYup={true}
-          showNope={true}
-          handleYup={this.handleYup}
-          handleNope={this.handleNope}
-          cardRemoved={this.cardRemoved}
-        />
+        <View style={{ paddingHorizontal: theme.screenPadding }}>
+          {/* <Button
+            title="Get Discover"
+            color="primary"
+            variant="contained"
+            onPress={this.props.getDiscoverOrgs}
+          /> */}
+          {!loaded
+          ? (
+            <Loader />
+          )
+          : (
+            <SwiperCards
+              cards={discoverOrgs}
+              handleYup={this.handleYup}
+              handleNope={this.handleNope}
+            />
+          )}
+          {/* {!!discoverOrgs && !!discoverOrgs.length && (
+            <SwipeCards
+              cards={discoverOrgs}
+              loop={false}
+              renderCard={Card}
+              renderNoMoreCards={() => <View><Txt>No More Cards</Txt></View>}
+              showYup={false}
+              showNope={false}
+              handleYup={this.handleYup}
+              handleNope={this.handleNope}
+              cardRemoved={() => false}
+            />
+          )} */}
+        </View>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  card: {
-    alignItems: 'center',
-    borderRadius: 5,
-    overflow: 'hidden',
-    borderColor: 'grey',
-    backgroundColor: 'white',
-    borderWidth: 1,
-    elevation: 1
-  },
-  thumbnail: {
-    width: 300,
-    height: 300
-  },
-  text: {
-    fontSize: 20,
-    paddingTop: 10,
-    paddingBottom: 10
-  },
-  noMoreCards: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
+export default mapToProps(Discover);

@@ -15,6 +15,13 @@ interface ICreateCauseProps {
 }
 
 class CreateCause extends React.Component<ICreateCauseProps> {
+  // static defaultProps: ICreateCauseProps = {
+  //   organizations: [],
+  //   createCause: () => undefined,
+  //   selectOrganization: (uuid) => uuid,
+  //   selectedOrganization: ''
+  // };
+
   render() {
     const {
       createCause,

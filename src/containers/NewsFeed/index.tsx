@@ -11,12 +11,14 @@ import newsFeedStyles from './styles';
 import NewsFeedContact from './components/Contact';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
+import Button from 'components/Button';
 
 interface INewsFeedProps {
   newsfeed: any[],
   loaded: boolean,
   organizations: any[];
-  navDetail: (uuid: string) => any
+  navDetail: (uuid: string) => any;
+  getNewsFeed: () => any;
 }
 
 const images = [
@@ -27,7 +29,7 @@ const images = [
 
 class NewsFeed extends React.Component<INewsFeedProps> {
   render() {
-    const { newsfeed, loaded } = this.props;
+    const { newsfeed, loaded, getNewsFeed } = this.props;
     return (
       <Screen>
         <View style={newsFeedStyles.topWrapper}>
@@ -44,7 +46,7 @@ class NewsFeed extends React.Component<INewsFeedProps> {
             Feed
           </Text>
           <View>
-            <Touchable onPress={() => NavigationService.navigate(routeNames.CHOOSE_CAUSE_NI)}>
+            <Touchable onPress={() => NavigationService.navigate(routeNames.CHOOSE_ORGANIZATION_NI)}>
               <View style={newsFeedStyles.iconsWrapper}>
                 <Entypo
                   name="plus"
@@ -83,6 +85,12 @@ class NewsFeed extends React.Component<INewsFeedProps> {
                 <Loader />
               </View>
             )}
+            <Button
+              title="Load"
+              color="primary"
+              variant="contained"
+              onPress={getNewsFeed}
+            />
             {newsfeed.map((item, ix) => (
               <NewsFeedItem
                 key={item.id}

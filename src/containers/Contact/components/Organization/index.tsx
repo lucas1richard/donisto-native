@@ -22,7 +22,7 @@ class Organization extends React.Component<IOrganizationProps> {
             style={styles.innerWrapper}
           >
             <View style={styles.textWrapper}>
-              <Txt color="light">
+              <Txt color="light" style={{ textAlign: 'center' }}>
                 {title}
               </Txt>
             </View>

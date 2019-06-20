@@ -6,6 +6,7 @@ import getNewsFeedFailTransformer from './transformers/getNewsFeedFail';
 import getNewsFeedSuccessTransformer from './transformers/getNewsFeedSuccess';
 import getNewsFeedTransformer from './transformers/getNewsFeed';
 import getNewsItemDetailSuccessTransformer from './transformers/getNewsItemDetailSuccess';
+import selectOrgUuidTransformer from './transformers/selectOrgUuid';
 
 export interface INewsFeedReduxUI {
   loaded: boolean;
@@ -16,6 +17,7 @@ export interface INewsfeedInitialState {
   news: any[];
   error: string;
   uuid: any;
+  selectedOrgUuid: string;
   selectedCauses: {
     [x: string]: boolean
   };
@@ -25,6 +27,7 @@ export interface INewsfeedInitialState {
 export const newsfeedInitialState: INewsfeedInitialState = {
   news: [],
   selectedCauses: {},
+  selectedOrgUuid: '',
   error: undefined,
   uuid: {},
   ui: {
@@ -36,10 +39,13 @@ export const newsfeedInitialState: INewsfeedInitialState = {
 const newsfeedReducer = (state = newsfeedInitialState, action: TNewsFeedActions) => {
   switch (action.type) {
     case NewsFeedConstants.GET_NEWS_FEED:
-      return getNewsFeedTransformer(state, action);
+      return getNewsFeedTransformer(state);
 
     case NewsFeedConstants.GET_NEWS_FEED_SUCCESS:
       return getNewsFeedSuccessTransformer(state, action);
+
+    case NewsFeedConstants.SELECT_ORG_UUID:
+      return selectOrgUuidTransformer(state, action);
 
     case NewsFeedConstants.GET_NEWS_FEED_FAIL:
       return getNewsFeedFailTransformer(state, action);

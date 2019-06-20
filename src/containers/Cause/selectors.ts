@@ -18,7 +18,7 @@ export const makeSelectDetailOrgCauses = () => createSelector(
   makeSelectDetailOrganization(),
   makeSelectCauses(),
   (orgSubstate, causesSubstate) => {
-    return orgSubstate.causes
+    return (orgSubstate && orgSubstate.causes)
       ? orgSubstate.causes.map(cause => causesSubstate[cause.uuid])
       : [];
   }
@@ -27,6 +27,11 @@ export const makeSelectDetailOrgCauses = () => createSelector(
 export const makeSelectCausesArray = () => createSelector(
   makeSelectCauses(),
   (causes) => Object.keys(causes).map((key) => causes[key])
+);
+
+export const makeSelectContactCauses = () => createSelector(
+  selectCauseDomain(),
+  (substate) => substate.contactCauses.map((uuid) => substate.causes[uuid])
 );
 
 export const makeSelectSelectedCauses = () => createSelector(

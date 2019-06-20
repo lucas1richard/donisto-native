@@ -7,6 +7,7 @@ enum NewsFeedConstants {
   GET_NEWS_ITEM_DETAIL = 'donisto/NewsFeed/GET_NEWS_ITEM_DETAIL',
   GET_NEWS_ITEM_DETAIL_SUCCESS = 'donisto/NewsFeed/GET_NEWS_ITEM_DETAIL_SUCCESS',
   GET_NEWS_ITEM_DETAIL_FAIL = 'donisto/NewsFeed/GET_NEWS_ITEM_DETAIL_FAIL',
+  SELECT_ORG_UUID = 'donisto/NewsFeed/SELECT_ORG_UUID',
 }
 
 export default NewsFeedConstants;

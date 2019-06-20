@@ -3,7 +3,7 @@
     "name": "Donisto",
     "slug": "donisto",
     "privacy": "public",
-    "sdkVersion": "30.0.0",
+    "sdkVersion": "31.0.0",
     "version": "1.0.14",
     "scheme": "donisto",
     "orientation": "portrait",

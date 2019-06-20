@@ -10,6 +10,7 @@ export type TNewsFeedActions =
   | IGetNewsItemDetailAction
   | IGetNewsItemDetailSuccessAction
   | IGetNewsItemDetailFailAction
+  | ISelectOrgUuidAction
 ;
 
 export interface IGetNewsFeedAction extends Action<string> {
@@ -52,6 +53,20 @@ export interface IUpdateDetailIxAction extends Action<string> {
 export const updateDetailIxAction = (detailIx: string): IUpdateDetailIxAction => ({
   type: NewsFeedConstants.UPDATE_DETAIL_IX,
   detailIx
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+export interface ISelectOrgUuidAction extends Action<string> {
+  type: NewsFeedConstants.SELECT_ORG_UUID,
+  uuid: string
+}
+
+export const selectOrgUuidAction = (uuid: string): ISelectOrgUuidAction => ({
+  type: NewsFeedConstants.SELECT_ORG_UUID,
+  uuid
 });
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -9,17 +9,18 @@ import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
 
 interface IChooseOrganizationProps {
-  orgs: any[]
+  orgs: IOrganization[],
+  selectOrg: (uuid: string) => any;
 }
 
 class ChooseOrganization extends React.Component<IChooseOrganizationProps> {
   render() {
-    const { orgs } = this.props;
+    const { orgs, selectOrg } = this.props;
     return (
       <ScrollView>
         <View style={{ paddingTop: 60 }}>
           <H1>
-            Select a Cause
+            Select an Organization
           </H1>
           <Touchable onPress={() => NavigationService.navigate(routeNames.CREATE_NEWS_ITEM)}>
             <Card>
@@ -29,7 +30,7 @@ class ChooseOrganization extends React.Component<IChooseOrganizationProps> {
           {orgs.map((org) => (
             <Touchable
               key={org.uuid}
-              onPress={() => NavigationService.navigate(routeNames.CREATE_NEWS_ITEM)}
+              onPress={() => selectOrg(org.uuid)}
             >
               <Card>
                 <Txt>{org.name}</Txt>

@@ -4,14 +4,11 @@ import api from 'utilities/api';
 import { getFormValues, stopSubmit, startSubmit } from 'redux-form';
 import { LOGIN_FORM_NAME } from 'containers/Login/components/Form';
 import NavigationService from 'containers/Navigation/NavigationService';
-import { getContactSuccessAction, getContactFailAction, getOrgNewsFeedAction } from 'containers/Contact/actions';
-import { getNewsFeedAction } from 'containers/NewsFeed/actions';
+import { getContactSuccessAction, getContactFailAction } from 'containers/Contact/actions';
 import showToast from 'components/Toast';
-import { getDonationsAction } from 'containers/Donations/actions';
 import { manualSetOutgoingHeaders } from 'utilities/request';
-import { getOrgAction } from 'containers/Organization/actions';
 import routeNames from 'containers/Navigation/routeNames';
-import { getCauseAction } from 'containers/Cause/actions';
+import getInitialData from './getInitialData';
 function* loginSaga() {
     try {
         yield put(startSubmit(LOGIN_FORM_NAME));
@@ -20,11 +17,7 @@ function* loginSaga() {
         yield call(manualSetOutgoingHeaders, headers.token, data.uuid);
         yield all([
             put(getContactSuccessAction(data)),
-            put(getNewsFeedAction()),
-            put(getDonationsAction()),
-            put(getOrgAction()),
-            put(getOrgNewsFeedAction()),
-            put(getCauseAction())
+            call(getInitialData)
         ]);
         yield call(NavigationService.navigate, routeNames.LOGGED_IN);
     }

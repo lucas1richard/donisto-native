@@ -10,6 +10,11 @@ export const makeSelectOrganization = () => createSelector(
   (substate) => substate
 );
 
+export const makeSelectDiscoverOrgsLoaded = () => createSelector(
+  selectOrganizationDomain(),
+  (substate) => substate.ui.discoverOrgsLoaded
+);
+
 export const makeSelectOrganizations = () => createSelector(
   selectOrganizationDomain(),
   (substate) => substate.organizations
@@ -53,4 +58,9 @@ export const makeSelectContactOrganizations = (alphabetized?: 'alphabetized') =>
     }
     return orgArray;
   }
+);
+
+export const makeSelectDiscoverOrgs = () => createSelector(
+  selectOrganizationDomain(),
+  (substate) => substate.discoverOrgs.map((uuid) => substate.uuid[uuid])
 );

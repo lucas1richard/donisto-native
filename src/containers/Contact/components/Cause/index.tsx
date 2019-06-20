@@ -19,7 +19,7 @@ class Cause extends React.Component<ICauseProps> {
           style={styles.innerWrapper}
         >
           <View style={styles.textWrapper}>
-            <Txt color="light">
+            <Txt color="light" style={{ textAlign: 'center' }}>
               {title}
             </Txt>
           </View>

@@ -29,7 +29,7 @@ class Donation extends React.Component<IDonationComponentProps> {
                 {moneyMask(donation.amount)}
               </Txt>
               <Txt style={{ fontSize: 13 }}>
-                {donation.cause.name}
+                {donation.cause && donation.cause.name}
               </Txt>
               <Txt style={{ fontSize: 13/* , color: '#aaa' */ }} color="muted">
                 on {moment(donation.createdAt).format('MMM DD, YYYY')}

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import routeNames from 'containers/Navigation/routeNames';
 import { View } from 'react-native';
-import { Messages } from '..';
+import Messages from '../index';
 import SpecificMessages from '../containers/SpecificMessages';
 
 const messagesRouter = createStackNavigator({

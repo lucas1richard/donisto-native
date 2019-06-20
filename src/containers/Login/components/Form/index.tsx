@@ -88,7 +88,7 @@ export class LoginForm extends FormFlow<TLoginFormProps> {
 export default reduxForm<ILoginFormData, ILoginFormProps>({
   form: LOGIN_FORM_NAME,
   initialValues: {
-    email: 'qqz@zz.zz',
+    email: 'qqw@ww.ww',
     password: 'yay'
   }
 })(LoginForm);

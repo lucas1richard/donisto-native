@@ -9,9 +9,9 @@ import {
   IRegistrationFormData
 } from '../../containers/BasicInfo/components/Form';
 import logger from 'utilities/logger';
-import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 import routeNames from 'containers/Navigation/routeNames';
 import { manualSetOutgoingHeaders } from 'utilities/request';
+import getInitialData from 'containers/Login/sagas/controllers/getInitialData';
 
 function* submitBasicInfoSaga() {
   try {
@@ -23,8 +23,8 @@ function* submitBasicInfoSaga() {
       password: formData.password
     });
     yield call(manualSetOutgoingHeaders, headers.token, data.uuid);
-    yield put(getNewsFeedAction());
     yield put(getContactSuccessAction(data));
+    yield call(getInitialData);
     yield call(NavigationService.navigate, routeNames.LOGGED_IN);
   } catch (err) {
     errorHandler(err);

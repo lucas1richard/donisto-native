@@ -3,7 +3,6 @@
     "babel-preset-expo"
   ],
   "plugins": [
-    "transform-react-jsx-source",
     ["module-resolver", {
       "root": ["./build"]
     }]

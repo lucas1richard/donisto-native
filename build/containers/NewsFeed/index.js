@@ -11,6 +11,7 @@ import newsFeedStyles from './styles';
 import NewsFeedContact from './components/Contact';
 import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
+import Button from 'components/Button';
 const images = [
     require('../../../assets/scenic-1.jpg'),
     require('../../../assets/happy-1.jpg'),
@@ -18,7 +19,7 @@ const images = [
 ];
 class NewsFeed extends React.Component {
     render() {
-        const { newsfeed, loaded } = this.props;
+        const { newsfeed, loaded, getNewsFeed } = this.props;
         return (React.createElement(Screen, null,
             React.createElement(View, { style: newsFeedStyles.topWrapper },
                 React.createElement(Touchable, null,
@@ -26,7 +27,7 @@ class NewsFeed extends React.Component {
                         React.createElement(Entypo, { name: "camera", size: 22, color: theme.primary[500] }))),
                 React.createElement(Text, { style: newsFeedStyles.feedText }, "Feed"),
                 React.createElement(View, null,
-                    React.createElement(Touchable, { onPress: () => NavigationService.navigate(routeNames.CHOOSE_CAUSE_NI) },
+                    React.createElement(Touchable, { onPress: () => NavigationService.navigate(routeNames.CHOOSE_ORGANIZATION_NI) },
                         React.createElement(View, { style: newsFeedStyles.iconsWrapper },
                             React.createElement(Entypo, { name: "plus", size: 28, color: theme.primary[500], style: { marginRight: 5 } }),
                             React.createElement(Entypo, { name: "dots-three-horizontal", color: theme.primary[500], size: 22 }))))),
@@ -44,6 +45,7 @@ class NewsFeed extends React.Component {
                 React.createElement(View, { style: newsFeedStyles.itemsWrapper },
                     !loaded && (React.createElement(View, null,
                         React.createElement(Loader, null))),
+                    React.createElement(Button, { title: "Load", color: "primary", variant: "contained", onPress: getNewsFeed }),
                     newsfeed.map((item, ix) => (React.createElement(NewsFeedItem, { key: item.id, item: item, img: images[ix % (images.length)], navDetail: () => this.props.navDetail(item.uuid) })))))));
     }
 }

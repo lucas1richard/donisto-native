@@ -58,6 +58,40 @@ export const getDonationsFailAction = (error: any): IGetDonationsFailAction => (
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+export interface IGetDonationsByIdAction {
+  type: DonationsConstants.GET_DONATIONS_BY_ID,
+  ids: string[]
+}
+
+export const getDonationsByIdAction = (ids: string[]): IGetDonationsByIdAction => ({
+  type: DonationsConstants.GET_DONATIONS_BY_ID,
+  ids,
+});
+
+export interface IGetDonationsByIdSuccessAction {
+  type: DonationsConstants.GET_DONATIONS_BY_ID_SUCCESS,
+  donations: any[]
+}
+
+export const getDonationsByIdSuccessAction = (donations: any[]): IGetDonationsByIdSuccessAction => ({
+  type: DonationsConstants.GET_DONATIONS_BY_ID_SUCCESS,
+  donations
+});
+
+export interface IGetDonationsByIdFailAction {
+  type: DonationsConstants.GET_DONATIONS_BY_ID_FAIL,
+  error: any
+}
+
+export const getDonationsByIdFailAction = (error: any): IGetDonationsByIdFailAction => ({
+  type: DonationsConstants.GET_DONATIONS_BY_ID_FAIL,
+  error
+});
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
 export interface ICreateDonationAction {
   type: DonationsConstants.CREATE_DONATION
 }

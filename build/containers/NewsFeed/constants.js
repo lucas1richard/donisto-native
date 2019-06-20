@@ -8,6 +8,7 @@ var NewsFeedConstants;
     NewsFeedConstants["GET_NEWS_ITEM_DETAIL"] = "donisto/NewsFeed/GET_NEWS_ITEM_DETAIL";
     NewsFeedConstants["GET_NEWS_ITEM_DETAIL_SUCCESS"] = "donisto/NewsFeed/GET_NEWS_ITEM_DETAIL_SUCCESS";
     NewsFeedConstants["GET_NEWS_ITEM_DETAIL_FAIL"] = "donisto/NewsFeed/GET_NEWS_ITEM_DETAIL_FAIL";
+    NewsFeedConstants["SELECT_ORG_UUID"] = "donisto/NewsFeed/SELECT_ORG_UUID";
 })(NewsFeedConstants || (NewsFeedConstants = {}));
 export default NewsFeedConstants;
 //# sourceMappingURL=constants.js.map

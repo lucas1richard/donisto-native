@@ -22,7 +22,10 @@ const getOrgDetailSuccessCaseFn = (
       ...state.ui,
       loaded: true
     },
-    uuid,
+    uuid: {
+      ...state.uuid,
+      ...uuid,
+    },
   };
 };
 

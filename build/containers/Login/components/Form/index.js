@@ -29,7 +29,7 @@ export class LoginForm extends FormFlow {
 export default reduxForm({
     form: LOGIN_FORM_NAME,
     initialValues: {
-        email: 'qqz@zz.zz',
+        email: 'qqw@ww.ww',
         password: 'yay'
     }
 })(LoginForm);
