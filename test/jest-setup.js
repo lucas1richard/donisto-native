@@ -1,5 +1,6 @@
 // import jest from 'jest';
 import { configure } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 import TrainingWheels from 'utilities/TrainingWheels';
 import theme from 'theme/iftheme';

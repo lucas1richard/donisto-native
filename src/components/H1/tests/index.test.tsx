@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import H1, { IH1Props } from '..';
 
 describe('<H1 />', () => {
-  const renderComponent = (props: IH1Props) => shallow(<H1 {...props} />);
+  const renderComponent = (props: IH1Props) => toJson(shallow(<H1 {...props} />));
   it('renders with just text', () => {
     expect(renderComponent({ children: 'mockText' })).toMatchSnapshot();
   });

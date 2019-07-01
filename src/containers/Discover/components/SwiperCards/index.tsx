@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { ImageBackground, View } from 'react-native';
 import theme from 'theme/iftheme';
 import H3 from 'components/H3';
@@ -14,19 +14,43 @@ export interface SwiperCardsProps {
 
 const Card = (card: IOrganization) => (
   <ImageBackground source={require('../../../../../assets/scenic-1.jpg')} style={{ height: 300, width: 350 }}>
-    <View style={{ height: 300, width: 350, backgroundColor: 'rgba(0,0,0,0.5)', padding: theme.screenPadding, justifyContent: 'space-between' }}>
+    <View style={{
+      height: 300,
+      width: 350,
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      padding: theme.screenPadding,
+      justifyContent: 'space-between'
+    }}>
       <View>
-        <H3 color="light">{card.name}</H3>
-        <Txt color="light" style={{ fontWeight: '600' }}>Mission:</Txt>
-        <Txt color="light">{card.mission}</Txt>
+        <H3 color="light">
+          {card.name}
+        </H3>
+        <Txt color="light" style={{ fontWeight: '600' }}>
+          Mission:
+        </Txt>
+        <Txt color="light">
+          {card.mission}
+        </Txt>
       </View>
       <View>
-        <Txt color="light" style={{ fontWeight: '600' }}>City:</Txt>
-        <Txt color="light">{card.city}</Txt>
-        <Txt color="light" style={{ fontWeight: '600' }}>State:</Txt>
-        <Txt color="light">{card.state}</Txt>
-        <Txt color="light" style={{ fontWeight: '600' }}>Zip:</Txt>
-        <Txt color="light">{card.zip}</Txt>
+        <Txt color="light" style={{ fontWeight: '600' }}>
+          City:
+        </Txt>
+        <Txt color="light">
+          {card.city}
+        </Txt>
+        <Txt color="light" style={{ fontWeight: '600' }}>
+          State:
+        </Txt>
+        <Txt color="light">
+          {card.state}
+        </Txt>
+        <Txt color="light" style={{ fontWeight: '600' }}>
+          Zip:
+        </Txt>
+        <Txt color="light">
+          {card.zip}
+        </Txt>
       </View>
     </View>
   </ImageBackground>

@@ -1,261 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<LoginLink /> renders 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <LoginLink />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": Array [
-        <Txt
-          color="light"
-        >
-          Already have an account?
-        </Txt>,
-        <TouchableOpacity
-          activeOpacity={0.2}
-          onPress={[Function]}
-        >
-          <Component
-            style={
-              Object {
-                "borderBottomColor": "#fff",
-                "borderBottomWidth": 1,
-              }
-            }
-          >
-            <Txt
-              color="light"
-            >
-              Log In
-            </Txt>
-          </Component>
-        </TouchableOpacity>,
-      ],
-      "style": Object {
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "marginBottom": 40,
-      },
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "children": "Already have an account?",
-          "color": "light",
-        },
-        "ref": null,
-        "rendered": "Already have an account?",
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "activeOpacity": 0.2,
-          "children": <Component
-            style={
-              Object {
-                "borderBottomColor": "#fff",
-                "borderBottomWidth": 1,
-              }
-            }
-          >
-            <Txt
-              color="light"
-            >
-              Log In
-            </Txt>
-          </Component>,
-          "onPress": [Function],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <Txt
-              color="light"
-            >
-              Log In
-            </Txt>,
-            "style": Object {
-              "borderBottomColor": "#fff",
-              "borderBottomWidth": 1,
-            },
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": "Log In",
-              "color": "light",
-            },
-            "ref": null,
-            "rendered": "Log In",
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
+<Component
+  style={
     Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
-          <Txt
-            color="light"
-          >
-            Already have an account?
-          </Txt>,
-          <TouchableOpacity
-            activeOpacity={0.2}
-            onPress={[Function]}
-          >
-            <Component
-              style={
-                Object {
-                  "borderBottomColor": "#fff",
-                  "borderBottomWidth": 1,
-                }
-              }
-            >
-              <Txt
-                color="light"
-              >
-                Log In
-              </Txt>
-            </Component>
-          </TouchableOpacity>,
-        ],
-        "style": Object {
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginBottom": 40,
-        },
-      },
-      "ref": null,
-      "rendered": Array [
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 40,
+    }
+  }
+>
+  <Txt
+    color="light"
+  >
+    Already have an account? 
+  </Txt>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+  >
+    <Component
+      style={
         Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "children": "Already have an account?",
-            "color": "light",
-          },
-          "ref": null,
-          "rendered": "Already have an account?",
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "activeOpacity": 0.2,
-            "children": <Component
-              style={
-                Object {
-                  "borderBottomColor": "#fff",
-                  "borderBottomWidth": 1,
-                }
-              }
-            >
-              <Txt
-                color="light"
-              >
-                Log In
-              </Txt>
-            </Component>,
-            "onPress": [Function],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <Txt
-                color="light"
-              >
-                Log In
-              </Txt>,
-              "style": Object {
-                "borderBottomColor": "#fff",
-                "borderBottomWidth": 1,
-              },
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "Log In",
-                "color": "light",
-              },
-              "ref": null,
-              "rendered": "Log In",
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-      ],
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromError": false,
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
+          "borderBottomColor": "#fff",
+          "borderBottomWidth": 1,
+        }
+      }
+    >
+      <Txt
+        color="light"
+      >
+        Log In
+      </Txt>
+    </Component>
+  </TouchableOpacity>
+</Component>
 `;

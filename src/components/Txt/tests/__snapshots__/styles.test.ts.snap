@@ -10,6 +10,10 @@ Object {
     "color": "#fff",
     "fontSize": 18,
   },
+  "muted": Object {
+    "color": "#bbb",
+    "fontSize": 18,
+  },
   "primary": Object {
     "color": "rgb(251, 100, 65)",
     "fontSize": 18,

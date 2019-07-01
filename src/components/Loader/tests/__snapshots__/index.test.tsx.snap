@@ -18,7 +18,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <ActivityIndicator
+      "children": <Component
         animating={true}
         color="#999999"
         hidesWhenStopped={true}
@@ -51,7 +51,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <ActivityIndicator
+        "children": <Component
           animating={true}
           color="#999999"
           hidesWhenStopped={true}
@@ -102,6 +102,8 @@ ShallowWrapper {
         },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
 }
 `;

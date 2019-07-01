@@ -1,333 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AddCauseLink /> renders with just text 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <AddCauseLink />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "activeOpacity": 0.2,
-      "children": <Component
-        style={
-          Array [
-            Object {
-              "height": 100,
-              "marginRight": 12,
-              "width": 100,
-            },
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fff",
-              "borderRadius": 12,
-              "justifyContent": "center",
-              "marginRight": 12,
-              "overflow": "hidden",
-            },
-          ]
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[Function]}
+>
+  <Component
+    style={
+      Array [
+        Object {
+          "height": 100,
+          "marginRight": 12,
+          "width": 100,
+        },
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#fff",
+          "borderRadius": 12,
+          "justifyContent": "center",
+          "marginRight": 12,
+          "overflow": "hidden",
+        },
+      ]
+    }
+  >
+    <Component
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(0,0,0,0.6)",
+          "height": "100%",
+          "justifyContent": "center",
+          "width": "100%",
         }
-      >
-        <Component
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "rgba(0,0,0,0.6)",
-              "height": "100%",
-              "justifyContent": "center",
-              "width": "100%",
-            }
-          }
-        >
-          <Icon
-            allowFontScaling={false}
-            color="#fff"
-            name="plus"
-            size={50}
-            style={
-              Object {
-                "marginRight": 5,
-              }
-            }
-          />
-        </Component>
-      </Component>,
-      "onPress": [Function],
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": <Component
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "rgba(0,0,0,0.6)",
-              "height": "100%",
-              "justifyContent": "center",
-              "width": "100%",
-            }
-          }
-        >
-          <Icon
-            allowFontScaling={false}
-            color="#fff"
-            name="plus"
-            size={50}
-            style={
-              Object {
-                "marginRight": 5,
-              }
-            }
-          />
-        </Component>,
-        "style": Array [
+      }
+    >
+      <Icon
+        allowFontScaling={false}
+        color="#fff"
+        name="plus"
+        size={50}
+        style={
           Object {
-            "height": 100,
-            "marginRight": 12,
-            "width": 100,
-          },
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "#fff",
-            "borderRadius": 12,
-            "justifyContent": "center",
-            "marginRight": 12,
-            "overflow": "hidden",
-          },
-        ],
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <Icon
-            allowFontScaling={false}
-            color="#fff"
-            name="plus"
-            size={50}
-            style={
-              Object {
-                "marginRight": 5,
-              }
-            }
-          />,
-          "style": Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(0,0,0,0.6)",
-            "height": "100%",
-            "justifyContent": "center",
-            "width": "100%",
-          },
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "allowFontScaling": false,
-            "color": "#fff",
-            "name": "plus",
-            "size": 50,
-            "style": Object {
-              "marginRight": 5,
-            },
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "activeOpacity": 0.2,
-        "children": <Component
-          style={
-            Array [
-              Object {
-                "height": 100,
-                "marginRight": 12,
-                "width": 100,
-              },
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "#fff",
-                "borderRadius": 12,
-                "justifyContent": "center",
-                "marginRight": 12,
-                "overflow": "hidden",
-              },
-            ]
+            "marginRight": 5,
           }
-        >
-          <Component
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "rgba(0,0,0,0.6)",
-                "height": "100%",
-                "justifyContent": "center",
-                "width": "100%",
-              }
-            }
-          >
-            <Icon
-              allowFontScaling={false}
-              color="#fff"
-              name="plus"
-              size={50}
-              style={
-                Object {
-                  "marginRight": 5,
-                }
-              }
-            />
-          </Component>
-        </Component>,
-        "onPress": [Function],
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <Component
-            style={
-              Object {
-                "alignItems": "center",
-                "backgroundColor": "rgba(0,0,0,0.6)",
-                "height": "100%",
-                "justifyContent": "center",
-                "width": "100%",
-              }
-            }
-          >
-            <Icon
-              allowFontScaling={false}
-              color="#fff"
-              name="plus"
-              size={50}
-              style={
-                Object {
-                  "marginRight": 5,
-                }
-              }
-            />
-          </Component>,
-          "style": Array [
-            Object {
-              "height": 100,
-              "marginRight": 12,
-              "width": 100,
-            },
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#fff",
-              "borderRadius": 12,
-              "justifyContent": "center",
-              "marginRight": 12,
-              "overflow": "hidden",
-            },
-          ],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <Icon
-              allowFontScaling={false}
-              color="#fff"
-              name="plus"
-              size={50}
-              style={
-                Object {
-                  "marginRight": 5,
-                }
-              }
-            />,
-            "style": Object {
-              "alignItems": "center",
-              "backgroundColor": "rgba(0,0,0,0.6)",
-              "height": "100%",
-              "justifyContent": "center",
-              "width": "100%",
-            },
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "allowFontScaling": false,
-              "color": "#fff",
-              "name": "plus",
-              "size": 50,
-              "style": Object {
-                "marginRight": 5,
-              },
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromError": false,
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-}
+        }
+      />
+    </Component>
+  </Component>
+</TouchableOpacity>
 `;

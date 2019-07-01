@@ -1,556 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TopRow /> renders 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TopRow
-    name="mockName"
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": Array [
-        <Component
-          style={
-            Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            }
-          }
-        >
-          <Component
-            style={
-              Object {
-                "backgroundColor": "#f0f0f0",
-                "borderRadius": 16,
-                "height": 32,
-                "marginRight": 12,
-                "width": 32,
-              }
-            }
-          />
-          <Component>
-            <Txt
-              color="default"
-              style={
-                Object {
-                  "fontSize": 16,
-                }
-              }
-            >
-              mockName
-            </Txt>
-            <Txt
-              color="default"
-              style={
-                Object {
-                  "color": "rgb(171, 169,167)",
-                  "fontSize": 11,
-                }
-              }
-            >
-              @xyz123
-            </Txt>
-          </Component>
-        </Component>,
-        <TouchableOpacity
-          activeOpacity={0.2}
-        >
-          <Component>
-            <Icon
-              allowFontScaling={false}
-              color="#d0d0d0"
-              name="dots-three-horizontal"
-              size={19}
-            />
-          </Component>
-        </TouchableOpacity>,
-      ],
-      "style": Object {
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "height": 58,
+      "justifyContent": "space-between",
+      "paddingHorizontal": 20,
+    }
+  }
+>
+  <Component
+    style={
+      Object {
         "alignItems": "center",
         "flexDirection": "row",
-        "height": 58,
-        "justifyContent": "space-between",
-        "paddingHorizontal": 20,
-      },
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <Component
-              style={
-                Object {
-                  "backgroundColor": "#f0f0f0",
-                  "borderRadius": 16,
-                  "height": 32,
-                  "marginRight": 12,
-                  "width": 32,
-                }
-              }
-            />,
-            <Component>
-              <Txt
-                color="default"
-                style={
-                  Object {
-                    "fontSize": 16,
-                  }
-                }
-              >
-                mockName
-              </Txt>
-              <Txt
-                color="default"
-                style={
-                  Object {
-                    "color": "rgb(171, 169,167)",
-                    "fontSize": 11,
-                  }
-                }
-              >
-                @xyz123
-              </Txt>
-            </Component>,
-          ],
-          "style": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-          },
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "style": Object {
-                "backgroundColor": "#f0f0f0",
-                "borderRadius": 16,
-                "height": 32,
-                "marginRight": 12,
-                "width": 32,
-              },
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": Array [
-                <Txt
-                  color="default"
-                  style={
-                    Object {
-                      "fontSize": 16,
-                    }
-                  }
-                >
-                  mockName
-                </Txt>,
-                <Txt
-                  color="default"
-                  style={
-                    Object {
-                      "color": "rgb(171, 169,167)",
-                      "fontSize": 11,
-                    }
-                  }
-                >
-                  @xyz123
-                </Txt>,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": "mockName",
-                  "color": "default",
-                  "style": Object {
-                    "fontSize": 16,
-                  },
-                },
-                "ref": null,
-                "rendered": "mockName",
-                "type": [Function],
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "function",
-                "props": Object {
-                  "children": "@xyz123",
-                  "color": "default",
-                  "style": Object {
-                    "color": "rgb(171, 169,167)",
-                    "fontSize": 11,
-                  },
-                },
-                "ref": null,
-                "rendered": "@xyz123",
-                "type": [Function],
-              },
-            ],
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "activeOpacity": 0.2,
-          "children": <Component>
-            <Icon
-              allowFontScaling={false}
-              color="#d0d0d0"
-              name="dots-three-horizontal"
-              size={19}
-            />
-          </Component>,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <Icon
-              allowFontScaling={false}
-              color="#d0d0d0"
-              name="dots-three-horizontal"
-              size={19}
-            />,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "allowFontScaling": false,
-              "color": "#d0d0d0",
-              "name": "dots-three-horizontal",
-              "size": 19,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
-          <Component
-            style={
-              Object {
-                "alignItems": "center",
-                "flexDirection": "row",
-              }
-            }
-          >
-            <Component
-              style={
-                Object {
-                  "backgroundColor": "#f0f0f0",
-                  "borderRadius": 16,
-                  "height": 32,
-                  "marginRight": 12,
-                  "width": 32,
-                }
-              }
-            />
-            <Component>
-              <Txt
-                color="default"
-                style={
-                  Object {
-                    "fontSize": 16,
-                  }
-                }
-              >
-                mockName
-              </Txt>
-              <Txt
-                color="default"
-                style={
-                  Object {
-                    "color": "rgb(171, 169,167)",
-                    "fontSize": 11,
-                  }
-                }
-              >
-                @xyz123
-              </Txt>
-            </Component>
-          </Component>,
-          <TouchableOpacity
-            activeOpacity={0.2}
-          >
-            <Component>
-              <Icon
-                allowFontScaling={false}
-                color="#d0d0d0"
-                name="dots-three-horizontal"
-                size={19}
-              />
-            </Component>
-          </TouchableOpacity>,
-        ],
-        "style": Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "height": 58,
-          "justifyContent": "space-between",
-          "paddingHorizontal": 20,
-        },
-      },
-      "ref": null,
-      "rendered": Array [
+      }
+    }
+  >
+    <Component
+      style={
         Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <Component
-                style={
-                  Object {
-                    "backgroundColor": "#f0f0f0",
-                    "borderRadius": 16,
-                    "height": 32,
-                    "marginRight": 12,
-                    "width": 32,
-                  }
-                }
-              />,
-              <Component>
-                <Txt
-                  color="default"
-                  style={
-                    Object {
-                      "fontSize": 16,
-                    }
-                  }
-                >
-                  mockName
-                </Txt>
-                <Txt
-                  color="default"
-                  style={
-                    Object {
-                      "color": "rgb(171, 169,167)",
-                      "fontSize": 11,
-                    }
-                  }
-                >
-                  @xyz123
-                </Txt>
-              </Component>,
-            ],
-            "style": Object {
-              "alignItems": "center",
-              "flexDirection": "row",
-            },
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "style": Object {
-                  "backgroundColor": "#f0f0f0",
-                  "borderRadius": 16,
-                  "height": 32,
-                  "marginRight": 12,
-                  "width": 32,
-                },
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": Array [
-                  <Txt
-                    color="default"
-                    style={
-                      Object {
-                        "fontSize": 16,
-                      }
-                    }
-                  >
-                    mockName
-                  </Txt>,
-                  <Txt
-                    color="default"
-                    style={
-                      Object {
-                        "color": "rgb(171, 169,167)",
-                        "fontSize": 11,
-                      }
-                    }
-                  >
-                    @xyz123
-                  </Txt>,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "mockName",
-                    "color": "default",
-                    "style": Object {
-                      "fontSize": 16,
-                    },
-                  },
-                  "ref": null,
-                  "rendered": "mockName",
-                  "type": [Function],
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": "@xyz123",
-                    "color": "default",
-                    "style": Object {
-                      "color": "rgb(171, 169,167)",
-                      "fontSize": 11,
-                    },
-                  },
-                  "ref": null,
-                  "rendered": "@xyz123",
-                  "type": [Function],
-                },
-              ],
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "activeOpacity": 0.2,
-            "children": <Component>
-              <Icon
-                allowFontScaling={false}
-                color="#d0d0d0"
-                name="dots-three-horizontal"
-                size={19}
-              />
-            </Component>,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <Icon
-                allowFontScaling={false}
-                color="#d0d0d0"
-                name="dots-three-horizontal"
-                size={19}
-              />,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "allowFontScaling": false,
-                "color": "#d0d0d0",
-                "name": "dots-three-horizontal",
-                "size": 19,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-      ],
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromError": false,
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+          "backgroundColor": "#f0f0f0",
+          "borderRadius": 16,
+          "height": 32,
+          "marginRight": 12,
+          "width": 32,
+        }
+      }
+    />
+    <Component>
+      <Txt
+        color="default"
+        style={
+          Object {
+            "fontSize": 16,
+          }
+        }
+      >
+        mockName
+      </Txt>
+      <Txt
+        color="default"
+        style={
+          Object {
+            "color": "rgb(171, 169,167)",
+            "fontSize": 11,
+          }
+        }
+      >
+        @xyz123
+      </Txt>
+    </Component>
+  </Component>
+  <TouchableOpacity
+    activeOpacity={0.2}
+  >
+    <Component>
+      <Icon
+        allowFontScaling={false}
+        color="#d0d0d0"
+        name="dots-three-horizontal"
+        size={19}
+      />
+    </Component>
+  </TouchableOpacity>
+</Component>
 `;

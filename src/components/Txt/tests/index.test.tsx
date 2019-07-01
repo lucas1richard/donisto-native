@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Txt, { ITxtProps } from '..';
 
 describe('<Txt />', () => {
-  const renderComponent = (props: ITxtProps) => shallow(<Txt {...props} />);
+  const renderComponent = (props: ITxtProps) => toJson(shallow(<Txt {...props} />));
   it('renders with just text', () => {
     expect(renderComponent({ children: 'mockText' })).toMatchSnapshot();
   });

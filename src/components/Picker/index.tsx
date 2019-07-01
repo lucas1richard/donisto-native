@@ -1,9 +1,16 @@
-import React from 'react';
+import * as React from 'react';
 import { Picker as RNPicker, View, StyleSheet } from 'react-native';
 import Txt from 'components/Txt';
 import theme from 'theme/iftheme';
 
-function Picker({ input, children, label, style, ...rest }) {
+export interface IPickerProps {
+  input: any;
+  children: any;
+  label: string;
+  style: any;
+}
+
+function Picker({ input, children, label, style, ...rest }: IPickerProps) {
   return (
     <View style={[styles.wrapper, style]}>
       {label && <Txt>{label}</Txt>}

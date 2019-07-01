@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import { Contact, IContactProps } from '../index';
 
 describe('<Contact />', () => {
-  const renderComponent = (props: IContactProps) => shallow(<Contact {...props} />);
+  const renderComponent = (props: IContactProps) => toJson(shallow(<Contact {...props} />));
   it('renders', () => {
     expect(renderComponent({
       contact: {
@@ -14,7 +15,8 @@ describe('<Contact />', () => {
       },
       orgNewsFeed: [],
       causes: [],
-      organizations: []
+      organizations: [],
+      goToOrgDetail: jest.fn(),
     })).toMatchSnapshot();
   });
 });

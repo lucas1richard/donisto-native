@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Button, { IButtonProps } from '..';
 
 describe('<Button />', () => {
-  const renderComponent = (props: IButtonProps) => shallow(<Button {...props} />);
+  const renderComponent = (props: IButtonProps) => toJson(shallow(<Button {...props} />));
   it('renders with a title', () => {
     expect(renderComponent({
       title: 'mockTitle',

@@ -1,577 +1,95 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ContactHeading /> renders with just text 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ContactHeading
-    contact={
+<Component
+  style={
+    Object {
+      "height": 200,
+      "marginBottom": 120,
+      "position": "relative",
+    }
+  }
+>
+  <ImageBackground
+    imageStyle={
       Object {
-        "city": "mockCity",
-        "first_name": "mockFirstName",
-        "last_name": "mockLastName",
-        "state": "mockState",
+        "alignSelf": "flex-start",
+        "flex": 1,
+        "height": 200,
+        "overflow": "hidden",
       }
     }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateError": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "children": Array [
-        <ImageBackground
-          imageStyle={
-            Object {
-              "alignSelf": "flex-start",
-              "flex": 1,
-              "height": 200,
-              "overflow": "hidden",
-            }
-          }
-          source={1}
-          style={
-            Object {
-              "backgroundColor": "#000",
-              "flexDirection": "row",
-              "height": 200,
-              "justifyContent": "flex-end",
-              "paddingHorizontal": 12,
-              "paddingVertical": 12,
-            }
-          }
-        >
-          <TouchableOpacity
-            activeOpacity={0.2}
-            onPress={[Function]}
-          >
-            <Component>
-              <Icon
-                allowFontScaling={false}
-                color="#fff"
-                name="dots-three-horizontal"
-                size={40}
-              />
-            </Component>
-          </TouchableOpacity>
-        </ImageBackground>,
-        <Component
-          style={
-            Object {
-              "backgroundColor": "#dedede",
-              "borderColor": "#fff",
-              "borderRadius": 20,
-              "borderWidth": 6.666666666666667,
-              "bottom": -120,
-              "height": 200,
-              "left": 12,
-              "position": "absolute",
-              "width": 133.33333333333331,
-              "zIndex": 50,
-            }
-          }
-        />,
-        <Component
-          style={
-            Object {
-              "bottom": 20,
-              "maxWidth": 300,
-              "position": "absolute",
-              "right": 12,
-            }
-          }
-        >
-          <Txt
-            color="light"
-          >
-            mockFirstName
-             
-            mockLastName
-          </Txt>
-          <Txt
-            color="light"
-          >
-            mockCity, mockState
-          </Txt>
-        </Component>,
-      ],
-      "style": Object {
+    source={1}
+    style={
+      Object {
+        "backgroundColor": "#000",
+        "flexDirection": "row",
         "height": 200,
-        "marginBottom": 120,
-        "position": "relative",
-      },
-    },
-    "ref": null,
-    "rendered": Array [
+        "justifyContent": "flex-end",
+        "paddingHorizontal": 12,
+        "paddingVertical": 12,
+      }
+    }
+  >
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <Component>
+        <Icon
+          allowFontScaling={false}
+          color="#fff"
+          name="dots-three-horizontal"
+          size={40}
+        />
+      </Component>
+    </TouchableOpacity>
+  </ImageBackground>
+  <Component
+    style={
       Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <TouchableOpacity
-            activeOpacity={0.2}
-            onPress={[Function]}
-          >
-            <Component>
-              <Icon
-                allowFontScaling={false}
-                color="#fff"
-                name="dots-three-horizontal"
-                size={40}
-              />
-            </Component>
-          </TouchableOpacity>,
-          "imageStyle": Object {
-            "alignSelf": "flex-start",
-            "flex": 1,
-            "height": 200,
-            "overflow": "hidden",
-          },
-          "source": 1,
-          "style": Object {
-            "backgroundColor": "#000",
-            "flexDirection": "row",
-            "height": 200,
-            "justifyContent": "flex-end",
-            "paddingHorizontal": 12,
-            "paddingVertical": 12,
-          },
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "activeOpacity": 0.2,
-            "children": <Component>
-              <Icon
-                allowFontScaling={false}
-                color="#fff"
-                name="dots-three-horizontal"
-                size={40}
-              />
-            </Component>,
-            "onPress": [Function],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <Icon
-                allowFontScaling={false}
-                color="#fff"
-                name="dots-three-horizontal"
-                size={40}
-              />,
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "allowFontScaling": false,
-                "color": "#fff",
-                "name": "dots-three-horizontal",
-                "size": 40,
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "style": Object {
-            "backgroundColor": "#dedede",
-            "borderColor": "#fff",
-            "borderRadius": 20,
-            "borderWidth": 6.666666666666667,
-            "bottom": -120,
-            "height": 200,
-            "left": 12,
-            "position": "absolute",
-            "width": 133.33333333333331,
-            "zIndex": 50,
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <Txt
-              color="light"
-            >
-              mockFirstName
-               
-              mockLastName
-            </Txt>,
-            <Txt
-              color="light"
-            >
-              mockCity, mockState
-            </Txt>,
-          ],
-          "style": Object {
-            "bottom": 20,
-            "maxWidth": 300,
-            "position": "absolute",
-            "right": 12,
-          },
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": Array [
-                "mockFirstName",
-                " ",
-                "mockLastName",
-              ],
-              "color": "light",
-            },
-            "ref": null,
-            "rendered": Array [
-              "mockFirstName",
-              " ",
-              "mockLastName",
-            ],
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "children": "mockCity, mockState",
-              "color": "light",
-            },
-            "ref": null,
-            "rendered": "mockCity, mockState",
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "children": Array [
-          <ImageBackground
-            imageStyle={
-              Object {
-                "alignSelf": "flex-start",
-                "flex": 1,
-                "height": 200,
-                "overflow": "hidden",
-              }
-            }
-            source={1}
-            style={
-              Object {
-                "backgroundColor": "#000",
-                "flexDirection": "row",
-                "height": 200,
-                "justifyContent": "flex-end",
-                "paddingHorizontal": 12,
-                "paddingVertical": 12,
-              }
-            }
-          >
-            <TouchableOpacity
-              activeOpacity={0.2}
-              onPress={[Function]}
-            >
-              <Component>
-                <Icon
-                  allowFontScaling={false}
-                  color="#fff"
-                  name="dots-three-horizontal"
-                  size={40}
-                />
-              </Component>
-            </TouchableOpacity>
-          </ImageBackground>,
-          <Component
-            style={
-              Object {
-                "backgroundColor": "#dedede",
-                "borderColor": "#fff",
-                "borderRadius": 20,
-                "borderWidth": 6.666666666666667,
-                "bottom": -120,
-                "height": 200,
-                "left": 12,
-                "position": "absolute",
-                "width": 133.33333333333331,
-                "zIndex": 50,
-              }
-            }
-          />,
-          <Component
-            style={
-              Object {
-                "bottom": 20,
-                "maxWidth": 300,
-                "position": "absolute",
-                "right": 12,
-              }
-            }
-          >
-            <Txt
-              color="light"
-            >
-              mockFirstName
-               
-              mockLastName
-            </Txt>
-            <Txt
-              color="light"
-            >
-              mockCity, mockState
-            </Txt>
-          </Component>,
-        ],
-        "style": Object {
-          "height": 200,
-          "marginBottom": 120,
-          "position": "relative",
-        },
-      },
-      "ref": null,
-      "rendered": Array [
+        "backgroundColor": "#dedede",
+        "borderColor": "#fff",
+        "borderRadius": 20,
+        "borderWidth": 6.666666666666667,
+        "bottom": -120,
+        "height": 200,
+        "left": 12,
+        "position": "absolute",
+        "width": 133.33333333333331,
+        "zIndex": 50,
+      }
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    onPress={[Function]}
+  >
+    <Component
+      style={
         Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": <TouchableOpacity
-              activeOpacity={0.2}
-              onPress={[Function]}
-            >
-              <Component>
-                <Icon
-                  allowFontScaling={false}
-                  color="#fff"
-                  name="dots-three-horizontal"
-                  size={40}
-                />
-              </Component>
-            </TouchableOpacity>,
-            "imageStyle": Object {
-              "alignSelf": "flex-start",
-              "flex": 1,
-              "height": 200,
-              "overflow": "hidden",
-            },
-            "source": 1,
-            "style": Object {
-              "backgroundColor": "#000",
-              "flexDirection": "row",
-              "height": 200,
-              "justifyContent": "flex-end",
-              "paddingHorizontal": 12,
-              "paddingVertical": 12,
-            },
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "activeOpacity": 0.2,
-              "children": <Component>
-                <Icon
-                  allowFontScaling={false}
-                  color="#fff"
-                  name="dots-three-horizontal"
-                  size={40}
-                />
-              </Component>,
-              "onPress": [Function],
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "children": <Icon
-                  allowFontScaling={false}
-                  color="#fff"
-                  name="dots-three-horizontal"
-                  size={40}
-                />,
-              },
-              "ref": null,
-              "rendered": Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "class",
-                "props": Object {
-                  "allowFontScaling": false,
-                  "color": "#fff",
-                  "name": "dots-three-horizontal",
-                  "size": 40,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": [Function],
-              },
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "style": Object {
-              "backgroundColor": "#dedede",
-              "borderColor": "#fff",
-              "borderRadius": 20,
-              "borderWidth": 6.666666666666667,
-              "bottom": -120,
-              "height": 200,
-              "left": 12,
-              "position": "absolute",
-              "width": 133.33333333333331,
-              "zIndex": 50,
-            },
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "children": Array [
-              <Txt
-                color="light"
-              >
-                mockFirstName
-                 
-                mockLastName
-              </Txt>,
-              <Txt
-                color="light"
-              >
-                mockCity, mockState
-              </Txt>,
-            ],
-            "style": Object {
-              "bottom": 20,
-              "maxWidth": 300,
-              "position": "absolute",
-              "right": 12,
-            },
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": Array [
-                  "mockFirstName",
-                  " ",
-                  "mockLastName",
-                ],
-                "color": "light",
-              },
-              "ref": null,
-              "rendered": Array [
-                "mockFirstName",
-                " ",
-                "mockLastName",
-              ],
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "children": "mockCity, mockState",
-                "color": "light",
-              },
-              "ref": null,
-              "rendered": "mockCity, mockState",
-              "type": [Function],
-            },
-          ],
-          "type": [Function],
-        },
-      ],
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-        "legacyContextMode": "parent",
-        "lifecycles": Object {
-          "componentDidUpdate": Object {
-            "onSetState": true,
-          },
-          "getChildContext": Object {
-            "calledByRenderer": false,
-          },
-          "getDerivedStateFromError": false,
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
-          "getSnapshotBeforeUpdate": true,
-          "setState": Object {
-            "skipsComponentDidUpdateOnNullish": true,
-          },
-        },
-      },
-    },
-  },
-  Symbol(enzyme.__childContext__): null,
-}
+          "bottom": 12,
+          "maxWidth": 300,
+          "minWidth": 100,
+          "position": "absolute",
+          "right": 12,
+          "zIndex": 50,
+        }
+      }
+    >
+      <Txt
+        color="light"
+      >
+        mockFirstName
+         
+        mockLastName
+      </Txt>
+      <Txt
+        color="light"
+      >
+        mockCity, mockState
+      </Txt>
+    </Component>
+  </TouchableOpacity>
+</Component>
 `;

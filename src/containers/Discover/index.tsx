@@ -1,7 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { View } from 'react-native';
 import Txt from 'components/Txt';
-import Button from 'components/Button';
 import { Entypo } from '@expo/vector-icons';
 import theme from 'theme/iftheme';
 import mapToProps from './mapToProps';
@@ -16,7 +15,7 @@ export interface IDiscoverProps {
   rejectFollowOrg: (uuid: string) => any;
 }
 
-class Discover extends React.Component<IDiscoverProps> {
+export class Discover extends React.Component<IDiscoverProps> {
   componentDidMount() {
     this.props.getDiscoverOrgs();
   }

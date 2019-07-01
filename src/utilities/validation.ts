@@ -40,12 +40,13 @@ export function validDate(value: string) {
 }
 
 /** Ensure that a string represents a value less than 18 */
-export function youngerThan18(value: { month: string, day: string, year: string }) {
+type MonthString = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+export function youngerThan18(value: { month: MonthString, day: string, year: string }) {
   let testVal;
   let format = 'MM/DD/YYYY';
   if (value && value.month && value.day && value.year) {
-    testVal = `${value.month} ${value.day}, ${value.year}`;
-    format = 'MMMM DD, YYYY';
+    testVal = `${value.month}/${value.day}/${value.year}`;
+    format = 'MM/DD/YYYY';
   }
   if (!isEmpty(testVal) && !moment(testVal, format, true).isBefore(moment().subtract(18, 'years'))) {
     return 'Sorry, Today you must be 18 or older';
@@ -54,7 +55,7 @@ export function youngerThan18(value: { month: string, day: string, year: string 
 }
 
 /** Ensure that a string represents a citizen or resident alien */
-export function citizenship(value: string) {
+export function citizenship(value?: 'N') {
   if (!isEmpty(value) && value === 'N') {
     return 'Sorry, Today you must be a citizen or resident alien';
   }

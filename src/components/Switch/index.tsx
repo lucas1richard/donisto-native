@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Switch, View } from 'react-native';
 import { WrappedFieldInputProps } from 'redux-form';
 import theme from 'theme/iftheme';

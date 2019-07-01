@@ -1,6 +1,3 @@
-// import moment from 'moment';
-import { fromJS } from 'immutable';
-
 import {
   email,
   zipCode,
@@ -72,8 +69,8 @@ describe('date validator', () => {
 describe('age validator', () => {
   it('should make sure birth date is more than 18 years ago', () => {
     const errorMsg = 'Sorry, Today you must be 18 or older';
-    expect(youngerThan18({month: '12', year: '1966', day: '31' })).toBe(undefined);
-    expect(youngerThan18({month: '1', year: '2000', day: '30' })).toBe(errorMsg);
+    expect(youngerThan18({ month: '12', year: '1966', day: '31' })).toBe(undefined);
+    expect(youngerThan18({ month: '1', year: '2000', day: '30' })).toBe(errorMsg);
     // const adult = moment().subtract(18, 'years').format('MM/DD/YYYY');
     // expect(youngerThan18(adult)).toBe(undefined);
     // const child = moment(adult, 'MM/DD/YYYY').add(1, 'd').format('MM/DD/YYYY');
@@ -193,7 +190,7 @@ describe('createValidator', () => {
   };
 
   it('should return an errors object', () => {
-    expect(createValidator(rules)(fromJS(data))).toEqual({});
+    expect(createValidator(rules)(data)).toEqual({});
     expect(createValidator(rules)()).toEqual({
       testField: 'This field is required'
     });

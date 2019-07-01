@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { View, ButtonProps } from 'react-native';
+import { View, ButtonProps, Text } from 'react-native';
 import Touchable from 'components/Touchable';
-import { Text } from 'react-native';
 import { viewStyles, textStyles } from './styles';
 import theme from 'theme/iftheme';
 import Loader from 'components/Loader';

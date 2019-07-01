@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Input, { TInputProps } from '..';
 import { BlurViewProps } from 'expo';
 
@@ -33,7 +34,7 @@ const defaultProps = {
 describe('<Input />', () => {
   const renderComponent = (props: TInputProps) => shallow(<Input {...props} />);
   it('renders', () => {
-    expect(renderComponent({ ...defaultProps })).toMatchSnapshot();
+    expect(toJson(renderComponent({ ...defaultProps }))).toMatchSnapshot();
   });
   it('renders multiline', () => {
     expect(renderComponent({
@@ -75,10 +76,10 @@ describe('<Input />', () => {
         tint: 'light',
         intensity: 80
       };
-      expect(renderComponent({
+      expect(toJson(renderComponent({
         ...defaultProps,
         blurViewProps
-      })).toMatchSnapshot();
+      }))).toMatchSnapshot();
     });
   });
 });
