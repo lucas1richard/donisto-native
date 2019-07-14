@@ -31,8 +31,8 @@ function* submitStorySaga() {
     const { data } = yield call(api, 'post', '/v1/newsfeed', newsStoryData);
     yield all([
       put(submitStorySuccessAction(data)),
-      put(getNewsFeedAction()),
-      put(getOrgNewsFeedAction())
+      put(getNewsFeedAction.Default()),
+      put(getOrgNewsFeedAction.Default())
     ]);
 
   } catch (err) {

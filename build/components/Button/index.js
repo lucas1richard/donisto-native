@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import Touchable from 'components/Touchable';
-import { Text } from 'react-native';
 import { viewStyles, textStyles } from './styles';
 import theme from 'theme/iftheme';
 import Loader from 'components/Loader';

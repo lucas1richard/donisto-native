@@ -1,7 +1,10 @@
-import { IToggleSelectCauseAction } from 'containers/NewsFeed/actions';
 import { INewsfeedInitialState } from '..';
+import { INewsFeedActions } from 'containers/NewsFeed/types/actions';
 
-function toggleSelectCauseTransformer(state: INewsfeedInitialState, action: IToggleSelectCauseAction): INewsfeedInitialState {
+function toggleSelectCauseTransformer(
+  state: INewsfeedInitialState,
+  action: INewsFeedActions.ToggleSelectCause['WithUuid']
+): INewsfeedInitialState {
   const selectedCauses = {
     ...state.selectedCauses
   };

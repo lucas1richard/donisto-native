@@ -1,9 +1,9 @@
+import { IOrganizationActions } from 'containers/Organization/types/actions';
 import { IOrganizationInitialState } from '..';
-import { ISelectOrgDetailAction } from 'containers/Organization/actions';
 
 const selectOrgDetailCaseFn = (
   state: IOrganizationInitialState,
-  action: ISelectOrgDetailAction
+  action: IOrganizationActions.SelectOrgDetail['WithUuid']
   ): IOrganizationInitialState => {
   return {
     ...state,

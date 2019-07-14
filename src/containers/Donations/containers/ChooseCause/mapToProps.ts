@@ -9,7 +9,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  selectCause: (causeUuid: string) => dispatch(selectDonationCauseAction(causeUuid))
+  selectCause: (causeUuid: string) => dispatch(selectDonationCauseAction.WithUuid(causeUuid))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

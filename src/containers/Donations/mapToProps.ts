@@ -14,14 +14,14 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
     viewDetail: (donationUuid: string) => {
-      dispatch(selectDetailViewAction(donationUuid));
+      dispatch(selectDetailViewAction.WithUuid(donationUuid));
       NavigationService.navigate(routeNames.DONATIONS_VIEW);
     },
     getDonationsById: (ids: string[]) => {
-      dispatch(getDonationsByIdAction(ids));
+      dispatch(getDonationsByIdAction.WithUuids(ids));
     },
     getCauseDetailsById: (ids: string[]) => {
-      dispatch(getCauseDetailAction(ids));
+      dispatch(getCauseDetailAction.WithUuids(ids));
     },
     dispatch
   };

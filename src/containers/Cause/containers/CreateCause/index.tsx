@@ -7,21 +7,16 @@ import CreateCauseHeader from './components/Header';
 import Txt from 'components/Txt';
 import { BlurView } from 'expo';
 
-interface ICreateCauseProps {
-  organizations: IOrganization[],
-  createCause: () => any;
-  selectOrganization: (uuid: string) => any;
-  selectedOrganization: string;
+namespace ICreateCause {
+  export interface Props {
+    organizations: IOrganization.Basic[],
+    createCause: () => any;
+    selectOrganization: (uuid: string) => any;
+    selectedOrganization: string;
+  }
 }
 
-class CreateCause extends React.Component<ICreateCauseProps> {
-  // static defaultProps: ICreateCauseProps = {
-  //   organizations: [],
-  //   createCause: () => undefined,
-  //   selectOrganization: (uuid) => uuid,
-  //   selectedOrganization: ''
-  // };
-
+class CreateCause extends React.Component<ICreateCause.Props> {
   render() {
     const {
       createCause,

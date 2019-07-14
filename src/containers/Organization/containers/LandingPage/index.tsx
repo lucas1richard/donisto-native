@@ -9,19 +9,19 @@ import H3 from 'components/H3';
 import Button from 'components/Button';
 import { Feather } from '@expo/vector-icons';
 import Touchable from 'components/Touchable';
-import { IDeleteOrgLinksAction } from 'containers/Organization/actions';
+import { IOrganizationActions } from 'containers/Organization/types/actions';
 import ScreenHeader from 'components/ScreenHeader';
 import CausesSection from './components/CausesSection';
 import BasicInfoSection from './components/BasicInfoSection';
 
 export interface IOrgLandingPageProps {
-  organization: IOrganization;
-  causes: IOrgDetailCause[];
+  organization: IOrganization.Basic;
+  causes: IOrganization.DetailCause[];
   viewCauseDetail: (uuid: string) => any;
   getDetail: () => any;
   createOrgLinks: () => any;
   updateOrg: (onComplete?: () => any) => any;
-  deleteOrgLinks: (links: string[], orgUuid: string) => IDeleteOrgLinksAction;
+  deleteOrgLinks: (links: string[], orgUuid: string) => IOrganizationActions.DeleteOrgLinks['Default'];
 }
 
 export interface IOrgLandingPageState {

@@ -20,12 +20,12 @@ export interface IOrganizationUI {
 
 export interface IOrganizationInitialState {
   ix: number,
-  organizations: IOrganization[];
+  organizations: IOrganization.Basic[];
   discoverOrgs: string[];
   ui: IOrganizationUI;
   error: string;
   uuid: {
-    [uuid: string]: IOrganization
+    [uuid: string]: IOrganization.Basic
   };
 }
 

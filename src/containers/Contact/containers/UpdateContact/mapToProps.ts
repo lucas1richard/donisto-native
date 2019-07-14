@@ -9,7 +9,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  updateContact: () => dispatch(updateContactAction())
+  updateContact: () => dispatch(updateContactAction.Default())
 });
 
 const mapToProps = connect(mapStateToProps, mapDispatchToProps);

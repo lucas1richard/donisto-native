@@ -10,52 +10,52 @@ describe('Contact actions', () => {
   };
 
   it('has a get contact action', () => {
-    expect(actions.getContactAction()).toEqual({
+    expect(actions.getContactAction.Default()).toEqual({
       type: ContactConstants.GET_CONTACT
     });
   });
   it('has a get contact success action', () => {
-    expect(actions.getContactSuccessAction(contact)).toEqual({
+    expect(actions.getContactAction.Success(contact)).toEqual({
       type: ContactConstants.GET_CONTACT_SUCCESS,
-      contact
+      data: contact
     });
   });
   it('has a get contact fail action', () => {
-    expect(actions.getContactFailAction('reason')).toEqual({
+    expect(actions.getContactAction.Fail('reason')).toEqual({
       type: ContactConstants.GET_CONTACT_FAIL,
       error: 'reason'
     });
   });
   it('has an update contact action', () => {
-    expect(actions.updateContactAction()).toEqual({
+    expect(actions.updateContactAction.Default()).toEqual({
       type: ContactConstants.UPDATE_CONTACT
     });
   });
   it('has an update contact success action', () => {
-    expect(actions.updateContactSuccessAction(contact)).toEqual({
+    expect(actions.updateContactAction.Success(contact)).toEqual({
       type: ContactConstants.UPDATE_CONTACT_SUCCESS,
-      contact
+      data: contact
     });
   });
   it('has an update contact fail action', () => {
-    expect(actions.updateContactFailAction('reason')).toEqual({
+    expect(actions.updateContactAction.Fail('reason')).toEqual({
       type: ContactConstants.UPDATE_CONTACT_FAIL,
       error: 'reason'
     });
   });
   it('has a get org news feed action', () => {
-    expect(actions.getOrgNewsFeedAction()).toEqual({
+    expect(actions.getOrgNewsFeedAction.Default()).toEqual({
       type: ContactConstants.GET_ORG_NEWS_FEED,
     });
   });
   it('has a get org news feed success action', () => {
-    expect(actions.getOrgNewsFeedSuccessAction([])).toEqual({
+    expect(actions.getOrgNewsFeedAction.Success([])).toEqual({
       type: ContactConstants.GET_ORG_NEWS_FEED_SUCCESS,
-      orgNewsFeed: []
+      data: []
     });
   });
   it('has a get org news feed fail action', () => {
-    expect(actions.getOrgNewsFeedFailAction('reason')).toEqual({
+    expect(actions.getOrgNewsFeedAction.Fail('reason')).toEqual({
       type: ContactConstants.GET_ORG_NEWS_FEED_FAIL,
       error: 'reason'
     });

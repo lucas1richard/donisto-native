@@ -6,9 +6,9 @@ import {
   makeSelectDiscoverOrgsLoaded
 } from 'containers/Organization/selectors';
 import {
-  getDiscoverOrgsAction,
   followOrgAction,
-  rejectFollowOrgAction
+  getDiscoverOrgs,
+  rejectFollowOrg
 } from 'containers/Organization/actions';
 
 const mapStateToProps = createStructuredSelector({
@@ -17,9 +17,9 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getDiscoverOrgs: () => dispatch(getDiscoverOrgsAction()),
-  followOrg: (uuid: string) => dispatch(followOrgAction(uuid)),
-  rejectFollowOrg: (uuid: string) => dispatch(rejectFollowOrgAction(uuid)),
+  getDiscoverOrgs: () => dispatch(getDiscoverOrgs.Default()),
+  followOrg: (uuid: string) => dispatch(followOrgAction.WithUuid(uuid)),
+  rejectFollowOrg: (uuid: string) => dispatch(rejectFollowOrg.WithUuid(uuid)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

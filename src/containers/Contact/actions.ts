@@ -1,106 +1,64 @@
 import ContactConstants from "./constants";
-import { Action } from "redux";
+import { IContactActions, IContactActionCreators } from './types/actions';
 
 export type TContactActions =
-  IGetContactAction
-  | IGetContactSuccessAction
-  | IGetContactFailAction
-  | IUpdateContactAction
-  | IUpdateContactSuccessAction
-  | IUpdateContactFailAction
-  | IGetOrgNewsFeedAction
-  | IGetOrgNewsFeedSuccessAction
-  | IGetOrgNewsFeedFailAction
+  IContactActions.GetContact['Default']
+  | IContactActions.GetContact['Fail']
+  | IContactActions.GetContact['Success']
+  | IContactActions.UpdateContact['Default']
+  | IContactActions.UpdateContact['Fail']
+  | IContactActions.UpdateContact['Success']
+  | IContactActions.GetOrgNewsFeed['Default']
+  | IContactActions.GetOrgNewsFeed['Fail']
+  | IContactActions.GetOrgNewsFeed['Success']
 ;
 
-export interface IGetContactAction extends Action<string> {
-  type: ContactConstants.GET_CONTACT
-}
-
-export const getContactAction = (): IGetContactAction => ({
-  type: ContactConstants.GET_CONTACT
-});
-
-export interface IGetContactSuccessAction extends Action<string> {
-  type: ContactConstants.GET_CONTACT_SUCCESS,
-  contact: ContactAttributes
-}
-
-export const getContactSuccessAction = (contact: ContactAttributes): IGetContactSuccessAction => ({
-  type: ContactConstants.GET_CONTACT_SUCCESS,
-  contact
-});
-
-export interface IGetContactFailAction extends Action<string> {
-  type: ContactConstants.GET_CONTACT_FAIL,
-  error: any
-}
-
-export const getContactFailAction = (error: any): IGetContactFailAction => ({
-  type: ContactConstants.GET_CONTACT_FAIL,
-  error
-});
+export const getContactAction: IContactActionCreators.GetContact = {
+  Default: () => ({
+    type: ContactConstants.GET_CONTACT
+  }),
+  Fail: (error) => ({
+    type: ContactConstants.GET_CONTACT_FAIL,
+    error
+  }),
+  Success: (data) => ({
+    type: ContactConstants.GET_CONTACT_SUCCESS,
+    data
+  })
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-export interface IUpdateContactAction extends Action<string> {
-  type: ContactConstants.UPDATE_CONTACT
-}
-
-export const updateContactAction = (): IUpdateContactAction => ({
-  type: ContactConstants.UPDATE_CONTACT
-});
-
-export interface IUpdateContactSuccessAction extends Action<string> {
-  type: ContactConstants.UPDATE_CONTACT_SUCCESS,
-  contact: ContactAttributes
-}
-
-export const updateContactSuccessAction = (contact: ContactAttributes): IUpdateContactSuccessAction => ({
-  type: ContactConstants.UPDATE_CONTACT_SUCCESS,
-  contact
-});
-
-export interface IUpdateContactFailAction extends Action<string> {
-  type: ContactConstants.UPDATE_CONTACT_FAIL,
-  error: any
-}
-
-export const updateContactFailAction = (error: any): IUpdateContactFailAction => ({
-  type: ContactConstants.UPDATE_CONTACT_FAIL,
-  error
-});
+export const updateContactAction: IContactActionCreators.UpdateContact = {
+  Default: () => ({
+    type: ContactConstants.UPDATE_CONTACT,
+  }),
+  Fail: (error) => ({
+    type: ContactConstants.UPDATE_CONTACT_FAIL,
+    error,
+  }),
+  Success: (data) => ({
+    type: ContactConstants.UPDATE_CONTACT_SUCCESS,
+    data,
+  }),
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-export interface IGetOrgNewsFeedAction extends Action<string> {
-  type: ContactConstants.GET_ORG_NEWS_FEED
-}
-
-export const getOrgNewsFeedAction = (): IGetOrgNewsFeedAction => ({
-  type: ContactConstants.GET_ORG_NEWS_FEED
-});
-
-export interface IGetOrgNewsFeedSuccessAction extends Action<string> {
-  type: ContactConstants.GET_ORG_NEWS_FEED_SUCCESS,
-  orgNewsFeed: any
-}
-
-export const getOrgNewsFeedSuccessAction = (orgNewsFeed: any): IGetOrgNewsFeedSuccessAction => ({
-  type: ContactConstants.GET_ORG_NEWS_FEED_SUCCESS,
-  orgNewsFeed
-});
-
-export interface IGetOrgNewsFeedFailAction extends Action<string> {
-  type: ContactConstants.GET_ORG_NEWS_FEED_FAIL,
-  error: any
-}
-
-export const getOrgNewsFeedFailAction = (error: any): IGetOrgNewsFeedFailAction => ({
-  type: ContactConstants.GET_ORG_NEWS_FEED_FAIL,
-  error
-});
+export const getOrgNewsFeedAction: IContactActionCreators.GetOrgNewsFeed = {
+  Default: () => ({
+    type: ContactConstants.GET_ORG_NEWS_FEED,
+  }),
+  Fail: (error) => ({
+    type: ContactConstants.GET_ORG_NEWS_FEED_FAIL,
+    error,
+  }),
+  Success: (data) => ({
+    type: ContactConstants.GET_ORG_NEWS_FEED_SUCCESS,
+    data
+  }),
+};

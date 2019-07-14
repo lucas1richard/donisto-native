@@ -1,11 +1,11 @@
 import { IDonationsInitialState } from '..';
-import { IGetDonationsSuccessAction } from 'containers/Donations/actions';
+import { IDonationActions } from 'containers/Donations/types/actions';
 
 const getDonationsSuccessCaseFn = (
   state: IDonationsInitialState,
-  action: IGetDonationsSuccessAction
+  action: IDonationActions.GetDonations['Success']
 ): IDonationsInitialState => {
-  const uuid = action.donations.reduce((memo, donation) => {
+  const uuid = action.data.reduce((memo: IDonationsInitialState['uuid'], donation) => {
     memo[donation.uuid] = donation;
     return memo;
   }, {});
@@ -17,7 +17,7 @@ const getDonationsSuccessCaseFn = (
       ...state.ui,
       loaded: true
     },
-    donations: action.donations
+    donations: action.data
   };
 };
 

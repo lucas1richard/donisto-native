@@ -1,10 +1,7 @@
-import { takeLatest, all } from 'redux-saga/effects';
-import NonprofitConstants from '../constants';
-import defaultSaga from './controllers/defaultSaga';
+import { all } from 'redux-saga/effects';
 
 export function* NonprofitSaga() {
   yield all([
-    takeLatest(NonprofitConstants.DEFAULT_ACTION, defaultSaga)
   ]);
 }
 

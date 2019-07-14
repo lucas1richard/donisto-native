@@ -37,7 +37,7 @@ export const makeSelectCreateDonationsCause = () => createSelector(
 export const makeSelectDonationsWithCauses = () => createSelector(
   selectDonationsDomain(),
   selectCauseDomain(),
-  (donations, causes): IDonationDetail[] => {
+  (donations, causes): IDonation.Detail[] => {
     return donations.donations.map((donation) => {
       return {
         ...donation,

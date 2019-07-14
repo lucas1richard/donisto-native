@@ -12,7 +12,7 @@ import AddCauseLink from './components/AddCauseLink';
 import AddOrgLink from './components/AddOrgLink';
 
 export interface IContactProps {
-  contact: ContactAttributes;
+  contact: IContact.Default;
   orgNewsFeed: any[];
   causes: any[];
   organizations: any[];

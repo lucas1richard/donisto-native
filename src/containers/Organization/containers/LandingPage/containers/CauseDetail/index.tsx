@@ -14,7 +14,7 @@ export interface ICauseDetailProps {
 interface ItotalDonors {
   [x: string]: {
     total: number,
-    info: ContactAttributes,
+    info: IContact.Default,
     numDonations: number
   }
 }

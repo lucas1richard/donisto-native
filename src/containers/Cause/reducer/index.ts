@@ -1,5 +1,5 @@
 import CauseConstants from '../constants';
-import { TCauseActions } from '../actions';
+import { TCauseActions } from '../types/actions';
 import selectForNewsFeedTransformer from './transformers/selectForNewsFeed';
 
 export interface ICauseInitialState {
@@ -45,7 +45,7 @@ function causeReducer(state = causeInitialState, action: TCauseActions) {
     case CauseConstants.GET_CAUSE_SUCCESS_ACTION:
       return {
         ...state,
-        causes: action.cause.reduce((memo: any, item: any) => {
+        causes: action.data.reduce((memo: any, item: any) => {
           memo[item.uuid] = item;
           return memo;
         }, {}),
@@ -60,12 +60,12 @@ function causeReducer(state = causeInitialState, action: TCauseActions) {
         ...state,
         causes: {
           ...state.causes,
-          ...action.cause.reduce((memo: any, item: any) => {
+          ...action.data.reduce((memo: any, item: any) => {
             memo[item.uuid] = item;
             return memo;
           }, {}),
         },
-        contactCauses: action.cause.map((cause) => cause.uuid),
+        contactCauses: action.data.map((cause) => cause.uuid),
         ui: {
           ...state.ui,
           getCausesLoaded: true
@@ -77,7 +77,7 @@ function causeReducer(state = causeInitialState, action: TCauseActions) {
         ...state,
         causes: {
           ...state.causes,
-          ...action.cause.reduce((memo: any, item: any) => {
+          ...action.data.reduce((memo: any, item: any) => {
             memo[item.uuid] = item;
             return memo;
           }, {})

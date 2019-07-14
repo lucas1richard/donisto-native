@@ -14,7 +14,7 @@ const mapStateToProps = createStructuredSelector({
 });
 const mapDispatchToProps = (dispatch) => ({
     goToOrgDetail: (uuid) => {
-        dispatch(selectOrgDetailAction(uuid));
+        dispatch(selectOrgDetailAction.WithUuid(uuid));
         NavigationService.navigate(routeNames.ORGANIZATION_LANDING_PAGE_HOME);
     }
 });

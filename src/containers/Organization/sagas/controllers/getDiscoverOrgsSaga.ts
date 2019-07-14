@@ -1,16 +1,13 @@
 import { put, call } from 'redux-saga/effects';
 import api from 'utilities/api';
-import {
-  getDiscoverOrgsSuccessAction,
-  getDiscoverOrgsFailAction
-} from 'containers/Organization/actions';
+import { getDiscoverOrgs } from 'containers/Organization/actions';
 
 function* getDiscoverOrgsSaga() {
   try {
     const { data } = yield call(api, 'get', '/v1/organization/discover');
-    yield put(getDiscoverOrgsSuccessAction(data));
+    yield put(getDiscoverOrgs.Success(data));
   } catch (err) {
-    yield put(getDiscoverOrgsFailAction(err));
+    yield put(getDiscoverOrgs.Fail(err));
   }
 }
 

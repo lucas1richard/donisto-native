@@ -12,7 +12,7 @@ import logger from 'utilities/logger';
 
 export const ORG_LINK_FORM = 'org_link_form';
 
-export interface IOrganizationLinkFormData extends IOrganizationLink {
+export interface IOrganizationLinkFormData extends IOrganization.Link {
 }
 
 interface IOrganizationLinkFormProps {

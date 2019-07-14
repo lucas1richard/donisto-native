@@ -19,17 +19,17 @@ export const mapToProps = createStructuredSelector({
 });
 
 export const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getDetail: () => dispatch(getOrgDetailAction()),
+  getDetail: () => dispatch(getOrgDetailAction.Default()),
   updateOrg: (onComplete: () => any) => {
-    dispatch(updateOrgAction(onComplete));
+    dispatch(updateOrgAction.WithCallBack(onComplete));
   },
   viewCauseDetail: (uuid: string) => {
-    dispatch(selectOrgCauseDetailAction(uuid));
+    dispatch(selectOrgCauseDetailAction.WithUuid(uuid));
     NavigationService.navigate(routeNames.ORGANIZATION_LANDING_PAGE_CAUSE_DETAIL);
   },
-  createOrgLinks: () => dispatch(createOrgLinksAction()),
+  createOrgLinks: () => dispatch(createOrgLinksAction.Default()),
   deleteOrgLinks: (links: string[], orgUuid: string) => {
-    dispatch(deleteOrgLinksAction(links, orgUuid));
+    dispatch(deleteOrgLinksAction.WithLinks(links, orgUuid));
   }
 });
 

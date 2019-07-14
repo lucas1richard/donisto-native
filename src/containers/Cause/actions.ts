@@ -1,196 +1,105 @@
-/*
- *
- * Cause actions
- *
- */
-
 import CauseConstants from './constants';
+import { ICauseActionCreators } from './types/actions';
 
-export type TCauseActions =
-  ICreateCauseAction
-  | ICreateCauseFailAction
-  | ICreateCauseSuccessAction
-  | IGetCauseAction
-  | IGetCauseFailAction
-  | IGetCauseSuccessAction
-  | IGetContactCausesAction
-  | IGetContactCausesFailAction
-  | IGetContactCausesSuccessAction
-  | IGetCauseDetailAction
-  | IGetCauseDetailFailAction
-  | IGetCauseDetailSuccessAction
-  | IToggleNewsFeedSelectAction
-  | ISelectOrgCreateCauseAction
-;
-
-export interface ICreateCauseAction {
-  type: CauseConstants.CREATE_CAUSE_ACTION
-}
-
-export const createCauseAction = (): ICreateCauseAction => ({
-  type: CauseConstants.CREATE_CAUSE_ACTION
-});
-
-export interface ICreateCauseFailAction {
-  type: CauseConstants.CREATE_CAUSE_FAIL_ACTION,
-  error: any
-}
-
-export const createCauseFailAction = (error: any): ICreateCauseFailAction => ({
-  type: CauseConstants.CREATE_CAUSE_FAIL_ACTION,
-  error
-});
-
-export interface ICreateCauseSuccessAction {
-  type: CauseConstants.CREATE_CAUSE_SUCCESS_ACTION,
-  cause: ICause[]
-}
-
-export const createCauseSuccessAction = (cause: ICause[]): ICreateCauseSuccessAction => ({
-  type: CauseConstants.CREATE_CAUSE_SUCCESS_ACTION,
-  cause
-});
+export const createCauseAction: ICauseActionCreators.CreateCause = {
+  Default: () => ({
+    type: CauseConstants.CREATE_CAUSE_ACTION,
+  }),
+  Fail: (error) => ({
+    type: CauseConstants.CREATE_CAUSE_FAIL_ACTION,
+    error,
+  }),
+  Success: (data) => ({
+    type: CauseConstants.CREATE_CAUSE_SUCCESS_ACTION,
+    data,
+  }),
+};
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-export interface IGetCauseAction {
-  type: CauseConstants.GET_CAUSE_ACTION
-}
+export const getCauseAction: ICauseActionCreators.GetCause = {
+  Default: () => ({
+    type: CauseConstants.GET_CAUSE_ACTION,
+  }),
+  Fail: (error) => ({
+    type: CauseConstants.GET_CAUSE_FAIL_ACTION,
+    error,
+  }),
+  Success: (data) => ({
+    type: CauseConstants.GET_CAUSE_SUCCESS_ACTION,
+    data,
+  }),
+};
 
-export const getCauseAction = (): IGetCauseAction => ({
-  type: CauseConstants.GET_CAUSE_ACTION
-});
-
-export interface IGetCauseFailAction {
-  type: CauseConstants.GET_CAUSE_FAIL_ACTION,
-  error: any
-}
-
-export const getCauseFailAction = (error: any): IGetCauseFailAction => ({
-  type: CauseConstants.GET_CAUSE_FAIL_ACTION,
-  error
-});
-
-export interface IGetCauseSuccessAction {
-  type: CauseConstants.GET_CAUSE_SUCCESS_ACTION,
-  cause: ICause[]
-}
-
-export const getCauseSuccessAction = (cause: ICause[]): IGetCauseSuccessAction => ({
-  type: CauseConstants.GET_CAUSE_SUCCESS_ACTION,
-  cause
-});
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-export interface IGetContactCausesAction {
-  type: CauseConstants.GET_CONTACT_CAUSES_ACTION
-}
+export const getContactCausesAction: ICauseActionCreators.GetContactCauses = {
+  Default: () => ({
+    type: CauseConstants.GET_CONTACT_CAUSES_ACTION,
+  }),
+  Fail: (error) => ({
+    type: CauseConstants.GET_CONTACT_CAUSES_FAIL_ACTION,
+    error,
+  }),
+  Success: (data) => ({
+    type: CauseConstants.GET_CONTACT_CAUSES_SUCCESS_ACTION,
+    data,
+  }),
+};
 
-export const getContactCausesAction = (): IGetContactCausesAction => ({
-  type: CauseConstants.GET_CONTACT_CAUSES_ACTION
-});
-
-export interface IGetContactCausesFailAction {
-  type: CauseConstants.GET_CONTACT_CAUSES_FAIL_ACTION,
-  error: any
-}
-
-export const getContactCausesFailAction = (error: any): IGetContactCausesFailAction => ({
-  type: CauseConstants.GET_CONTACT_CAUSES_FAIL_ACTION,
-  error
-});
-
-export interface IGetContactCausesSuccessAction {
-  type: CauseConstants.GET_CONTACT_CAUSES_SUCCESS_ACTION,
-  cause: ICause[]
-}
-
-export const getContactCausesSuccessAction = (cause: ICause[]): IGetContactCausesSuccessAction => ({
-  type: CauseConstants.GET_CONTACT_CAUSES_SUCCESS_ACTION,
-  cause
-});
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
-export interface IGetCauseDetailByIdAction {
-  type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_ACTION,
-  cause_uuids: string[]
-}
-
-export const getCauseDetailByIdAction = (cause_uuids: string[]): IGetCauseDetailByIdAction => ({
-  type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_ACTION,
-  cause_uuids
-});
-
-export interface IGetCauseDetailByIdFailAction {
-  type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_FAIL_ACTION,
-  error: any
-}
-
-export const getCauseDetailByIdFailAction = (error: any): IGetCauseDetailByIdFailAction => ({
-  type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_FAIL_ACTION,
-  error
-});
-
-export interface IGetCauseDetailByIdSuccessAction {
-  type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_SUCCESS_ACTION,
-  cause: ICause[]
-}
-
-export const getCauseDetailByIdSuccessAction = (cause: ICause[]): IGetCauseDetailByIdSuccessAction => ({
-  type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_SUCCESS_ACTION,
-  cause
-});
+export const getCauseDetailByIdAction: ICauseActionCreators.GetCauseDetailById = {
+  WithUuids: (cause_uuids: string[]) => ({
+    type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_ACTION,
+    cause_uuids,
+  }),
+  Fail: (error: any) => ({
+    type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_FAIL_ACTION,
+    error,
+  }),
+  Success: (data) => ({
+    type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_SUCCESS_ACTION,
+    data,
+  }),
+  Default: () => ({
+    type: CauseConstants.GET_CAUSE_DETAIL_BY_ID_ACTION,
+  }),
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-export interface IGetCauseDetailAction {
-  type: CauseConstants.GET_CAUSE_DETAIL_ACTION,
-  cause_uuids: string[]
-}
-
-export const getCauseDetailAction = (cause_uuids: string[]): IGetCauseDetailAction => ({
-  type: CauseConstants.GET_CAUSE_DETAIL_ACTION,
-  cause_uuids
-});
-
-export interface IGetCauseDetailFailAction {
-  type: CauseConstants.GET_CAUSE_DETAIL_FAIL_ACTION,
-  error: any
-}
-
-export const getCauseDetailFailAction = (error: any): IGetCauseDetailFailAction => ({
-  type: CauseConstants.GET_CAUSE_DETAIL_FAIL_ACTION,
-  error
-});
-
-export interface IGetCauseDetailSuccessAction {
-  type: CauseConstants.GET_CAUSE_DETAIL_SUCCESS_ACTION,
-  cause: ICause[]
-}
-
-export const getCauseDetailSuccessAction = (cause: ICause[]): IGetCauseDetailSuccessAction => ({
-  type: CauseConstants.GET_CAUSE_DETAIL_SUCCESS_ACTION,
-  cause
-});
+export const getCauseDetailAction: ICauseActionCreators.GetCauseDetail = {
+  WithUuids: (cause_uuids: string[]) => ({
+    type: CauseConstants.GET_CAUSE_DETAIL_ACTION,
+    cause_uuids,
+  }),
+  Fail: (error: any) => ({
+    type: CauseConstants.GET_CAUSE_DETAIL_FAIL_ACTION,
+    error,
+  }),
+  Success: (data) => ({
+    type: CauseConstants.GET_CAUSE_DETAIL_SUCCESS_ACTION,
+    data,
+  }),
+  Default: () => ({
+    type: CauseConstants.GET_CAUSE_DETAIL_ACTION,
+  }),
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-export interface IToggleNewsFeedSelectAction {
-  type: CauseConstants.TOGGLE_NEWSFEED_SELECT,
-  uuid: string
-}
-
-export const toggleNewsFeedSelectAction = (uuid: string): IToggleNewsFeedSelectAction => ({
+export const toggleNewsFeedSelectAction: ICauseActionCreators.ToggleNewsFeedSelect = (uuid) => ({
   type: CauseConstants.TOGGLE_NEWSFEED_SELECT,
   uuid
 });
@@ -199,12 +108,7 @@ export const toggleNewsFeedSelectAction = (uuid: string): IToggleNewsFeedSelectA
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-export interface ISelectOrgCreateCauseAction {
-  type: CauseConstants.SELECT_ORG_CREATE_CAUSE_ACTION,
-  uuid: string
-}
-
-export const selectOrgCreateCauseAction = (uuid: string): ISelectOrgCreateCauseAction => ({
+export const selectOrgCreateCauseAction: ICauseActionCreators.SelectOrgCreateCause = (uuid) => ({
   type: CauseConstants.SELECT_ORG_CREATE_CAUSE_ACTION,
   uuid
 });

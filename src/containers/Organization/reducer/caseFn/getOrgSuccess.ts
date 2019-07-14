@@ -1,11 +1,11 @@
-import { IGetOrgSuccessAction } from 'containers/Organization/actions';
 import { IOrganizationInitialState } from '..';
+import { IOrganizationActions } from 'containers/Organization/types/actions';
 
 const getOrgSuccessCaseFn = (
   state: IOrganizationInitialState,
-  action: IGetOrgSuccessAction
+  action: IOrganizationActions.GetOrg['Success']
 ): IOrganizationInitialState => {
-  const uuid = action.organization.reduce((memo: any, org: any) => {
+  const uuid = action.data.reduce((memo: any, org: any) => {
     if (memo[org.uuid]) {
       memo[org.uuid] = {
         ...memo[org.uuid],
@@ -27,7 +27,7 @@ const getOrgSuccessCaseFn = (
       ...state.uuid,
       ...uuid,
     },
-    organizations: action.organization
+    organizations: action.data
   };
 };
 

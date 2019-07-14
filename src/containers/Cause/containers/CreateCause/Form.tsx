@@ -11,22 +11,22 @@ import { decimalMask } from 'utilities/masks';
 
 export const CREATE_CAUSE_FORM_NAME = 'create_cause';
 
-export interface ICreateCauseFormData {
-  cause: string;
+export namespace ICreateCauseForm {
+  export interface Values {
+    cause: string;
+  }
+  export interface BaseProps {
+    onSubmit: () => any;
+  }
+  export interface Props extends BaseProps, InjectedFormProps<Values, BaseProps> {}
 }
-
-interface ICreateCauseFormProps {
-  onSubmit: () => any;
-}
-
-type TCreateCauseFormProps = ICreateCauseFormProps & InjectedFormProps<ICreateCauseFormData, ICreateCauseFormProps>;
 
 const blurViewProps: BlurViewProps = {
   tint: 'light',
   intensity: 30
 };
 
-export class CreateCauseForm extends FormFlow<TCreateCauseFormProps> {
+export class CreateCauseForm extends FormFlow<ICreateCauseForm.Props> {
   render() {
     const { submitting, onSubmit, handleSubmit } = this.props;
     return (
@@ -80,6 +80,6 @@ export class CreateCauseForm extends FormFlow<TCreateCauseFormProps> {
   }
 }
 
-export default reduxForm<ICreateCauseFormData, ICreateCauseFormProps>({
+export default reduxForm<ICreateCauseForm.Values, ICreateCauseForm.BaseProps>({
   form: CREATE_CAUSE_FORM_NAME
 })(CreateCauseForm);

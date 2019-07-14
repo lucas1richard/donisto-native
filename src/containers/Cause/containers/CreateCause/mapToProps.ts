@@ -12,7 +12,7 @@ export const mapStateToProps = createStructuredSelector({
 
 export const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    createCause: () => dispatch(createCauseAction()),
+    createCause: () => dispatch(createCauseAction.Default()),
     selectOrganization: (uuid: string) => dispatch(selectOrgCreateCauseAction(uuid)),
   };
 };

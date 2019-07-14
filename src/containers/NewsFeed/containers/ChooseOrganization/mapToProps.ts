@@ -12,7 +12,7 @@ export const mapStateToProps = createStructuredSelector({
 
 export const mapDispatchToProps = (dispatch: Dispatch) => ({
   selectOrg: (uuid: string) => {
-    dispatch(selectOrgUuidAction(uuid));
+    dispatch(selectOrgUuidAction.WithUuid(uuid));
     NavigationService.navigate(routeNames.CHOOSE_CAUSE_NI);
   },
 });

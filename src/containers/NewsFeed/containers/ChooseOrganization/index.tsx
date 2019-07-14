@@ -9,7 +9,7 @@ import NavigationService from 'containers/Navigation/NavigationService';
 import routeNames from 'containers/Navigation/routeNames';
 
 interface IChooseOrganizationProps {
-  orgs: IOrganization[],
+  orgs: IOrganization.Basic[],
   selectOrg: (uuid: string) => any;
 }
 

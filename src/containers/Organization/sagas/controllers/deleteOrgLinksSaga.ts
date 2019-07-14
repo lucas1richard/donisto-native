@@ -1,21 +1,21 @@
 import { put, call } from 'redux-saga/effects';
 import api from 'utilities/api';
 import {
-  createOrgLinksFailAction,
-  updateOrgActionSuccess,
-  IDeleteOrgLinksAction
+  updateOrgAction,
+  createOrgLinksAction,
 } from 'containers/Organization/actions';
+import { IOrganizationActions } from 'containers/Organization/types/actions';
 
-function* deleteOrgLinksSaga(action: IDeleteOrgLinksAction) {
+function* deleteOrgLinksSaga(action: IOrganizationActions.DeleteOrgLinks['WithLinks']) {
   try {
     const { links, orgUuid } = action;
     const { data } = yield call(api, 'delete', '/v1/organization/links', {
       organization_uuid: orgUuid,
       link_uuids: links
     });
-    yield put(updateOrgActionSuccess(data));
+    yield put(updateOrgAction.Success(data));
   } catch (err) {
-    yield put(createOrgLinksFailAction(err));
+    yield put(createOrgLinksAction.Fail(err));
   }
 }
 

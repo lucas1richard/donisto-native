@@ -1,13 +1,13 @@
 import { call, put } from 'redux-saga/effects';
 import api from 'utilities/api';
-import { getOrgNewsFeedSuccessAction, getOrgNewsFeedFailAction } from 'containers/Contact/actions';
+import { getOrgNewsFeedAction } from 'containers/Contact/actions';
 
 function* getOrgNewsFeedSaga() {
   try {
     const { data } = yield call(api, 'get', '/v1/contact/orgnewsfeed');
-    yield put(getOrgNewsFeedSuccessAction(data));
+    yield put(getOrgNewsFeedAction.Success(data));
   } catch (err) {
-    yield put(getOrgNewsFeedFailAction(err));
+    yield put(getOrgNewsFeedAction.Fail(err));
   }
 }
 

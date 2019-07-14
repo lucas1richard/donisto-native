@@ -1,9 +1,9 @@
-import { IRegisterOrgFailAction } from 'containers/Organization/actions';
+import { IOrganizationActions } from 'containers/Organization/types/actions';
 import { IOrganizationInitialState } from '..';
 
 const registerOrgFailCaseFn = (
   state: IOrganizationInitialState,
-  action: IRegisterOrgFailAction
+  action: IOrganizationActions.RegisterOrg['Fail']
 ) => {
   return {
     ...state,

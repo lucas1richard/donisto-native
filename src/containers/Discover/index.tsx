@@ -8,7 +8,7 @@ import Loader from 'components/Loader';
 import SwiperCards from './components/SwiperCards';
 
 export interface IDiscoverProps {
-  discoverOrgs: IOrganization[];
+  discoverOrgs: IOrganization.Basic[];
   loaded: boolean;
   getDiscoverOrgs: () => any;
   followOrg: (uuid: string) => any;
@@ -20,11 +20,11 @@ export class Discover extends React.Component<IDiscoverProps> {
     this.props.getDiscoverOrgs();
   }
 
-  handleYup = (card: IOrganization) => {
+  handleYup = (card: IOrganization.Basic) => {
     this.props.followOrg(card.uuid);
   }
 
-  handleNope = (card: IOrganization) => {
+  handleNope = (card: IOrganization.Basic) => {
     this.props.rejectFollowOrg(card.uuid);
   }
 

@@ -13,7 +13,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
-    registerNewOrg: () => dispatch(registerOrgAction())
+    registerNewOrg: () => dispatch(registerOrgAction.Default())
   };
 }
 

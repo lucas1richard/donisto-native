@@ -14,7 +14,7 @@ interface IChooseCauseProps {
   causes: any[],
   toggleSelect: (uuid: string) => any;
   selectedCauses: { [x: string]: boolean };
-  selectedOrg: IOrganization
+  selectedOrg: IOrganization.Basic;
 }
 
 class ChooseCause extends React.Component<IChooseCauseProps> {

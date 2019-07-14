@@ -1,7 +1,5 @@
 
-import {
-  createCauseAction
-} from '../actions';
+import { createCauseAction } from '../actions';
 import CauseConstants from '../constants';
 
 describe('Cause actions', () => {
@@ -10,7 +8,7 @@ describe('Cause actions', () => {
       const expected = {
         type: CauseConstants.CREATE_CAUSE_ACTION
       };
-      expect(createCauseAction()).toEqual(expected);
+      expect(createCauseAction.Default()).toEqual(expected);
     });
   });
 });

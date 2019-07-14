@@ -11,7 +11,7 @@ import routeNames from 'containers/Navigation/routeNames';
 
 export interface IOrganizationProps {
   organizationUuid?: string;
-  activeOrg?: IOrganization;
+  activeOrg?: IOrganization.Basic;
 }
 
 export class Organization extends React.Component<IOrganizationProps> {

@@ -55,7 +55,7 @@ export function youngerThan18(value: { month: MonthString, day: string, year: st
 }
 
 /** Ensure that a string represents a citizen or resident alien */
-export function citizenship(value?: 'N') {
+export function citizenship(value?: 'N' | 'C') {
   if (!isEmpty(value) && value === 'N') {
     return 'Sorry, Today you must be a citizen or resident alien';
   }

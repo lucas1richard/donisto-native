@@ -10,7 +10,7 @@ import { moneyMask } from 'utilities/masks';
 interface IDonationComponentProps {
   img: NodeRequire,
   onPress: () => any;
-  donation: IDonationDetail;
+  donation: IDonation.Detail;
 }
 
 class Donation extends React.Component<IDonationComponentProps> {

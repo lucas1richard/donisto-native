@@ -1,5 +1,3 @@
-// import moment from 'moment';
-import { fromJS } from 'immutable';
 import { email, zipCode, poBox, validDate, youngerThan18, citizenship, ssn, required, minLength, exactLength, maxLength, futureYear, integer, match, age, maxNumber, textNumber, createValidator } from '../validation';
 describe('email validator', () => {
     it('should return undefined if email is valid', () => {
@@ -153,7 +151,7 @@ describe('createValidator', () => {
         testField: [required]
     };
     it('should return an errors object', () => {
-        expect(createValidator(rules)(fromJS(data))).toEqual({});
+        expect(createValidator(rules)(data)).toEqual({});
         expect(createValidator(rules)()).toEqual({
             testField: 'This field is required'
         });

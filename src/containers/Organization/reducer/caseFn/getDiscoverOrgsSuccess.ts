@@ -1,7 +1,7 @@
-import { IGetDiscoverOrgsSuccessAction } from 'containers/Organization/actions';
+import { IOrganizationActions } from 'containers/Organization/types/actions';
 
-const getDiscoverOrgsSuccessCaseFn: IOrgCaseFn<IGetDiscoverOrgsSuccessAction> = (state, action) => {
-  const uuid = action.organizations.reduce((memo: any, org: any) => {
+const getDiscoverOrgsSuccessCaseFn: IOrgCaseFn<IOrganizationActions.GetDiscoverOrgs['Success']> = (state, action) => {
+  const uuid = action.data.reduce((memo: any, org: any) => {
     if (memo[org.uuid]) {
       memo[org.uuid] = {
         ...memo[org.uuid],
@@ -23,7 +23,7 @@ const getDiscoverOrgsSuccessCaseFn: IOrgCaseFn<IGetDiscoverOrgsSuccessAction> = 
       ...state.uuid,
       ...uuid,
     },
-    discoverOrgs: action.organizations.map((org) => org.uuid),
+    discoverOrgs: action.data.map((org) => org.uuid),
   };
 };
 

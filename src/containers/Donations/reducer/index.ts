@@ -11,9 +11,9 @@ export interface IDonationsInitialState {
     loaded: boolean;
     viewDonation: string;
   };
-  uuid: { [x: string]: IDonation};
+  uuid: { [x: string]: IDonation.Basic};
   createDonation: ICreateDonationReduxState;
-  donations: IDonation[];
+  donations: IDonation.Basic[];
   error: any;
 }
 

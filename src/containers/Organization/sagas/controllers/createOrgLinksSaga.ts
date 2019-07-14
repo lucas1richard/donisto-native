@@ -1,5 +1,5 @@
 import { put, call, select } from 'redux-saga/effects';
-import { createOrgLinksFailAction, updateOrgActionSuccess } from 'containers/Organization/actions';
+import { createOrgLinksAction, updateOrgAction } from 'containers/Organization/actions';
 import api from 'utilities/api';
 import { makeSelectDetailOrganization } from 'containers/Organization/selectors';
 import { getFormValues, reset } from 'redux-form';
@@ -13,10 +13,10 @@ function* createOrgLinksSaga() {
       organization_uuid: organization.uuid,
       links: [formValues]
     });
-    yield put(updateOrgActionSuccess(data));
+    yield put(updateOrgAction.Success(data));
     yield put(reset(ORG_LINK_FORM));
   } catch (err) {
-    yield put(createOrgLinksFailAction(err));
+    yield put(createOrgLinksAction.Fail(err));
   }
 }
 

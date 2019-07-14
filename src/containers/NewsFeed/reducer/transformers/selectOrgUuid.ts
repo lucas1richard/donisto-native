@@ -1,7 +1,7 @@
 import { INewsfeedInitialState } from '..';
-import { ISelectOrgUuidAction } from 'containers/NewsFeed/actions';
+import { INewsFeedActions } from 'containers/NewsFeed/types/actions';
 
-function selectOrgUuidTransformer(state: INewsfeedInitialState, action: ISelectOrgUuidAction): INewsfeedInitialState {
+function selectOrgUuidTransformer(state: INewsfeedInitialState, action: INewsFeedActions.SelectOrgUuid['WithUuid']): INewsfeedInitialState {
   return {
     ...state,
     selectedOrgUuid: action.uuid,

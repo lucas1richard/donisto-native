@@ -6,7 +6,7 @@ import Loader from 'components/Loader';
 import LandingPageCause from './components/Cause';
 
 export interface ICausesSectionProps {
-  causes?: IOrgDetailCause[];
+  causes?: IOrganization.DetailCause[];
   viewCauseDetail: (uuid: string) => any;
 }
 

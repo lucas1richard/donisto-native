@@ -3,7 +3,7 @@ import { getFormValues, startSubmit, stopSubmit } from 'redux-form';
 import api from 'utilities/api';
 import NavigationService from 'containers/Navigation/NavigationService';
 import errorHandler from 'utilities/errorHandler';
-import { getContactSuccessAction } from 'containers/Contact/actions';
+import { getContactAction } from 'containers/Contact/actions';
 import {
   REGISTRATION_BASICINFO_FORM_NAME,
   IRegistrationFormData
@@ -23,7 +23,7 @@ function* submitBasicInfoSaga() {
       password: formData.password
     });
     yield call(manualSetOutgoingHeaders, headers.token, data.uuid);
-    yield put(getContactSuccessAction(data));
+    yield put(getContactAction.Success(data));
     yield call(getInitialData);
     yield call(NavigationService.navigate, routeNames.LOGGED_IN);
   } catch (err) {

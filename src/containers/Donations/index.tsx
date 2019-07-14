@@ -6,7 +6,7 @@ import Donation from './components/Donation';
 import DonationsHeader from './components/Header';
 
 export interface IDonationsProps {
-  donations: IDonationDetail[];
+  donations: IDonation.Detail[];
   viewDetail: (donationUuid: string) => any;
   getCauseDetailsById: (ids: string[]) => any;
 }

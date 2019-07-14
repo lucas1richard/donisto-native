@@ -1,17 +1,14 @@
 import { put, call } from 'redux-saga/effects';
-import {
-  IFollowOrgAction,
-  followOrgSuccessAction,
-  followOrgFailAction
-} from 'containers/Organization/actions';
 import api from 'utilities/api';
+import { IOrganizationActions } from 'containers/Organization/types/actions';
+import { followOrgAction } from 'containers/Organization/actions';
 
-function* followOrganizationSaga(action: IFollowOrgAction) {
+function* followOrganizationSaga(action: IOrganizationActions.FollowOrg['WithUuid']) {
   try {
     const data = yield call(api, 'post', '/v1/organization/follow', { org_uuid: action.org_uuid });
-    yield put(followOrgSuccessAction(data));
+    yield put(followOrgAction.Success(data));
   } catch (err) {
-    yield put(followOrgFailAction(err));
+    yield put(followOrgAction.Fail(err));
 
   }
 }

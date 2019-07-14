@@ -1,7 +1,12 @@
 import { ICauseInitialState } from '..';
-import { IToggleNewsFeedSelectAction } from 'containers/Cause/actions';
+import { ICauseActions } from 'containers/Cause/types/actions';
 
-function selectForNewsFeedTransformer(state: ICauseInitialState, action: IToggleNewsFeedSelectAction) {
+export type SelectForNewsFeedCaseFn = DonistoCaseFn<
+  ICauseInitialState,
+  ICauseActions.ToggleNewsFeedSelect
+>;
+
+const selectForNewsFeedCaseFn: SelectForNewsFeedCaseFn = (state, action) => {
   const selectedCauses = { ...state.selectedForNewsFeed };
 
   if (selectedCauses[action.uuid]) {
@@ -15,6 +20,6 @@ function selectForNewsFeedTransformer(state: ICauseInitialState, action: IToggle
     ui: { ...state.ui },
     selectedForNewsFeed: selectedCauses
   };
-}
+};
 
-export default selectForNewsFeedTransformer;
+export default selectForNewsFeedCaseFn;

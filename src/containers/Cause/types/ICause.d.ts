@@ -7,5 +7,5 @@ interface ICause {
   createdAt: string;
   updatedAt: string;
   goal_amount: number;
-  donations?: IDonationWContact[]
+  donations?: IDonation.WithContact[];
 }

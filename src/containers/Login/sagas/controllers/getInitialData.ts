@@ -7,11 +7,11 @@ import { getContactCausesAction } from 'containers/Cause/actions';
 
 function* getInitialData() {
   yield all([
-    put(getNewsFeedAction()),
-    put(getDonationsAction()),
-    put(getOrgAction()),
-    put(getOrgNewsFeedAction()),
-    put(getContactCausesAction())
+    put(getNewsFeedAction.Default()),
+    put(getDonationsAction.Default()),
+    put(getOrgAction.Default()),
+    put(getOrgNewsFeedAction.Default()),
+    put(getContactCausesAction.Default())
   ]);
 }
 

@@ -7,12 +7,12 @@ import Txt from 'components/Txt';
 import SwipeCards from 'react-native-swipe-cards';
 
 export interface SwiperCardsProps {
-  cards: IOrganization[];
-  handleYup: (card: IOrganization) => any;
-  handleNope: (card: IOrganization) => any;
+  cards: IOrganization.Basic[];
+  handleYup: (card: IOrganization.Basic) => any;
+  handleNope: (card: IOrganization.Basic) => any;
 }
 
-const Card = (card: IOrganization) => (
+const Card = (card: IOrganization.Basic) => (
   <ImageBackground source={require('../../../../../assets/scenic-1.jpg')} style={{ height: 300, width: 350 }}>
     <View style={{
       height: 300,

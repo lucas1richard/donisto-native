@@ -9,7 +9,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getDetail: (uuid: string) => dispatch(getNewsItemDetailAction(uuid))
+  getDetail: (uuid: string) => dispatch(getNewsItemDetailAction.WithUuid(uuid))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

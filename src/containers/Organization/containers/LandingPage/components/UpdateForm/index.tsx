@@ -11,7 +11,7 @@ import theme from 'theme/iftheme';
 
 export const UPDATE_ORG_FORM = 'update_org';
 
-export interface IUpdateOrganizationData extends IOrganization {
+export interface IUpdateOrganizationData extends IOrganization.Basic {
 }
 
 interface IUpdateOrganizationProps {

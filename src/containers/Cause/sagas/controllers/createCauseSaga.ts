@@ -6,8 +6,7 @@ import { getNewsFeedAction } from 'containers/NewsFeed/actions';
 import { getDonationsAction } from 'containers/Donations/actions';
 import { CREATE_CAUSE_FORM_NAME } from 'containers/Cause/containers/CreateCause/Form';
 import {
-  createCauseSuccessAction,
-  createCauseFailAction,
+  createCauseAction,
   selectOrgCreateCauseAction,
   getContactCausesAction
 } from 'containers/Cause/actions';
@@ -28,17 +27,17 @@ function* createCauseSaga() {
     };
     const { data } = yield call(api, 'post', '/v1/cause', causeData);
     yield all([
-      put(createCauseSuccessAction(data)),
-      put(getNewsFeedAction()),
-      put(getDonationsAction()),
-      put(getContactCausesAction()),
-      put(getOrgAction())
+      put(createCauseAction.Success(data)),
+      put(getNewsFeedAction.Default()),
+      put(getDonationsAction.Default()),
+      put(getContactCausesAction.Default()),
+      put(getOrgAction.Default())
     ]);
 
     yield put(selectOrgCreateCauseAction(''));
     yield put(reset(CREATE_CAUSE_FORM_NAME));
   } catch (err) {
-    yield put(createCauseFailAction(err.message));
+    yield put(createCauseAction.Fail(err.message));
   } finally {
     yield put(stopSubmit(CREATE_CAUSE_FORM_NAME));
   }

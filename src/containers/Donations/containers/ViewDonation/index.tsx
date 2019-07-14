@@ -10,8 +10,8 @@ import Txt from 'components/Txt';
 import styles from './styles';
 import H3 from 'components/H3';
 
-export interface IDonationWithCauseAndOrg extends IDonationDetail {
-  organization: IOrganization;
+export interface IDonationWithCauseAndOrg extends IDonation.Detail {
+  organization: IOrganization.Basic;
 }
 
 export interface IViewDonationProps {

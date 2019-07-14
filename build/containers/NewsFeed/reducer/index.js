@@ -14,7 +14,7 @@ export const newsfeedInitialState = {
     uuid: {},
     ui: {
         loaded: false,
-        detailIx: 0
+        detailIx: ''
     }
 };
 const newsfeedReducer = (state = newsfeedInitialState, action) => {

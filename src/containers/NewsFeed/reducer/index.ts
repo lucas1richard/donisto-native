@@ -10,7 +10,7 @@ import selectOrgUuidTransformer from './transformers/selectOrgUuid';
 
 export interface INewsFeedReduxUI {
   loaded: boolean;
-  detailIx: number;
+  detailIx: string;
 }
 
 export interface INewsfeedInitialState {
@@ -32,7 +32,7 @@ export const newsfeedInitialState: INewsfeedInitialState = {
   uuid: {},
   ui: {
     loaded: false,
-    detailIx: 0
+    detailIx: ''
   }
 };
 

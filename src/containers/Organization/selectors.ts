@@ -27,7 +27,7 @@ export const makeSelectActiveOrganization = () => createSelector(
 
 export const makeSelectDetailOrganization = () => createSelector(
   selectOrganizationDomain(),
-  (substate): IOrganization => substate.uuid[substate.ui.detailUuid]
+  (substate): IOrganization.Basic => substate.uuid[substate.ui.detailUuid]
 );
 
 export const makeSelectOrgCauseDetail = () => createSelector(
@@ -41,8 +41,8 @@ export const makeSelectOrgCauseDetail = () => createSelector(
 export const makeSelectContactOrganizations = (alphabetized?: 'alphabetized') => createSelector(
   selectContactDomain(),
   selectOrganizationDomain(),
-  (contactSubstate, orgSubstate): IOrganization[] => {
-    const orgArray: IOrganization[] = contactSubstate.organizations.map((org: IOrganization) => {
+  (contactSubstate, orgSubstate): IOrganization.Basic[] => {
+    const orgArray: IOrganization.Basic[] = contactSubstate.organizations.map((org: IOrganization.Basic) => {
       return orgSubstate.uuid[org.uuid];
     });
     if (alphabetized) {

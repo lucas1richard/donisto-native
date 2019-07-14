@@ -4,7 +4,7 @@ export const selectContactDomain = () => (state: any) => state.contact;
 
 export const makeSelectContact = () => createSelector(
   selectContactDomain(),
-  (substate): ContactAttributes => substate
+  (substate): IContact.Default => substate
 );
 
 export const makeSelectOrganizationUuid = () => createSelector(

@@ -13,7 +13,7 @@ const contactReducer = (
     case ContactConstants.GET_CONTACT_SUCCESS:
       return {
         ...state,
-        ...action.contact
+        ...action.data
       };
 
     case ContactConstants.GET_CONTACT_FAIL:
@@ -25,7 +25,7 @@ const contactReducer = (
       case ContactConstants.UPDATE_CONTACT_SUCCESS:
         return {
           ...state,
-          ...action.contact
+          ...action.data
         };
 
       case ContactConstants.UPDATE_CONTACT_FAIL:
@@ -40,7 +40,7 @@ const contactReducer = (
       case ContactConstants.GET_ORG_NEWS_FEED_SUCCESS:
         return {
           ...state,
-          orgNewsFeed: action.orgNewsFeed
+          orgNewsFeed: action.data
         };
 
       case ContactConstants.GET_ORG_NEWS_FEED_FAIL:

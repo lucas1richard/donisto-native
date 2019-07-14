@@ -12,10 +12,10 @@ export const mapStateToProps = createStructuredSelector({
 });
 export const mapDispatchToProps = (dispatch) => ({
     navDetail: (uuid) => {
-        dispatch(updateDetailIxAction(uuid));
+        dispatch(updateDetailIxAction.WithUuid(uuid));
         NavigationService.navigate(routeNames.NEWS_ITEM_DETAIL);
     },
-    getNewsFeed: () => dispatch(getNewsFeedAction()),
+    getNewsFeed: () => dispatch(getNewsFeedAction.Default()),
 });
 export default connect(mapStateToProps, mapDispatchToProps);
 //# sourceMappingURL=mapToProps.js.map

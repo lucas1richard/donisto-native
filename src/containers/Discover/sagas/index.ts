@@ -1,11 +1,8 @@
-import { takeLatest, all } from 'redux-saga/effects';
-import DiscoverConstants from '../constants';
-import defaultSaga from './controllers/defaultSaga';
+import { all } from 'redux-saga/effects';
 
 export function* discoverSaga() {
   yield all([
-    takeLatest(DiscoverConstants.DEFAULT_ACTION, defaultSaga)
   ]);
 }
 
-export default defaultSaga;
+export default discoverSaga;

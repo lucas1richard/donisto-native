@@ -1,11 +1,11 @@
-import { IUpdateOrgSuccessAction } from 'containers/Organization/actions';
+import { IOrganizationActions } from 'containers/Organization/types/actions';
 import { IOrganizationInitialState } from '..';
 
 const updateOrgSuccessCaseFn = (
   state: IOrganizationInitialState,
-  action: IUpdateOrgSuccessAction
+  action: IOrganizationActions.UpdateOrg['Success']
 ): IOrganizationInitialState => {
-  const { organization } = action;
+  const { data: organization } = action;
   const existingUuid = state.uuid[organization.uuid] || {};
 
   const uuid = {

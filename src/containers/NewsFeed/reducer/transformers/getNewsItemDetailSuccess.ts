@@ -1,14 +1,14 @@
 import { INewsfeedInitialState } from '..';
-import { IGetNewsItemDetailSuccessAction } from 'containers/NewsFeed/actions';
+import { INewsFeedActions } from 'containers/NewsFeed/types/actions';
 
 function getNewsItemDetailSuccessTransformer(
   state: INewsfeedInitialState,
-  action: IGetNewsItemDetailSuccessAction
+  action: INewsFeedActions.GetNewsItemDetail['Success']
 ): INewsfeedInitialState {
   const uuid = {
     ...state.uuid,
-    [action.news_item.uuid]: {
-      ...action.news_item,
+    [action.data.uuid]: {
+      ...action.data,
       detailFetched: true,
     }
   };

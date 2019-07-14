@@ -9,7 +9,7 @@ export const mapStateToProps = createStructuredSelector({
 });
 
 export const mapDispatchToProps = (dispatch: Dispatch) => ({
-  createDonation: () => dispatch(createDonationAction()),
+  createDonation: () => dispatch(createDonationAction.Default()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps);

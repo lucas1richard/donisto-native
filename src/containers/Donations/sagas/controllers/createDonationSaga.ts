@@ -1,11 +1,7 @@
 import { call, put, select, all} from 'redux-saga/effects';
 import { getFormValues } from 'redux-form';
 import api from 'utilities/api';
-  import {
-    createDonationSuccessAction,
-    createDonationFailAction,
-    getDonationsAction
-  } from 'containers/Donations/actions';
+import { getDonationsAction, createDonationAction } from 'containers/Donations/actions';
 import { CREATE_DONATION_FORM } from 'containers/Donations/containers/CreateDonation/Form';
 import { makeSelectCreateDonationsCause } from 'containers/Donations/selectors';
 import { decimalMask } from 'utilities/masks';
@@ -23,12 +19,12 @@ function* createDonationSaga() {
     };
     const { data } = yield call(api, 'post', '/v1/donation', dataToSend);
     yield all([
-      put(createDonationSuccessAction(data)),
-      put(getDonationsAction()),
+      put(createDonationAction.Success(data)),
+      put(getDonationsAction.Default()),
       call(NavigationService.navigate, routeNames.DONATIONS_HOME)
     ]);
   } catch (err) {
-    yield put(createDonationFailAction(err));
+    yield put(createDonationAction.Fail(err));
   }
 }
 

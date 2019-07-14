@@ -12,7 +12,7 @@ import logger from 'utilities/logger';
 
 interface ILandingPageCauseProps {
   uuid: string;
-  donations: IDonationWContact[];
+  donations: IDonation.WithContact[];
   createdAt: string;
   updatedAt: string;
   name: string;
@@ -22,7 +22,7 @@ interface ILandingPageCauseProps {
 
 const totalDonationsSelector = createSelector(
   (donations) => donations,
-  (donations: IDonationWContact[]) => {
+  (donations: IDonation.WithContact[]) => {
     try {
       logger.info('calculating', 'totalDonationsSelector');
       return donations.reduce((memo, donation) => memo + donation.amount, 0);

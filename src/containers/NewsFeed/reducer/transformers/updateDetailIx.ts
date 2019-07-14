@@ -1,12 +1,12 @@
 import { INewsfeedInitialState } from '..';
-import { IUpdateDetailIxAction } from 'containers/NewsFeed/actions';
+import { INewsFeedActions } from 'containers/NewsFeed/types/actions';
 
-function updateDetailIxTransformer(state: INewsfeedInitialState, action: IUpdateDetailIxAction): INewsfeedInitialState {
+function updateDetailIxTransformer(state: INewsfeedInitialState, action: INewsFeedActions.UpdateDetailIx['WithUuid']): INewsfeedInitialState {
   return {
     ...state,
     ui: {
       ...state.ui,
-      detailIx: action.detailIx
+      detailIx: action.uuid
     }
   };
 }
