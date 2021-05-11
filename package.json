@@ -47,7 +47,7 @@
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "expo": "^31.0.6",
     "immutable": "^3.8.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "lottie": "0.0.1",
     "moment": "^2.19.1",
     "native-base": "^2.3.10",
